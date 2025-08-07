@@ -1,0 +1,22 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Background Circle -->
+  <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" stroke="white" stroke-width="2"/>
+  
+  <!-- Print Icon -->
+  <rect x="12" y="14" width="16" height="2" fill="white" rx="1"/>
+  <rect x="12" y="18" width="16" height="2" fill="white" rx="1"/>
+  <rect x="12" y="22" width="12" height="2" fill="white" rx="1"/>
+  <rect x="10" y="26" width="20" height="2" fill="white" rx="1" opacity="0.7"/>
+  
+  <!-- Company Name -->
+  <text x="45" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1f2937">printec</text>
+  <text x="45" y="28" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#6b7280" letter-spacing="0.5px">QUALITY PRINTING</text>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

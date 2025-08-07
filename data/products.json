@@ -1,0 +1,85 @@
+{
+  "featuredProducts": [
+    {
+      "id": 1,
+      "name": "Business Card Pack",
+      "price": "$9.99",
+      "image": "assets/images/business-cards.jpg",
+      "category": "Business Cards"
+    },
+    {
+      "id": 2,
+      "name": "Brochure Design",
+      "price": "$24.99",
+      "image": "assets/images/brochure.jpg", 
+      "category": "Brochures"
+    },
+    {
+      "id": 3,
+      "name": "Folder Design",
+      "price": "$19.99",
+      "image": "assets/images/folders.jpg",
+      "category": "Folders"
+    },
+    {
+      "id": 4,
+      "name": "Report Layout",
+      "price": "$34.99",
+      "image": "assets/images/reports.jpg",
+      "category": "Reports"
+    },
+    {
+      "id": 5,
+      "name": "Magazine Design",
+      "price": "$49.99",
+      "image": "assets/images/magazine.jpg",
+      "category": "Magazines"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "company": "TechStart Inc.",
+      "text": "We found a fantastic thing at printec that was cheaper than a hotel, no more price comparisons needed because we know we're getting the best deal with this team!",
+      "rating": 5
+    },
+    {
+      "name": "Mike Chen",
+      "company": "Design Studio",
+      "text": "Outstanding quality and professional service. They delivered exactly what we needed on time.",
+      "rating": 5
+    },
+    {
+      "name": "Emma Wilson",
+      "company": "Marketing Pro",
+      "text": "The attention to detail and customer service is unmatched. Highly recommended!",
+      "rating": 5
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Why smartly you should use to be the perfect customer process",
+      "excerpt": "Learn how to optimize your printing process...",
+      "date": "March 20, 2024",
+      "image": "assets/images/blog1.jpg",
+      "category": "Tips"
+    },
+    {
+      "id": 2,
+      "title": "An Ultimate Guide to Custom Printables And Important Information",
+      "excerpt": "Everything you need to know about custom printing...",
+      "date": "March 15, 2024", 
+      "image": "assets/images/blog2.jpg",
+      "category": "Guide"
+    },
+    {
+      "id": 3,
+      "title": "Tips to Find Best Print and Demand Suppliers Online",
+      "excerpt": "Discover the best suppliers for your printing needs...",
+      "date": "March 10, 2024",
+      "image": "assets/images/blog3.jpg",
+      "category": "Business"
+    }
+  ]
+}
