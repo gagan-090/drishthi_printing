@@ -264,6 +264,7 @@ body.app-loaded .header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: var(--space-8);
 }
 
 /* Curved, bordered, 3D navbar surface */
@@ -343,25 +344,33 @@ body.app-loaded .header {
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-12);
+  gap: var(--space-16);
+  flex: 1;
+  justify-content: center;
 }
 
 .navbar-nav {
   display: flex;
   list-style: none;
-  gap: var(--space-10);
+  gap: var(--space-8);
   margin: 0;
   padding: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-nav a {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-5);
   position: relative;
   transition: color var(--transition-fast);
   border-radius: var(--radius-lg);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .navbar-nav a::after {
@@ -409,6 +418,7 @@ body.app-loaded .header {
   display: flex;
   align-items: center;
   gap: var(--space-6);
+  margin-left: auto;
 }
 
 .btn-theme-toggle {
@@ -3711,6 +3721,7 @@ body.app-loaded .header {
     visibility: hidden;
     transition: all var(--transition-normal);
     box-shadow: var(--shadow-lg);
+    gap: var(--space-4);
   }
   
   .navbar-menu.active {
@@ -3723,10 +3734,12 @@ body.app-loaded .header {
     flex-direction: column;
     gap: var(--space-4);
     margin-bottom: var(--space-6);
+    align-items: stretch;
   }
   
   .navbar-actions {
     justify-content: center;
+    margin-left: 0;
   }
   
   .navbar-toggle {
