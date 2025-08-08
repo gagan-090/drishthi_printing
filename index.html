@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shristi Press - The leader in quality custom printing services. Get business cards, brochures, folders, and more with professional design and fast delivery.">
+    <meta name="description"
+        content="Shristi Press - The leader in quality custom printing services. Get business cards, brochures, folders, and more with professional design and fast delivery.">
     <meta name="keywords" content="printing, custom printing, business cards, brochures, design, quality printing">
     <meta name="author" content="Shristi Press">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Shristi Press - Quality Custom Printing">
     <meta property="og:description" content="The leader in quality custom printing services">
     <meta property="og:image" content="assets/images/og-image.jpg">
     <meta property="og:url" content="https://shristipress.com">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Shristi Press - Quality Custom Printing">
     <meta name="twitter:description" content="The leader in quality custom printing services">
     <meta name="twitter:image" content="assets/images/og-image.jpg">
-    
+
     <title>Shristi Press - The Leader in Quality Custom Printing</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="assets/images/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-    
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6366f1">
-    
+
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
     <link rel="preload" href="css/style.css" as="style">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -52,31 +56,87 @@
         "description": "The leader in quality custom printing services",
         "url": "https://shristipress.com",
         "logo": "assets/images/logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-555-0123",
-            "contactType": "customer service"
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+91-98765-43210",
+                "contactType": "customer service",
+                "email": "info@shristipress.com"
+            },
+            {
+                "@type": "ContactPoint", 
+                "telephone": "+91-98765-43211",
+                "contactType": "sales",
+                "email": "orders@shristipress.com"
+            }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Print Street, Design Plaza",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra", 
+            "postalCode": "400001",
+            "addressCountry": "IN"
         }
     }
     </script>
 </head>
+
 <body>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-    
+
     <!-- Skip to Content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Header -->
     <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">info@shristipress.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <span class="contact-text">Mon-Sat: 9AM-7PM</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <span class="contact-text">Follow Us:</span>
+                        <a href="https://facebook.com/shristipress" class="social-link" aria-label="Facebook"
+                            target="_blank">📘</a>
+                        <a href="https://twitter.com/shristipress" class="social-link" aria-label="Twitter"
+                            target="_blank">🐦</a>
+                        <a href="https://instagram.com/shristipress" class="social-link" aria-label="Instagram"
+                            target="_blank">📷</a>
+                        <a href="https://linkedin.com/company/shristipress" class="social-link" aria-label="LinkedIn"
+                            target="_blank">💼</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="container">
                 <div class="navbar-brand">
                     <a href="#" class="logo" aria-label="Shristi Press Home">
-                        <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40" class="logo-image">
+                        <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
                     </a>
                 </div>
-                
+
                 <div class="navbar-menu" id="navbarMenu">
                     <ul class="navbar-nav" role="menubar">
                         <li role="none"><a href="#home" role="menuitem">Home</a></li>
@@ -86,17 +146,19 @@
                         <li role="none"><a href="#blog" role="menuitem">Blog</a></li>
                         <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
                     </ul>
-                    
+
                     <div class="navbar-actions">
-                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
                             <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
                             <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
                         </button>
                         <button class="btn btn-primary">Get Started</button>
                     </div>
                 </div>
-                
-                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -118,11 +180,11 @@
                                 <div class="hero-text" data-animation="fade-up">
                                     <p class="hero-subtitle">PRINTING SERVICES</p>
                                     <h1 id="hero-title" class="hero-title">
-                                        The leader in 
+                                        The leader in
                                         <span class="text-gradient">quality custom</span>
                                     </h1>
                                     <p class="hero-description">
-                                        Let us walk you through the top-tier art expertise that 
+                                        Let us walk you through the top-tier art expertise that
                                         we will utilize to create your fantastic printing design.
                                     </p>
                                     <div class="hero-actions">
@@ -134,12 +196,10 @@
                                 </div>
                                 <div class="hero-visual" data-animation="fade-left">
                                     <div class="hero-image-container">
-                                        <div class="book-open-overlay" aria-hidden="true"></div>
                                         <div class="hero-circle kenburns"></div>
-                                        <img src="assets/images/hero-illustration.svg" 
-                                             alt="Professional printing services illustration showcasing business cards and printing equipment" 
-                                             class="hero-image parallax"
-                                             loading="eager">
+                                        <img src="assets/images/hero-book.png"
+                                            alt="Open book showcasing professional printing services and design layouts"
+                                            class="hero-image hero-book parallax" loading="eager">
                                         <div class="floating-badge">
                                             <div class="badge-content">
                                                 <span class="badge-number">10K+</span>
@@ -162,10 +222,12 @@
                                         Design. <span class="text-gradient">Print.</span> Deliver.
                                     </h2>
                                     <p class="hero-description">
-                                        Premium brochures and catalogs with vibrant colors, crisp details, and fast turnaround.
+                                        Premium brochures and catalogs with vibrant colors, crisp details, and fast
+                                        turnaround.
                                     </p>
                                     <div class="hero-actions">
-                                        <button class="btn btn-primary btn-large">Explore Brochures <span class="btn-icon">→</span></button>
+                                        <button class="btn btn-primary btn-large">Explore Brochures <span
+                                                class="btn-icon">→</span></button>
                                         <button class="btn btn-secondary">See Samples</button>
                                     </div>
                                 </div>
@@ -173,10 +235,9 @@
                                     <div class="hero-image-container">
                                         <div class="book-open-overlay" aria-hidden="true"></div>
                                         <div class="hero-circle alt kenburns"></div>
-                                        <img src="assets/images/brochure-design.svg" 
-                                             alt="Premium brochure design mockups" 
-                                             class="hero-image parallax"
-                                             loading="lazy">
+                                        <img src="assets/images/hero-illustration.svg"
+                                            alt="Shristi Press book illustration showcasing quality printing services"
+                                            class="hero-image parallax" loading="lazy">
                                         <div class="floating-badge">
                                             <div class="badge-content">
                                                 <span class="badge-number">24hr</span>
@@ -199,10 +260,12 @@
                                         Bring your <span class="text-gradient">brand</span> to life
                                     </h2>
                                     <p class="hero-description">
-                                        Custom T‑shirts and wearables with durable, high‑quality prints and stunning finish options.
+                                        Custom T‑shirts and wearables with durable, high‑quality prints and stunning
+                                        finish options.
                                     </p>
                                     <div class="hero-actions">
-                                        <button class="btn btn-primary btn-large">Start Customizing <span class="btn-icon">→</span></button>
+                                        <button class="btn btn-primary btn-large">Start Customizing <span
+                                                class="btn-icon">→</span></button>
                                         <button class="btn btn-secondary">Pricing</button>
                                     </div>
                                 </div>
@@ -210,10 +273,9 @@
                                     <div class="hero-image-container">
                                         <div class="book-open-overlay" aria-hidden="true"></div>
                                         <div class="hero-circle success kenburns"></div>
-                                        <img src="assets/images/bestselling-t-shirts.svg" 
-                                             alt="Custom T‑shirt printing preview" 
-                                             class="hero-image parallax"
-                                             loading="lazy">
+                                        <img src="assets/images/bestselling-t-shirts.svg"
+                                            alt="Custom T‑shirt printing preview" class="hero-image parallax"
+                                            loading="lazy">
                                         <div class="floating-badge">
                                             <div class="badge-content">
                                                 <span class="badge-number">5★</span>
@@ -231,13 +293,15 @@
                 <div class="hero-nav" aria-label="Hero navigation">
                     <button class="hero-nav-btn prev" id="prevHero" aria-label="Previous slide">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </button>
                     <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
                     <button class="hero-nav-btn next" id="nextHero" aria-label="Next slide">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </button>
                 </div>
@@ -250,9 +314,8 @@
                 <div class="services-row">
                     <div class="service-card" data-animation="fade-up" data-delay="100">
                         <div class="service-image">
-                            <img src="assets/images/service-custom-layouts.svg" 
-                                 alt="Custom print layouts design" 
-                                 loading="lazy">
+                            <img src="assets/images/service-custom-layouts.svg" alt="Custom print layouts design"
+                                loading="lazy">
                         </div>
                         <h3 class="service-title">CUSTOM LAYOUTS</h3>
                         <p class="service-subtitle">Our custom collection</p>
@@ -260,9 +323,8 @@
 
                     <div class="service-card" data-animation="fade-up" data-delay="200">
                         <div class="service-image">
-                            <img src="assets/images/service-high-quality.svg" 
-                                 alt="High quality printing service" 
-                                 loading="lazy">
+                            <img src="assets/images/service-high-quality.svg" alt="High quality printing service"
+                                loading="lazy">
                         </div>
                         <h3 class="service-title">HIGH QUALITY PRINTING</h3>
                         <p class="service-subtitle">Professional result</p>
@@ -270,9 +332,8 @@
 
                     <div class="service-card" data-animation="fade-up" data-delay="300">
                         <div class="service-image">
-                            <img src="assets/images/service-one-stop-shop.svg" 
-                                 alt="One stop shop printing solutions" 
-                                 loading="lazy">
+                            <img src="assets/images/service-one-stop-shop.svg" alt="One stop shop printing solutions"
+                                loading="lazy">
                         </div>
                         <h3 class="service-title">ONE STOP SHOP</h3>
                         <p class="service-subtitle">Complete solution</p>
@@ -280,9 +341,7 @@
 
                     <div class="service-card" data-animation="fade-up" data-delay="400">
                         <div class="service-image">
-                            <img src="assets/images/service-t-shirt.svg" 
-                                 alt="Custom T-shirt printing" 
-                                 loading="lazy">
+                            <img src="assets/images/service-t-shirt.svg" alt="Custom T-shirt printing" loading="lazy">
                         </div>
                         <h3 class="service-title">CUSTOMIZE T-SHIRT</h3>
                         <p class="service-subtitle">Personalized clothing</p>
@@ -292,9 +351,7 @@
                 <div class="services-row">
                     <div class="service-card" data-animation="fade-up" data-delay="500">
                         <div class="service-image">
-                            <img src="assets/images/service-design-services.svg" 
-                                 alt="Design services" 
-                                 loading="lazy">
+                            <img src="assets/images/service-design-services.svg" alt="Design services" loading="lazy">
                         </div>
                         <h3 class="service-title">DESIGN SERVICES</h3>
                         <p class="service-subtitle">Creative solutions</p>
@@ -302,9 +359,8 @@
 
                     <div class="service-card" data-animation="fade-up" data-delay="600">
                         <div class="service-image">
-                            <img src="assets/images/service-office-stationery.svg" 
-                                 alt="Office & stationery products" 
-                                 loading="lazy">
+                            <img src="assets/images/service-office-stationery.svg" alt="Office & stationery products"
+                                loading="lazy">
                         </div>
                         <h3 class="service-title">OFFICE & STATIONERY</h3>
                         <p class="service-subtitle">Business essentials</p>
@@ -312,9 +368,8 @@
 
                     <div class="service-card" data-animation="fade-up" data-delay="700">
                         <div class="service-image">
-                            <img src="assets/images/service-labels-stickers.svg" 
-                                 alt="Labels & stickers printing" 
-                                 loading="lazy">
+                            <img src="assets/images/service-labels-stickers.svg" alt="Labels & stickers printing"
+                                loading="lazy">
                         </div>
                         <h3 class="service-title">LABELS & STICKERS</h3>
                         <p class="service-subtitle">Custom branding</p>
@@ -322,9 +377,8 @@
 
                     <div class="service-card" data-animation="fade-up" data-delay="800">
                         <div class="service-image">
-                            <img src="assets/images/service-wearables-clothing.svg" 
-                                 alt="Wearables & clothing printing" 
-                                 loading="lazy">
+                            <img src="assets/images/service-wearables-clothing.svg" alt="Wearables & clothing printing"
+                                loading="lazy">
                         </div>
                         <h3 class="service-title">WEARABLES & CLOTHING</h3>
                         <p class="service-subtitle">Custom apparel</p>
@@ -351,7 +405,8 @@
                 <div class="features-grid">
                     <div class="feature-card" data-animation="fade-up" data-delay="100">
                         <div class="feature-icon">
-                            <img src="assets/images/feature-connect-ideas.svg" alt="Connect your ideas" aria-hidden="true">
+                            <img src="assets/images/feature-connect-ideas.svg" alt="Connect your ideas"
+                                aria-hidden="true">
                         </div>
                         <h3 class="feature-title">Connect your ideas</h3>
                         <p class="feature-description">
@@ -361,7 +416,8 @@
 
                     <div class="feature-card" data-animation="fade-up" data-delay="200">
                         <div class="feature-icon">
-                            <img src="assets/images/feature-color-customize.svg" alt="Customize with lots of color" aria-hidden="true">
+                            <img src="assets/images/feature-color-customize.svg" alt="Customize with lots of color"
+                                aria-hidden="true">
                         </div>
                         <h3 class="feature-title">Customize with lots of color</h3>
                         <p class="feature-description">
@@ -371,7 +427,8 @@
 
                     <div class="feature-card" data-animation="fade-up" data-delay="300">
                         <div class="feature-icon">
-                            <img src="assets/images/feature-printing-center.svg" alt="Printing in the home center" aria-hidden="true">
+                            <img src="assets/images/feature-printing-center.svg" alt="Printing in the home center"
+                                aria-hidden="true">
                         </div>
                         <h3 class="feature-title">Printing in the home center</h3>
                         <p class="feature-description">
@@ -381,7 +438,8 @@
 
                     <div class="feature-card" data-animation="fade-up" data-delay="400">
                         <div class="feature-icon">
-                            <img src="assets/images/feature-order-ship-track.svg" alt="Order, ship and track your shipment" aria-hidden="true">
+                            <img src="assets/images/feature-order-ship-track.svg"
+                                alt="Order, ship and track your shipment" aria-hidden="true">
                         </div>
                         <h3 class="feature-title">Order, ship and track your shipment</h3>
                         <p class="feature-description">
@@ -599,13 +657,14 @@
                                 <button class="control-btn" id="rotateRight" aria-label="Rotate right">↻</button>
                             </div>
                             <div class="preview-image" id="mainPreview">
-                                <img src="assets/images/business-cards.svg" alt="Business Cards Preview" class="preview-img">
+                                <img src="assets/images/business-cards.svg" alt="Business Cards Preview"
+                                    class="preview-img">
                                 <div class="preview-overlay">
                                     <button class="customize-btn">🎨 Customize Design</button>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="product-details">
                             <h3 class="product-title">Professional Business Cards</h3>
                             <div class="product-rating">
@@ -673,9 +732,7 @@
                 <div class="top-selling-grid">
                     <div class="product-card" data-animation="fade-up" data-delay="100">
                         <div class="product-image">
-                            <img src="assets/images/business-cards.svg" 
-                                 alt="Business Card Set" 
-                                 loading="lazy">
+                            <img src="assets/images/business-cards.svg" alt="Business Card Set" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -688,9 +745,7 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="200">
                         <div class="product-image">
-                            <img src="assets/images/brochure-design.svg" 
-                                 alt="Business Brochure" 
-                                 loading="lazy">
+                            <img src="assets/images/brochure-design.svg" alt="Business Brochure" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -703,9 +758,7 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="300">
                         <div class="product-image">
-                            <img src="assets/images/product-folders.svg" 
-                                 alt="Folder Collection Set" 
-                                 loading="lazy">
+                            <img src="assets/images/product-folders.svg" alt="Folder Collection Set" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -718,9 +771,7 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="400">
                         <div class="product-image">
-                            <img src="assets/images/product-reports.svg" 
-                                 alt="Report Layout Design" 
-                                 loading="lazy">
+                            <img src="assets/images/product-reports.svg" alt="Report Layout Design" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -733,9 +784,7 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="500">
                         <div class="product-image">
-                            <img src="assets/images/brochure-design.svg" 
-                                 alt="Annual Magazine Design" 
-                                 loading="lazy">
+                            <img src="assets/images/brochure-design.svg" alt="Annual Magazine Design" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -766,23 +815,27 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="100">
                         <div class="new-product-badge">#1 Bestseller</div>
                         <div class="new-product-image-container">
-                            <img src="assets/images/bestselling-business-cards.svg" 
-                                 alt="Premium Business Cards" 
-                                 loading="lazy"
-                                 class="new-product-image">
+                            <img src="assets/images/bestselling-business-cards.svg" alt="Premium Business Cards"
+                                loading="lazy" class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                     <button class="new-btn-add-cart" aria-label="Add to cart">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                 </div>
@@ -819,23 +872,27 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="200">
                         <div class="new-product-badge">#2 Popular</div>
                         <div class="new-product-image-container">
-                            <img src="assets/images/bestselling-brochures.svg" 
-                                 alt="Professional Brochures" 
-                                 loading="lazy"
-                                 class="new-product-image">
+                            <img src="assets/images/bestselling-brochures.svg" alt="Professional Brochures"
+                                loading="lazy" class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                     <button class="new-btn-add-cart" aria-label="Add to cart">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                 </div>
@@ -872,23 +929,27 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="300">
                         <div class="new-product-badge">#3 Trending</div>
                         <div class="new-product-image-container">
-                            <img src="assets/images/bestselling-t-shirts.svg" 
-                                 alt="Custom T-Shirts" 
-                                 loading="lazy"
-                                 class="new-product-image">
+                            <img src="assets/images/bestselling-t-shirts.svg" alt="Custom T-Shirts" loading="lazy"
+                                class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                     <button class="new-btn-add-cart" aria-label="Add to cart">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                 </div>
@@ -925,23 +986,27 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="400">
                         <div class="new-product-badge">#4 Hot</div>
                         <div class="new-product-image-container">
-                            <img src="assets/images/bestselling-banners.svg" 
-                                 alt="Large Format Banners" 
-                                 loading="lazy"
-                                 class="new-product-image">
+                            <img src="assets/images/bestselling-banners.svg" alt="Large Format Banners" loading="lazy"
+                                class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                     <button class="new-btn-add-cart" aria-label="Add to cart">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                 </div>
@@ -979,7 +1044,8 @@
                     <button class="new-btn-view-all-products">
                         <span>View All Products</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                 </div>
@@ -1001,10 +1067,8 @@
                     <!-- Blog Post 1 -->
                     <article class="blog-card" data-animation="slide-up" data-delay="100">
                         <div class="blog-image-container">
-                            <img src="assets/images/blog-printing-trends.svg" 
-                                 alt="Printing Industry Trends 2024" 
-                                 loading="lazy"
-                                 class="blog-image">
+                            <img src="assets/images/blog-printing-trends.svg" alt="Printing Industry Trends 2024"
+                                loading="lazy" class="blog-image">
                             <div class="blog-overlay">
                                 <div class="blog-category">Industry Insights</div>
                                 <div class="blog-date">Dec 15, 2024</div>
@@ -1014,11 +1078,13 @@
                         <div class="blog-content">
                             <h3 class="blog-title">Top Printing Trends to Watch in 2024</h3>
                             <p class="blog-excerpt">
-                                Discover the latest innovations in printing technology, from sustainable materials to digital transformation that are reshaping the industry landscape.
+                                Discover the latest innovations in printing technology, from sustainable materials to
+                                digital transformation that are reshaping the industry landscape.
                             </p>
                             <div class="blog-meta">
                                 <div class="blog-author">
-                                    <img src="assets/images/avatar-michael.svg" alt="Michael Chen" class="author-avatar">
+                                    <img src="assets/images/avatar-michael.svg" alt="Michael Chen"
+                                        class="author-avatar">
                                     <span class="author-name">Michael Chen</span>
                                 </div>
                                 <div class="blog-stats">
@@ -1029,7 +1095,8 @@
                             <button class="btn-read-more">
                                 <span>Read More</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>
@@ -1038,10 +1105,8 @@
                     <!-- Blog Post 2 -->
                     <article class="blog-card" data-animation="slide-up" data-delay="200">
                         <div class="blog-image-container">
-                            <img src="assets/images/blog-design-tips.svg" 
-                                 alt="Design Tips for Print" 
-                                 loading="lazy"
-                                 class="blog-image">
+                            <img src="assets/images/blog-design-tips.svg" alt="Design Tips for Print" loading="lazy"
+                                class="blog-image">
                             <div class="blog-overlay">
                                 <div class="blog-category">Design Tips</div>
                                 <div class="blog-date">Dec 12, 2024</div>
@@ -1051,7 +1116,8 @@
                         <div class="blog-content">
                             <h3 class="blog-title">Essential Design Tips for Print-Ready Files</h3>
                             <p class="blog-excerpt">
-                                Learn the crucial design principles and technical specifications needed to create print-ready files that ensure perfect results every time.
+                                Learn the crucial design principles and technical specifications needed to create
+                                print-ready files that ensure perfect results every time.
                             </p>
                             <div class="blog-meta">
                                 <div class="blog-author">
@@ -1066,7 +1132,8 @@
                             <button class="btn-read-more">
                                 <span>Read More</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>
@@ -1075,10 +1142,8 @@
                     <!-- Blog Post 3 -->
                     <article class="blog-card" data-animation="slide-up" data-delay="300">
                         <div class="blog-image-container">
-                            <img src="assets/images/blog-sustainability.svg" 
-                                 alt="Sustainable Printing Practices" 
-                                 loading="lazy"
-                                 class="blog-image">
+                            <img src="assets/images/blog-sustainability.svg" alt="Sustainable Printing Practices"
+                                loading="lazy" class="blog-image">
                             <div class="blog-overlay">
                                 <div class="blog-category">Sustainability</div>
                                 <div class="blog-date">Dec 10, 2024</div>
@@ -1088,7 +1153,8 @@
                         <div class="blog-content">
                             <h3 class="blog-title">Sustainable Printing: Eco-Friendly Practices</h3>
                             <p class="blog-excerpt">
-                                Explore how modern printing companies are adopting eco-friendly practices and materials to reduce environmental impact while maintaining quality.
+                                Explore how modern printing companies are adopting eco-friendly practices and materials
+                                to reduce environmental impact while maintaining quality.
                             </p>
                             <div class="blog-meta">
                                 <div class="blog-author">
@@ -1103,7 +1169,8 @@
                             <button class="btn-read-more">
                                 <span>Read More</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>
@@ -1112,10 +1179,8 @@
                     <!-- Blog Post 4 -->
                     <article class="blog-card" data-animation="slide-up" data-delay="400">
                         <div class="blog-image-container">
-                            <img src="assets/images/blog-branding-guide.svg" 
-                                 alt="Branding Guide for Small Businesses" 
-                                 loading="lazy"
-                                 class="blog-image">
+                            <img src="assets/images/blog-branding-guide.svg" alt="Branding Guide for Small Businesses"
+                                loading="lazy" class="blog-image">
                             <div class="blog-overlay">
                                 <div class="blog-category">Branding</div>
                                 <div class="blog-date">Dec 8, 2024</div>
@@ -1125,7 +1190,8 @@
                         <div class="blog-content">
                             <h3 class="blog-title">Complete Branding Guide for Small Businesses</h3>
                             <p class="blog-excerpt">
-                                A comprehensive guide to building a strong brand identity through strategic design, consistent messaging, and professional printing materials.
+                                A comprehensive guide to building a strong brand identity through strategic design,
+                                consistent messaging, and professional printing materials.
                             </p>
                             <div class="blog-meta">
                                 <div class="blog-author">
@@ -1140,7 +1206,8 @@
                             <button class="btn-read-more">
                                 <span>Read More</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>
@@ -1150,7 +1217,8 @@
                     <button class="btn-view-all-posts">
                         <span>View All Blog Posts</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                 </div>
@@ -1244,7 +1312,8 @@
                         Customer <span class="text-gradient">Testimonials</span>
                     </h2>
                     <p class="section-description">
-                        Don't just take our word for it. Here's what our satisfied customers have to say about their experience with Shristi Press.
+                        Don't just take our word for it. Here's what our satisfied customers have to say about their
+                        experience with Shristi Press.
                     </p>
                 </div>
 
@@ -1261,7 +1330,9 @@
                                     <span class="star">⭐</span>
                                 </div>
                                 <blockquote class="testimonial-quote">
-                                    "We found a fantastic thing at shristi press that was cheaper than a hotel, no more price comparisons needed because we know we're getting the best deal with this team!"
+                                    "We found a fantastic thing at shristi press that was cheaper than a hotel, no more
+                                    price comparisons needed because we know we're getting the best deal with this
+                                    team!"
                                 </blockquote>
                                 <div class="testimonial-author">
                                     <img src="assets/images/avatar-sarah.svg" alt="Sarah Johnson" class="author-avatar">
@@ -1284,10 +1355,12 @@
                                     <span class="star">⭐</span>
                                 </div>
                                 <blockquote class="testimonial-quote">
-                                    "Outstanding quality and professional service. They delivered exactly what we needed on time and exceeded our expectations with their attention to detail."
+                                    "Outstanding quality and professional service. They delivered exactly what we needed
+                                    on time and exceeded our expectations with their attention to detail."
                                 </blockquote>
                                 <div class="testimonial-author">
-                                    <img src="assets/images/avatar-michael.svg" alt="Michael Chen" class="author-avatar">
+                                    <img src="assets/images/avatar-michael.svg" alt="Michael Chen"
+                                        class="author-avatar">
                                     <div class="author-info">
                                         <cite class="author-name">Michael Chen</cite>
                                         <span class="author-company">Design Studio Pro</span>
@@ -1307,7 +1380,8 @@
                                     <span class="star">⭐</span>
                                 </div>
                                 <blockquote class="testimonial-quote">
-                                    "The attention to detail and customer service is unmatched. They helped us create stunning marketing materials that perfectly represent our brand."
+                                    "The attention to detail and customer service is unmatched. They helped us create
+                                    stunning marketing materials that perfectly represent our brand."
                                 </blockquote>
                                 <div class="testimonial-author">
                                     <img src="assets/images/avatar-emma.svg" alt="Emma Wilson" class="author-avatar">
@@ -1330,10 +1404,12 @@
                                     <span class="star">⭐</span>
                                 </div>
                                 <blockquote class="testimonial-quote">
-                                    "Fast turnaround times, competitive pricing, and exceptional quality. Shristi Press has become our go-to partner for all printing needs."
+                                    "Fast turnaround times, competitive pricing, and exceptional quality. Shristi Press
+                                    has become our go-to partner for all printing needs."
                                 </blockquote>
                                 <div class="testimonial-author">
-                                    <img src="assets/images/avatar-david.svg" alt="David Rodriguez" class="author-avatar">
+                                    <img src="assets/images/avatar-david.svg" alt="David Rodriguez"
+                                        class="author-avatar">
                                     <div class="author-info">
                                         <cite class="author-name">David Rodriguez</cite>
                                         <span class="author-company">Creative Agency</span>
@@ -1353,7 +1429,8 @@
                                     <span class="star">⭐</span>
                                 </div>
                                 <blockquote class="testimonial-quote">
-                                    "Professional, reliable, and innovative. Their team went above and beyond to ensure our project was perfect. Highly recommended!"
+                                    "Professional, reliable, and innovative. Their team went above and beyond to ensure
+                                    our project was perfect. Highly recommended!"
                                 </blockquote>
                                 <div class="testimonial-author">
                                     <img src="assets/images/avatar-lisa.svg" alt="Lisa Thompson" class="author-avatar">
@@ -1370,10 +1447,11 @@
                     <div class="testimonials-nav">
                         <button class="nav-btn prev-btn" id="prevTestimonial" aria-label="Previous testimonial">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </button>
-                        
+
                         <div class="testimonials-dots" id="testimonialsDots">
                             <button class="dot active" data-index="0" aria-label="Go to testimonial 1"></button>
                             <button class="dot" data-index="1" aria-label="Go to testimonial 2"></button>
@@ -1381,10 +1459,11 @@
                             <button class="dot" data-index="3" aria-label="Go to testimonial 4"></button>
                             <button class="dot" data-index="4" aria-label="Go to testimonial 5"></button>
                         </div>
-                        
+
                         <button class="nav-btn next-btn" id="nextTestimonial" aria-label="Next testimonial">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </button>
                     </div>
@@ -1396,32 +1475,37 @@
                     <div class="brand-logos">
                         <div class="brand-logo" aria-label="Google">
                             <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
-                                <path d="M8 6h64v12H8z" fill="#4285f4"/>
-                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Google</text>
+                                <path d="M8 6h64v12H8z" fill="#4285f4" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Google</text>
                             </svg>
                         </div>
                         <div class="brand-logo" aria-label="Airbnb">
                             <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
-                                <path d="M8 6h64v12H8z" fill="#ff5a5f"/>
-                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Airbnb</text>
+                                <path d="M8 6h64v12H8z" fill="#ff5a5f" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Airbnb</text>
                             </svg>
                         </div>
                         <div class="brand-logo" aria-label="GitHub">
                             <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
-                                <path d="M8 6h64v12H8z" fill="#333"/>
-                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="bold">GitHub</text>
+                                <path d="M8 6h64v12H8z" fill="#333" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">GitHub</text>
                             </svg>
                         </div>
                         <div class="brand-logo" aria-label="Squarespace">
                             <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
-                                <path d="M8 6h64v12H8z" fill="#000"/>
-                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Squarespace</text>
+                                <path d="M8 6h64v12H8z" fill="#000" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Squarespace</text>
                             </svg>
                         </div>
                         <div class="brand-logo" aria-label="Uber">
                             <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
-                                <path d="M8 6h64v12H8z" fill="#000"/>
-                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Uber</text>
+                                <path d="M8 6h64v12H8z" fill="#000" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Uber</text>
                             </svg>
                         </div>
                     </div>
@@ -1451,65 +1535,72 @@
                 <div class="newsletter-modern-content" data-animation="fade-up">
                     <div class="newsletter-modern-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="newsletter-svg">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="newsletter-glow"></div>
                     </div>
-                    
+
                     <div class="newsletter-modern-text">
                         <h2 id="newsletter-title" class="newsletter-modern-title">
                             Stay Ahead with
                             <span class="newsletter-highlight">Exclusive Offers</span>
                         </h2>
                         <p class="newsletter-modern-subtitle">
-                            Get first access to premium printing deals, industry insights, and creative inspiration delivered to your inbox.
+                            Get first access to premium printing deals, industry insights, and creative inspiration
+                            delivered to your inbox.
                         </p>
                     </div>
-                    
+
                     <form class="newsletter-modern-form" id="newsletterForm" novalidate>
                         <div class="newsletter-input-group">
                             <div class="newsletter-input-wrapper">
-                                <svg class="newsletter-input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <svg class="newsletter-input-icon" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <input 
-                                    type="email" 
-                                    id="emailInput" 
-                                    class="newsletter-modern-input" 
-                                    placeholder="Enter your email address"
-                                    required
-                                    aria-describedby="emailError">
+                                <input type="email" id="emailInput" class="newsletter-modern-input"
+                                    placeholder="Enter your email address" required aria-describedby="emailError">
                                 <div class="newsletter-input-focus-border"></div>
                             </div>
                             <button type="submit" class="newsletter-modern-btn">
                                 <span class="btn-text">Subscribe Now</span>
                                 <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>
                         <div id="emailError" class="newsletter-error" role="alert" aria-live="polite"></div>
                         <div id="successMessage" class="newsletter-success" role="alert" aria-live="polite"></div>
                     </form>
-                    
+
                     <div class="newsletter-features">
                         <div class="newsletter-feature">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                             <span>No spam, ever</span>
                         </div>
                         <div class="newsletter-feature">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                             <span>Unsubscribe anytime</span>
                         </div>
                         <div class="newsletter-feature">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                             <span>Premium content only</span>
                         </div>
@@ -1527,7 +1618,8 @@
                 <div class="footer-section">
                     <div class="footer-brand">
                         <a href="#" class="footer-logo" aria-label="Shristi Press Home">
-                            <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40" class="footer-logo-image">
+                            <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
                         </a>
                         <p class="footer-description">
                             Professional printing services with unmatched quality and customer satisfaction.
@@ -1538,9 +1630,31 @@
                 <div class="footer-section">
                     <h3 class="footer-title">Get in Touch</h3>
                     <address class="footer-contact">
-                        <p>📧 info@shristipress.com</p>
-                        <p>📞 +1 (555) 123-4567</p>
-                        <p>📍 123 Business Ave, Suite 100<br>City, State 12345</p>
+                        <div class="contact-group">
+                            <p><strong>📧 Email:</strong></p>
+                            <p><a href="mailto:info@shristipress.com">info@shristipress.com</a></p>
+                            <p><a href="mailto:orders@shristipress.com">orders@shristipress.com</a></p>
+                            <p><a href="mailto:support@shristipress.com">support@shristipress.com</a></p>
+                        </div>
+                        <div class="contact-group">
+                            <p><strong>📞 Phone:</strong></p>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a> (Main)</p>
+                            <p><a href="tel:+919876543211">+91 98765 43211</a> (Orders)</p>
+                            <p><a href="https://wa.me/919876543210" target="_blank">WhatsApp Support</a></p>
+                        </div>
+                        <div class="contact-group">
+                            <p><strong>📍 Address:</strong></p>
+                            <p>Shristi Press Pvt. Ltd.<br>
+                                123 Print Street, Design Plaza<br>
+                                Mumbai, Maharashtra 400001<br>
+                                India</p>
+                        </div>
+                        <div class="contact-group">
+                            <p><strong>🕒 Business Hours:</strong></p>
+                            <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                            <p>Saturday: 9:00 AM - 5:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
                     </address>
                 </div>
 
@@ -1606,7 +1720,8 @@
                 <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
             </div>
             <div class="modal-body">
-                <p>You've successfully subscribed to our newsletter. We'll keep you updated with our latest offers and news!</p>
+                <p>You've successfully subscribed to our newsletter. We'll keep you updated with our latest offers and
+                    news!</p>
             </div>
         </div>
     </div>
@@ -1630,8 +1745,8 @@
     </div>
 
     <!-- Scripts -->
-            <script defer src="js/script.js?v=17"></script>
-    
+    <script defer src="js/script.js?v=17"></script>
+
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -1647,4 +1762,5 @@
         }
     </script>
 </body>
+
 </html>
