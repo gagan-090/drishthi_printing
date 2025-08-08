@@ -3,36 +3,36 @@
     {
       "id": 1,
       "name": "Business Card Pack",
-      "price": "$9.99",
-      "image": "assets/images/business-cards.jpg",
+      "price": "₹9.99",
+      "image": "assets/images/business-cards.svg",
       "category": "Business Cards"
     },
     {
       "id": 2,
       "name": "Brochure Design",
-      "price": "$24.99",
-      "image": "assets/images/brochure.jpg", 
+      "price": "₹24.99",
+      "image": "assets/images/brochure-design.svg", 
       "category": "Brochures"
     },
     {
       "id": 3,
       "name": "Folder Design",
-      "price": "$19.99",
-      "image": "assets/images/folders.jpg",
+      "price": "₹19.99",
+      "image": "assets/images/business-cards.svg",
       "category": "Folders"
     },
     {
       "id": 4,
       "name": "Report Layout",
-      "price": "$34.99",
-      "image": "assets/images/reports.jpg",
+      "price": "₹34.99",
+      "image": "assets/images/brochure-design.svg",
       "category": "Reports"
     },
     {
       "id": 5,
       "name": "Magazine Design",
-      "price": "$49.99",
-      "image": "assets/images/magazine.jpg",
+      "price": "₹49.99",
+      "image": "assets/images/business-cards.svg",
       "category": "Magazines"
     }
   ],
@@ -40,7 +40,7 @@
     {
       "name": "Sarah Johnson",
       "company": "TechStart Inc.",
-      "text": "We found a fantastic thing at printec that was cheaper than a hotel, no more price comparisons needed because we know we're getting the best deal with this team!",
+      "text": "We found a fantastic thing at shristi press that was cheaper than a hotel, no more price comparisons needed because we know we're getting the best deal with this team!",
       "rating": 5
     },
     {

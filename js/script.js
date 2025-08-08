@@ -5,7 +5,26 @@ let testimonials = [];
 let products = [];
 let blogPosts = [];
 
+// Global error handler
+window.addEventListener('error', (e) => {
+  console.error('Global error caught:', e.error);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  console.error('Unhandled promise rejection:', e.reason);
+});
+
+// Global error handler
+window.addEventListener('error', (event) => {
+  console.error('❌ Global JavaScript error:', event.error);
+  console.error('Error details:', event.filename, event.lineno, event.colno);
+});
+
+console.log('🎯 Script.js loaded successfully!');
+
 // ===== UTILITY FUNCTIONS =====
+console.log('🚀 Script.js loaded successfully!');
+
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
@@ -72,6 +91,9 @@ class NavigationManager {
     this.navbarToggle = $('#navbarToggle');
     this.navbarMenu = $('#navbarMenu');
     this.isMenuOpen = false;
+    this.lastScrollY = 0;
+    this.isNavbarVisible = true;
+    this.scrollThreshold = 100; // Minimum scroll distance to trigger hide/show
     this.init();
   }
 
@@ -149,8 +171,40 @@ class NavigationManager {
   }
 
   handleScroll() {
-    const scrolled = window.scrollY > 50;
+    const currentScrollY = window.scrollY;
+    const scrolled = currentScrollY > 50;
+    
+    // Add scrolled class for styling
     this.navbar.classList.toggle('scrolled', scrolled);
+    
+    // Handle navbar hide/show based on scroll direction
+    if (currentScrollY > this.scrollThreshold) {
+      const isScrollingDown = currentScrollY > this.lastScrollY;
+      const isScrollingUp = currentScrollY < this.lastScrollY;
+      
+      if (isScrollingDown && this.isNavbarVisible) {
+        // Hide navbar when scrolling down
+        this.hideNavbar();
+      } else if (isScrollingUp && !this.isNavbarVisible) {
+        // Show navbar when scrolling up
+        this.showNavbar();
+      }
+    } else if (!this.isNavbarVisible) {
+      // Always show navbar at the top
+      this.showNavbar();
+    }
+    
+    this.lastScrollY = currentScrollY;
+  }
+  
+  hideNavbar() {
+    this.navbar.classList.add('navbar-hidden');
+    this.isNavbarVisible = false;
+  }
+  
+  showNavbar() {
+    this.navbar.classList.remove('navbar-hidden');
+    this.isNavbarVisible = true;
   }
 }
 
@@ -203,15 +257,21 @@ class ScrollAnimations {
 class DataLoader {
   async loadData() {
     try {
+      console.log('Loading data from products.json...');
       const response = await fetch('data/products.json');
       if (!response.ok) throw new Error('Failed to load data');
       const data = await response.json();
+      
+      console.log('Data loaded successfully:', data);
       
       products = data.featuredProducts || [];
       testimonials = data.testimonials || [];
       blogPosts = data.blogPosts || [];
       
+      console.log('Products array:', products);
+      
       this.renderProducts();
+      this.renderBestsellingProducts();
       this.renderBlogPosts();
       this.initTestimonials();
     } catch (error) {
@@ -221,11 +281,12 @@ class DataLoader {
   }
 
   loadFallbackData() {
+    console.log('Loading fallback data...');
     // Fallback data in case JSON loading fails
     products = [
-      { id: 1, name: "Business Card Pack", price: "$9.99", category: "Business Cards" },
-      { id: 2, name: "Brochure Design", price: "$24.99", category: "Brochures" },
-      { id: 3, name: "Folder Design", price: "$19.99", category: "Folders" }
+      { id: 1, name: "Business Card Pack", price: "₹9.99", category: "Business Cards" },
+      { id: 2, name: "Brochure Design", price: "₹24.99", category: "Brochures" },
+      { id: 3, name: "Folder Design", price: "₹19.99", category: "Folders" }
     ];
     
     blogPosts = [
@@ -238,60 +299,402 @@ class DataLoader {
       }
     ];
     
+    console.log('Fallback products:', products);
+    
     this.renderProducts();
+    this.renderBestsellingProducts();
     this.renderBlogPosts();
   }
 
   renderProducts() {
     const productsGrid = $('#productsGrid');
-    if (!productsGrid) return;
+    if (!productsGrid) {
+      console.log('Products grid not found');
+      return;
+    }
 
-    const productsHTML = products.map((product, index) => `
-      <div class="product-card" data-animation="fade-up" data-delay="${(index + 1) * 100}">
-        <div class="product-image">
-          <img src="data:image/svg+xml;base64,${this.generateProductImageSVG(product.name)}" 
-               alt="${product.name}" 
-               loading="lazy">
-          <div class="product-overlay">
-            <button class="btn-cart" aria-label="Add ${product.name} to cart" data-product-id="${product.id}">🛒</button>
+    // Fresh product data with top-class animations
+    const freshProducts = [
+      {
+        id: 1,
+        name: "Premium Business Cards",
+        price: 999,
+        originalPrice: 1499,
+        category: "Business Cards",
+        badge: "🔥 HOT SELLER",
+        rating: 4.9,
+        reviews: 2847,
+        features: ["Premium 400gsm Paper", "UV Coating", "24hr Delivery"],
+        image: "assets/images/business-cards.svg"
+      },
+      {
+        id: 2,
+        name: "Corporate Brochures",
+        price: 2499,
+        originalPrice: 3499,
+        category: "Brochures",
+        badge: "✨ NEW ARRIVAL",
+        rating: 4.8,
+        reviews: 1956,
+        features: ["Tri-fold Design", "Glossy Finish", "Full Color Print"],
+        image: "assets/images/brochure-design.svg"
+      },
+      {
+        id: 3,
+        name: "Executive Folders",
+        price: 1899,
+        originalPrice: 2599,
+        category: "Folders",
+        badge: "⭐ POPULAR",
+        rating: 4.7,
+        reviews: 1234,
+        features: ["Matte Lamination", "Die Cut", "Pocket Design"],
+        image: "assets/images/product-folders.svg"
+      },
+      {
+        id: 4,
+        name: "Annual Reports",
+        price: 3499,
+        originalPrice: 4999,
+        category: "Reports",
+        badge: "🏆 PREMIUM",
+        rating: 4.9,
+        reviews: 892,
+        features: ["Wire-O Binding", "High Resolution", "Laminated Cover"],
+        image: "assets/images/product-reports.svg"
+      },
+      {
+        id: 5,
+        name: "Marketing Magazines",
+        price: 4999,
+        originalPrice: 6999,
+        category: "Magazines",
+        badge: "💎 LUXURY",
+        rating: 4.8,
+        reviews: 567,
+        features: ["Perfect Binding", "Silk Paper", "Vibrant Colors"],
+        image: "assets/images/brochure-design.svg"
+      }
+    ];
+
+    const formatINR = (value) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+
+    const productsHTML = freshProducts.map((product, index) => {
+      const discountPct = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+      const stars = Array.from({ length: 5 }).map((_, i) => 
+        `<span class="star-new ${i < Math.floor(product.rating) ? 'filled' : ''}">★</span>`
+      ).join('');
+
+      return `
+        <div class="product-card-new" data-animation="slide-up" data-delay="${index * 150}">
+          <div class="product-badge-new">${product.badge}</div>
+          <div class="product-image-container-new">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" class="product-image-new">
+            <div class="product-overlay-new">
+              <div class="overlay-buttons">
+                <button class="btn-quick-view-new" aria-label="Quick view ${product.name}">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+                <button class="btn-cart-new" aria-label="Add ${product.name} to cart" data-product-id="${product.id}">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-info-new">
+            <div class="product-category-new">${product.category}</div>
+            <h3 class="product-name-new">${product.name}</h3>
+            <div class="product-rating-new">
+              <div class="stars-new">${stars}</div>
+              <span class="rating-text-new">${product.rating}/5 (${product.reviews.toLocaleString('en-IN')} reviews)</span>
+            </div>
+            <div class="product-features-new">
+              ${product.features.map(f => `<span class="feature-tag-new">${f}</span>`).join('')}
+            </div>
+            <div class="product-pricing-new">
+              <span class="price-new">${formatINR(product.price)}</span>
+              <span class="price-original-new">${formatINR(product.originalPrice)}</span>
+              <span class="discount-badge-new">-${discountPct}%</span>
+            </div>
+            <button class="btn-order-now-new">Order Now</button>
           </div>
         </div>
-        <div class="product-info">
-          <h3 class="product-name">${product.name}</h3>
-          <p class="product-price">${product.price}</p>
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     productsGrid.innerHTML = productsHTML;
+    
+    // Initialize new product interactions
+    this.initNewProductInteractions();
+  }
 
-    // Bind cart events
-    this.bindCartEvents();
+  initNewProductInteractions() {
+    const cards = $$('.product-card-new');
+    
+    cards.forEach((card, index) => {
+      // Add entrance animation
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      
+      setTimeout(() => {
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, index * 150);
+      
+      // Hover effects
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px) scale(1.02)';
+        card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+        card.style.boxShadow = '';
+      });
+      
+      // Quick view button
+      const quickViewBtn = card.querySelector('.btn-quick-view-new');
+      if (quickViewBtn) {
+        quickViewBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.showQuickViewModal(card);
+        });
+      }
+      
+      // Add to cart button
+      const cartBtn = card.querySelector('.btn-cart-new');
+      if (cartBtn) {
+        cartBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.addToCartNew(card);
+        });
+      }
+      
+      // Order now button
+      const orderBtn = card.querySelector('.btn-order-now-new');
+      if (orderBtn) {
+        orderBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.handleOrderNowNew(card);
+        });
+      }
+    });
+  }
+  
+  showQuickViewModal(card) {
+    const productName = card.querySelector('.product-name-new').textContent;
+    const productPrice = card.querySelector('.price-new').textContent;
+    
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'quick-view-modal-new';
+    modal.innerHTML = `
+      <div class="modal-overlay-new"></div>
+      <div class="modal-content-new">
+        <div class="modal-header-new">
+          <h3>${productName}</h3>
+          <button class="modal-close-new">&times;</button>
+        </div>
+        <div class="modal-body-new">
+          <p>Quick view for ${productName} - ${productPrice}</p>
+          <button class="btn-customize-new">Customize & Order</button>
+        </div>
+      </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Show modal
+    setTimeout(() => modal.classList.add('active'), 10);
+    
+    // Close modal
+    const closeBtn = modal.querySelector('.modal-close-new');
+    const overlay = modal.querySelector('.modal-overlay-new');
+    
+    const closeModal = () => {
+      modal.classList.remove('active');
+      setTimeout(() => modal.remove(), 300);
+    };
+    
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+  }
+  
+  addToCartNew(card) {
+    const productName = card.querySelector('.product-name-new').textContent;
+    const cartBtn = card.querySelector('.btn-cart-new');
+    
+    // Animate button
+    cartBtn.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      cartBtn.style.transform = 'scale(1)';
+    }, 150);
+    
+    // Show notification
+    this.showNotificationNew(`${productName} added to cart!`, 'success');
+  }
+  
+  handleOrderNowNew(card) {
+    const productName = card.querySelector('.product-name-new').textContent;
+    const orderBtn = card.querySelector('.btn-order-now-new');
+    
+    // Add ripple effect
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple-new';
+    orderBtn.appendChild(ripple);
+    
+    setTimeout(() => ripple.remove(), 600);
+    
+    // Show notification
+    this.showNotificationNew(`Ordering ${productName}...`, 'info');
+  }
+  
+  showNotificationNew(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification-new notification-${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.classList.add('show'), 10);
+    
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
+  }
+
+  normalizePrice(price, formatter) {
+    if (typeof price === 'number') return formatter(price);
+    if (typeof price === 'string') {
+      // Try to parse numbers from strings like "$9.99", "₹9.99", "9.99"
+      const numeric = parseFloat(price.replace(/[^0-9.]/g, ''));
+      if (!isNaN(numeric)) return formatter(numeric);
+    }
+    return price;
+  }
+
+  renderBestsellingProducts() {
+    const bestsellingGrid = document.querySelector('.bestselling-grid');
+    if (!bestsellingGrid) {
+      console.log('Bestselling grid not found');
+      return;
+    }
+    if (!Array.isArray(products)) {
+      console.log('Products not loaded:', products);
+      return;
+    }
+    
+    console.log('Rendering bestselling products:', products);
+
+    const formatINR = (value) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 }).format(value);
+
+    const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const featurePresets = {
+      'Business Cards': ['Premium Paper', 'UV Coating', '24hr Turnaround'],
+      'Brochures': ['Tri-fold', 'Glossy Finish', 'Full Color'],
+      'Folders': ['Matte Lamination', 'Die Cut', 'Pocket Slot'],
+      'Reports': ['Wire-O Bind', 'High Resolution', 'Cover Lamination'],
+      'Magazines': ['Perfect Bind', 'Vibrant Colors', 'Silk Stock']
+    };
+
+    const svgEye = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+
+    const svgCart = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+
+    const cardsHTML = products.map((product, index) => {
+      const basePrice = typeof product.price === 'number'
+        ? product.price
+        : parseFloat(String(product.price).replace(/[^0-9.]/g, '')) || 0;
+      const originalPrice = basePrice > 0 ? +(basePrice * 1.3).toFixed(2) : 0;
+      const discountPct = originalPrice > 0 ? Math.round(((originalPrice - basePrice) / originalPrice) * 100) : 0;
+      const rating = getRandomInt(4, 5);
+      const reviews = getRandomInt(800, 3200).toLocaleString('en-IN');
+      const category = product.category || 'Popular';
+      const features = featurePresets[category] || ['High Quality', 'Fast Turnaround', 'Best Value'];
+      const badgeText = `#${index + 1} ${index === 0 ? 'Bestseller' : index === 1 ? 'Popular' : index === 2 ? 'Trending' : 'Hot'}`;
+
+      const stars = Array.from({ length: 5 }).map((_, i) => `<span class="star ${i < rating ? 'filled' : ''}">★</span>`).join('');
+      const placeholder = `data:image/svg+xml;base64,${this.generateProductImageSVG(product.name)}`;
+      const imgSrc = product.image ? product.image : placeholder;
+      
+      return `
+        <div class="bestselling-card" data-animation="slide-up" data-delay="${(index + 1) * 100}">
+          <div class="product-badge">${badgeText}</div>
+          <div class="product-image-container">
+            <img src="${imgSrc}" alt="${product.name}" loading="lazy" class="product-image" />
+            <div class="product-overlay">
+              <div class="overlay-content">
+                <button class="btn-quick-view" aria-label="Quick view">${svgEye}</button>
+                <button class="btn-add-cart" aria-label="Add to cart">${svgCart}</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">${category}</div>
+            <h3 class="product-name">${product.name}</h3>
+            <div class="product-rating">
+              <div class="stars">${stars}</div>
+              <span class="rating-text">(${reviews} reviews)</span>
+            </div>
+            <div class="product-features">
+              ${features.slice(0,3).map(f => `<span class="feature-tag">${f}</span>`).join('')}
+            </div>
+            <div class="product-pricing">
+              <span class="price">${formatINR(basePrice)}</span>
+              <span class="price-original">${originalPrice ? formatINR(originalPrice) : ''}</span>
+              ${discountPct ? `<span class="discount-badge">-${discountPct}%</span>` : ''}
+            </div>
+            <button class="btn-order-now">Order Now</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    bestsellingGrid.innerHTML = cardsHTML;
+    
+    console.log('Bestselling products rendered successfully');
+
+    // Re-bind interactive behaviors for newly injected cards
+    if (window.app && window.app.bestsellingProductsManager) {
+      window.app.bestsellingProductsManager.init();
+    }
   }
 
   renderBlogPosts() {
-    const blogGrid = $('#blogGrid');
-    if (!blogGrid) return;
+    const blogGrid = document.querySelector('.blog-grid');
+    if (!blogGrid) {
+      console.log('Blog grid not found');
+      return;
+    }
 
-    const blogHTML = blogPosts.map((post, index) => `
-      <article class="blog-card" data-animation="fade-up" data-delay="${(index + 1) * 100}">
-        <div class="blog-image">
-          <img src="data:image/svg+xml;base64,${this.generateBlogImageSVG(post.title)}" 
-               alt="${post.title}" 
-               loading="lazy">
-        </div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <time class="blog-date" datetime="${post.date}">${post.date}</time>
-            <span class="blog-category">${post.category}</span>
-          </div>
-          <h3 class="blog-title">${post.title}</h3>
-          <p class="blog-excerpt">${post.excerpt}</p>
-        </div>
-      </article>
-    `).join('');
+    console.log('Blog grid found, checking for blog cards...');
+    const blogCards = blogGrid.querySelectorAll('.blog-card');
+    console.log(`Found ${blogCards.length} blog cards`);
 
-    blogGrid.innerHTML = blogHTML;
+    // Since the blog posts are already in the HTML, we don't need to render them dynamically
+    // Just initialize the blog manager to handle interactions
+    if (window.app && window.app.blogManager) {
+      window.app.blogManager.init();
+    }
   }
 
   initTestimonials() {
@@ -929,13 +1332,14 @@ class PriceCalculatorManager {
   }
 
   updatePriceDisplay(prices) {
-    $('#base-price').textContent = `$${prices.basePrice.toFixed(2)}`;
-    $('#paper-cost').textContent = `$${prices.paperCost.toFixed(2)}`;
-    $('#finish-cost').textContent = `$${prices.finishCost.toFixed(2)}`;
-    $('#color-cost').textContent = `$${prices.colorCost.toFixed(2)}`;
-    $('#rush-cost').textContent = `$${prices.rushCost.toFixed(2)}`;
-    $('#total-price').textContent = `$${prices.totalPrice.toFixed(2)}`;
-    $('#unit-price').textContent = `$${prices.unitPrice.toFixed(3)} per piece`;
+    const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+    $('#base-price').textContent = fmt.format(prices.basePrice);
+    $('#paper-cost').textContent = fmt.format(prices.paperCost);
+    $('#finish-cost').textContent = fmt.format(prices.finishCost);
+    $('#color-cost').textContent = fmt.format(prices.colorCost);
+    $('#rush-cost').textContent = fmt.format(prices.rushCost);
+    $('#total-price').textContent = fmt.format(prices.totalPrice);
+    $('#unit-price').textContent = `${fmt.format(prices.unitPrice)} per piece`;
   }
 
   updateDeliveryEstimates(turnaround) {
@@ -1007,11 +1411,11 @@ class PriceCalculatorManager {
 
     // Reset price display
     $$('#base-price, #paper-cost, #finish-cost, #color-cost, #rush-cost, #total-price').forEach(el => {
-      if (el) el.textContent = '$0.00';
+      if (el) el.textContent = '₹0.00';
     });
 
     const unitPrice = $('#unit-price');
-    if (unitPrice) unitPrice.textContent = '$0.00 per piece';
+    if (unitPrice) unitPrice.textContent = '₹0.00 per piece';
 
     // Reset dates
     $$('#ready-date, #delivery-date').forEach(el => {
@@ -1099,9 +1503,9 @@ class PriceCalculatorManager {
     };
 
     // Save to localStorage
-    const savedCalculations = JSON.parse(localStorage.getItem('printecCalculations') || '[]');
+    const savedCalculations = JSON.parse(localStorage.getItem('shristiPressCalculations') || '[]');
     savedCalculations.push(calculation);
-    localStorage.setItem('printecCalculations', JSON.stringify(savedCalculations));
+    localStorage.setItem('shristiPressCalculations', JSON.stringify(savedCalculations));
 
     // Show success message
     const btn = $('#save-calculation');
@@ -1426,7 +1830,7 @@ class BestsellingProductsManager {
     const productName = card.querySelector('.product-name').textContent;
     
     // Add ripple effect
-    this.createRippleEffect(button, e);
+    this.createRippleEffect(button, new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
     
     // Show order confirmation
     this.showNotification(`Ordering ${productName}...`, 'info');
@@ -1512,6 +1916,77 @@ class BestsellingProductsManager {
   updateCartCount() {
     // This would integrate with a cart system
     console.log('Cart count updated');
+  }
+}
+
+// ===== FEATURED PRODUCTS MANAGER (tilt, quick view) =====
+class FeaturedProductsManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.bindTilt();
+    this.bindQuickView();
+  }
+
+  bindTilt() {
+    const cards = $$('#productsGrid .product-card');
+    cards.forEach(card => {
+      const onMove = (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-4px)`;
+      };
+      const onLeave = () => {
+        card.style.transform = '';
+      };
+      card.addEventListener('mousemove', onMove);
+      card.addEventListener('mouseleave', onLeave);
+      card.addEventListener('touchend', onLeave);
+    });
+  }
+
+  bindQuickView() {
+    const buttons = $$('#productsGrid .btn-quick-view');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const card = btn.closest('.product-card');
+        const name = card.querySelector('.product-name').textContent;
+        const img = card.querySelector('img').src;
+        const price = card.querySelector('.price').textContent;
+        this.showQuickView(name, img, price);
+      });
+    });
+  }
+
+  showQuickView(name, img, price) {
+    const modal = `
+      <div class="quick-view-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>${name}</h3>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="product-preview"><img src="${img}" alt="${name}"></div>
+            <div class="product-details">
+              <div class="price-display">${price}</div>
+              <button class="btn-customize">Customize & Order</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    document.body.insertAdjacentHTML('beforeend', modal);
+    const close = document.querySelector('.quick-view-modal .modal-close');
+    const backdrop = document.querySelector('.quick-view-modal');
+    const destroy = () => backdrop && backdrop.remove();
+    close && close.addEventListener('click', destroy);
+    backdrop && backdrop.addEventListener('click', (e) => { if (e.target === backdrop) destroy(); });
   }
 }
 
@@ -1694,32 +2169,32 @@ class ProductGalleryManager {
       'business-cards': {
         name: 'Professional Business Cards',
         image: 'assets/images/business-cards.svg',
-        price: '$9.99',
-        originalPrice: '$14.99',
+        price: '₹9.99',
+        originalPrice: '₹14.99',
         rating: '4.9/5',
         reviews: '2,341'
       },
       'brochures': {
         name: 'Premium Brochures',
         image: 'assets/images/brochure-design.svg',
-        price: '$24.99',
-        originalPrice: '$34.99',
+        price: '₹24.99',
+        originalPrice: '₹34.99',
         rating: '4.8/5',
         reviews: '1,892'
       },
       'folders': {
         name: 'Custom Folders',
         image: 'assets/images/business-cards.svg',
-        price: '$19.99',
-        originalPrice: '$29.99',
+        price: '₹19.99',
+        originalPrice: '₹29.99',
         rating: '4.7/5',
         reviews: '1,456'
       },
       'reports': {
         name: 'Annual Reports',
         image: 'assets/images/brochure-design.svg',
-        price: '$49.99',
-        originalPrice: '$69.99',
+        price: '₹49.99',
+        originalPrice: '₹69.99',
         rating: '4.9/5',
         reviews: '987'
       }
@@ -1820,7 +2295,7 @@ class ProductGalleryManager {
     // Simulate quote generation
     const quoteData = {
       product: product.name,
-      basePrice: parseFloat(product.price.replace('$', '')),
+      basePrice: parseFloat(product.price.replace(/[^0-9.]/g, '')),
       material: $('.option-select').value,
       finish: $$('.option-select')[1].value,
       quantity: parseInt($$('.option-select')[2].value),
@@ -1833,6 +2308,7 @@ class ProductGalleryManager {
     const finishMultiplier = quoteData.finish === 'Gloss' ? 1.1 : quoteData.finish === 'Velvet' ? 1.2 : 1;
     const total = (quoteData.basePrice * materialMultiplier * finishMultiplier * quoteData.quantity).toFixed(2);
 
+    const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' });
     alert(`
       📋 QUICK QUOTE
       
@@ -1841,7 +2317,7 @@ class ProductGalleryManager {
       Finish: ${quoteData.finish}
       Quantity: ${quoteData.quantity} items
       
-      Total: $${total}
+      Total: ${fmt.format(total)}
       Delivery: ${quoteData.deliveryTime}
       Quote ID: ${quoteData.quoteId}
       
@@ -2482,6 +2958,8 @@ class App {
 
   async init() {
     try {
+      console.log('🚀 Starting app initialization...');
+      
       // Initialize all managers
       this.themeManager = new ThemeManager();
       this.navigationManager = new NavigationManager();
@@ -2495,9 +2973,14 @@ class App {
       this.errorHandler = new ErrorHandler();
       this.priceCalculatorManager = new PriceCalculatorManager();
       this.statisticsCounterManager = new StatisticsCounterManager();
-      this.bestsellingProductsManager = new BestsellingProductsManager();
+          this.bestsellingProductsManager = new BestsellingProductsManager();
+    this.featuredProductsManager = new FeaturedProductsManager();
+    this.newBestsellingProductsManager = new NewBestsellingProductsManager();
       this.productGalleryManager = new ProductGalleryManager();
       this.blogManager = new BlogManager();
+      this.heroSliderManager = new HeroSliderManager();
+      
+      console.log('📦 Managers initialized, loading data...');
       
       // Load data
       await this.dataLoader.loadData();
@@ -2510,7 +2993,7 @@ class App {
       // Mark app as loaded
       document.body.classList.add('app-loaded');
       
-      console.log('✅ Printec app initialized successfully');
+      console.log('✅ Shristi Press app initialized successfully');
       
     } catch (error) {
       console.error('❌ Failed to initialize app:', error);
@@ -2520,8 +3003,15 @@ class App {
 
 // ===== DOCUMENT READY =====
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize app
-  window.app = new App();
+  console.log('DOM Content Loaded - Initializing app...');
+  try {
+    // Initialize app
+    window.app = new App();
+  } catch (error) {
+    console.error('❌ Error initializing app:', error);
+  }
+  
+  // Remove the test product - let normal rendering handle it
 });
 
 // ===== SERVICE WORKER REGISTRATION =====
@@ -2537,9 +3027,359 @@ if ('serviceWorker' in navigator) {
 }
 
 // ===== UTILITY EXPORTS (for potential module usage) =====
-window.PrintecUtils = {
+window.ShristiPressUtils = {
   debounce,
   throttle,
   $,
   $$
 };
+
+// ===== HERO SLIDER MANAGER =====
+class HeroSliderManager {
+  constructor() {
+    this.track = $('#heroTrack');
+    this.slides = $$('.hero-slide');
+    this.nextBtn = $('#nextHero');
+    this.prevBtn = $('#prevHero');
+    this.dotsContainer = $('#heroDots');
+    this.current = 0;
+    this.autoplayMs = 6000;
+    this.timer = null;
+    this.drag = { startX: 0, currentX: 0, isDragging: false };
+    this.init();
+  }
+
+  init() {
+    if (!this.track || this.slides.length === 0) return;
+    this.createDots();
+    this.update();
+    this.bindEvents();
+    this.startAutoplay();
+  }
+
+  bindEvents() {
+    if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+    if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+
+    // Keyboard
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') this.next();
+      if (e.key === 'ArrowLeft') this.prev();
+    });
+
+    // Pause on hover
+    this.track.addEventListener('mouseenter', () => this.stopAutoplay());
+    this.track.addEventListener('mouseleave', () => this.startAutoplay());
+
+    // Touch/Drag
+    this.track.addEventListener('pointerdown', (e) => this.onDragStart(e));
+    window.addEventListener('pointermove', (e) => this.onDragMove(e));
+    window.addEventListener('pointerup', (e) => this.onDragEnd(e));
+
+    // Resize
+    window.addEventListener('resize', debounce(() => this.goTo(this.current, false), 150));
+
+    // Subtle parallax on mouse move
+    this.track.addEventListener('mousemove', (e) => {
+      const activeSlideImg = this.slides[this.current]?.querySelector('.parallax');
+      if (!activeSlideImg) return;
+      const rect = this.track.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      activeSlideImg.style.transform = `translate(${x * 10}px, ${y * 6}px) scale(1.02)`;
+    });
+    this.track.addEventListener('mouseleave', () => {
+      const activeSlideImg = this.slides[this.current]?.querySelector('.parallax');
+      if (activeSlideImg) activeSlideImg.style.transform = '';
+    });
+  }
+
+  createDots() {
+    if (!this.dotsContainer) return;
+    this.dotsContainer.innerHTML = '';
+    this.dots = Array.from({ length: this.slides.length }).map((_, index) => {
+      const btn = document.createElement('button');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-label', `Go to slide ${index + 1}`);
+      btn.addEventListener('click', () => this.goTo(index));
+      this.dotsContainer.appendChild(btn);
+      return btn;
+    });
+  }
+
+  startAutoplay() {
+    this.stopAutoplay();
+    this.timer = setInterval(() => this.next(), this.autoplayMs);
+  }
+
+  stopAutoplay() {
+    if (this.timer) clearInterval(this.timer);
+    this.timer = null;
+  }
+
+  next() { this.goTo((this.current + 1) % this.slides.length); }
+  prev() { this.goTo((this.current - 1 + this.slides.length) % this.slides.length); }
+
+  goTo(index, animate = true) {
+    this.current = index;
+    const offset = -index * 100;
+    if (!animate) this.track.style.transition = 'none';
+    this.track.style.transform = `translateX(${offset}%)`;
+    if (!animate) requestAnimationFrame(() => { this.track.style.transition = ''; });
+    this.update();
+  }
+
+  update() {
+    this.slides.forEach((slide, i) => slide.classList.toggle('active', i === this.current));
+    if (this.dots) this.dots.forEach((dot, i) => dot.classList.toggle('active', i === this.current));
+  }
+
+  onDragStart(e) {
+    this.drag.isDragging = true;
+    this.drag.startX = e.clientX;
+    this.drag.currentX = e.clientX;
+    this.track.style.cursor = 'grabbing';
+    this.stopAutoplay();
+  }
+
+  onDragMove(e) {
+    if (!this.drag.isDragging) return;
+    this.drag.currentX = e.clientX;
+    const delta = this.drag.currentX - this.drag.startX;
+    const percent = (delta / window.innerWidth) * 100;
+    this.track.style.transition = 'none';
+    const offset = -this.current * 100 + percent;
+    this.track.style.transform = `translateX(${offset}%)`;
+  }
+
+  onDragEnd(e) {
+    if (!this.drag.isDragging) return;
+    this.drag.isDragging = false;
+    this.track.style.cursor = '';
+    const delta = this.drag.currentX - this.drag.startX;
+    const threshold = window.innerWidth * 0.15;
+    this.track.style.transition = '';
+    if (Math.abs(delta) > threshold) {
+      if (delta < 0) this.next(); else this.prev();
+    } else {
+      this.goTo(this.current);
+    }
+    this.startAutoplay();
+  }
+}
+
+class NewBestsellingProductsManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupProductCards();
+    this.setupQuickView();
+    this.setupAddToCart();
+    this.setupOrderButtons();
+    this.setupViewAllButton();
+  }
+
+  setupProductCards() {
+    const cards = document.querySelectorAll('.new-product-card');
+    
+    cards.forEach((card, index) => {
+      // Simple hover effect
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
+    });
+  }
+
+  setupQuickView() {
+    const quickViewButtons = document.querySelectorAll('.new-btn-quick-view');
+    
+    quickViewButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.showQuickViewModal(button);
+      });
+    });
+  }
+
+  showQuickViewModal(button) {
+    const card = button.closest('.new-product-card');
+    const productName = card.querySelector('.new-product-name').textContent;
+    const productImage = card.querySelector('.new-product-image').src;
+    const productPrice = card.querySelector('.new-price').textContent;
+    
+    // Create modal HTML
+    const modalHTML = `
+      <div class="new-quick-view-modal">
+        <div class="new-modal-overlay"></div>
+        <div class="new-modal-content">
+          <div class="new-modal-header">
+            <h3>${productName}</h3>
+            <button class="new-modal-close">&times;</button>
+          </div>
+          <div class="new-modal-body">
+            <div class="new-modal-image">
+              <img src="${productImage}" alt="${productName}">
+            </div>
+            <div class="new-modal-details">
+              <div class="new-modal-price">${productPrice}</div>
+              <p>Get detailed information about this product and customize your order.</p>
+              <button class="new-btn-customize">Customize Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Add modal to page
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Show modal with animation
+    setTimeout(() => {
+      const modal = document.querySelector('.new-quick-view-modal');
+      modal.classList.add('active');
+    }, 10);
+    
+    // Setup close functionality
+    const closeBtn = document.querySelector('.new-modal-close');
+    const overlay = document.querySelector('.new-modal-overlay');
+    
+    const closeModal = () => {
+      const modal = document.querySelector('.new-quick-view-modal');
+      modal.classList.remove('active');
+      setTimeout(() => modal.remove(), 300);
+    };
+    
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+  }
+
+  setupAddToCart() {
+    const addToCartButtons = document.querySelectorAll('.new-btn-add-cart');
+    
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.addToCart(button);
+      });
+    });
+  }
+
+  addToCart(button) {
+    const card = button.closest('.new-product-card');
+    const productName = card.querySelector('.new-product-name').textContent;
+    
+    // Create ripple effect
+    this.createRippleEffect(button, new MouseEvent('click'));
+    
+    // Show notification
+    this.showNotification(`${productName} added to cart!`, 'success');
+    
+    // Animate button
+    button.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      button.style.transform = 'scale(1.1) rotate(5deg)';
+    }, 100);
+    setTimeout(() => {
+      button.style.transform = '';
+    }, 300);
+  }
+
+  setupOrderButtons() {
+    const orderButtons = document.querySelectorAll('.new-btn-order-now');
+    
+    orderButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.handleOrderNow(button);
+      });
+    });
+  }
+
+  handleOrderNow(button) {
+    const card = button.closest('.new-product-card');
+    const productName = card.querySelector('.new-product-name').textContent;
+    
+    // Create ripple effect
+    this.createRippleEffect(button, new MouseEvent('click'));
+    
+    // Show notification
+    this.showNotification(`Ordering ${productName}...`, 'info');
+    
+    // Animate button
+    button.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      button.style.transform = 'scale(1.05)';
+    }, 150);
+    setTimeout(() => {
+      button.style.transform = '';
+    }, 400);
+  }
+
+  createRippleEffect(button, event) {
+    const ripple = document.createElement('span');
+    ripple.className = 'new-ripple';
+    
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => ripple.remove(), 600);
+  }
+
+  showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `new-notification new-notification-${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.classList.add('show'), 10);
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
+  }
+
+  setupViewAllButton() {
+    const viewAllButton = document.querySelector('.new-btn-view-all-products');
+    
+    if (viewAllButton) {
+      viewAllButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.handleViewAllProducts();
+      });
+    }
+  }
+
+  handleViewAllProducts() {
+    // Create ripple effect
+    this.createRippleEffect(document.querySelector('.new-btn-view-all-products'), new MouseEvent('click'));
+    
+    // Show notification
+    this.showNotification('Opening all products...', 'info');
+    
+    // Simulate navigation
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.querySelector('.products-grid').offsetTop - 100,
+        behavior: 'smooth'
+      });
+    }, 500);
+  }
+}

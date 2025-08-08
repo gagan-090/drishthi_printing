@@ -1,7 +1,7 @@
 // ===== SERVICE WORKER FOR PWA =====
-const CACHE_NAME = 'printec-v1.0.0';
-const STATIC_CACHE = 'printec-static-v1.0.0';
-const DYNAMIC_CACHE = 'printec-dynamic-v1.0.0';
+const CACHE_NAME = 'shristipress-v1.0.0';
+const STATIC_CACHE = 'shristipress-static-v1.0.0';
+const DYNAMIC_CACHE = 'shristipress-dynamic-v1.0.0';
 
 // Files to cache immediately
 const STATIC_FILES = [
@@ -262,7 +262,7 @@ self.addEventListener('push', (event) => {
   };
 
   event.waitUntil(
-    self.registration.showNotification('Printec', options)
+    self.registration.showNotification('Shristi Press', options)
   );
 });
 

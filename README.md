@@ -1,4 +1,4 @@
-# Printec - Quality Custom Printing Website
+# Shristi Press - Quality Custom Printing Website
 
 A modern, responsive, and fully-featured website for a printing services company built with vanilla HTML, CSS, and JavaScript.
 

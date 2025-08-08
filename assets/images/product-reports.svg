@@ -115,7 +115,7 @@
         <text x="12.5" y="8" font-family="Inter" font-size="6" font-weight="700" fill="white" text-anchor="middle">+24%</text>
         
         <rect x="35" y="0" width="25" height="15" fill="url(#kpi2Grad)" rx="3"/>
-        <text x="47.5" y="8" font-family="Inter" font-size="6" font-weight="700" fill="white" text-anchor="middle">$2.4M</text>
+        <text x="47.5" y="8" font-family="Inter" font-size="6" font-weight="700" fill="white" text-anchor="middle">₹2.4M</text>
         
         <rect x="70" y="0" width="25" height="15" fill="url(#kpi3Grad)" rx="3"/>
         <text x="82.5" y="8" font-family="Inter" font-size="6" font-weight="700" fill="white" text-anchor="middle">95%</text>

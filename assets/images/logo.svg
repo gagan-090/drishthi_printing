@@ -9,7 +9,7 @@
   <rect x="10" y="26" width="20" height="2" fill="white" rx="1" opacity="0.7"/>
   
   <!-- Company Name -->
-  <text x="45" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1f2937">printec</text>
+  <text x="45" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1f2937">Shristi Press</text>
   <text x="45" y="28" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#6b7280" letter-spacing="0.5px">QUALITY PRINTING</text>
   
   <!-- Gradient Definition -->
