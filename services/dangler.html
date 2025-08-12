@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangler Printing - Drishthi Printing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/services.css">
+</head>
+<body class="font-inter bg-white text-gray-900">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-700 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">D</span>
+                    </div>
+                    <span class="text-xl font-poppins font-semibold text-gray-900">Drishthi Printing</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-indigo-600 transition-colors">Home</a>
+                    <a href="#" class="text-indigo-600 font-medium">Services</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">About</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact</a>
+                </div>
+                <button class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">Get Quote</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="relative bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h1 class="text-5xl md:text-6xl font-poppins font-bold text-gray-900 mb-6">
+                        Dangler <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Printing</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">Eye-catching dangler printing services for retail displays and promotional campaigns.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="btn-primary">Get Quote</button>
+                        <button class="btn-secondary">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">Why Choose Our Dangler Printing?</h2>
+                    <p class="text-xl text-gray-600">We create attention-grabbing danglers that effectively promote your products and increase sales.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">High Visibility</h3>
+                        <p class="text-gray-600">Designed to catch attention and stand out in retail environments and displays.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Durable Materials</h3>
+                        <p class="text-gray-600">Quality materials that withstand handling and maintain appearance over time.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Custom Sizing</h3>
+                        <p class="text-gray-600">Tailored dimensions to fit your specific display requirements and product needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-4xl font-poppins font-bold mb-6">Ready to Get Started?</h2>
+                    <p class="text-xl mb-8 opacity-90">Contact us today for a free consultation on your dangler printing needs.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="btn-white">Get Free Quote</button>
+                        <button class="btn-outline-white">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Drishthi Printing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/services.js"></script>
+    <script>
+        AOS.init({duration: 800, once: true});
+        document.addEventListener('DOMContentLoaded', function() { new ServicePageManager(); });
+    </script>
+</body>
+</html>

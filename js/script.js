@@ -5,23 +5,6 @@ let testimonials = [];
 let products = [];
 let blogPosts = [];
 
-// Global error handler
-window.addEventListener('error', (e) => {
-  console.error('Global error caught:', e.error);
-});
-
-window.addEventListener('unhandledrejection', (e) => {
-  console.error('Unhandled promise rejection:', e.reason);
-});
-
-// Global error handler
-window.addEventListener('error', (event) => {
-  console.error('❌ Global JavaScript error:', event.error);
-  console.error('Error details:', event.filename, event.lineno, event.colno);
-});
-
-console.log('🎯 Script.js loaded successfully!');
-
 // ===== UTILITY FUNCTIONS =====
 console.log('🚀 Script.js loaded successfully!');
 
@@ -42,7 +25,7 @@ const debounce = (func, wait) => {
 
 const throttle = (func, limit) => {
   let inThrottle;
-  return function() {
+  return function () {
     const args = arguments;
     const context = this;
     if (!inThrottle) {
@@ -111,7 +94,11 @@ class NavigationManager {
     // Close menu when clicking on links
     const navLinks = $$('.navbar-nav a');
     navLinks.forEach(link => {
-      link.addEventListener('click', () => this.closeMobileMenu());
+      link.addEventListener('click', () => {
+        this.closeMobileMenu();
+        // Also close all mega menus
+        this.resetAllMegaMenus();
+      });
     });
 
     // Smooth scroll for navigation links
@@ -122,6 +109,9 @@ class NavigationManager {
     // Handle scroll events
     window.addEventListener('scroll', throttle(() => this.handleScroll(), 100));
 
+    // Handle window resize to manage mega menu states
+    window.addEventListener('resize', throttle(() => this.handleMegaMenuResizeImproved(), 250));
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!this.navbar.contains(e.target) && this.isMenuOpen) {
@@ -131,8 +121,279 @@ class NavigationManager {
 
     // Handle escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isMenuOpen) {
-        this.closeMobileMenu();
+      if (e.key === 'Escape') {
+        if (this.isMenuOpen) {
+          this.closeMobileMenu();
+        }
+        // Also close any open mega menus
+        this.resetAllMegaMenus();
+      }
+    });
+
+    // Mega menu functionality - using CSS-only approach
+    this.initSimpleMegaMenu();
+  }
+
+  initMegaMenu() {
+    const megaMenuItems = $$('.mega-menu-item');
+    let currentOpenMenu = null;
+    let isInNavigationArea = false;
+
+    // Create a large invisible navigation area that covers the entire nav + mega menu
+    const navigationArea = document.createElement('div');
+    navigationArea.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      z-index: 998;
+      pointer-events: none;
+      display: none;
+    `;
+    document.body.appendChild(navigationArea);
+
+    megaMenuItems.forEach(item => {
+      const trigger = item.querySelector('a');
+      const megaMenu = item.querySelector('.mega-menu');
+
+      if (!trigger || !megaMenu) {
+        return;
+      }
+
+      // Desktop hover behavior
+      if (window.innerWidth > 1024) {
+        
+        // Mouse enter nav item - open mega menu
+        item.addEventListener('mouseenter', () => {
+          // Close any other open menu
+          if (currentOpenMenu && currentOpenMenu !== item) {
+            currentOpenMenu.classList.remove('mega-menu-active');
+            this.hideMegaMenu(currentOpenMenu);
+          }
+          
+          // Open this menu
+          this.showMegaMenu(item);
+          item.classList.add('mega-menu-active');
+          currentOpenMenu = item;
+          
+          // Show navigation area
+          navigationArea.style.display = 'block';
+          isInNavigationArea = true;
+        });
+
+        // Mouse enter mega menu - keep it open
+        megaMenu.addEventListener('mouseenter', () => {
+          if (currentOpenMenu === item) {
+            isInNavigationArea = true;
+          }
+        });
+
+        // Mobile click behavior
+        if (window.innerWidth <= 1024) {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.toggleMegaMenu(item);
+          });
+        }
+
+        // Handle keyboard navigation
+        trigger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (window.innerWidth <= 1024) {
+              this.toggleMegaMenu(item);
+            }
+          }
+        });
+
+        // Close mega menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!item.contains(e.target)) {
+            this.hideMegaMenu(item);
+            if (window.innerWidth <= 1024) {
+              item.classList.remove('active');
+            }
+          }
+        });
+
+        // Enhanced keyboard navigation for mega menu links
+        const megaMenuLinks = megaMenu.querySelectorAll('a');
+        megaMenuLinks.forEach((link, index) => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth <= 1024) {
+              this.resetAllMegaMenus();
+            }
+          });
+
+          link.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              const nextLink = megaMenuLinks[index + 1] || megaMenuLinks[0];
+              nextLink.focus();
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              const prevLink = megaMenuLinks[index - 1] || megaMenuLinks[megaMenuLinks.length - 1];
+              prevLink.focus();
+            } else if (e.key === 'Escape') {
+              e.preventDefault();
+              this.hideMegaMenu(item);
+              if (window.innerWidth <= 1024) {
+                item.classList.remove('active');
+              }
+              trigger.focus();
+            }
+          });
+        });
+      }
+    });
+
+    // Global mouse tracking - only close when cursor leaves entire navigation area
+    document.addEventListener('mousemove', (e) => {
+      const target = e.target;
+      const isOverNav = target.closest('.navbar') || target.closest('.mega-menu') || target.closest('.mega-menu-item');
+      
+      if (isOverNav) {
+        isInNavigationArea = true;
+      } else {
+        // Only close if we're really outside the navigation area
+        if (isInNavigationArea && currentOpenMenu) {
+          setTimeout(() => {
+            if (!isInNavigationArea) {
+              currentOpenMenu.classList.remove('mega-menu-active');
+              this.hideMegaMenu(currentOpenMenu);
+              currentOpenMenu = null;
+              navigationArea.style.display = 'none';
+            }
+          }, 200);
+        }
+        isInNavigationArea = false;
+      }
+    });
+  }
+
+  showMegaMenu(item) {
+    const megaMenu = item.querySelector('.mega-menu');
+    const trigger = item.querySelector('a');
+
+    if (megaMenu && trigger) {
+      // Close all other mega menus first
+      this.closeAllOtherMegaMenus(item);
+      
+      // Calculate the center position based on viewport width
+      const viewportWidth = window.innerWidth;
+      const megaMenuWidth = Math.min(1400, viewportWidth - 40); // 40px for margins
+
+      // Add active class first for CSS transitions
+      item.classList.add('mega-menu-active');
+      
+      // Set styles with a small delay to allow CSS transitions
+      requestAnimationFrame(() => {
+        megaMenu.style.width = `${megaMenuWidth}px`;
+        megaMenu.style.left = '50%';
+        megaMenu.style.transform = 'translateX(-50%) translateY(0)';
+        megaMenu.style.opacity = '1';
+        megaMenu.style.visibility = 'visible';
+        megaMenu.style.pointerEvents = 'auto';
+        megaMenu.style.zIndex = '9999';
+      });
+      
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  hideMegaMenu(item) {
+    const megaMenu = item.querySelector('.mega-menu');
+    const trigger = item.querySelector('a');
+
+    if (megaMenu && trigger) {
+      // Remove active class first to trigger CSS transitions
+      item.classList.remove('mega-menu-active');
+      
+      // Reset styles after transition
+      setTimeout(() => {
+        megaMenu.style.opacity = '0';
+        megaMenu.style.visibility = 'hidden';
+        megaMenu.style.transform = 'translateX(-50%) translateY(-20px)';
+        megaMenu.style.pointerEvents = 'none';
+        
+        // For mobile devices, also reset display property
+        if (window.innerWidth <= 1024) {
+          megaMenu.style.display = 'none';
+        }
+      }, 300); // Slightly longer than CSS transition
+
+      trigger.setAttribute('aria-expanded', 'false');
+      item.classList.remove('active');
+    }
+  }
+
+  toggleMegaMenu(item) {
+    const isActive = item.classList.contains('active');
+
+    // Close all other mega menus
+    $$('.mega-menu-item').forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('active');
+        this.hideMegaMenu(otherItem);
+      }
+    });
+
+    if (isActive) {
+      item.classList.remove('active');
+      this.hideMegaMenu(item);
+    } else {
+      item.classList.add('active');
+      const megaMenu = item.querySelector('.mega-menu');
+      const trigger = item.querySelector('a');
+
+      if (megaMenu && trigger) {
+        // For mobile devices, ensure display is set to block
+        if (window.innerWidth <= 1024) {
+          megaMenu.style.display = 'block';
+        }
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    }
+  }
+
+  handleMegaMenuResize() {
+    const megaMenuItems = $$('.mega-menu-item');
+
+    megaMenuItems.forEach(item => {
+      if (window.innerWidth > 1024) {
+        // Desktop: reset to hover behavior
+        item.classList.remove('active');
+        this.hideMegaMenu(item);
+      } else {
+        // Mobile: ensure proper mobile behavior
+        const megaMenu = item.querySelector('.mega-menu');
+        if (megaMenu) {
+          // Reset all styles for mobile
+          megaMenu.style.opacity = '';
+          megaMenu.style.visibility = '';
+          megaMenu.style.transform = '';
+          megaMenu.style.display = item.classList.contains('active') ? 'block' : 'none';
+        }
+      }
+    });
+  }
+
+  resetAllMegaMenus() {
+    const megaMenuItems = $$('.mega-menu-item');
+    megaMenuItems.forEach(item => {
+      item.classList.remove('active');
+      this.hideMegaMenu(item);
+    });
+  }
+
+  closeAllOtherMegaMenus(currentItem) {
+    const megaMenuItems = $$('.mega-menu-item');
+    megaMenuItems.forEach(item => {
+      if (item !== currentItem) {
+        item.classList.remove('mega-menu-active');
+        this.hideMegaMenu(item);
       }
     });
   }
@@ -153,6 +414,12 @@ class NavigationManager {
     this.navbarToggle.classList.remove('active');
     this.navbarToggle.setAttribute('aria-expanded', false);
     document.body.style.overflow = '';
+
+    // Close all mega menus when mobile menu is closed
+    $$('.mega-menu-item').forEach(item => {
+      item.classList.remove('active');
+      this.hideMegaMenu(item);
+    });
   }
 
   handleSmoothScroll(e) {
@@ -173,15 +440,15 @@ class NavigationManager {
   handleScroll() {
     const currentScrollY = window.scrollY;
     const scrolled = currentScrollY > 50;
-    
+
     // Add scrolled class for styling
     this.navbar.classList.toggle('scrolled', scrolled);
-    
+
     // Handle navbar hide/show based on scroll direction
     if (currentScrollY > this.scrollThreshold) {
       const isScrollingDown = currentScrollY > this.lastScrollY;
       const isScrollingUp = currentScrollY < this.lastScrollY;
-      
+
       if (isScrollingDown && this.isNavbarVisible) {
         // Hide navbar when scrolling down
         this.hideNavbar();
@@ -193,18 +460,294 @@ class NavigationManager {
       // Always show navbar at the top
       this.showNavbar();
     }
-    
+
     this.lastScrollY = currentScrollY;
   }
-  
+
   hideNavbar() {
     this.navbar.classList.add('navbar-hidden');
     this.isNavbarVisible = false;
   }
-  
+
   showNavbar() {
     this.navbar.classList.remove('navbar-hidden');
     this.isNavbarVisible = true;
+  }
+
+  // Improved mega menu functionality with better performance
+  initMegaMenuImproved() {
+    const megaMenuItems = $$('.mega-menu-item');
+    const allNavItems = $$('.navbar-nav li');
+
+    // Clear any existing event listeners to prevent duplicates
+    this.cleanupMegaMenuEvents();
+
+    // Store references for cleanup
+    if (!this.megaMenuEventHandlers) {
+      this.megaMenuEventHandlers = new Map();
+    }
+
+    // Simple approach: Add mouseenter to ALL nav items
+    allNavItems.forEach(navItem => {
+      const isMegaMenuItem = navItem.classList.contains('mega-menu-item');
+
+      if (window.innerWidth > 1024) {
+        const navMouseEnterHandler = () => {
+          // Always close all mega menus first
+          this.resetAllMegaMenus();
+
+          // If this is a mega menu item, show it after a brief delay
+          if (isMegaMenuItem) {
+            setTimeout(() => {
+              this.showMegaMenu(navItem);
+            }, 50);
+          }
+        };
+
+        navItem.addEventListener('mouseenter', navMouseEnterHandler);
+        this.megaMenuEventHandlers.set(navItem, { mouseenter: navMouseEnterHandler });
+      }
+    });
+
+    // Handle mobile click behavior for mega menu items
+    megaMenuItems.forEach(item => {
+      const trigger = item.querySelector('a');
+      const megaMenu = item.querySelector('.mega-menu');
+
+      if (!trigger || !megaMenu) return;
+
+      if (window.innerWidth <= 1024) {
+        // Mobile click behavior
+        const clickHandler = (e) => {
+          e.preventDefault();
+          this.toggleMegaMenu(item);
+        };
+
+        trigger.addEventListener('click', clickHandler);
+
+        // Store mobile handlers separately
+        const existingHandlers = this.megaMenuEventHandlers.get(item) || {};
+        this.megaMenuEventHandlers.set(item, { ...existingHandlers, click: clickHandler });
+      }
+
+      // Add hover area to mega menu content to prevent closing when moving mouse into it
+      if (window.innerWidth > 1024) {
+        const megaMenuEnterHandler = () => {
+          // Keep the menu open when hovering over the mega menu content
+          clearTimeout(this._globalHideTimeout);
+        };
+
+        const megaMenuLeaveHandler = () => {
+          // Close menu when leaving the mega menu content
+          this._globalHideTimeout = setTimeout(() => {
+            this.resetAllMegaMenus();
+          }, 300);
+        };
+
+        megaMenu.addEventListener('mouseenter', megaMenuEnterHandler);
+        megaMenu.addEventListener('mouseleave', megaMenuLeaveHandler);
+
+        const existingHandlers = this.megaMenuEventHandlers.get(item) || {};
+        this.megaMenuEventHandlers.set(item, {
+          ...existingHandlers,
+          megaMenuEnter: megaMenuEnterHandler,
+          megaMenuLeave: megaMenuLeaveHandler
+        });
+      }
+
+      // Keyboard navigation
+      const keydownHandler = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (window.innerWidth <= 1024) {
+            this.toggleMegaMenu(item);
+          } else {
+            this.showMegaMenu(item);
+          }
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          this.hideMegaMenu(item);
+          item.classList.remove('active');
+        }
+      };
+
+      trigger.addEventListener('keydown', keydownHandler);
+
+      // Enhanced keyboard navigation for mega menu links
+      const megaMenuLinks = megaMenu.querySelectorAll('a');
+      megaMenuLinks.forEach((link, index) => {
+        link.addEventListener('click', () => {
+          this.resetAllMegaMenus();
+        });
+
+        link.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextLink = megaMenuLinks[index + 1] || megaMenuLinks[0];
+            nextLink.focus();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevLink = megaMenuLinks[index - 1] || megaMenuLinks[megaMenuLinks.length - 1];
+            prevLink.focus();
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            this.hideMegaMenu(item);
+            item.classList.remove('active');
+            trigger.focus();
+          }
+        });
+      });
+    });
+
+    // Global click handler to close menus (only one instance)
+    if (!this.globalClickHandler) {
+      this.globalClickHandler = (e) => {
+        const clickedMegaMenuItem = e.target.closest('.mega-menu-item');
+        if (!clickedMegaMenuItem) {
+          this.resetAllMegaMenus();
+        }
+      };
+      document.addEventListener('click', this.globalClickHandler);
+    }
+
+    // Add navbar mouseleave to close menus when leaving navbar area
+    if (window.innerWidth > 1024 && !this.navbarLeaveHandler) {
+      this.navbarLeaveHandler = () => {
+        this._globalHideTimeout = setTimeout(() => {
+          this.resetAllMegaMenus();
+        }, 300);
+      };
+
+      this.navbar.addEventListener('mouseleave', this.navbarLeaveHandler);
+    }
+  }
+
+  cleanupMegaMenuEvents() {
+    if (this.megaMenuEventHandlers) {
+      this.megaMenuEventHandlers.forEach((handlers, item) => {
+        const megaMenu = item.querySelector('.mega-menu');
+        Object.entries(handlers).forEach(([event, handler]) => {
+          if (event === 'click') {
+            const trigger = item.querySelector('a');
+            if (trigger) trigger.removeEventListener('click', handler);
+          } else if (event === 'megaMenuEnter' && megaMenu) {
+            megaMenu.removeEventListener('mouseenter', handler);
+          } else if (event === 'megaMenuLeave' && megaMenu) {
+            megaMenu.removeEventListener('mouseleave', handler);
+          } else if (event === 'mouseenter' || event === 'mouseleave') {
+            // Handle both mega menu items and regular nav items
+            item.removeEventListener(event, handler);
+          } else {
+            item.removeEventListener(event, handler);
+          }
+        });
+      });
+      this.megaMenuEventHandlers.clear();
+    }
+
+    if (this.globalClickHandler) {
+      document.removeEventListener('click', this.globalClickHandler);
+      this.globalClickHandler = null;
+    }
+
+    if (this.navbarLeaveHandler) {
+      this.navbar.removeEventListener('mouseleave', this.navbarLeaveHandler);
+      this.navbarLeaveHandler = null;
+    }
+  }
+
+  hideMegaMenuFast(item) {
+    const megaMenu = item.querySelector('.mega-menu');
+    const trigger = item.querySelector('a');
+
+    if (megaMenu && trigger) {
+      megaMenu.style.opacity = '0';
+      megaMenu.style.visibility = 'hidden';
+      trigger.setAttribute('aria-expanded', 'false');
+      item.classList.remove('active', 'mega-menu-active');
+    }
+  }
+
+  resetAllMegaMenus() {
+    $$('.mega-menu-item').forEach(item => {
+      // Clear any pending timeouts
+      clearTimeout(item._showTimeout);
+      clearTimeout(item._hideTimeout);
+      clearTimeout(this._globalHideTimeout);
+
+      // Use fast hide for immediate closing
+      this.hideMegaMenuFast(item);
+      item.classList.remove('active');
+    });
+  }
+
+  handleMegaMenuResizeImproved() {
+    // Close all menus during resize to prevent positioning issues
+    this.resetAllMegaMenus();
+
+    // Reinitialize mega menu with new screen size
+    this.initMegaMenuImproved();
+  }
+
+  // Simple CSS-based mega menu with minimal JavaScript
+  initSimpleMegaMenu() {
+    const megaMenuItems = $$('.mega-menu-item');
+    const allNavItems = $$('.navbar-nav li');
+    
+    // Desktop: Add hover handlers to close mega menus when hovering non-mega items
+    if (window.innerWidth > 1024) {
+      allNavItems.forEach(navItem => {
+        const isMegaMenuItem = navItem.classList.contains('mega-menu-item');
+        
+        if (!isMegaMenuItem) {
+          navItem.addEventListener('mouseenter', () => {
+            // Hide all mega menus by adding a class
+            megaMenuItems.forEach(item => {
+              item.classList.add('force-hide');
+            });
+          });
+          
+          navItem.addEventListener('mouseleave', () => {
+            // Remove force hide class
+            megaMenuItems.forEach(item => {
+              item.classList.remove('force-hide');
+            });
+          });
+        }
+      });
+    }
+    
+    // Mobile click behavior
+    megaMenuItems.forEach(item => {
+      const trigger = item.querySelector('a');
+      
+      if (!trigger) return;
+
+      if (window.innerWidth <= 1024) {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Close other menus
+          megaMenuItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle this menu
+          item.classList.toggle('active');
+        });
+      }
+    });
+
+    // Close menus when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.mega-menu-item')) {
+        megaMenuItems.forEach(item => {
+          item.classList.remove('active');
+        });
+      }
+    });
   }
 }
 
@@ -261,15 +804,15 @@ class DataLoader {
       const response = await fetch('data/products.json');
       if (!response.ok) throw new Error('Failed to load data');
       const data = await response.json();
-      
+
       console.log('Data loaded successfully:', data);
-      
+
       products = data.featuredProducts || [];
       testimonials = data.testimonials || [];
       blogPosts = data.blogPosts || [];
-      
+
       console.log('Products array:', products);
-      
+
       this.renderProducts();
       this.renderBestsellingProducts();
       this.renderBlogPosts();
@@ -288,19 +831,19 @@ class DataLoader {
       { id: 2, name: "Brochure Design", price: "₹24.99", category: "Brochures" },
       { id: 3, name: "Folder Design", price: "₹19.99", category: "Folders" }
     ];
-    
+
     blogPosts = [
-      { 
-        id: 1, 
+      {
+        id: 1,
         title: "Why smartly you should use to be the perfect customer process",
         excerpt: "Learn optimization techniques...",
         date: "March 20, 2024",
         category: "Tips"
       }
     ];
-    
+
     console.log('Fallback products:', products);
-    
+
     this.renderProducts();
     this.renderBestsellingProducts();
     this.renderBlogPosts();
@@ -381,7 +924,7 @@ class DataLoader {
 
     const productsHTML = freshProducts.map((product, index) => {
       const discountPct = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-      const stars = Array.from({ length: 5 }).map((_, i) => 
+      const stars = Array.from({ length: 5 }).map((_, i) =>
         `<span class="star-new ${i < Math.floor(product.rating) ? 'filled' : ''}">★</span>`
       ).join('');
 
@@ -430,36 +973,36 @@ class DataLoader {
     }).join('');
 
     productsGrid.innerHTML = productsHTML;
-    
+
     // Initialize new product interactions
     this.initNewProductInteractions();
   }
 
   initNewProductInteractions() {
     const cards = $$('.product-card-new');
-    
+
     cards.forEach((card, index) => {
       // Add entrance animation
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
-      
+
       setTimeout(() => {
         card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
       }, index * 150);
-      
+
       // Hover effects
       card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-8px) scale(1.02)';
         card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
       });
-      
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0) scale(1)';
         card.style.boxShadow = '';
       });
-      
+
       // Quick view button
       const quickViewBtn = card.querySelector('.btn-quick-view-new');
       if (quickViewBtn) {
@@ -468,7 +1011,7 @@ class DataLoader {
           this.showQuickViewModal(card);
         });
       }
-      
+
       // Add to cart button
       const cartBtn = card.querySelector('.btn-cart-new');
       if (cartBtn) {
@@ -477,7 +1020,7 @@ class DataLoader {
           this.addToCartNew(card);
         });
       }
-      
+
       // Order now button
       const orderBtn = card.querySelector('.btn-order-now-new');
       if (orderBtn) {
@@ -488,11 +1031,11 @@ class DataLoader {
       }
     });
   }
-  
+
   showQuickViewModal(card) {
     const productName = card.querySelector('.product-name-new').textContent;
     const productPrice = card.querySelector('.price-new').textContent;
-    
+
     // Create modal
     const modal = document.createElement('div');
     modal.className = 'quick-view-modal-new';
@@ -509,63 +1052,63 @@ class DataLoader {
         </div>
       </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     // Show modal
     setTimeout(() => modal.classList.add('active'), 10);
-    
+
     // Close modal
     const closeBtn = modal.querySelector('.modal-close-new');
     const overlay = modal.querySelector('.modal-overlay-new');
-    
+
     const closeModal = () => {
       modal.classList.remove('active');
       setTimeout(() => modal.remove(), 300);
     };
-    
+
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
   }
-  
+
   addToCartNew(card) {
     const productName = card.querySelector('.product-name-new').textContent;
     const cartBtn = card.querySelector('.btn-cart-new');
-    
+
     // Animate button
     cartBtn.style.transform = 'scale(0.9)';
     setTimeout(() => {
       cartBtn.style.transform = 'scale(1)';
     }, 150);
-    
+
     // Show notification
     this.showNotificationNew(`${productName} added to cart!`, 'success');
   }
-  
+
   handleOrderNowNew(card) {
     const productName = card.querySelector('.product-name-new').textContent;
     const orderBtn = card.querySelector('.btn-order-now-new');
-    
+
     // Add ripple effect
     const ripple = document.createElement('span');
     ripple.className = 'ripple-new';
     orderBtn.appendChild(ripple);
-    
+
     setTimeout(() => ripple.remove(), 600);
-    
+
     // Show notification
     this.showNotificationNew(`Ordering ${productName}...`, 'info');
   }
-  
+
   showNotificationNew(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification-new notification-${type}`;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => notification.classList.add('show'), 10);
-    
+
     setTimeout(() => {
       notification.classList.remove('show');
       setTimeout(() => notification.remove(), 300);
@@ -592,7 +1135,7 @@ class DataLoader {
       console.log('Products not loaded:', products);
       return;
     }
-    
+
     console.log('Rendering bestselling products:', products);
 
     const formatINR = (value) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 }).format(value);
@@ -635,7 +1178,7 @@ class DataLoader {
       const stars = Array.from({ length: 5 }).map((_, i) => `<span class="star ${i < rating ? 'filled' : ''}">★</span>`).join('');
       const placeholder = `data:image/svg+xml;base64,${this.generateProductImageSVG(product.name)}`;
       const imgSrc = product.image ? product.image : placeholder;
-      
+
       return `
         <div class="bestselling-card" data-animation="slide-up" data-delay="${(index + 1) * 100}">
           <div class="product-badge">${badgeText}</div>
@@ -656,7 +1199,7 @@ class DataLoader {
               <span class="rating-text">(${reviews} reviews)</span>
             </div>
             <div class="product-features">
-              ${features.slice(0,3).map(f => `<span class="feature-tag">${f}</span>`).join('')}
+              ${features.slice(0, 3).map(f => `<span class="feature-tag">${f}</span>`).join('')}
             </div>
             <div class="product-pricing">
               <span class="price">${formatINR(basePrice)}</span>
@@ -670,7 +1213,7 @@ class DataLoader {
     }).join('');
 
     bestsellingGrid.innerHTML = cardsHTML;
-    
+
     console.log('Bestselling products rendered successfully');
 
     // Re-bind interactive behaviors for newly injected cards
@@ -686,14 +1229,14 @@ class DataLoader {
       return;
     }
 
-    console.log('Blog grid found, checking for blog cards...');
-    const blogCards = blogGrid.querySelectorAll('.blog-card');
-    console.log(`Found ${blogCards.length} blog cards`);
+    const existingBlogCards = blogGrid.querySelectorAll('.blog-card').length > 0;
 
-    // Since the blog posts are already in the HTML, we don't need to render them dynamically
-    // Just initialize the blog manager to handle interactions
-    if (window.app && window.app.blogManager) {
-      window.app.blogManager.init();
+    if (existingBlogCards) {
+      console.log('Blog cards already exist in HTML, initializing manager.');
+      if (window.app && window.app.blogManager) {
+        window.app.blogManager.init();
+      }
+      return;
     }
   }
 
@@ -707,7 +1250,7 @@ class DataLoader {
   showTestimonial(index) {
     const testimonialText = $('#testimonialText');
     const testimonialAuthor = $('#testimonialAuthor');
-    
+
     if (testimonialText && testimonialAuthor && testimonials[index]) {
       const testimonial = testimonials[index];
       testimonialText.textContent = `"${testimonial.text}"`;
@@ -745,12 +1288,12 @@ class DataLoader {
   showCartModal(product) {
     const modal = $('#cartModal');
     const modalText = $('#cartModalText');
-    
+
     if (modal && modalText) {
       modalText.textContent = `${product.name} has been added to your cart!`;
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
-      
+
       // Focus management
       const closeButton = modal.querySelector('.modal-close');
       if (closeButton) closeButton.focus();
@@ -815,10 +1358,10 @@ class FormValidator {
 
   handleNewsletterSubmit(e) {
     e.preventDefault();
-    
+
     const emailInput = $('#emailInput');
     const isValid = this.validateEmail(emailInput);
-    
+
     if (isValid) {
       this.submitNewsletter(emailInput.value);
     }
@@ -828,17 +1371,17 @@ class FormValidator {
     const email = input.value.trim();
     const errorElement = $('#emailError');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!email) {
       this.showError(errorElement, 'Email address is required');
       return false;
     }
-    
+
     if (!emailRegex.test(email)) {
       this.showError(errorElement, 'Please enter a valid email address');
       return false;
     }
-    
+
     this.clearError(input);
     return true;
   }
@@ -861,21 +1404,21 @@ class FormValidator {
   async submitNewsletter(email) {
     const submitButton = $('.newsletter-btn');
     const originalText = submitButton.textContent;
-    
+
     try {
       // Show loading state
       submitButton.textContent = 'Subscribing...';
       submitButton.disabled = true;
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       this.showSuccessMessage();
       this.showNewsletterModal();
-      
+
       // Reset form
       $('#emailInput').value = '';
-      
+
     } catch (error) {
       this.showError($('#emailError'), 'Something went wrong. Please try again.');
     } finally {
@@ -900,7 +1443,7 @@ class FormValidator {
     if (modal) {
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
-      
+
       const closeButton = modal.querySelector('.modal-close');
       if (closeButton) closeButton.focus();
     }
@@ -941,11 +1484,11 @@ class ModalManager {
     // Cart modal actions
     const continueShopping = $('#continueShopping');
     const viewCart = $('#viewCart');
-    
+
     if (continueShopping) {
       continueShopping.addEventListener('click', () => this.closeModal());
     }
-    
+
     if (viewCart) {
       viewCart.addEventListener('click', () => {
         this.closeModal();
@@ -961,10 +1504,10 @@ class ModalManager {
       this.activeModal = modal;
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
-      
+
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
-      
+
       // Focus management
       const focusableElements = modal.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -980,7 +1523,7 @@ class ModalManager {
       this.activeModal.classList.remove('active');
       this.activeModal.setAttribute('aria-hidden', 'true');
       this.activeModal = null;
-      
+
       // Restore body scroll
       document.body.style.overflow = '';
     }
@@ -996,7 +1539,7 @@ class BackToTop {
 
   init() {
     if (!this.button) return;
-    
+
     this.bindEvents();
     this.handleScroll();
   }
@@ -1141,12 +1684,12 @@ class AccessibilityManager {
   enhanceKeyboardNavigation() {
     // Add keyboard support for interactive elements
     const interactiveElements = $$('[role="button"], .service-card, .product-card, .blog-card');
-    
+
     interactiveElements.forEach(element => {
       if (!element.getAttribute('tabindex')) {
         element.setAttribute('tabindex', '0');
       }
-      
+
       element.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -1295,7 +1838,7 @@ class PriceCalculatorManager {
 
     // Get base pricing
     const basePrice = this.pricingData[productType].base * quantity;
-    
+
     // Calculate multipliers
     const paperMultiplier = this.multipliers.paper[paperType];
     const finishMultiplier = this.multipliers.finish[finishType];
@@ -1367,7 +1910,7 @@ class PriceCalculatorManager {
 
     const readyDate = new Date(today);
     readyDate.setDate(today.getDate() + readyDays);
-    
+
     const deliveryDate = new Date(today);
     deliveryDate.setDate(today.getDate() + deliveryDays);
 
@@ -1436,8 +1979,8 @@ class PriceCalculatorManager {
   }
 
   generateQuoteNumber() {
-    const quoteNum = 'QT-' + new Date().getFullYear() + '-' + 
-                    String(Math.floor(Math.random() * 1000) + 1).padStart(3, '0');
+    const quoteNum = 'QT-' + new Date().getFullYear() + '-' +
+      String(Math.floor(Math.random() * 1000) + 1).padStart(3, '0');
     const quoteElement = $('#quote-number');
     if (quoteElement) {
       quoteElement.textContent = quoteNum;
@@ -1459,7 +2002,7 @@ class PriceCalculatorManager {
     // Simulate quote request
     const modal = $('#quoteModal');
     const modalText = $('#quoteModalText');
-    
+
     if (modal && modalText) {
       modalText.innerHTML = `
         <div style="text-align: center;">
@@ -1481,7 +2024,7 @@ class PriceCalculatorManager {
       const originalText = btn.innerHTML;
       btn.innerHTML = '✅ Quote Requested!';
       btn.style.background = 'var(--success-color)';
-      
+
       setTimeout(() => {
         btn.innerHTML = originalText;
         btn.style.background = '';
@@ -1513,7 +2056,7 @@ class PriceCalculatorManager {
       const originalText = btn.innerHTML;
       btn.innerHTML = '💾 Saved!';
       btn.style.background = 'var(--success-color)';
-      
+
       setTimeout(() => {
         btn.innerHTML = originalText;
         btn.style.background = '';
@@ -1561,16 +2104,16 @@ class BestsellingProductsManager {
 
   setupProductCards() {
     const cards = $$('.bestselling-card');
-    
+
     cards.forEach((card, index) => {
       // Add staggered animation delay
       card.style.animationDelay = `${index * 0.1}s`;
-      
+
       // Add hover effects
       card.addEventListener('mouseenter', () => {
         this.animateCardHover(card, true);
       });
-      
+
       card.addEventListener('mouseleave', () => {
         this.animateCardHover(card, false);
       });
@@ -1581,14 +2124,14 @@ class BestsellingProductsManager {
     const image = card.querySelector('.product-image');
     const overlay = card.querySelector('.product-overlay');
     const badge = card.querySelector('.product-badge');
-    
+
     if (isHovering) {
       // Animate badge
       badge.style.transform = 'scale(1.1) rotate(5deg)';
-      
+
       // Animate image
       image.style.transform = 'scale(1.1) rotate(2deg)';
-      
+
       // Show overlay with delay
       setTimeout(() => {
         overlay.style.opacity = '1';
@@ -1603,7 +2146,7 @@ class BestsellingProductsManager {
 
   setupQuickView() {
     const quickViewButtons = $$('.btn-quick-view');
-    
+
     quickViewButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -1618,7 +2161,7 @@ class BestsellingProductsManager {
     const productName = card.querySelector('.product-name').textContent;
     const productImage = card.querySelector('.product-image').src;
     const productPrice = card.querySelector('.price').textContent;
-    
+
     // Create modal content
     const modalContent = `
       <div class="quick-view-modal">
@@ -1640,13 +2183,13 @@ class BestsellingProductsManager {
         </div>
       </div>
     `;
-    
+
     // Add modal to page
     document.body.insertAdjacentHTML('beforeend', modalContent);
-    
+
     // Add modal styles
     this.addModalStyles();
-    
+
     // Setup modal interactions
     this.setupModalInteractions();
   }
@@ -1752,19 +2295,19 @@ class BestsellingProductsManager {
     const modal = document.querySelector('.quick-view-modal');
     const closeBtn = modal.querySelector('.modal-close');
     const customizeBtn = modal.querySelector('.btn-customize');
-    
+
     // Close modal
     closeBtn.addEventListener('click', () => {
       this.closeModal(modal);
     });
-    
+
     // Close on backdrop click
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         this.closeModal(modal);
       }
     });
-    
+
     // Customize button
     customizeBtn.addEventListener('click', () => {
       this.closeModal(modal);
@@ -1786,7 +2329,7 @@ class BestsellingProductsManager {
 
   setupAddToCart() {
     const addToCartButtons = $$('.btn-add-cart');
-    
+
     addToCartButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -1800,23 +2343,23 @@ class BestsellingProductsManager {
     const card = button.closest('.bestselling-card');
     const productName = card.querySelector('.product-name').textContent;
     const productPrice = card.querySelector('.price').textContent;
-    
+
     // Animate button
     button.style.transform = 'scale(0.9)';
     setTimeout(() => {
       button.style.transform = 'scale(1)';
     }, 150);
-    
+
     // Show success notification
     this.showNotification(`${productName} added to cart!`, 'success');
-    
+
     // Update cart count (if cart exists)
     this.updateCartCount();
   }
 
   setupOrderButtons() {
     const orderButtons = $$('.btn-order-now');
-    
+
     orderButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -1828,13 +2371,13 @@ class BestsellingProductsManager {
   handleOrderNow(button) {
     const card = button.closest('.bestselling-card');
     const productName = card.querySelector('.product-name').textContent;
-    
+
     // Add ripple effect
     this.createRippleEffect(button, new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
-    
+
     // Show order confirmation
     this.showNotification(`Ordering ${productName}...`, 'info');
-    
+
     // Simulate order process
     setTimeout(() => {
       this.showNotification(`Order for ${productName} placed successfully!`, 'success');
@@ -1847,14 +2390,14 @@ class BestsellingProductsManager {
     const size = Math.max(rect.width, rect.height);
     const x = event.clientX - rect.left - size / 2;
     const y = event.clientY - rect.top - size / 2;
-    
+
     ripple.style.width = ripple.style.height = size + 'px';
     ripple.style.left = x + 'px';
     ripple.style.top = y + 'px';
     ripple.classList.add('ripple');
-    
+
     button.appendChild(ripple);
-    
+
     setTimeout(() => {
       ripple.remove();
     }, 600);
@@ -1864,7 +2407,7 @@ class BestsellingProductsManager {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
-    
+
     // Add notification styles
     if (!document.querySelector('#notification-styles')) {
       const style = document.createElement('style');
@@ -1901,9 +2444,9 @@ class BestsellingProductsManager {
       `;
       document.head.appendChild(style);
     }
-    
+
     document.body.appendChild(notification);
-    
+
     // Auto remove after 3 seconds
     setTimeout(() => {
       notification.style.animation = 'slideOutRight 0.3s ease';
@@ -2005,11 +2548,11 @@ class StatisticsCounterManager {
 
   setupCounters() {
     const statNumbers = $$('.stat-number');
-    
+
     statNumbers.forEach(counter => {
       const target = parseInt(counter.dataset.target);
       const suffix = counter.dataset.suffix || '';
-      
+
       this.counters.push({
         element: counter,
         target: target,
@@ -2051,23 +2594,23 @@ class StatisticsCounterManager {
     const stepTime = 16; // ~60fps
     const steps = duration / stepTime;
     const increment = target / steps;
-    
+
     let current = 0;
     element.classList.add('counting');
 
     const timer = setInterval(() => {
       current += increment;
-      
+
       if (current >= target) {
         current = target;
         clearInterval(timer);
         element.classList.remove('counting');
       }
-      
+
       // Format the number
       const displayValue = this.formatNumber(Math.floor(current));
       element.textContent = displayValue + suffix;
-      
+
       // Add some visual effects
       if (current >= target) {
         this.addCompletionEffect(element);
@@ -2086,7 +2629,7 @@ class StatisticsCounterManager {
     // Add a pulse effect when counting completes
     element.style.transform = 'scale(1.1)';
     element.style.transition = 'transform 0.3s ease-out';
-    
+
     setTimeout(() => {
       element.style.transform = 'scale(1)';
     }, 300);
@@ -2220,7 +2763,7 @@ class ProductGalleryManager {
 
   updateProductDisplay() {
     const product = this.products[this.currentProduct];
-    
+
     // Update image
     const previewImg = $('.preview-img');
     if (previewImg) {
@@ -2259,7 +2802,7 @@ class ProductGalleryManager {
 
   addToCart() {
     const product = this.products[this.currentProduct];
-    
+
     // Get selected options
     const material = $('.option-select').value;
     const finish = $$('.option-select')[1].value;
@@ -2267,11 +2810,11 @@ class ProductGalleryManager {
 
     // Show success animation
     this.animateAddToCart();
-    
+
     // Show modal with details
     const modal = $('#cartModal');
     const modalText = $('#cartModalText');
-    
+
     if (modal && modalText) {
       modalText.innerHTML = `
         <strong>${product.name}</strong> has been added to your cart!<br>
@@ -2291,7 +2834,7 @@ class ProductGalleryManager {
 
   generateQuote() {
     const product = this.products[this.currentProduct];
-    
+
     // Simulate quote generation
     const quoteData = {
       product: product.name,
@@ -2331,7 +2874,7 @@ class ProductGalleryManager {
       btn.style.transform = 'scale(0.95)';
       btn.style.background = 'var(--success-color)';
       btn.innerHTML = '✅ Added to Cart!';
-      
+
       setTimeout(() => {
         btn.style.transform = '';
         btn.style.background = '';
@@ -2355,15 +2898,15 @@ class BlogManager {
 
   setupBlogCards() {
     const blogCards = $$('.blog-card');
-    
+
     blogCards.forEach((card, index) => {
       // Add staggered animation delay
       card.style.animationDelay = `${index * 0.1}s`;
-      
+
       // Add hover effects
       card.addEventListener('mouseenter', () => this.animateCardHover(card, true));
       card.addEventListener('mouseleave', () => this.animateCardHover(card, false));
-      
+
       // Add click to expand excerpt
       const excerpt = card.querySelector('.blog-excerpt');
       if (excerpt) {
@@ -2376,20 +2919,20 @@ class BlogManager {
     const image = card.querySelector('.blog-image');
     const title = card.querySelector('.blog-title');
     const badge = card.querySelector('.blog-badge');
-    
+
     if (isHovering) {
       card.style.transform = 'translateY(-8px) scale(1.02)';
       card.style.boxShadow = 'var(--shadow-xl)';
       card.style.borderColor = 'var(--primary-color)';
-      
+
       if (image) {
         image.style.transform = 'scale(1.1) rotate(1deg)';
       }
-      
+
       if (title) {
         title.style.color = 'var(--primary-color)';
       }
-      
+
       if (badge) {
         badge.style.animation = 'pulse 1s infinite';
       }
@@ -2397,15 +2940,15 @@ class BlogManager {
       card.style.transform = '';
       card.style.boxShadow = '';
       card.style.borderColor = '';
-      
+
       if (image) {
         image.style.transform = '';
       }
-      
+
       if (title) {
         title.style.color = '';
       }
-      
+
       if (badge) {
         badge.style.animation = 'pulse 2s infinite';
       }
@@ -2424,13 +2967,13 @@ class BlogManager {
 
   setupReadMoreButtons() {
     const readMoreButtons = $$('.btn-read-more');
-    
+
     readMoreButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
         this.handleReadMore(button);
       });
-      
+
       // Add ripple effect
       button.addEventListener('click', (e) => this.createRippleEffect(button, e));
     });
@@ -2441,7 +2984,7 @@ class BlogManager {
     const title = card.querySelector('.blog-title').textContent;
     const author = card.querySelector('.author-name').textContent;
     const category = card.querySelector('.blog-category').textContent;
-    
+
     // Show blog post modal
     this.showBlogPostModal({
       title,
@@ -2477,25 +3020,25 @@ class BlogManager {
         </div>
       </div>
     `;
-    
+
     // Add modal to page
     document.body.insertAdjacentHTML('beforeend', modalHTML);
-    
+
     // Add modal styles
     this.addModalStyles();
-    
+
     // Show modal
     const modal = $('#blog-modal');
     modal.style.display = 'flex';
     setTimeout(() => modal.classList.add('active'), 10);
-    
+
     // Setup modal interactions
     this.setupModalInteractions(modal);
   }
 
   addModalStyles() {
     if (document.getElementById('blog-modal-styles')) return;
-    
+
     const styles = `
       <style id="blog-modal-styles">
         .blog-modal {
@@ -2657,7 +3200,7 @@ class BlogManager {
         }
       </style>
     `;
-    
+
     document.head.insertAdjacentHTML('beforeend', styles);
   }
 
@@ -2666,7 +3209,7 @@ class BlogManager {
     const overlay = modal.querySelector('.blog-modal-overlay');
     const shareBtn = modal.querySelector('.btn-share-post');
     const bookmarkBtn = modal.querySelector('.btn-bookmark-post');
-    
+
     // Close modal
     const closeModal = () => {
       modal.classList.remove('active');
@@ -2674,20 +3217,20 @@ class BlogManager {
         modal.remove();
       }, 300);
     };
-    
+
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
-    
+
     // Share post
     shareBtn.addEventListener('click', () => {
       this.sharePost();
     });
-    
+
     // Bookmark post
     bookmarkBtn.addEventListener('click', () => {
       this.bookmarkPost();
     });
-    
+
     // Close on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -2777,7 +3320,7 @@ class BlogManager {
         <p>Remember, strong branding is an investment that pays dividends in customer recognition, trust, and loyalty. Take the time to get it right from the start.</p>
       `
     };
-    
+
     return contentMap[title] || `
       <p>This is a sample blog post content. The full article would contain detailed information about the topic, including practical tips, industry insights, and actionable advice for readers.</p>
       
@@ -2828,14 +3371,14 @@ class BlogManager {
     const size = Math.max(rect.width, rect.height);
     const x = event.clientX - rect.left - size / 2;
     const y = event.clientY - rect.top - size / 2;
-    
+
     ripple.style.width = ripple.style.height = size + 'px';
     ripple.style.left = x + 'px';
     ripple.style.top = y + 'px';
     ripple.classList.add('ripple');
-    
+
     button.appendChild(ripple);
-    
+
     setTimeout(() => {
       ripple.remove();
     }, 600);
@@ -2851,7 +3394,7 @@ class BlogManager {
         <button class="notification-close">×</button>
       </div>
     `;
-    
+
     // Add notification styles if not already present
     if (!document.getElementById('notification-styles')) {
       const styles = `
@@ -2926,20 +3469,20 @@ class BlogManager {
       `;
       document.head.insertAdjacentHTML('beforeend', styles);
     }
-    
+
     // Add to page
     document.body.appendChild(notification);
-    
+
     // Show notification
     setTimeout(() => notification.classList.add('show'), 10);
-    
+
     // Setup close functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
       notification.classList.remove('show');
       setTimeout(() => notification.remove(), 300);
     });
-    
+
     // Auto-remove after 5 seconds
     setTimeout(() => {
       if (notification.parentNode) {
@@ -2959,7 +3502,7 @@ class App {
   async init() {
     try {
       console.log('🚀 Starting app initialization...');
-      
+
       // Initialize all managers
       this.themeManager = new ThemeManager();
       this.navigationManager = new NavigationManager();
@@ -2973,28 +3516,28 @@ class App {
       this.errorHandler = new ErrorHandler();
       this.priceCalculatorManager = new PriceCalculatorManager();
       this.statisticsCounterManager = new StatisticsCounterManager();
-          this.bestsellingProductsManager = new BestsellingProductsManager();
-    this.featuredProductsManager = new FeaturedProductsManager();
-    this.newBestsellingProductsManager = new NewBestsellingProductsManager();
+      this.bestsellingProductsManager = new BestsellingProductsManager();
+      this.featuredProductsManager = new FeaturedProductsManager();
+      this.newBestsellingProductsManager = new NewBestsellingProductsManager();
       this.productGalleryManager = new ProductGalleryManager();
       this.blogManager = new BlogManager();
       this.heroSliderManager = new HeroSliderManager();
-      
+
       console.log('📦 Managers initialized, loading data...');
-      
+
       // Load data
       await this.dataLoader.loadData();
-      
+
       // Initialize performance monitoring (only in development)
       if (window.location.hostname === 'localhost') {
         this.performanceMonitor = new PerformanceMonitor();
       }
-      
+
       // Mark app as loaded
       document.body.classList.add('app-loaded');
-      
+
       console.log('✅ Shristi Press app initialized successfully');
-      
+
     } catch (error) {
       console.error('❌ Failed to initialize app:', error);
     }
@@ -3010,7 +3553,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (error) {
     console.error('❌ Error initializing app:', error);
   }
-  
+
   // Remove the test product - let normal rendering handle it
 });
 
@@ -3183,13 +3726,13 @@ class NewBestsellingProductsManager {
 
   setupProductCards() {
     const cards = document.querySelectorAll('.new-product-card');
-    
+
     cards.forEach((card, index) => {
       // Simple hover effect
       card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-5px)';
       });
-      
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
       });
@@ -3198,7 +3741,7 @@ class NewBestsellingProductsManager {
 
   setupQuickView() {
     const quickViewButtons = document.querySelectorAll('.new-btn-quick-view');
-    
+
     quickViewButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -3213,7 +3756,7 @@ class NewBestsellingProductsManager {
     const productName = card.querySelector('.new-product-name').textContent;
     const productImage = card.querySelector('.new-product-image').src;
     const productPrice = card.querySelector('.new-price').textContent;
-    
+
     // Create modal HTML
     const modalHTML = `
       <div class="new-quick-view-modal">
@@ -3236,33 +3779,33 @@ class NewBestsellingProductsManager {
         </div>
       </div>
     `;
-    
+
     // Add modal to page
     document.body.insertAdjacentHTML('beforeend', modalHTML);
-    
+
     // Show modal with animation
     setTimeout(() => {
       const modal = document.querySelector('.new-quick-view-modal');
       modal.classList.add('active');
     }, 10);
-    
+
     // Setup close functionality
     const closeBtn = document.querySelector('.new-modal-close');
     const overlay = document.querySelector('.new-modal-overlay');
-    
+
     const closeModal = () => {
       const modal = document.querySelector('.new-quick-view-modal');
       modal.classList.remove('active');
       setTimeout(() => modal.remove(), 300);
     };
-    
+
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
   }
 
   setupAddToCart() {
     const addToCartButtons = document.querySelectorAll('.new-btn-add-cart');
-    
+
     addToCartButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -3275,13 +3818,13 @@ class NewBestsellingProductsManager {
   addToCart(button) {
     const card = button.closest('.new-product-card');
     const productName = card.querySelector('.new-product-name').textContent;
-    
+
     // Create ripple effect
     this.createRippleEffect(button, new MouseEvent('click'));
-    
+
     // Show notification
     this.showNotification(`${productName} added to cart!`, 'success');
-    
+
     // Animate button
     button.style.transform = 'scale(0.9)';
     setTimeout(() => {
@@ -3294,7 +3837,7 @@ class NewBestsellingProductsManager {
 
   setupOrderButtons() {
     const orderButtons = document.querySelectorAll('.new-btn-order-now');
-    
+
     orderButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
@@ -3307,13 +3850,13 @@ class NewBestsellingProductsManager {
   handleOrderNow(button) {
     const card = button.closest('.new-product-card');
     const productName = card.querySelector('.new-product-name').textContent;
-    
+
     // Create ripple effect
     this.createRippleEffect(button, new MouseEvent('click'));
-    
+
     // Show notification
     this.showNotification(`Ordering ${productName}...`, 'info');
-    
+
     // Animate button
     button.style.transform = 'scale(0.95)';
     setTimeout(() => {
@@ -3327,18 +3870,18 @@ class NewBestsellingProductsManager {
   createRippleEffect(button, event) {
     const ripple = document.createElement('span');
     ripple.className = 'new-ripple';
-    
+
     const rect = button.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     const x = event.clientX - rect.left - size / 2;
     const y = event.clientY - rect.top - size / 2;
-    
+
     ripple.style.width = ripple.style.height = size + 'px';
     ripple.style.left = x + 'px';
     ripple.style.top = y + 'px';
-    
+
     button.appendChild(ripple);
-    
+
     setTimeout(() => ripple.remove(), 600);
   }
 
@@ -3346,9 +3889,9 @@ class NewBestsellingProductsManager {
     const notification = document.createElement('div');
     notification.className = `new-notification new-notification-${type}`;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => notification.classList.add('show'), 10);
     setTimeout(() => {
       notification.classList.remove('show');
@@ -3358,7 +3901,7 @@ class NewBestsellingProductsManager {
 
   setupViewAllButton() {
     const viewAllButton = document.querySelector('.new-btn-view-all-products');
-    
+
     if (viewAllButton) {
       viewAllButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -3370,10 +3913,10 @@ class NewBestsellingProductsManager {
   handleViewAllProducts() {
     // Create ripple effect
     this.createRippleEffect(document.querySelector('.new-btn-view-all-products'), new MouseEvent('click'));
-    
+
     // Show notification
     this.showNotification('Opening all products...', 'info');
-    
+
     // Simulate navigation
     setTimeout(() => {
       window.scrollTo({
