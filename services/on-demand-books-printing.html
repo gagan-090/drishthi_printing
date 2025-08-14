@@ -3,197 +3,711 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On Demand Books Printing - Drishthi Printing</title>
-    <meta name="description" content="Professional on demand books printing services with quick turnaround, high-quality printing, and flexible quantities. Print books as you need them.">
+    <title>Premium On-Demand Book Printing | Quality Meets Speed | PrintCraft Solutions</title>
+    <meta name="description" content="Professional on-demand book printing services. Digital and offset printing with no minimum orders, fast turnaround, and worldwide shipping. Get your instant quote today.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/services.css">
-    
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'poppins': ['Poppins', 'sans-serif']
-                    },
+                                 'arial': ['Arial', 'Helvetica', 'sans-serif'],
+                                },
+
+                    
                     colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca'
-                        }
-                    }
+                        primary: '#1e3a8a',
+                        secondary: '#f59e0b',
+                        accent: '#10b981',
+                        dark: '#1f2937',
+                        light: '#f8fafc',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'book-flip': 'bookFlip 4s ease-in-out infinite',
+                        'parallax': 'parallax 20s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        bookFlip: {
+                            '0%': { transform: 'rotateY(0deg)' },
+                            '25%': { transform: 'rotateY(180deg)' },
+                            '50%': { transform: 'rotateY(180deg)' },
+                            '75%': { transform: 'rotateY(0deg)' },
+                            '100%': { transform: 'rotateY(0deg)' },
+                        },
+                        parallax: {
+                            '0%': { transform: 'translateX(0px)' },
+                            '100%': { transform: 'translateX(-50px)' },
+                        },
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+                    },
                 }
             }
         }
     </script>
+    
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .book-hover:hover {
+            transform: perspective(1000px) rotateY(15deg) rotateX(5deg);
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .material-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        @keyframes pageFlip {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+        }
+        
+        .page-flip {
+            animation: pageFlip 3s ease-in-out infinite;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 200px;
+        }
+    </style>
+    <!-- Main Site Styles -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="font-inter bg-white">
+<body class="font-inter text-gray-900 antialiased">
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">D</span>
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                       
                     </div>
-                    <span class="text-xl font-poppins font-semibold text-gray-900">Drishthi Printing</span>
+                   
                 </div>
-                
-                <!-- Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
-                    <a href="#" class="text-primary-600 font-medium">Services</a>
-                    <a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">About</a>
-                    <a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
                 </div>
-                
-                <!-- CTA Button -->
-                <button class="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
-                    Get Quote
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
+                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
+                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
+                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
+                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
+                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
+                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
+                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
+                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="brochures.html">Brochures</a></li>
+                                                <li><a href="catalogue.html">Catalogue</a></li>
+                                                <li><a href="poster.html">Poster</a></li>
+                                                <li><a href="flyers.html">Flyers</a></li>
+                                                <li><a href="dangler.html">Dangler</a></li>
+                                                <li><a href="standees.html">Standees</a></li>
+                                                <li><a href="pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="business-cards.html">Business Card</a></li>
+                                                <li><a href="letter-head.html">Letter Head</a></li>
+                                                <li><a href="envelopes.html">Envelopes</a></li>
+                                                <li><a href="bill-book.html">Bill Book</a></li>
+                                                <li><a href="id-cards.html">ID Cards</a></li>
+                                                <li><a href="sticker.html">Sticker</a></li>
+                                                <li><a href="document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
         </nav>
     </header>
 
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    
+
+
+
+
+    <!-- Navigation -->
+    
+
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                <h1 class="text-5xl md:text-6xl font-poppins font-bold text-gray-900 mb-6">
-                    On Demand Books Printing
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Print books exactly when you need them with our on demand printing services. 
-                    Quick turnaround, flexible quantities, and professional quality for every order.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-primary-600 text-white px-8 py-4 rounded-xl hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl">
-                        Start Your Project
-                    </button>
-                    <button class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 font-semibold text-lg">
-                        View Samples
-                    </button>
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-blue-700 to-blue-900 parallax-bg" style="background-image: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('../assets/images/book-types/hardcover.jpg')">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 hero-pattern opacity-20"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-float"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-secondary opacity-20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-accent opacity-15 rounded-full animate-float" style="animation-delay: 4s;"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-white animate-fade-in">
+                    <h1 class="font-playfair text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                        Premium On-Demand Book Printing —
+                        <span class="text-secondary">Quality Meets Speed</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8 max-w-2xl">
+                        Print your books only when you need them — no inventory, no waste, maximum quality[9]. From single copies to thousands, we deliver professional results with lightning-fast turnaround.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <button class="bg-secondary hover:bg-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg transform hover:scale-105 transition-all duration-300 shadow-2xl" onclick="scrollToSection('pricing')">
+                            Get a Quote
+                        </button>
+                        <button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-full font-bold text-lg transform hover:scale-105 transition-all duration-300" onclick="scrollToSection('how-it-works')">
+                            Start Your Order
+                        </button>
+                    </div>
+                    
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary">24hr</div>
+                            <div class="text-sm text-blue-200">Fast Turnaround</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary">0</div>
+                            <div class="text-sm text-blue-200">Minimum Order</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary">50+</div>
+                            <div class="text-sm text-blue-200">Countries Served</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Animated Book -->
+                <div class="relative flex justify-center animate-slide-up">
+                    <div class="relative">
+                        <!-- Main Book -->
+                        <div class="book-hover transform perspective-1000">
+                            <img src="../assets/images/hero-book.png" 
+                                 alt="Premium Book Sample" 
+                                 class="w-80 h-96 object-cover rounded-lg shadow-2xl">
+                        </div>
+                        
+                        <!-- Floating Pages Animation -->
+                        <div class="absolute -top-4 -right-4 w-6 h-8 bg-white opacity-80 rounded-sm animate-float page-flip" style="animation-delay: 1s;"></div>
+                        <div class="absolute -top-2 -right-6 w-6 h-8 bg-white opacity-60 rounded-sm animate-float page-flip" style="animation-delay: 2s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="animate-slide-up">
+                    <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                        Revolutionary On-Demand Book Printing
+                    </h2>
+                    <p class="text-xl text-gray-600 leading-relaxed mb-8">
+                        Experience the future of book printing with our advanced on-demand services. We combine cost-efficiency, flexibility, and eco-friendly production to deliver exactly what you need, when you need it[32].
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Reduce costs by up to 60% compared to traditional printing</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Zero inventory risk and storage costs</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Eco-friendly with minimal paper waste</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Images Grid -->
+                <div class="grid grid-cols-2 gap-6 animate-fade-in">
+                    <div class="space-y-6">
+                        <img src="../assets/images/book-types/picture-books.jpg" 
+                             alt="Book Covers" 
+                             class="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <img src="../assets/images/book-types/paperback.jpg" 
+                             alt="Book Pages" 
+                             class="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    </div>
+                    <div class="mt-8">
+                        <img src="../assets/images/book-types/hardcover.jpg" 
+                             alt="Printed Books" 
+                             class="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Key Benefits Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Why Choose Our On-Demand Printing?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience the perfect blend of quality, speed, and sustainability with our advanced printing technology[14].
+                </p>
+            </div>
+            
+            <!-- Benefits Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- High Quality Printing -->
+                <div class="text-center group animate-slide-up">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-dark mb-4">High Quality Digital & Offset Printing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Superior image quality rivaling offset printing with modern digital presses. Perfect for high-quality image books and professional publications[9].
+                    </p>
+                </div>
+                
+                <!-- No Minimum Order -->
+                <div class="text-center group animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-accent to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-dark mb-4">No Minimum Order Quantity</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Print as few as one copy or as many as thousands. Perfect for authors, small businesses, and organizations with varying needs[11].
+                    </p>
+                </div>
+                
+                <!-- Fast Turnaround -->
+                <div class="text-center group animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-secondary to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-dark mb-4">Fast Turnaround & Worldwide Shipping</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Quick turnaround times with digital printing eliminating lengthy setups. Global shipping network ensures fast delivery anywhere[30].
+                    </p>
+                </div>
+                
+                <!-- Eco-Friendly -->
+                <div class="text-center group animate-slide-up" style="animation-delay: 0.6s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-dark mb-4">Eco-Friendly Printing Materials</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Environmentally friendly with fewer chemicals and less paper waste. Sustainable printing practices for a greener future[9].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    How It Works
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Four simple steps to get your professional-quality books printed and delivered.
+                </p>
+            </div>
+            
+            <!-- Steps -->
+            <div class="relative">
+                <!-- Connection Line -->
+                <div class="hidden lg:block absolute top-24 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-primary opacity-20"></div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center animate-slide-up">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-4">Upload Your Book Files</h3>
+                        <p class="text-gray-600">Provide your print-ready files in supported formats including PDF, JPG, and PNG[16].</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-4">Choose Printing Specs</h3>
+                        <p class="text-gray-600">Select book size, binding type, paper quality, and finishing options to match your vision.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center animate-slide-up" style="animation-delay: 0.4s;">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H9.5a2 2 0 01-2-2V5a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2h11.5a2 2 0 012 2v2a2 2 0 002-2z"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-4">We Print On-Demand</h3>
+                        <p class="text-gray-600">Books are printed only as needed, minimizing waste and ensuring freshness.</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center animate-slide-up" style="animation-delay: 0.6s;">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M9 21h6"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-4">Delivery to You</h3>
+                        <p class="text-gray-600">Fast shipping globally to your location or directly to your customers with tracking[30].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Printing Options Section -->
     <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">
-                    Why Choose Our On Demand Books Printing?
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Printing Options
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We specialize in on demand printing that gives you flexibility and control 
-                    over your book production with superior quality.
+                    Choose from our comprehensive range of professional printing options to bring your vision to life.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-50 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+            <!-- Options Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Paperback Books -->
+                <div class="group bg-light rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-blue-100 to-blue-200 relative overflow-hidden">
+                        <img src="../assets/images/book-types/paperback.jpg" 
+                             alt="Paperback Books" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Quick Turnaround</h3>
-                    <p class="text-gray-600">Fast production times to meet your urgent printing needs.</p>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-3">Paperback Books</h3>
+                        <p class="text-gray-600 mb-4">Affordable and versatile, perfect for general purposes. Most novels are printed on 50# offset paper[33].</p>
+                        <div class="text-primary font-semibold">Starting at ₹45/copy</div>
+                    </div>
                 </div>
                 
-                <!-- Feature 2 -->
-                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                        </svg>
+                <!-- Hardcover Books -->
+                <div class="group bg-light rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-purple-100 to-purple-200 relative overflow-hidden">
+                        <img src="../assets/images/book-types/hardcover.jpg" 
+                             alt="Hardcover Books" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Flexible Quantities</h3>
-                    <p class="text-gray-600">Print from 1 to 1000+ copies based on your exact needs.</p>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-3">Hardcover Books</h3>
+                        <p class="text-gray-600 mb-4">Durable and premium quality with rigid covers. Case bound with cloth and foil stamping options[11].</p>
+                        <div class="text-primary font-semibold">Starting at ₹125/copy</div>
+                    </div>
                 </div>
                 
-                <!-- Feature 3 -->
-                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-                        </svg>
+                <!-- Spiral Bound Books -->
+                <div class="group bg-light rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 relative overflow-hidden">
+                        <img src="../assets/images/book-types/activity.jpg" 
+                             alt="Spiral Bound Books" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Professional Quality</h3>
-                    <p class="text-gray-600">Same high-quality printing standards regardless of quantity.</p>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-3">Spiral Bound Books</h3>
+                        <p class="text-gray-600 mb-4">Ideal for notebooks, manuals, and presentations. Lays flat for easy writing and reading[42].</p>
+                        <div class="text-primary font-semibold">Starting at ₹65/copy</div>
+                    </div>
+                </div>
+                
+                <!-- Custom Finishes -->
+                <div class="group bg-light rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-yellow-100 to-yellow-200 relative overflow-hidden">
+                        <img src="../assets/images/book-types/interactive.jpg" 
+                             alt="Custom Sizes & Finishes" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-bold text-dark mb-3">Custom Sizes & Finishes</h3>
+                        <p class="text-gray-600 mb-4">Specialized sizes and finishes including foil stamping, embossing, and UV coating for unique projects.</p>
+                        <div class="text-primary font-semibold">Custom Pricing</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Materials & Finishes Section -->
     <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">
-                    Our On Demand Books Collection
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Premium Materials & Finishes
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Explore our diverse range of on demand book printing options.
+                    Choose from our extensive range of high-quality papers, covers, and binding options to create the perfect book[28][33].
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Book 1 -->
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-64 bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center">
-                            <span class="text-white text-4xl font-bold">📚</span>
+            <!-- Materials Grid -->
+            <div class="space-y-16">
+                <!-- Paper Types -->
+                <div>
+                    <h3 class="font-playfair text-3xl font-bold text-center text-dark mb-12">Paper Types</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg mx-auto mb-6 shadow-inner"></div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Matte Paper</h4>
+                            <p class="text-gray-600">Non-reflective surface perfect for text-heavy books. Great for readability with reduced glare[37].</p>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Fiction & Non-Fiction</h3>
-                            <p class="text-gray-600 mb-4">Novels, biographies, and educational content.</p>
-                            <span class="text-primary-600 font-medium">Starting at $7.99</span>
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-b from-white to-gray-100 rounded-lg mx-auto mb-6 shadow-lg"></div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Glossy Paper</h4>
+                            <p class="text-gray-600">High-shine finish that enhances color clarity in images. Best for photo books and illustrations[37].</p>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Book 2 -->
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-64 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
-                            <span class="text-white text-4xl font-bold">📖</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Academic Books</h3>
-                            <p class="text-gray-600 mb-4">Textbooks, research papers, and course materials.</p>
-                            <span class="text-primary-600 font-medium">Starting at $9.99</span>
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-b from-green-50 to-green-100 rounded-lg mx-auto mb-6 shadow-md"></div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Recycled Paper</h4>
+                            <p class="text-gray-600">Eco-friendly option with natural texture. Sustainable choice for environmentally conscious projects[37].</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Book 3 -->
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-64 bg-gradient-to-br from-indigo-400 to-blue-500 flex items-center justify-center">
-                            <span class="text-white text-4xl font-bold">📝</span>
+                <!-- Cover Finishes -->
+                <div>
+                    <h3 class="font-playfair text-3xl font-bold text-center text-dark mb-12">Cover Finishes</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-b from-gray-200 to-gray-300 rounded-lg mx-auto mb-6"></div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Matte Lamination</h4>
+                            <p class="text-gray-600">Smooth, non-reflective finish that's fingerprint resistant and provides excellent durability.</p>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Self-Published</h3>
-                            <p class="text-gray-600 mb-4">Author manuscripts and personal projects.</p>
-                            <span class="text-primary-600 font-medium">Starting at $6.99</span>
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-b from-blue-100 to-blue-200 rounded-lg mx-auto mb-6 shadow-lg"></div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Gloss Lamination</h4>
+                            <p class="text-gray-600">High-shine protective coating that makes colors pop and provides water resistance.</p>
+                        </div>
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-b from-purple-100 to-purple-200 rounded-lg mx-auto mb-6"></div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Soft Touch Lamination</h4>
+                            <p class="text-gray-600">Luxurious velvet-like texture that feels premium and provides a unique tactile experience.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Binding Styles -->
+                <div>
+                    <h3 class="font-playfair text-3xl font-bold text-center text-dark mb-12">Binding Styles</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-l-lg mx-auto mb-6 relative">
+                                <div class="absolute right-0 top-0 h-full w-20 bg-white rounded-r-lg shadow-inner"></div>
+                            </div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Perfect Binding</h4>
+                            <p class="text-gray-600">Professional square spine binding for paperback books with 40+ pages[11].</p>
+                        </div>
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-gradient-to-r from-red-500 to-red-600 rounded-l-lg mx-auto mb-6 relative">
+                                <div class="absolute right-0 top-0 h-full w-20 bg-white rounded-r-lg shadow-lg border-l-4 border-red-500"></div>
+                            </div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Hardcover Case</h4>
+                            <p class="text-gray-600">Premium hardcover binding wrapped in cloth with optional foil stamping[11].</p>
+                        </div>
+                        <div class="material-hover bg-white rounded-xl p-6 shadow-lg text-center cursor-pointer">
+                            <div class="w-24 h-32 bg-white rounded-lg mx-auto mb-6 relative border-l-4 border-gray-400">
+                                <div class="absolute left-0 top-4 h-4 w-1 bg-gray-400"></div>
+                                <div class="absolute left-0 top-12 h-4 w-1 bg-gray-400"></div>
+                                <div class="absolute left-0 top-20 h-4 w-1 bg-gray-400"></div>
+                            </div>
+                            <h4 class="font-playfair text-xl font-bold text-dark mb-3">Spiral Binding</h4>
+                            <p class="text-gray-600">Flexible spiral binding that allows books to lay completely flat[42].</p>
                         </div>
                     </div>
                 </div>
@@ -201,106 +715,514 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-3xl mx-auto" data-aos="fade-up">
-                <h2 class="text-4xl font-poppins font-bold text-white mb-6">
-                    Ready to Print On Demand?
+    <!-- Pricing & Quote Calculator -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Transparent Pricing Calculator
                 </h2>
-                <p class="text-xl text-primary-100 mb-8">
-                    Let's bring your book to life with our flexible on demand printing services. 
-                    Get a free quote and start your printing journey today.
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get instant pricing tailored to your specific needs. No hidden costs, no surprises.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-white text-primary-600 px-8 py-4 rounded-xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-lg">
-                        Get Free Quote
-                    </button>
-                    <button class="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300 font-semibold text-lg">
-                        Contact Us
-                    </button>
+            </div>
+            
+            <!-- Calculator -->
+            <div class="bg-gradient-to-br from-primary to-blue-800 rounded-3xl p-8 text-white">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Controls -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-lg font-semibold mb-3">Book Type</label>
+                            <select id="bookType" class="w-full p-3 rounded-lg bg-white text-gray-900 font-semibold" onchange="updatePrice()">
+                                <option value="paperback">Paperback</option>
+                                <option value="hardcover">Hardcover</option>
+                                <option value="spiral">Spiral Bound</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-lg font-semibold mb-3">Quantity</label>
+                            <input type="range" id="quantity" min="1" max="1000" value="100" 
+                                   class="w-full" onchange="updateQuantity()" oninput="updateQuantity()">
+                            <div class="flex justify-between text-sm mt-2">
+                                <span>1</span>
+                                <span id="quantityDisplay" class="font-bold">100 copies</span>
+                                <span>1000</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-lg font-semibold mb-3">Pages</label>
+                            <input type="range" id="pages" min="24" max="500" value="100" 
+                                   class="w-full" onchange="updatePrice()" oninput="updatePages()">
+                            <div class="flex justify-between text-sm mt-2">
+                                <span>24</span>
+                                <span id="pagesDisplay" class="font-bold">100 pages</span>
+                                <span>500</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Display -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-4">Estimated Price</h3>
+                        <div class="text-5xl font-bold text-secondary mb-2" id="priceDisplay">₹20,000</div>
+                        <div class="text-lg opacity-75 mb-6" id="pricePerUnit">₹200 per copy</div>
+                        
+                        <div class="space-y-2 text-sm opacity-75 mb-6">
+                            <div>✓ Free digital proof</div>
+                            <div>✓ Quality guarantee</div>
+                            <div>✓ Fast turnaround</div>
+                        </div>
+                        
+                        <button class="w-full bg-secondary hover:bg-yellow-500 text-primary font-bold py-3 px-6 rounded-lg transition-colors duration-300 transform hover:scale-105">
+                            Get Detailed Quote
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    What Our Customers Say
+                </h2>
+                <div class="flex justify-center items-center space-x-2 mb-4">
+                    <div class="flex text-yellow-400">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-dark">4.9/5</span>
+                </div>
+                <p class="text-gray-600">Based on 2,400+ customer reviews</p>
+            </div>
+            
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-up">
+                    <div class="flex items-center mb-6">
+                        <img src="../assets/images/avatar-emma.svg" 
+                             alt="Alice Johnson" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Alice Johnson</h4>
+                            <p class="text-sm text-gray-600">Author</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">
+                        "Outstanding print quality and fast delivery! The customer service team was incredibly helpful throughout the entire process. Highly recommended for any author."[10]
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <img src="../assets/images/avatar-michael.svg" 
+                             alt="Mark Lee" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Mark Lee</h4>
+                            <p class="text-sm text-gray-600">Publisher</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">
+                        "Great customer service and beautiful finished books. The on-demand model has revolutionized our publishing process. We've received many compliments on the quality."[34]
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <img src="../assets/images/avatar-sarah.svg" 
+                             alt="Sara Kim" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Sara Kim</h4>
+                            <p class="text-sm text-gray-600">Educator</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">
+                        "Eco-friendly options and excellent support throughout the process. The ability to print exactly what we need has saved our school thousands. Perfect for educational materials."[15]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Everything you need to know about our on-demand book printing services.
+                </p>
+            </div>
+            
+            <!-- FAQ Accordion -->
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full text-left px-6 py-4 focus:outline-none focus:bg-gray-50" onclick="toggleAccordion(0)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-dark">What file formats do you accept?</h3>
+                            <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4" id="accordion-0">
+                        <p class="text-gray-600">We accept high-resolution PDF, JPG, PNG, and other print-ready files. For best results, we recommend PDF files with embedded fonts and CMYK color mode[16].</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full text-left px-6 py-4 focus:outline-none focus:bg-gray-50" onclick="toggleAccordion(1)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-dark">Is there a minimum order quantity?</h3>
+                            <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4" id="accordion-1">
+                        <p class="text-gray-600">No minimum order for on-demand printing! Print as few as one copy or as many as thousands. This flexibility makes it perfect for authors, small businesses, and test runs[11].</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full text-left px-6 py-4 focus:outline-none focus:bg-gray-50" onclick="toggleAccordion(2)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-dark">How long does the printing process take?</h3>
+                            <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4" id="accordion-2">
+                        <p class="text-gray-600">Typical turnaround is 2-5 business days for most orders. Digital printing eliminates lengthy setup times, and rush delivery options are available for urgent projects[30].</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full text-left px-6 py-4 focus:outline-none focus:bg-gray-50" onclick="toggleAccordion(3)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-dark">Can I order books with custom sizes?</h3>
+                            <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4" id="accordion-3">
+                        <p class="text-gray-600">Yes! We support fully custom sizes and finishes to meet your specific needs. Our team can accommodate special requirements and provide guidance on optimal specifications for your project[11].</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full text-left px-6 py-4 focus:outline-none focus:bg-gray-50" onclick="toggleAccordion(4)">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-dark">What shipping options are available?</h3>
+                            <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4" id="accordion-4">
+                        <p class="text-gray-600">We offer worldwide shipping with various speed options. Standard delivery, express shipping, and bulk delivery rates are available. All orders include tracking information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Banner -->
+    <section class="py-20 bg-gradient-to-r from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 hero-pattern opacity-10"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
+                Start printing your books today — with zero risk and full control
+            </h2>
+            <p class="text-xl text-blue-100 leading-relaxed mb-8 max-w-3xl mx-auto animate-slide-up">
+                Join thousands of satisfied customers who have chosen our on-demand printing services. Experience the quality, speed, and flexibility that makes the difference.
+            </p>
+            <button class="bg-secondary hover:bg-yellow-500 text-primary font-bold text-lg px-10 py-4 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl animate-slide-up" style="animation-delay: 0.2s;" onclick="scrollToSection('contact')">
+                Request a Free Sample
+            </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">D</span>
-                        </div>
-                        <span class="text-xl font-poppins font-semibold">Drishthi Printing</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md">
-                        Your trusted partner for premium printing services. We deliver quality, creativity, and excellence in every project.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
+            <!-- Slim Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
+                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
-                            </svg>
-                        </a>
+                        <p class="footer-description">
+                            Professional printing services with unmatched quality and customer satisfaction.
+                        </p>
                     </div>
                 </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">All Services</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <!-- Contact Info -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>+1 (555) 123-4567</li>
-                        <li>info@drishthiprinting.com</li>
-                        <li>123 Print Street<br>Design City, DC 12345</li>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
+                        <li><a href="brochures.html">Brochures</a></li>
+                        <li><a href="business-cards.html">Business Cards</a></li>
+                        <li><a href="poster.html">Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#gdpr">GDPR</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">
-                    © 2024 Drishthi Printing. All rights reserved.
-                </p>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                    </div>
+                    <div class="footer-logo-small">
+                        <span>Made with ❤️ by Shristi Press</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom Scripts -->
-    <script src="../js/services.js"></script>
-    
+    <!-- JavaScript -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
+        // Pricing Calculator
+        class PricingCalculator {
+            constructor() {
+                this.basePrice = 45;
+                this.pricePerPage = 2;
+                this.pages = 100;
+                this.quantity = 100;
+                this.bookType = 'paperback';
+                this.totalPrice = 0;
+                this.priceMultipliers = {
+                    'paperback': 1.0,
+                    'hardcover': 2.8,
+                    'spiral': 1.4
+                };
+            }
+            
+            calculate() {
+                const baseForType = this.basePrice * this.priceMultipliers[this.bookType];
+                const pagesCost = this.pages * this.pricePerPage;
+                const unitPrice = baseForType + pagesCost;
+                this.totalPrice = unitPrice * this.quantity;
+                
+                // Update display
+                document.getElementById('priceDisplay').innerText = '₹' + this.totalPrice.toLocaleString('en-IN');
+                document.getElementById('pricePerUnit').innerText = '₹' + Math.round(unitPrice).toLocaleString('en-IN') + ' per copy';
+            }
+            
+            setBookType(type) {
+                this.bookType = type;
+                this.calculate();
+            }
+            
+            setQuantity(qty) {
+                this.quantity = qty;
+                this.calculate();
+            }
+            
+            setPages(pages) {
+                this.pages = pages;
+                this.calculate();
+            }
+        }
+
+        const calculator = new PricingCalculator();
+
+        function updatePrice() {
+            const bookType = document.getElementById('bookType').value;
+            calculator.setBookType(bookType);
+        }
+
+        function updateQuantity() {
+            const qty = parseInt(document.getElementById('quantity').value);
+            calculator.setQuantity(qty);
+            document.getElementById('quantityDisplay').innerText = qty + ' copies';
+        }
+
+        function updatePages() {
+            const pages = parseInt(document.getElementById('pages').value);
+            calculator.setPages(pages);
+            document.getElementById('pagesDisplay').innerText = pages + ' pages';
+        }
+
+        // FAQ Accordion
+        function toggleAccordion(index) {
+            const content = document.getElementById(`accordion-${index}`);
+            const icon = document.querySelector(`.accordion-icon-${index}`);
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all accordions
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('[class*="accordion-icon-"]').forEach(item => {
+                    item.style.transform = 'rotate(0deg)';
+                });
+                
+                // Open clicked accordion
+                content.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            // Add mobile menu functionality here
+        });
+
+        // Initialize calculator on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            calculator.calculate();
+            
+            // Animate on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe animated elements
+            document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
         });
     </script>
+    <!-- Main Site Scripts -->
+    <script defer src="../js/script.js"></script>
 </body>
 </html>

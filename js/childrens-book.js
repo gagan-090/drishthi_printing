@@ -691,6 +691,9 @@ document.addEventListener('DOMContentLoaded', function() {
         window.navigationManager = new NavigationManager();
     }
     
+    // Initialize file upload functionality
+    initFileUpload();
+    
     // Add app loaded class for animations
     setTimeout(() => {
         document.body.classList.add('app-loaded');
@@ -753,3 +756,604 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ChildrensBookPrinting;
 }
+
+// ===== CHILDREN'S BOOK PRINTING ENHANCEMENTS =====
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize enhanced hero section features
+    initEnhancedHero();
+    initAnimatedCounters();
+    initInteractiveElements();
+    initParallaxEffects();
+});
+
+// Enhanced Hero Section Initialization
+function initEnhancedHero() {
+    const heroSection = document.querySelector('.hero-clean');
+    if (!heroSection) return;
+
+    // Add scroll-triggered animations
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        // Parallax effect for background elements
+        const bgElements = heroSection.querySelectorAll('.bg-circle-clean');
+        bgElements.forEach((element, index) => {
+            const speed = 0.1 + (index * 0.05);
+            element.style.transform = `translateY(${rate * speed}px)`;
+        });
+    });
+
+    // Add mouse move effects
+    heroSection.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        
+        const x = (clientX / innerWidth - 0.5) * 20;
+        const y = (clientY / innerHeight - 0.5) * 20;
+        
+        // Subtle movement for floating elements
+        const floatingElements = heroSection.querySelectorAll('.float-element-clean');
+        floatingElements.forEach((element, index) => {
+            const delay = index * 0.1;
+            element.style.transform = `translate(${x * delay}px, ${y * delay}px)`;
+        });
+    });
+}
+
+// Animated Counters for Stats
+function initAnimatedCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-count'));
+                animateCounter(counter, target);
+                observer.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        // Format number with commas
+        const formatted = Math.floor(current).toLocaleString();
+        element.textContent = formatted + '+';
+        
+        // Add animation class
+        element.classList.add('counter-animated');
+    }, 30);
+}
+
+// Interactive Elements
+function initInteractiveElements() {
+    // Enhanced feature card interactions
+    const featureCards = document.querySelectorAll('.feature-card-clean');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+        });
+    });
+
+    // Enhanced guarantee card interactions
+    const guaranteeCards = document.querySelectorAll('.guarantee-card-clean');
+    guaranteeCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+        });
+    });
+
+    // Enhanced button interactions
+    const primaryButton = document.querySelector('.btn-primary-modern');
+    if (primaryButton) {
+        primaryButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        });
+        
+        primaryButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    }
+}
+
+// Parallax Effects for Book Illustration
+function initParallaxEffects() {
+    const bookIllustration = document.querySelector('.book-illustration-clean');
+    if (!bookIllustration) return;
+
+    let ticking = false;
+    
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.3;
+        
+        // Subtle parallax for book
+        bookIllustration.style.transform = `translateY(${rate}px)`;
+        
+        // Parallax for floating elements
+        const floatingElements = bookIllustration.querySelectorAll('.float-element-clean');
+        floatingElements.forEach((element, index) => {
+            const speed = 0.1 + (index * 0.05);
+            element.style.transform = `translateY(${rate * speed}px)`;
+        });
+        
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick);
+    
+    // Mouse move effect for book
+    bookIllustration.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        
+        const x = (clientX / innerWidth - 0.5) * 15;
+        const y = (clientY / innerHeight - 0.5) * 15;
+        
+        bookIllustration.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+    });
+    
+    bookIllustration.addEventListener('mouseleave', () => {
+        bookIllustration.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+    });
+}
+
+// Enhanced Social Share Functionality
+function initSocialShare() {
+    const socialLinks = document.querySelectorAll('.social-link-modern');
+    
+    socialLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const platform = this.classList.contains('facebook') ? 'Facebook' :
+                           this.classList.contains('instagram') ? 'Instagram' :
+                           this.classList.contains('whatsapp') ? 'WhatsApp' :
+                           this.classList.contains('pinterest') ? 'Pinterest' : 'Social Media';
+            
+            // Add click animation
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Show success message
+            showShareMessage(platform);
+        });
+    });
+}
+
+function showShareMessage(platform) {
+    // Create temporary success message
+    const message = document.createElement('div');
+    message.className = 'share-success-message';
+    message.innerHTML = `
+        <div class="message-content">
+            <span class="message-icon">✅</span>
+            <span>Shared on ${platform}! You've earned 5% off!</span>
+        </div>
+    `;
+    
+    document.body.appendChild(message);
+    
+    // Animate in
+    setTimeout(() => message.classList.add('show'), 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        message.classList.remove('show');
+        setTimeout(() => message.remove(), 300);
+    }, 3000);
+}
+
+// Enhanced Book Animation
+function initBookAnimations() {
+    const bookCover = document.querySelector('.book-cover');
+    const bookPages = document.querySelectorAll('.page');
+    
+    if (!bookCover) return;
+    
+    // Add page flip animation
+    bookPages.forEach((page, index) => {
+        page.style.animationDelay = `${index * 0.2}s`;
+        page.classList.add('page-flip');
+    });
+    
+    // Enhanced book hover effect
+    bookCover.addEventListener('mouseenter', function() {
+        this.style.transform = 'rotateY(-25deg) scale(1.05)';
+        this.style.boxShadow = '0 30px 60px rgba(139, 92, 246, 0.4)';
+    });
+    
+    bookCover.addEventListener('mouseleave', function() {
+        this.style.transform = 'rotateY(-10deg) scale(1)';
+        this.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.3)';
+    });
+}
+
+// Initialize all features
+document.addEventListener('DOMContentLoaded', function() {
+    initSocialShare();
+    initBookAnimations();
+    
+    // Add CSS for success message
+    addSuccessMessageStyles();
+});
+
+// Add CSS for success message
+function addSuccessMessageStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .share-success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .share-success-message.show {
+            transform: translateX(0);
+        }
+        
+        .message-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .message-icon {
+            font-size: 20px;
+        }
+        
+        .counter-animated {
+            animation: counterPulse 0.6s ease-out;
+        }
+        
+        @keyframes counterPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .page-flip {
+            animation: pageFlip 0.8s ease-out forwards;
+        }
+        
+        @keyframes pageFlip {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(-5deg); }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Enhanced scroll animations
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.feature-card, .guarantee-card, .stat-item-modern');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+// Initialize scroll animations
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollAnimations();
+});
+
+// ===== FILE UPLOAD FUNCTIONALITY =====
+
+// Initialize file upload functionality
+function initFileUpload() {
+    const uploadZone = document.getElementById('uploadZone');
+    const fileInput = document.getElementById('fileInput');
+    const uploadedFiles = document.getElementById('uploadedFiles');
+    const fileList = document.getElementById('fileList');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    
+    let files = [];
+    
+    if (!uploadZone || !fileInput) return;
+    
+    // Drag and drop functionality
+    uploadZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadZone.classList.add('drag-over');
+    });
+    
+    uploadZone.addEventListener('dragleave', () => {
+        uploadZone.classList.remove('drag-over');
+    });
+    
+    uploadZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadZone.classList.remove('drag-over');
+        const droppedFiles = Array.from(e.dataTransfer.files);
+        handleFiles(droppedFiles);
+    });
+    
+    // Click to browse files
+    uploadZone.addEventListener('click', () => {
+        fileInput.click();
+    });
+    
+    // File input change
+    fileInput.addEventListener('change', (e) => {
+        const selectedFiles = Array.from(e.target.files);
+        handleFiles(selectedFiles);
+    });
+    
+    // Handle selected files
+    function handleFiles(newFiles) {
+        // Filter files by type and size
+        const validFiles = newFiles.filter(file => {
+            const isValidType = isValidFileType(file);
+            const isValidSize = file.size <= 100 * 1024 * 1024; // 100MB limit
+            
+            if (!isValidType) {
+                showNotification(`File type not supported: ${file.name}`, 'error');
+            }
+            if (!isValidSize) {
+                showNotification(`File too large: ${file.name} (max 100MB)`, 'error');
+            }
+            
+            return isValidType && isValidSize;
+        });
+        
+        if (validFiles.length > 0) {
+            files = [...files, ...validFiles];
+            updateFileList();
+            updateUploadButton();
+            showNotification(`${validFiles.length} file(s) added successfully!`, 'success');
+        }
+    }
+    
+    // Validate file type
+    function isValidFileType(file) {
+        const validTypes = [
+            'application/pdf',
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'application/postscript',
+            'image/jpeg',
+            'image/png',
+            'image/tiff',
+            'application/illustrator',
+            'application/x-photoshop'
+        ];
+        
+        return validTypes.includes(file.type) || 
+               file.name.toLowerCase().endsWith('.ai') ||
+               file.name.toLowerCase().endsWith('.psd') ||
+               file.name.toLowerCase().endsWith('.indd');
+    }
+    
+    // Update file list display
+    function updateFileList() {
+        if (files.length === 0) {
+            uploadedFiles.style.display = 'none';
+            return;
+        }
+        
+        uploadedFiles.style.display = 'block';
+        fileList.innerHTML = '';
+        
+        files.forEach((file, index) => {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            
+            const fileSize = formatFileSize(file.size);
+            const fileExtension = getFileExtension(file.name);
+            
+            fileItem.innerHTML = `
+                <div class="file-info">
+                    <div class="file-icon">${fileExtension.toUpperCase()}</div>
+                    <div class="file-details">
+                        <div class="file-name">${file.name}</div>
+                        <div class="file-size">${fileSize}</div>
+                    </div>
+                </div>
+                <div class="file-actions">
+                    <button class="btn-remove" onclick="removeFile(${index})" aria-label="Remove file">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            `;
+            
+            fileList.appendChild(fileItem);
+        });
+    }
+    
+    // Update upload button state
+    function updateUploadButton() {
+        uploadBtn.disabled = files.length === 0;
+        clearBtn.style.display = files.length > 0 ? 'block' : 'none';
+    }
+    
+    // Remove file
+    window.removeFile = function(index) {
+        files.splice(index, 1);
+        updateFileList();
+        updateUploadButton();
+        showNotification('File removed successfully!', 'success');
+    };
+    
+    // Clear all files
+    clearBtn.addEventListener('click', () => {
+        files = [];
+        updateFileList();
+        updateUploadButton();
+        fileInput.value = '';
+        showNotification('All files cleared!', 'success');
+    });
+    
+    // Upload files
+    uploadBtn.addEventListener('click', () => {
+        if (files.length === 0) return;
+        
+        // Show loading state
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = `
+            <span>Uploading...</span>
+            <div class="btn-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-spin">
+                    <path d="M21 12a9 9 0 11-6.219-8.56"/>
+                </svg>
+            </div>
+        `;
+        
+        // Simulate upload process
+        setTimeout(() => {
+            showNotification('Files uploaded successfully! Redirecting to quote...', 'success');
+            
+            // Reset button
+            setTimeout(() => {
+                uploadBtn.disabled = false;
+                uploadBtn.innerHTML = `
+                    <span>Upload Files & Continue</span>
+                    <div class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                `;
+                
+                // Scroll to tabs section
+                const tabsSection = document.querySelector('.tabs-section');
+                if (tabsSection) {
+                    tabsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 2000);
+        }, 2000);
+    });
+}
+
+// Utility functions
+function formatFileSize(bytes) {
+    if (bytes === 0) return '0 Bytes';
+    
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+function getFileExtension(filename) {
+    return filename.slice((filename.lastIndexOf('.') - 1 >>> 0) + 2);
+}
+
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-message">${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#6366f1'};
+        color: white;
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        max-width: 400px;
+        animation: slideInRight 0.3s ease;
+    `;
+    
+    // Add keyframe animation
+    if (!document.querySelector('#notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
+}
+

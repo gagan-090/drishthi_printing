@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corrugated Boxes Printing - Drishthi Printing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/services.css">
-    <!-- Main Site Styles -->
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="font-inter bg-white text-gray-900">
-    <!-- Skip to Content (Accessibility) -->
+#!/usr/bin/env python3
+"""
+Complete navbar update script - adds HTML structure, CSS, and JS to all service files
+"""
+
+import os
+import glob
+import re
+
+def get_navbar_html():
+    """Get the complete navbar HTML structure"""
+    return '''    <!-- Skip to Content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
@@ -50,7 +47,7 @@
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="container">
                 <div class="navbar-brand">
-                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                    <a href="../index.html" class="logo" aria-label="Shristi Press Home">
                         <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
                             class="logo-image">
                     </a>
@@ -131,7 +128,7 @@
                         <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
                         <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
                         <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
-                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="../index.html#contact" role="menuitem">Contact</a></li>
                     </ul>
 
                     <div class="navbar-actions">
@@ -154,141 +151,101 @@
         </nav>
     </header>
 
+'''
 
-    <!-- Skip to Content (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
+def remove_existing_headers(content):
+    """Remove any existing headers, navs, or navigation elements"""
+    # Remove header tags
+    content = re.sub(r'<header.*?</header>', '', content, flags=re.DOTALL)
     
-
-
-
+    # Remove standalone nav tags
+    content = re.sub(r'<nav.*?</nav>', '', content, flags=re.DOTALL)
     
+    # Remove contact bars
+    content = re.sub(r'<div class="contact-bar">.*?</div>\s*</div>\s*</div>', '', content, flags=re.DOTALL)
+    
+    # Remove any loading screens or overlays that might interfere
+    content = re.sub(r'<div id="loading-screen".*?</div>', '', content, flags=re.DOTALL)
+    
+    return content
 
-    <main class="pt-20">
-        <section class="relative bg-gradient-to-br from-amber-50 via-white to-yellow-50 py-20">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                    <h1 class="text-5xl md:text-6xl font-poppins font-bold text-gray-900 mb-6">
-                        Corrugated Boxes <span class="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">Printing</span>
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">Strong and durable packaging solutions for heavy-duty shipping and storage requirements.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="btn-primary">Get Quote</button>
-                        <button class="btn-secondary">Contact Us</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+def add_css_if_missing(content):
+    """Add main CSS if not already present"""
+    if '../css/style.css' not in content:
+        css_link = '''    <!-- Main Site Styles -->
+    <link rel="stylesheet" href="../css/style.css">'''
+        content = re.sub(r'</head>', f'{css_link}\n</head>', content)
+    return content
 
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">Why Choose Our Corrugated Boxes?</h2>
-                    <p class="text-xl text-gray-600">We provide robust packaging solutions that protect your products during transit and storage.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Maximum Protection</h3>
-                        <p class="text-gray-600">Multi-layer construction provides excellent cushioning and protection for fragile items.</p>
-                    </div>
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Custom Sizing</h3>
-                        <p class="text-gray-600">Tailored dimensions to fit your products perfectly and minimize shipping costs.</p>
-                    </div>
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Eco-Friendly</h3>
-                        <p class="text-gray-600">Recyclable materials that align with sustainable packaging practices.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+def add_js_if_missing(content):
+    """Add main JS if not already present"""
+    if '../js/script.js' not in content:
+        js_script = '''    <!-- Main Site Scripts -->
+    <script defer src="../js/script.js"></script>'''
+        content = re.sub(r'</body>', f'{js_script}\n</body>', content)
+    return content
 
-        <section class="py-20 bg-gradient-to-r from-amber-600 to-yellow-600 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <div class="max-w-3xl mx-auto" data-aos="fade-up">
-                    <h2 class="text-4xl font-poppins font-bold mb-6">Ready to Get Started?</h2>
-                    <p class="text-xl mb-8 opacity-90">Contact us today for a free consultation on your corrugated box printing needs.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="btn-white">Get Free Quote</button>
-                        <button class="btn-outline-white">Contact Us</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+def update_service_file(filepath):
+    """Complete navbar update for a service file"""
+    print(f"Processing {filepath}...")
+    
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Check if already has proper navbar
+        if 'header class="header"' in content and 'contact-bar' in content:
+            print(f"  ✓ {filepath} already has proper navbar")
+            return
+        
+        # Remove existing headers/navs
+        content = remove_existing_headers(content)
+        
+        # Find body tag and add navbar after it
+        body_match = re.search(r'(<body[^>]*>)', content)
+        if not body_match:
+            print(f"  ❌ Could not find body tag in {filepath}")
+            return
+        
+        body_tag = body_match.group(1)
+        body_end = body_match.end()
+        
+        # Insert navbar after body tag
+        navbar_html = get_navbar_html()
+        content = content[:body_end] + '\n' + navbar_html + '\n' + content[body_end:]
+        
+        # Add CSS and JS
+        content = add_css_if_missing(content)
+        content = add_js_if_missing(content)
+        
+        # Write updated content
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(content)
+        
+        print(f"  ✅ Successfully updated {filepath}")
+        
+    except Exception as e:
+        print(f"  ❌ Error processing {filepath}: {e}")
 
-            <!-- Slim Footer Section -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
-                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
-                                class="footer-logo-image">
-                        </a>
-                        <p class="footer-description">
-                            Professional printing services with unmatched quality and customer satisfaction.
-                        </p>
-                    </div>
-                </div>
+def main():
+    """Main function"""
+    print("Complete navbar update for all service files...")
+    print("=" * 60)
+    
+    # Get all service files
+    service_files = glob.glob('services/*.html')
+    service_files = [f for f in service_files if 'navbar-template' not in f]
+    
+    print(f"Found {len(service_files)} service files to process")
+    print()
+    
+    # Process each file
+    for service_file in service_files:
+        update_service_file(service_file)
+        print()
+    
+    print("=" * 60)
+    print("✅ Complete navbar update finished!")
 
-                <div class="footer-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="../index.html#home">Home</a></li>
-                        <li><a href="../index.html#services">All Services</a></li>
-                        <li><a href="../index.html#about">About Us</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
-                        <li><a href="brochures.html">Brochures</a></li>
-                        <li><a href="business-cards.html">Business Cards</a></li>
-                        <li><a href="poster.html">Posters</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#cookies">Cookie Policy</a></li>
-                        <li><a href="#gdpr">GDPR</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
-                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
-                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
-                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
-                    </div>
-                    <div class="footer-logo-small">
-                        <span>Made with ❤️ by Shristi Press</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../js/services.js"></script>
-    <script>
-        AOS.init({duration: 800, once: true});
-        document.addEventListener('DOMContentLoaded', function() { new ServicePageManager(); });
-    </script>
-    <!-- Main Site Scripts -->
-    <script defer src="../js/script.js"></script>
-</body>
-</html>
+if __name__ == "__main__":
+    main()

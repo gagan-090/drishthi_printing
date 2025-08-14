@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-link { 
+            display: inline-block; 
+            margin: 10px; 
+            padding: 10px 20px; 
+            background: #6366f1; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+        }
+        .test-link:hover { background: #4f46e5; }
+        .debug-info {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Category Navigation</h1>
+    <p>Click these links to test navigation to different categories:</p>
+    
+    <a href="categories.html#book-printing" class="test-link">Book Printing</a>
+    <a href="categories.html#paper-box" class="test-link">Paper Box Printing</a>
+    <a href="categories.html#marketing" class="test-link">Marketing Products</a>
+    <a href="categories.html#stationery" class="test-link">Stationery Products</a>
+    
+    <div class="debug-info">
+        <h3>Debug Information:</h3>
+        <p><strong>Current URL:</strong> <span id="currentUrl"></span></p>
+        <p><strong>Hash:</strong> <span id="currentHash"></span></p>
+        <button onclick="testDirectNavigation()">Test Direct Navigation</button>
+    </div>
+    
+    <h2>From Home Page Service Cards</h2>
+    <p>The service cards on the home page now link to:</p>
+    <ul>
+        <li>Book Printing → categories.html#book-printing</li>
+        <li>Paper Box Printing → categories.html#paper-box</li>
+        <li>Marketing Products → categories.html#marketing</li>
+        <li>Stationery Products → categories.html#stationery</li>
+    </ul>
+
+    <script>
+        function updateDebugInfo() {
+            document.getElementById('currentUrl').textContent = window.location.href;
+            document.getElementById('currentHash').textContent = window.location.hash || 'none';
+        }
+
+        function testDirectNavigation() {
+            window.location.href = 'categories.html#book-printing';
+        }
+
+        // Update debug info on load and hash change
+        updateDebugInfo();
+        window.addEventListener('hashchange', updateDebugInfo);
+    </script>
+</body>
+</html>

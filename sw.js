@@ -1,7 +1,10 @@
 // ===== SERVICE WORKER FOR PWA =====
-const CACHE_NAME = 'shristipress-v1.0.0';
-const STATIC_CACHE = 'shristipress-static-v1.0.0';
-const DYNAMIC_CACHE = 'shristipress-dynamic-v1.0.0';
+const CACHE_NAME = 'shristipress-v1.0.1';
+const STATIC_CACHE = 'shristipress-static-v1.0.1';
+const DYNAMIC_CACHE = 'shristipress-dynamic-v1.0.1';
+
+// Development mode - set to true to disable caching
+const DEVELOPMENT_MODE = true;
 
 // Files to cache immediately
 const STATIC_FILES = [
@@ -24,7 +27,7 @@ const CACHE_STRATEGIES = {
 // ===== INSTALL EVENT =====
 self.addEventListener('install', (event) => {
   console.log('Service Worker: Installing...');
-  
+
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
@@ -44,7 +47,7 @@ self.addEventListener('install', (event) => {
 // ===== ACTIVATE EVENT =====
 self.addEventListener('activate', (event) => {
   console.log('Service Worker: Activating...');
-  
+
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
@@ -70,8 +73,14 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Skip external requests that aren't fonts
-  if (!event.request.url.startsWith(self.location.origin) && 
-      !event.request.url.includes('fonts.googleapis.com')) {
+  if (!event.request.url.startsWith(self.location.origin) &&
+    !event.request.url.includes('fonts.googleapis.com')) {
+    return;
+  }
+
+  // In development mode, bypass cache entirely
+  if (DEVELOPMENT_MODE) {
+    event.respondWith(fetch(event.request));
     return;
   }
 
@@ -83,7 +92,7 @@ self.addEventListener('fetch', (event) => {
 // ===== FETCH STRATEGIES =====
 async function handleFetchRequest(request) {
   const url = new URL(request.url);
-  
+
   // Handle different types of requests
   if (isImageRequest(request)) {
     return handleImageRequest(request);
@@ -154,9 +163,14 @@ async function handleFontRequest(request) {
   }
 }
 
-// ===== STATIC REQUESTS (Cache First with Network Fallback) =====
+// ===== STATIC REQUESTS (Stale While Revalidate for CSS/JS) =====
 async function handleStaticRequest(request) {
   try {
+    // For CSS and JS files, use stale-while-revalidate strategy
+    if (request.url.includes('.css') || request.url.includes('.js')) {
+      return handleStaleWhileRevalidate(request);
+    }
+
     const cachedResponse = await caches.match(request);
     if (cachedResponse) {
       return cachedResponse;
@@ -179,21 +193,38 @@ async function handleStaticRequest(request) {
   }
 }
 
+// ===== STALE WHILE REVALIDATE STRATEGY =====
+async function handleStaleWhileRevalidate(request) {
+  const cachedResponse = await caches.match(request);
+
+  // Always try to fetch fresh version in background
+  const fetchPromise = fetch(request).then(async (networkResponse) => {
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  }).catch(() => null);
+
+  // Return cached version immediately if available, otherwise wait for network
+  return cachedResponse || fetchPromise;
+}
+
 // ===== UTILITY FUNCTIONS =====
 function isImageRequest(request) {
-  return request.destination === 'image' || 
-         /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(request.url);
+  return request.destination === 'image' ||
+    /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(request.url);
 }
 
 function isAPIRequest(request) {
-  return request.url.includes('/api/') || 
-         request.url.includes('.json');
+  return request.url.includes('/api/') ||
+    request.url.includes('.json');
 }
 
 function isFontRequest(request) {
   return request.destination === 'font' ||
-         request.url.includes('fonts.googleapis.com') ||
-         /\.(woff|woff2|ttf|eot)$/i.test(request.url);
+    request.url.includes('fonts.googleapis.com') ||
+    /\.(woff|woff2|ttf|eot)$/i.test(request.url);
 }
 
 function isStaticAsset(request) {
@@ -202,18 +233,18 @@ function isStaticAsset(request) {
 
 async function getFallbackImage() {
   const cache = await caches.open(STATIC_CACHE);
-  return cache.match('/assets/images/fallback.svg') || 
-         new Response('', { status: 404 });
+  return cache.match('/assets/images/fallback.svg') ||
+    new Response('', { status: 404 });
 }
 
 async function getOfflinePage() {
   const cache = await caches.open(STATIC_CACHE);
-  return cache.match('/offline.html') || 
-         cache.match('/index.html') ||
-         new Response('Offline', { 
-           status: 200, 
-           headers: { 'Content-Type': 'text/html' }
-         });
+  return cache.match('/offline.html') ||
+    cache.match('/index.html') ||
+    new Response('Offline', {
+      status: 200,
+      headers: { 'Content-Type': 'text/html' }
+    });
 }
 
 // ===== BACKGROUND SYNC =====
@@ -282,7 +313,7 @@ self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-  
+
   if (event.data && event.data.type === 'GET_VERSION') {
     event.ports[0].postMessage({ version: CACHE_NAME });
   }
@@ -292,7 +323,7 @@ self.addEventListener('message', (event) => {
 async function cleanupCaches() {
   const cacheWhitelist = [STATIC_CACHE, DYNAMIC_CACHE];
   const cacheNames = await caches.keys();
-  
+
   return Promise.all(
     cacheNames.map((cacheName) => {
       if (!cacheWhitelist.includes(cacheName)) {
