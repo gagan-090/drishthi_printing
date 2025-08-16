@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Shristi Press - Get in touch for quality custom printing services. Call, email, or visit us for all your printing needs.">
+    <meta name="keywords" content="contact, printing services, Shristi Press, custom printing, business printing">
+    <title>Contact Us - Shristi Press | Quality Custom Printing</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-inter">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="assets/images/logo.svg" alt="Shristi Press" class="h-10 w-auto">
+                        <span class="text-2xl font-bold text-gray-900">Shristi Press</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary-600 transition-colors">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary-600 transition-colors">About</a>
+                    <a href="contact.html" class="text-primary-600 font-semibold">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Get In Touch</h1>
+            <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+                Ready to bring your printing vision to life? We're here to help with expert advice and premium quality services.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 -mt-10 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 h-fit sticky top-24">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-8">Contact Information</h2>
+                        
+                        <!-- Contact Items -->
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-primary-100 p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Address</h3>
+                                    <p class="text-gray-600">123 Print Street, Design Plaza<br>Mumbai, Maharashtra 400001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-primary-100 p-3 rounded-lg">
+                                    <i class="fas fa-phone text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Phone</h3>
+                                    <p class="text-gray-600">+91 98765 43210</p>
+                                    <p class="text-gray-600">+91 98765 43211</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-primary-100 p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Email</h3>
+                                    <p class="text-gray-600">info@shristipress.com</p>
+                                    <p class="text-gray-600">orders@shristipress.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-primary-100 p-3 rounded-lg">
+                                    <i class="fas fa-clock text-primary-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Business Hours</h3>
+                                    <p class="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                    <p class="text-gray-600">Sat: 9:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <h3 class="font-semibold text-gray-900 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+                        
+                        <form x-data="contactForm()" @submit.prevent="submitForm" class="space-y-6">
+                            <!-- Name Fields -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                                        First Name *
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="firstName" 
+                                        x-model="form.firstName"
+                                        :class="errors.firstName ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+                                        class="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:ring-2"
+                                        placeholder="John"
+                                        required
+                                    >
+                                    <p x-show="errors.firstName" x-text="errors.firstName" class="mt-1 text-sm text-red-600"></p>
+                                </div>
+                                
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Last Name *
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        x-model="form.lastName"
+                                        :class="errors.lastName ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+                                        class="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:ring-2"
+                                        placeholder="Doe"
+                                        required
+                                    >
+                                    <p x-show="errors.lastName" x-text="errors.lastName" class="mt-1 text-sm text-red-600"></p>
+                                </div>
+                            </div>
+
+                            <!-- Email and Phone -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Email Address *
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        x-model="form.email"
+                                        :class="errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+                                        class="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:ring-2"
+                                        placeholder="john@example.com"
+                                        required
+                                    >
+                                    <p x-show="errors.email" x-text="errors.email" class="mt-1 text-sm text-red-600"></p>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Phone Number
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        x-model="form.phone"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 focus:outline-none focus:ring-2 transition-colors"
+                                        placeholder="+91 98765 43210"
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Company and Service -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Company Name
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="company" 
+                                        x-model="form.company"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 focus:outline-none focus:ring-2 transition-colors"
+                                        placeholder="Your Company"
+                                    >
+                                </div>
+                                
+                                <div>
+                                    <label for="service" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Service Interested In
+                                    </label>
+                                    <select 
+                                        id="service" 
+                                        x-model="form.service"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-primary-500 focus:outline-none focus:ring-2 transition-colors"
+                                    >
+                                        <option value="">Select a service</option>
+                                        <option value="book-printing">Book Printing</option>
+                                        <option value="brochures">Brochures</option>
+                                        <option value="business-cards">Business Cards</option>
+                                        <option value="packaging">Packaging</option>
+                                        <option value="marketing-materials">Marketing Materials</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Subject -->
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Subject *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="subject" 
+                                    x-model="form.subject"
+                                    :class="errors.subject ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+                                    class="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:ring-2"
+                                    placeholder="How can we help you?"
+                                    required
+                                >
+                                <p x-show="errors.subject" x-text="errors.subject" class="mt-1 text-sm text-red-600"></p>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Message *
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    x-model="form.message"
+                                    :class="errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-primary-500 focus:ring-primary-500'"
+                                    class="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:ring-2 resize-none"
+                                    rows="6"
+                                    placeholder="Tell us about your project requirements..."
+                                    required
+                                ></textarea>
+                                <p x-show="errors.message" x-text="errors.message" class="mt-1 text-sm text-red-600"></p>
+                                <p class="mt-1 text-sm text-gray-500" x-text="`${form.message.length}/500 characters`"></p>
+                            </div>
+
+                            <!-- File Upload -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Attach Files (Optional)
+                                </label>
+                                <div 
+                                    x-data="fileUpload()"
+                                    @drop.prevent="handleDrop($event)"
+                                    @dragover.prevent
+                                    @dragenter.prevent
+                                    class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary-500 transition-colors"
+                                >
+                                    <input 
+                                        type="file" 
+                                        multiple 
+                                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                                        @change="handleFileSelect($event)"
+                                        class="hidden"
+                                        x-ref="fileInput"
+                                    >
+                                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                                    <p class="text-gray-600 mb-2">Drop files here or <button type="button" @click="$refs.fileInput.click()" class="text-primary-600 hover:text-primary-700 font-medium">browse</button></p>
+                                    <p class="text-sm text-gray-500">PDF, DOC, JPG, PNG up to 10MB each</p>
+                                    
+                                    <!-- File List -->
+                                    <div x-show="files.length > 0" class="mt-4 space-y-2">
+                                        <template x-for="(file, index) in files" :key="index">
+                                            <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                                                <span class="text-sm text-gray-700" x-text="file.name"></span>
+                                                <button type="button" @click="removeFile(index)" class="text-red-500 hover:text-red-700">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Privacy Checkbox -->
+                            <div class="flex items-start space-x-3">
+                                <input 
+                                    type="checkbox" 
+                                    id="privacy" 
+                                    x-model="form.privacy"
+                                    class="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                                    required
+                                >
+                                <label for="privacy" class="text-sm text-gray-700">
+                                    I agree to the <a href="#" class="text-primary-600 hover:text-primary-700 font-medium">Privacy Policy</a> and consent to my data being processed for this inquiry. *
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="pt-4">
+                                <button 
+                                    type="submit" 
+                                    :disabled="loading"
+                                    :class="loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-600 hover:bg-primary-700'"
+                                    class="w-full text-white font-semibold py-4 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                                >
+                                    <span x-show="!loading" class="flex items-center justify-center space-x-2">
+                                        <span>Send Message</span>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </span>
+                                    <span x-show="loading" class="flex items-center justify-center space-x-2">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        <span>Sending...</span>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <!-- Success/Error Messages -->
+                            <div x-show="showSuccess" x-transition class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-600"></i>
+                                    <p class="text-green-800 font-medium">Message sent successfully! We'll get back to you soon.</p>
+                                </div>
+                            </div>
+
+                            <div x-show="showError" x-transition class="bg-red-50 border border-red-200 rounded-lg p-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-exclamation-circle text-red-600"></i>
+                                    <p class="text-red-800 font-medium">There was an error sending your message. Please try again.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Visit our modern printing facility to see our state-of-the-art equipment and discuss your project in person.</p>
+            </div>
+            
+            <!-- Map Placeholder -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="h-96 bg-gray-300 flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt text-6xl text-gray-500 mb-4"></i>
+                        <p class="text-gray-600">Interactive map would be embedded here</p>
+                        <p class="text-sm text-gray-500">123 Print Street, Design Plaza, Mumbai, Maharashtra 400001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/images/logo.svg" alt="Shristi Press" class="h-8 w-auto">
+                        <span class="text-xl font-bold">Shristi Press</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted partner for quality custom printing services. From business cards to large format printing, we deliver excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-sm"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-sm"></i>
+                            <span>info@shristipress.com</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt text-sm mt-1"></i>
+                            <span>123 Print Street, Design Plaza<br>Mumbai, Maharashtra 400001</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Shristi Press. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Alpine.js Components -->
+    <script>
+        function contactForm() {
+            return {
+                form: {
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    service: '',
+                    subject: '',
+                    message: '',
+                    privacy: false
+                },
+                errors: {},
+                loading: false,
+                showSuccess: false,
+                showError: false,
+                
+                validateForm() {
+                    this.errors = {};
+                    
+                    if (!this.form.firstName.trim()) {
+                        this.errors.firstName = 'First name is required';
+                    }
+                    
+                    if (!this.form.lastName.trim()) {
+                        this.errors.lastName = 'Last name is required';
+                    }
+                    
+                    if (!this.form.email.trim()) {
+                        this.errors.email = 'Email is required';
+                    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) {
+                        this.errors.email = 'Please enter a valid email address';
+                    }
+                    
+                    if (!this.form.subject.trim()) {
+                        this.errors.subject = 'Subject is required';
+                    }
+                    
+                    if (!this.form.message.trim()) {
+                        this.errors.message = 'Message is required';
+                    } else if (this.form.message.length > 500) {
+                        this.errors.message = 'Message must be less than 500 characters';
+                    }
+                    
+                    return Object.keys(this.errors).length === 0;
+                },
+                
+                async submitForm() {
+                    if (!this.validateForm()) {
+                        return;
+                    }
+                    
+                    this.loading = true;
+                    this.showSuccess = false;
+                    this.showError = false;
+                    
+                    try {
+                        // Simulate API call
+                        await new Promise(resolve => setTimeout(resolve, 2000));
+                        
+                        // Reset form on success
+                        this.form = {
+                            firstName: '',
+                            lastName: '',
+                            email: '',
+                            phone: '',
+                            company: '',
+                            service: '',
+                            subject: '',
+                            message: '',
+                            privacy: false
+                        };
+                        
+                        this.showSuccess = true;
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            this.showSuccess = false;
+                        }, 5000);
+                        
+                    } catch (error) {
+                        this.showError = true;
+                        
+                        // Hide error message after 5 seconds
+                        setTimeout(() => {
+                            this.showError = false;
+                        }, 5000);
+                    } finally {
+                        this.loading = false;
+                    }
+                }
+            }
+        }
+        
+        function fileUpload() {
+            return {
+                files: [],
+                
+                handleFileSelect(event) {
+                    this.addFiles(event.target.files);
+                },
+                
+                handleDrop(event) {
+                    this.addFiles(event.dataTransfer.files);
+                },
+                
+                addFiles(fileList) {
+                    Array.from(fileList).forEach(file => {
+                        if (file.size <= 10 * 1024 * 1024) { // 10MB limit
+                            this.files.push(file);
+                        }
+                    });
+                },
+                
+                removeFile(index) {
+                    this.files.splice(index, 1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

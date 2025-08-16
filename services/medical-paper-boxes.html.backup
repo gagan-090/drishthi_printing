@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Medical Paper Boxes | YourBrand</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ------------------- */
+        /* --- GLOBAL STYLES & VARIABLES --- */
+        /* ------------------- */
+        :root {
+            --indigo-600: #4F46E5;
+            --blue-500: #3B82F6;
+            --slate-gray: #64748B;
+            --dark-indigo: #1E1B4B;
+            --white: #FFFFFF;
+            --light-gray-bg: #F9FAFB;
+            --border-color: #E5E7EB;
+            --font-family: 'Inter', sans-serif;
+            --gradient-primary: linear-gradient(90deg, var(--indigo-600) 0%, var(--blue-500) 100%);
+            --gradient-gold: linear-gradient(90deg, #FBBF24 0%, #F59E0B 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--white);
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--dark-indigo);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-gradient-fill {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-gradient-fill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(79, 70, 229, 0.4);
+        }
+        
+        .btn-gradient-outline {
+            color: var(--indigo-600);
+            border-image: var(--gradient-primary);
+            border-image-slice: 1;
+            background-color: transparent;
+        }
+        
+        .btn-gradient-outline:hover {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            transform: translateY(-2px);
+        }
+
+
+        /* ------------------- */
+        /* --- HEADER --- */
+        /* ------------------- */
+        .main-header {
+            background-color: var(--white);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark-indigo);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--indigo-600);
+        }
+
+        .mobile-nav-toggle { display: none; }
+
+        /* ------------------- */
+        /* --- HERO SECTION --- */
+        /* ------------------- */
+        #hero {
+            padding-top: 100px;
+        }
+        
+        #hero .container {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-headline {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--dark-indigo);
+        }
+
+        .hero-headline .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-subheading {
+            font-size: 1.125rem;
+            color: var(--slate-gray);
+            margin-top: 24px;
+            max-width: 500px;
+        }
+
+        .hero-ctas {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        .hero-features {
+            margin-top: 48px;
+            display: flex;
+            gap: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--slate-gray);
+        }
+
+        .feature-item i {
+            color: var(--indigo-600);
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ------------------- */
+        /* --- INSTANT PRICE CALCULATOR --- */
+        /* ------------------- */
+        #calculator {
+            background-color: var(--light-gray-bg);
+        }
+
+        #calculator .container {
+            display: flex;
+            gap: 32px;
+        }
+
+        .calculator-options {
+            flex: 2;
+            background-color: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .calculator-options:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .calculator-options h3 {
+            margin-bottom: 24px;
+            color: var(--dark-indigo);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #475569;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: var(--font-family);
+        }
+
+        .calculator-price-box {
+            flex: 1;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            align-self: flex-start;
+            position: sticky;
+            top: 100px; /* Adjust based on header height */
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+        }
+        
+        .price-box-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .price-box-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 16px 0;
+        }
+        
+        .price-box-note {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        /* ------------------- */
+        /* --- CUSTOM BOX STYLES --- */
+        /* ------------------- */
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .style-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .style-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .style-card:hover .style-card-img img {
+            transform: scale(1.05);
+        }
+        
+        .style-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .style-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .style-card-content {
+            padding: 24px;
+        }
+        
+        .style-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-indigo);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .style-card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .style-card-desc {
+            font-size: 0.95rem;
+            color: var(--slate-gray);
+            margin-top: 16px;
+        }
+
+        /* ------------------- */
+        /* --- ENVIRONMENTAL COMMITMENT --- */
+        /* ------------------- */
+        #commitment {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        #commitment h2 {
+            color: var(--white);
+        }
+
+        #commitment .illustration {
+            font-size: 6rem;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+
+        #commitment p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        /* ------------------- */
+        /* --- TESTIMONIALS --- */
+        /* ------------------- */
+        #testimonials {
+            background-color: var(--light-gray-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-author .name {
+            font-weight: 700;
+            color: var(--dark-indigo);
+        }
+
+        .testimonial-author .rating {
+            font-size: 1.1rem;
+        }
+        .testimonial-author .rating .fa-star {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .testimonial-text {
+            color: var(--slate-gray);
+            font-style: italic;
+        }
+
+        /* ------------------- */
+        /* --- FAQ --- */
+        /* ------------------- */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-indigo);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover, .faq-item.active .faq-question {
+            color: var(--indigo-600);
+        }
+        
+        .faq-item.active .faq-question {
+            background: linear-gradient(90deg, rgba(79, 70, 229, 0.05) 0%, rgba(59, 130, 246, 0.0) 100%);
+        }
+
+        .faq-question .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: var(--white);
+        }
+        
+        .faq-answer p {
+            padding: 0 24px 24px;
+            color: var(--slate-gray);
+        }
+        
+        /* ------------------- */
+        /* --- CONTACT FORM --- */
+        /* ------------------- */
+        #contact {
+             background-color: var(--light-gray-bg);
+        }
+        
+        .contact-form-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+        
+        .contact-form-wrapper .form-group input,
+        .contact-form-wrapper .form-group textarea {
+            background-color: var(--light-gray-bg);
+        }
+        
+        .contact-form-wrapper .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .file-upload-wrapper {
+            border: 2px dashed var(--border-color);
+            border-radius: 6px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        
+        .file-upload-wrapper:hover {
+            border-color: var(--indigo-600);
+        }
+
+        .file-upload-wrapper input[type="file"] {
+            display: none;
+        }
+        
+        .file-upload-wrapper .upload-icon {
+            font-size: 1.5rem;
+            color: var(--slate-gray);
+        }
+        .file-upload-wrapper .upload-text {
+            margin-top: 8px;
+            color: var(--slate-gray);
+        }
+        
+        /* ------------------- */
+        /* --- FOOTER --- */
+        /* ------------------- */
+        .main-footer {
+            background-color: var(--dark-indigo);
+            color: var(--white);
+            padding: 60px 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        
+        .footer-logo-area .logo {
+            color: var(--white);
+        }
+
+        .footer-logo-area p {
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .footer-socials a {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-left: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-socials a:hover {
+            transform: scale(1.1);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        /* ------------------- */
+        /* --- RESPONSIVENESS --- */
+        /* ------------------- */
+
+        /* Tablets and smaller desktops */
+        @media (max-width: 1024px) {
+            h2 { font-size: 2.2rem; }
+            .hero-headline { font-size: 3.5rem; }
+            
+            #calculator .container {
+                flex-direction: column;
+            }
+            .calculator-price-box {
+                position: static; /* Unstick the price box */
+                order: -1; /* Move price box to the top on mobile/tablet */
+            }
+        }
+        
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            h2 { font-size: 2rem; }
+            .container { padding: 0 16px; }
+
+            /* Mobile Header & Nav */
+            .main-nav {
+                display: none; /* Hide nav links by default */
+            }
+            .header-cta {
+                display: none; /* Hide header CTA on mobile, hero one is enough */
+            }
+            .mobile-nav-toggle {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: var(--dark-indigo);
+            }
+
+            /* Hero */
+            #hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-headline { font-size: 2.8rem; }
+            .hero-subheading { margin-left: auto; margin-right: auto; }
+            .hero-ctas { justify-content: center; }
+            .hero-features { justify-content: center; flex-wrap: wrap; }
+            .hero-image { margin-top: 40px; }
+
+            /* Footer */
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links ul { flex-direction: column; gap: 16px; }
+            .footer-socials { margin-top: 16px; }
+        }
+
+    </style>
+    <!-- Main Site Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
+                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
+                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
+                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
+                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
+                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
+                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
+                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
+                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="brochures.html">Brochures</a></li>
+                                                <li><a href="catalogue.html">Catalogue</a></li>
+                                                <li><a href="poster.html">Poster</a></li>
+                                                <li><a href="flyers.html">Flyers</a></li>
+                                                <li><a href="dangler.html">Dangler</a></li>
+                                                <li><a href="standees.html">Standees</a></li>
+                                                <li><a href="pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="business-cards.html">Business Card</a></li>
+                                                <li><a href="letter-head.html">Letter Head</a></li>
+                                                <li><a href="envelopes.html">Envelopes</a></li>
+                                                <li><a href="bill-book.html">Bill Book</a></li>
+                                                <li><a href="id-cards.html">ID Cards</a></li>
+                                                <li><a href="sticker.html">Sticker</a></li>
+                                                <li><a href="document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    
+
+
+
+
+    
+
+    <main>
+
+        <section id="hero">
+            <div class="container mt-2">
+                <div class="hero-content">
+                    <h1 class="hero-headline">Premium <br><span class="gradient-text">Medical Paper Boxes</span></h1>
+                    <p class="hero-subheading">
+                        Secure, compliant, and professionally designed packaging for your medical products.
+                        Get an instant quote and order high-quality custom boxes today.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#calculator" class="btn btn-gradient-fill">Get a Free Quote</a>
+                        <a href="#styles" class="btn btn-gradient-outline">View Samples</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> FDA Approved Materials</div>
+                        <div class="feature-item"><i class="fas fa-truck-fast"></i> Fast Delivery</div>
+                        <div class="feature-item"><i class="fas fa-award"></i> Quality Guarantee</div>
+                    </div>
+                </div>
+                <div class="hero-image mt-2">
+                    <img src="/assets/medical-paper/hero.jpg" alt="Custom medical paper box mockup">
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator">
+            <div class="container">
+                <div class="calculator-options">
+                    <h3>Instant Price Calculator</h3>
+                    <div class="form-group">
+                        <label for="box-style">Box Style</label>
+                        <select id="box-style" name="box-style">
+                            <option>Straight Tuck End</option>
+                            <option>Reverse Tuck End</option>
+                            <option>Tuck Top Auto Bottom</option>
+                            <option>Seal End</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" value="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="size">Size (L x W x H in inches)</label>
+                        <input type="text" id="size" name="size" placeholder="e.g., 4 x 2 x 6">
+                    </div>
+                     <div class="form-group">
+                        <label for="material">Material</label>
+                        <select id="material" name="material">
+                            <option>18pt SBS C1S</option>
+                            <option>24pt SBS C1S</option>
+                            <option>Recycled Kraft Paper</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="printing">Printing</label>
+                        <select id="printing" name="printing">
+                            <option>Full Color CMYK</option>
+                            <option>CMYK + 1 Pantone Color</option>
+                            <option>Black and White</option>
+                        </select>
+                    </div>
+                </div>
+<aside 
+    class="calculator-price-box max-w-xs p-6 rounded-2xl shadow-lg 
+           bg-white border border-gray-200 
+           flex flex-col items-center justify-center space-y-4 
+           transition-all duration-300 hover:shadow-lg hover:shadow-blue-100">
+    
+    <!-- Title -->
+    <div class="price-box-title text-lg font-semibold tracking-wide uppercase text-blue-700">
+        Instant Quote
+    </div>
+    
+    <!-- Price -->
+    <div class="price-box-price text-4xl font-extrabold tracking-tight text-blue-600">
+        $1,240.00
+    </div>
+    
+    <!-- Note -->
+    <div class="price-box-note text-sm text-gray-500 text-center leading-relaxed">
+        For 1000 units. Price may vary based on final design.
+    </div>
+    
+    <!-- CTA Button -->
+    <a href="../contact.html" 
+       class="btn w-full py-3 rounded-lg font-semibold 
+              bg-blue-600 text-white hover:bg-blue-700 
+              transition-all duration-300 shadow">
+        Get Started
+    </a>
+</aside>
+
+
+
+        </section>
+
+        <section id="styles">
+            <div class="container">
+                <h2>Custom Medical Paper Box Styles</h2>
+                <div class="styles-grid">
+                    <div class="style-card w-full md:w-72 lg:w-80 bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300">
+                        <div class="style-card-img"><img src="/assets/medical-paper/box1.jpg" alt="Straight Tuck End Box"></div>
+                        <div class="style-card-content">
+                            <h3 class="style-card-title">Straight Tuck End</h3>
+                            <p class="style-card-desc">Ideal for lightweight products. Both top and bottom flaps tuck into the front.</p>
+                        </div>
+                    </div>
+                    <div class="style-card">
+                         <div class="style-card-img"><img src="/assets/medical-paper/box2.jpg" alt="Reverse Tuck End Box"></div>
+                        <div class="style-card-content">
+                            <h3 class="style-card-title">Reverse Tuck End</h3>
+                            <p class="style-card-desc">Durable and cost-effective. Flaps tuck in opposite directions for added strength.</p>
+                        </div>
+                    </div>
+                    <div class="style-card">
+                         <div class="style-card-img"><img src="/assets/medical-paper/box3.jpg" alt="Tuck Top Auto Bottom Box"></div>
+                        <div class="style-card-content">
+                            <h3 class="style-card-title">Tuck Top Auto Bottom</h3>
+                            <p class="style-card-desc">Features a quick, pre-glued bottom for fast assembly and a secure base.</p>
+                        </div>
+                    </div>
+                     <div class="style-card">
+                         <div class="style-card-img"><img src="/assets/medical-paper/box4.jpg" alt="Seal End Medical Box"></div>
+                        <div class="style-card-content">
+                            <h3 class="style-card-title">Seal End Boxes</h3>
+                            <p class="style-card-desc">Glued ends for tamper-evident security, perfect for sensitive medical items.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="commitment">
+            <div class="container">
+                <div class="illustration"><i class="fas fa-leaf"></i></div>
+                <h2>Our Environmental Commitment</h2>
+                <p>
+                    We are dedicated to sustainability. Our medical paper boxes are crafted from responsibly sourced, recyclable, and biodegradable materials without compromising on safety or quality.
+                </p>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Reviewer Sarah J.">
+                            <div class="testimonial-author">
+                                <div class="name">Sarah Johnson</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The quality is outstanding, and the colors are vibrant. The boxes arrived faster than expected and were perfect for our new product launch."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://i.pravatar.cc/150?img=2" alt="Reviewer Dr. Mark Chen">
+                            <div class="testimonial-author">
+                                <div class="name">Dr. Mark Chen</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Professional service from start to finish. The team helped us ensure our packaging was fully compliant. Highly recommended."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://i.pravatar.cc/150?img=3" alt="Reviewer Emily White">
+                            <div class="testimonial-author">
+                                <div class="name">Emily White</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The instant price calculator was incredibly helpful for our budgeting. The final product matched the quote exactly. Fantastic experience!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the minimum order quantity?
+                            <i class="fas fa-chevron-down icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our typical minimum order quantity (MOQ) for custom medical boxes is 500 units. However, this can vary based on the complexity and size of the box. Please contact us for specific requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are your materials safe for medical products?
+                            <i class="fas fa-chevron-down icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We use high-quality, food-grade and FDA-approved paperboard (like SBS) that is safe for primary and secondary packaging of medical and pharmaceutical products. All materials are sterile and produced in a clean environment.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How long does production and shipping take?
+                            <i class="fas fa-chevron-down icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Standard production time is typically 8-12 business days after final proof approval. Shipping times vary based on your location. We also offer expedited production and shipping options if you're on a tight deadline.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">
+                            Can I get a physical sample before placing a full order?
+                            <i class="fas fa-chevron-down icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we can provide a physical prototype of your custom box. This allows you to check the dimensions, material, and print quality before committing to a full production run. Contact our sales team to arrange for a sample.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get a Detailed Quote</h2>
+                 <div class="contact-form-wrapper">
+                     <form action="#">
+                         <div class="form-group">
+                             <label for="name">Full Name</label>
+                             <input type="text" id="name" name="name" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="email">Email Address</label>
+                             <input type="email" id="email" name="email" required>
+                         </div>
+                          <div class="form-group">
+                             <label for="company">Company</label>
+                             <input type="text" id="company" name="company">
+                         </div>
+                         <div class="form-group">
+                             <label for="message">Message (Include specifications)</label>
+                             <textarea id="message" name="message" required></textarea>
+                         </div>
+                         <div class="form-group">
+                             <label for="file-upload">Upload Artwork (Optional)</label>
+                             <label for="file-upload" class="file-upload-wrapper">
+                                <input type="file" id="file-upload" name="file-upload">
+                                <div class="upload-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                                <div class="upload-text">Click to browse or drag & drop files</div>
+                            </label>
+                         </div>
+                         <button type="submit" class="btn btn-gradient-fill" style="width: 100%;">Send Message</button>
+                     </form>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+    
+            <!-- Slim Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
+                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
+                        </a>
+                        <p class="footer-description">
+                            Professional printing services with unmatched quality and customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">All Services</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
+                        <li><a href="brochures.html">Brochures</a></li>
+                        <li><a href="business-cards.html">Business Cards</a></li>
+                        <li><a href="poster.html">Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                    </div>
+                    <div class="footer-logo-small">
+                        <span>Made with ❤️ by Shristi Press</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const isOpen = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Open the clicked item if it was closed
+                if (!isOpen) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Note: The mobile navigation toggle would require more JS to function.
+        // This is a basic implementation for the FAQ.
+    </script>
+    <!-- Main Site Scripts -->
+    <script defer src="../js/script.js"></script>
+</body>
+</html>

@@ -243,12 +243,15 @@ body {
 
 /* Contact Bar */
 .contact-bar {
-  background: var(--primary-color);
-  color: white;
+  background: rgba(99, 102, 241, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgb(0, 0, 0);
   padding: var(--space-2) 0;
   font-size: var(--font-size-sm);
   position: relative;
   z-index: var(--z-fixed);
+  transition: all var(--transition-normal);
 }
 
 .contact-bar-content {
@@ -313,11 +316,27 @@ body {
 .header.navbar-hidden {
   transform: translateY(-100%);
   opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+  pointer-events: none;
 }
 
 .header.navbar-hidden .navbar .container {
   backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   background: rgba(255, 255, 255, 0);
+  transition: backdrop-filter 0.3s ease-out, background 0.3s ease-out;
+}
+
+/* Ensure smooth transitions for navbar show */
+.header {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+}
+
+/* Mobile navbar adjustments */
+@media (max-width: 768px) {
+  .header.navbar-hidden {
+    transform: translateY(-120%);
+  }
 }
 
 /* Header drop-in animation on app load */
@@ -389,30 +408,54 @@ body.app-loaded .header {
   box-sizing: border-box;
 }
 
-/* Curved, bordered, 3D navbar surface */
+/* Curved, bordered, transparent navbar surface */
 .header .navbar .container {
   position: relative;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
   border-radius: 999px;
   padding: 0 var(--space-6);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
   max-width: 1400px;
   width: 95%;
+  transition: all var(--transition-normal);
 }
 
 .header.scrolled .navbar .container {
-  background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="dark"] .header .navbar .container {
-  background: #111827;
-  border-color: rgba(99, 102, 241, 0.35);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  background: rgba(17, 24, 39, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .header.scrolled .navbar .container {
+  background: rgba(17, 24, 39, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Force navbar transparency - Override any conflicting styles */
+.navbar {
+  background: transparent !important;
+}
+
+.navbar .container {
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Link pills with subtle 3D hover */
@@ -420,6 +463,22 @@ body.app-loaded .header {
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-full);
   position: relative;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.navbar-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .navbar-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Mega Menu Styles */

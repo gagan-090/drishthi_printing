@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelopes Printing - Drishthi Printing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/services.css">
+    <!-- Main Site Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-inter bg-white text-gray-900">
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
+                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
+                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
+                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
+                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
+                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
+                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
+                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
+                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="brochures.html">Brochures</a></li>
+                                                <li><a href="catalogue.html">Catalogue</a></li>
+                                                <li><a href="poster.html">Poster</a></li>
+                                                <li><a href="flyers.html">Flyers</a></li>
+                                                <li><a href="dangler.html">Dangler</a></li>
+                                                <li><a href="standees.html">Standees</a></li>
+                                                <li><a href="pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="business-cards.html">Business Card</a></li>
+                                                <li><a href="letter-head.html">Letter Head</a></li>
+                                                <li><a href="envelopes.html">Envelopes</a></li>
+                                                <li><a href="bill-book.html">Bill Book</a></li>
+                                                <li><a href="id-cards.html">ID Cards</a></li>
+                                                <li><a href="sticker.html">Sticker</a></li>
+                                                <li><a href="document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    
+
+
+
+    
+
+    <main class="pt-20">
+        <section class="relative bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h1 class="text-5xl md:text-6xl font-poppins font-bold text-gray-900 mb-6">
+                        Envelopes <span class="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">Printing</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">Professional envelope printing services for business correspondence and mailing campaigns.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="btn-primary">Get Quote</button>
+                        <button class="btn-secondary">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">Why Choose Our Envelope Printing?</h2>
+                    <p class="text-xl text-gray-600">We create professional envelopes that enhance your business communication and brand image.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Multiple Sizes</h3>
+                        <p class="text-gray-600">Various standard envelope sizes and custom dimensions to meet your specific needs.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Quality Materials</h3>
+                        <p class="text-gray-600">Premium paper stocks that ensure durability and professional appearance.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Custom Branding</h3>
+                        <p class="text-gray-600">Personalized designs with your logo and company information for brand consistency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-4xl font-poppins font-bold mb-6">Ready to Get Started?</h2>
+                    <p class="text-xl mb-8 opacity-90">Contact us today for a free consultation on your envelope printing needs.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="btn-white">Get Free Quote</button>
+                        <button class="btn-outline-white">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+            <!-- Slim Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
+                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
+                        </a>
+                        <p class="footer-description">
+                            Professional printing services with unmatched quality and customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">All Services</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
+                        <li><a href="brochures.html">Brochures</a></li>
+                        <li><a href="business-cards.html">Business Cards</a></li>
+                        <li><a href="poster.html">Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                    </div>
+                    <div class="footer-logo-small">
+                        <span>Made with ❤️ by Shristi Press</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/services.js"></script>
+    <script>
+        AOS.init({duration: 800, once: true});
+        document.addEventListener('DOMContentLoaded', function() { new ServicePageManager(); });
+    </script>
+    <!-- Main Site Scripts -->
+    <script defer src="../js/script.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@
     <!-- Custom Tailwind Config -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -48,6 +49,7 @@
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); }
     </style>
+    <link rel="stylesheet" href="css/dark-mode.css">
 </head>
 
 <body class="bg-gray-50 font-inter">
@@ -603,5 +605,6 @@
             }
         }
     </script>
+    <script src="js/dark-mode.js"></script>
 </body>
 </html>

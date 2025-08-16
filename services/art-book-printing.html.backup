@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Book Printing | Premium Custom Art Book Printing Services - Drishthi Printing</title>
+    <meta name="description" content="Professional art book printing with museum-quality reproduction, premium papers, and luxury binding options. Custom sizes available with instant online quotes.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                        'playfair': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#007bff',
+                        secondary: '#ff6600',
+                        dark: '#222222',
+                        light: '#f7f7f7',
+                        'light-blue': '#f0f8ff',
+                        textGray: '#555555',
+                        textLight: '#888888',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(0, 123, 255, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(0, 123, 255, 0.5)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Main Site Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-white text-dark font-inter antialiased overflow-x-hidden">
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
+                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
+                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
+                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
+                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
+                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
+                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
+                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
+                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="brochures.html">Brochures</a></li>
+                                                <li><a href="catalogue.html">Catalogue</a></li>
+                                                <li><a href="poster.html">Poster</a></li>
+                                                <li><a href="flyers.html">Flyers</a></li>
+                                                <li><a href="dangler.html">Dangler</a></li>
+                                                <li><a href="standees.html">Standees</a></li>
+                                                <li><a href="pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="business-cards.html">Business Card</a></li>
+                                                <li><a href="letter-head.html">Letter Head</a></li>
+                                                <li><a href="envelopes.html">Envelopes</a></li>
+                                                <li><a href="bill-book.html">Bill Book</a></li>
+                                                <li><a href="id-cards.html">ID Cards</a></li>
+                                                <li><a href="sticker.html">Sticker</a></li>
+                                                <li><a href="document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    
+
+
+
+
+    <!-- Header -->
+   
+
+    <!-- Hero Section -->
+    <section class="bg-white pt-8 pb-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Breadcrumb -->
+            
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="animate-slide-up">
+                    <h1 class="font-playfair text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">
+                        Art Book Printing
+                    </h1>
+                    
+                    <p class="text-lg text-textGray leading-relaxed mb-8 max-w-2xl">
+                        Create stunning art books that showcase your work with museum-quality printing. Professional reproduction of fine art, photography, and illustrations with premium materials and expert color matching for gallery-worthy results.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 mb-8">
+                        <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-sm uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">
+                            ONLINE PRICE CALCULATOR
+                        </button>
+                        <a href="#" class="text-primary hover:text-blue-600 font-semibold inline-flex items-center space-x-2 transition-colors hover:underline">
+                            <span>Contact Us | FAQ</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Product Image & Features -->
+                <div class="animate-scale-in">
+                    <div class="relative mb-8">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500 animate-pulse-glow">
+                            <div class="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100">
+                                <img src="../assets/images/art-book-stack.jpg" alt="Art Book Stack Sample" 
+                                     class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature Icons Row -->
+                    <div class="flex justify-center space-x-8">
+                        <div class="text-center group cursor-pointer">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-gray-600 font-medium">Binding</span>
+                        </div>
+                        <div class="text-center group cursor-pointer">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-gray-600 font-medium">Paper</span>
+                        </div>
+                        <div class="text-center group cursor-pointer">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs text-gray-600 font-medium">Finishes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Rating Bar -->
+    <section class="bg-light-blue py-4 border-t border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex items-center justify-center space-x-6">
+                <div class="flex items-center space-x-3">
+                    <div class="flex text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-dark text-lg">Excellent 4.9 out of 5</span>
+                </div>
+                <div class="text-gray-600 text-sm">Based on 1,847 reviews</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Quote Calculator -->
+    <section class="bg-light py-20" id="calculator">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Art Book Printing Instant Quote
+                </h2>
+            </div>
+            
+            <!-- Calculator Card -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-3 gap-0">
+                    <!-- Configuration Panel -->
+                    <div class="lg:col-span-2 p-8 lg:p-12 space-y-8">
+                        <!-- Book Type Tabs -->
+                        <div class="space-y-4">
+                            <label class="block text-lg font-semibold text-dark">Book Type</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <button class="book-type-tab active flex items-center space-x-3 p-4 border-2 border-primary bg-primary/10 rounded-xl text-left transition-all duration-300" data-type="hardcover">
+                                    <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-primary">Hardcover Art Book</span>
+                                </button>
+                                <button class="book-type-tab flex items-center space-x-3 p-4 border-2 border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-left transition-all duration-300" data-type="softcover">
+                                    <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-700">Softcover Art Book</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Quantity & Size -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Quantity Input -->
+                            <div class="space-y-3">
+                                <label class="block text-lg font-semibold text-dark">Quantity</label>
+                                <div class="flex items-center">
+                                    <button class="qty-btn w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-l-lg flex items-center justify-center font-bold text-xl transition-colors" data-action="decrease">-</button>
+                                    <input type="number" id="quantity" value="100" min="25" max="5000" class="flex-1 h-12 px-4 border-t-2 border-b-2 border-gray-200 text-center text-xl font-semibold focus:border-primary focus:ring-0 outline-none transition-colors">
+                                    <button class="qty-btn w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-r-lg flex items-center justify-center font-bold text-xl transition-colors" data-action="increase">+</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Size Selection -->
+                            <div class="space-y-3">
+                                <label class="block text-lg font-semibold text-dark">Size</label>
+                                <select id="bookSize" class="w-full h-12 px-4 border-2 border-gray-200 rounded-lg text-lg focus:border-primary focus:ring-0 outline-none transition-colors">
+                                    <option value="8.5x11">8.5" × 11" (Standard)</option>
+                                    <option value="10x10" selected>10" × 10" (Square)</option>
+                                    <option value="11x11">11" × 11" (Large Square)</option>
+                                    <option value="12x12">12" × 12" (Premium)</option>
+                                    <option value="custom">Custom Size</option>
+                                </select>
+                                <div id="customSizeInputs" class="hidden grid grid-cols-2 gap-3 mt-3">
+                                    <input type="number" placeholder="Width (inches)" step="0.1" class="px-3 py-2 border border-gray-300 rounded-md text-sm focus:border-primary focus:ring-0 outline-none">
+                                    <input type="number" placeholder="Height (inches)" step="0.1" class="px-3 py-2 border border-gray-300 rounded-md text-sm focus:border-primary focus:ring-0 outline-none">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Binding Type Selector -->
+                        <div class="space-y-4">
+                            <label class="block text-lg font-semibold text-dark">Binding Type</label>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <button class="binding-option active p-4 border-2 border-primary bg-primary/10 rounded-xl text-center transition-all duration-300 hover:scale-105" data-binding="perfect">
+                                    <img src="../assets/images/binding-perfect.jpg" alt="Perfect Binding" class="w-16 h-12 mx-auto mb-3 rounded-md object-cover">
+                                    <span class="text-sm font-semibold text-primary">Perfect Bound</span>
+                                </button>
+                                <button class="binding-option p-4 border-2 border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-center transition-all duration-300 hover:scale-105" data-binding="wire-o">
+                                    <img src="../assets/images/binding-wire.jpg" alt="Wire-O Binding" class="w-16 h-12 mx-auto mb-3 rounded-md object-cover">
+                                    <span class="text-sm font-semibold text-gray-700">Wire-O</span>
+                                </button>
+                                <button class="binding-option p-4 border-2 border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-center transition-all duration-300 hover:scale-105" data-binding="hardcover">
+                                    <img src="../assets/images/binding-hardcover.jpg" alt="Hardcover Binding" class="w-16 h-12 mx-auto mb-3 rounded-md object-cover">
+                                    <span class="text-sm font-semibold text-gray-700">Hardcover</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Pages Slider -->
+                        <div class="space-y-4">
+                            <label class="block text-lg font-semibold text-dark">Number of Pages</label>
+                            <div class="flex items-center space-x-6">
+                                <input type="range" id="pageSlider" min="32" max="300" value="96" 
+                                       class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                                <div class="flex items-center space-x-2 min-w-[6rem]">
+                                    <span id="pageCount" class="text-2xl font-bold text-primary">96</span>
+                                    <span class="text-gray-600">pages</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Paper Selection -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Interior Paper -->
+                            <div class="space-y-3">
+                                <label class="block text-lg font-semibold text-dark">Interior Paper</label>
+                                <select id="interiorPaper" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-lg focus:border-primary focus:ring-0 outline-none transition-colors">
+                                    <option value="128gsm">128 GSM Matte Art Paper</option>
+                                    <option value="157gsm" selected>157 GSM Gloss Art Paper</option>
+                                    <option value="200gsm">200 GSM Premium Art Paper</option>
+                                    <option value="250gsm">250 GSM Luxury Art Paper</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Cover Paper -->
+                            <div class="space-y-3">
+                                <label class="block text-lg font-semibold text-dark">Cover Paper</label>
+                                <select id="coverPaper" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-lg focus:border-primary focus:ring-0 outline-none transition-colors">
+                                    <option value="300gsm" selected>300 GSM Art Board</option>
+                                    <option value="350gsm">350 GSM Premium Board</option>
+                                    <option value="cloth">Cloth Cover</option>
+                                    <option value="linen">Linen Cover</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Cover Lamination Options -->
+                        <div class="space-y-4">
+                            <label class="block text-lg font-semibold text-dark">Cover Lamination</label>
+                            <div class="flex space-x-3 overflow-x-auto pb-2">
+                                <button class="lamination-option active flex-shrink-0 p-4 border-2 border-primary bg-primary/10 rounded-xl text-center min-w-[100px] transition-all duration-300" data-lamination="matte">
+                                    <div class="w-12 h-8 bg-gray-300 rounded-md mx-auto mb-2"></div>
+                                    <span class="text-sm font-semibold text-primary">Matte</span>
+                                </button>
+                                <button class="lamination-option flex-shrink-0 p-4 border-2 border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-center min-w-[100px] transition-all duration-300" data-lamination="gloss">
+                                    <div class="w-12 h-8 bg-white border rounded-md mx-auto mb-2 shadow-sm"></div>
+                                    <span class="text-sm font-semibold text-gray-700">Gloss</span>
+                                </button>
+                                <button class="lamination-option flex-shrink-0 p-4 border-2 border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-center min-w-[100px] transition-all duration-300" data-lamination="soft-touch">
+                                    <div class="w-12 h-8 bg-gray-400 rounded-md mx-auto mb-2"></div>
+                                    <span class="text-sm font-semibold text-gray-700">Soft Touch</span>
+                                </button>
+                                <button class="lamination-option flex-shrink-0 p-4 border-2 border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-center min-w-[100px] transition-all duration-300" data-lamination="none">
+                                    <div class="w-12 h-8 bg-gray-100 border-2 border-dashed border-gray-300 rounded-md mx-auto mb-2"></div>
+                                    <span class="text-sm font-semibold text-gray-700">None</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Special Finishes -->
+                        <div class="space-y-4">
+                            <label class="block text-lg font-semibold text-dark">Special Finishes</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="flex items-center space-x-3 p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-primary rounded focus:ring-primary finish-checkbox" data-finish="foil" data-cost="1200">
+                                    <div class="flex items-center space-x-2 flex-1">
+                                        <div class="w-6 h-6 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded"></div>
+                                        <span class="font-medium">Foil Stamping</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500">+₹1,200</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-primary rounded focus:ring-primary finish-checkbox" data-finish="spot-uv" data-cost="800">
+                                    <div class="flex items-center space-x-2 flex-1">
+                                        <div class="w-6 h-6 bg-white border-2 border-gray-300 rounded shadow-lg"></div>
+                                        <span class="font-medium">Spot UV</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500">+₹800</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-primary rounded focus:ring-primary finish-checkbox" data-finish="emboss" data-cost="1500">
+                                    <div class="flex items-center space-x-2 flex-1">
+                                        <div class="w-6 h-6 bg-gray-200 rounded shadow-inner"></div>
+                                        <span class="font-medium">Embossing</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500">+₹1,500</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Display Panel -->
+                    <div class="bg-primary text-white p-8 lg:p-12">
+                        <div class="h-full flex flex-col">
+                            <!-- Discount Badge -->
+                            <div class="text-center mb-6">
+                                <div class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                                    Save 32% now
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="text-gray-200 text-xl line-through" id="originalPrice">₹28,500</div>
+                                    <div class="text-5xl lg:text-6xl font-bold" id="finalPrice">₹19,380</div>
+                                    <div class="text-sm text-gray-200" id="weightInfo">
+                                        Weight: 24.5kg
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="space-y-4 mb-8">
+                                <button class="w-full bg-white text-primary font-bold py-4 rounded-lg hover:bg-gray-50 transition-colors transform hover:scale-105 shadow-lg">
+                                    SAVE QUOTE
+                                </button>
+                                <button class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-4 rounded-lg transition-colors transform hover:scale-105 shadow-lg">
+                                    GET SHIPPING COST / ASK QUESTION
+                                </button>
+                                <button class="w-full border-2 border-white/30 hover:border-white/60 text-white py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span>Download Templates</span>
+                                </button>
+                            </div>
+                            
+                            <!-- Save & Share Link -->
+                            <div class="text-center">
+                                <a href="#" class="text-white/80 hover:text-white underline text-sm transition-colors">
+                                    Save & Share Quote
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper Options Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Art Book Paper Options
+                </h2>
+                
+                <!-- Navigation Tabs -->
+                <div class="flex justify-center mb-8">
+                    <div class="flex bg-gray-100 rounded-lg p-1">
+                        <button class="paper-tab active px-6 py-3 bg-white text-primary rounded-md font-semibold shadow-sm transition-all duration-300" data-tab="materials">
+                            Cover & Interior Materials
+                        </button>
+                        <button class="paper-tab px-6 py-3 text-gray-600 hover:text-primary font-semibold transition-all duration-300" data-tab="binding">
+                            Binding Options
+                        </button>
+                        <button class="paper-tab px-6 py-3 text-gray-600 hover:text-primary font-semibold transition-all duration-300" data-tab="print">
+                            Print Options
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-textGray leading-relaxed max-w-4xl mx-auto">
+                    Premium paper selection is crucial for art book reproduction. Our museum-quality papers ensure faithful color reproduction and archival longevity[41][50].
+                </p>
+            </div>
+            
+            <!-- Paper Options Content -->
+            <div id="materials-tab" class="paper-content">
+                <!-- Paper Option Cards -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Coated Gloss -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-[4/3] bg-gray-100">
+                            <img src="../assets/images/coated-gloss-paper.jpg" alt="Coated Gloss Paper" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-dark mb-3">Coated Gloss Paper</h3>
+                            <p class="text-gray-600 mb-4">High-shine finish that enhances color vibrancy and depth. Perfect for photography and fine art reproduction with exceptional image clarity.</p>
+                            <div class="text-sm text-gray-500">
+                                <div>Weight: 157-250 GSM</div>
+                                <div>Finish: High Gloss</div>
+                                <div>Best for: Photography, Fine Art</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coated Matte -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-[4/3] bg-gray-100">
+                            <img src="../assets/images/coated-matte-paper.jpg" alt="Coated Matte Paper" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-dark mb-3">Coated Matte Paper</h3>
+                            <p class="text-gray-600 mb-4">Elegant non-reflective finish with excellent print quality. Reduces glare while maintaining rich color reproduction and fine detail.</p>
+                            <div class="text-sm text-gray-500">
+                                <div>Weight: 157-300 GSM</div>
+                                <div>Finish: Matte Coated</div>
+                                <div>Best for: Mixed Media, Paintings</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Uncoated -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-[4/3] bg-gray-100">
+                            <img src="../assets/images/uncoated-paper.jpg" alt="Uncoated Paper" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-dark mb-3">Uncoated Paper</h3>
+                            <p class="text-gray-600 mb-4">Natural texture with excellent ink absorption. Ideal for text-heavy art books and provides a premium, tactile reading experience.</p>
+                            <div class="text-sm text-gray-500">
+                                <div>Weight: 120-200 GSM</div>
+                                <div>Finish: Natural Uncoated</div>
+                                <div>Best for: Text, Illustrations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Binding Options Tab Content -->
+            <div id="binding-tab" class="paper-content hidden">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 rounded-2xl p-8 text-center">
+                        <div class="text-6xl mb-4">📘</div>
+                        <h3 class="font-playfair text-2xl font-bold mb-4">Perfect Binding</h3>
+                        <p class="text-gray-600">Professional square-spine binding ideal for art books with 32+ pages.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-8 text-center">
+                        <div class="text-6xl mb-4">🗂️</div>
+                        <h3 class="font-playfair text-2xl font-bold mb-4">Wire-O Binding</h3>
+                        <p class="text-gray-600">Lay-flat binding perfect for art portfolios and reference books.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Print Options Tab Content -->
+            <div id="print-tab" class="paper-content hidden">
+                <div class="text-center py-16">
+                    <h3 class="font-playfair text-3xl font-bold text-dark mb-4">Premium Print Options</h3>
+                    <p class="text-lg text-textGray">CMYK + Spot Colors, Pantone Matching, and Custom Color Profiles available[47].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardcover vs Softcover Section -->
+    <section class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Hardcover vs Softcover Art Books
+                </h2>
+            </div>
+            
+            <!-- Options -->
+            <div class="space-y-16">
+                <!-- Hardcover Art Books -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="animate-slide-up">
+                        <h3 class="font-playfair text-3xl font-bold text-dark mb-6">Hardcover Art Book Printing</h3>
+                        <p class="text-lg text-textGray leading-relaxed mb-8">
+                            Premium hardcover art books provide the ultimate presentation for your artwork. Featuring durable casebound construction, dust jackets, and museum-quality materials for collector-worthy results[41].
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Durable casebound construction</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Custom dust jacket design</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Premium presentation quality</span>
+                            </div>
+                        </div>
+                        <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            START YOUR PROJECT
+                        </button>
+                    </div>
+                    <div class="animate-scale-in">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                            <img src="../assets/images/hardcover-art-book.jpg" alt="Hardcover Art Book" 
+                                 class="w-full h-96 object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Paperback Art Books -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 animate-scale-in">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                            <img src="../assets/images/softcover-art-book.jpg" alt="Paperback Art Book" 
+                                 class="w-full h-96 object-cover">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 animate-slide-up">
+                        <h3 class="font-playfair text-3xl font-bold text-dark mb-6">Paperback Art Book Printing</h3>
+                        <p class="text-lg text-textGray leading-relaxed mb-8">
+                            Cost-effective paperback art books perfect for portfolios, exhibition catalogs, and trade distribution. Professional perfect binding with premium cover options[41].
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Budget-friendly option</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Perfect for portfolios</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Fast production times</span>
+                            </div>
+                        </div>
+                        <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            START YOUR PROJECT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloth Cover Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div>
+                    <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                        Cloth Cover Art Book Printing
+                    </h2>
+                    <p class="text-lg text-textGray leading-relaxed mb-8">
+                        Luxurious cloth-bound art books offer the ultimate in sophistication and durability. Our premium fabric covers provide a tactile, museum-quality presentation that enhances the perceived value of your artwork.
+                    </p>
+                    
+                    <!-- Color Swatches Gallery -->
+                    <div class="mb-8">
+                        <h4 class="font-semibold text-dark mb-4">Available Cloth Colors:</h4>
+                        <div class="grid grid-cols-6 gap-3">
+                            <div class="group relative">
+                                <div class="w-16 h-16 bg-gray-800 rounded-lg shadow-md cursor-pointer hover:scale-110 transition-transform" title="Charcoal Black"></div>
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Charcoal Black
+                                </div>
+                            </div>
+                            <div class="group relative">
+                                <div class="w-16 h-16 bg-blue-900 rounded-lg shadow-md cursor-pointer hover:scale-110 transition-transform" title="Navy Blue"></div>
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Navy Blue
+                                </div>
+                            </div>
+                            <div class="group relative">
+                                <div class="w-16 h-16 bg-red-800 rounded-lg shadow-md cursor-pointer hover:scale-110 transition-transform" title="Burgundy"></div>
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Burgundy
+                                </div>
+                            </div>
+                            <div class="group relative">
+                                <div class="w-16 h-16 bg-green-800 rounded-lg shadow-md cursor-pointer hover:scale-110 transition-transform" title="Forest Green"></div>
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Forest Green
+                                </div>
+                            </div>
+                            <div class="group relative">
+                                <div class="w-16 h-16 bg-purple-800 rounded-lg shadow-md cursor-pointer hover:scale-110 transition-transform" title="Royal Purple"></div>
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Royal Purple
+                                </div>
+                            </div>
+                            <div class="group relative">
+                                <div class="w-16 h-16 bg-white border-2 border-gray-300 rounded-lg shadow-md cursor-pointer hover:scale-110 transition-transform" title="Cream White"></div>
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Cream White
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div>
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                        <img src="../assets/images/cloth-cover-closeup.jpg" alt="Cloth Cover Close-up" 
+                             class="w-full h-96 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Formats Section -->
+    <section class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl lg:text-5xl font-bold text-dark mb-6">
+                    Special Format Art Books
+                </h2>
+            </div>
+            
+            <!-- Format Options -->
+            <div class="space-y-16">
+                <!-- Landscape Art Books -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="animate-slide-up">
+                        <h3 class="font-playfair text-3xl font-bold text-dark mb-6">Landscape Art Book Printing</h3>
+                        <p class="text-lg text-textGray leading-relaxed mb-8">
+                            Perfect for panoramic artwork, architectural photography, and wide-format illustrations. Our landscape orientation maximizes visual impact for horizontal compositions.
+                        </p>
+                        <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            START YOUR PROJECT
+                        </button>
+                    </div>
+                    <div class="animate-scale-in">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                            <img src="../assets/images/landscape-art-book.jpg" alt="Landscape Art Book" 
+                                 class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Large Size Art Books -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 animate-scale-in">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                            <img src="../assets/images/large-art-book.jpg" alt="Large Size Art Book" 
+                                 class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 animate-slide-up">
+                        <h3 class="font-playfair text-3xl font-bold text-dark mb-6">Large Size Art Book Printing</h3>
+                        <p class="text-lg text-textGray leading-relaxed mb-8">
+                            Oversized art books up to 16" × 20" for maximum impact. Perfect for fine art collections, museum catalogs, and coffee table presentations that demand attention.
+                        </p>
+                        <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            START YOUR PROJECT
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Art Books -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="animate-slide-up">
+                        <h3 class="font-playfair text-3xl font-bold text-dark mb-6">Gallery Art Book Printing</h3>
+                        <p class="text-lg text-textGray leading-relaxed mb-8">
+                            Professional exhibition catalogs and gallery books with museum-quality reproduction. Perfect for art institutions, galleries, and serious collectors seeking archival-quality presentation.
+                        </p>
+                        <button class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            START YOUR PROJECT
+                        </button>
+                    </div>
+                    <div class="animate-scale-in">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
+                            <img src="../assets/images/gallery-art-book.jpg" alt="Gallery Art Book" 
+                                 class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="bg-primary text-white py-20 relative overflow-hidden">
+        <!-- Zigzag Border -->
+        <div class="absolute top-0 left-0 w-full h-8 bg-white transform" style="clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+            <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6">
+                Can't find what you want? Contact us!
+            </h2>
+            <p class="text-xl text-blue-100 leading-relaxed mb-10 max-w-3xl mx-auto">
+                Have a unique art book project in mind? Our printing experts specialize in custom solutions for artists, galleries, and publishers. Submit your specifications and receive a personalized quote within 24 hours.
+            </p>
+            <button class="bg-white text-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                START YOUR PROJECT
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+            <!-- Slim Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
+                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
+                        </a>
+                        <p class="footer-description">
+                            Professional printing services with unmatched quality and customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">All Services</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
+                        <li><a href="brochures.html">Brochures</a></li>
+                        <li><a href="business-cards.html">Business Cards</a></li>
+                        <li><a href="poster.html">Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                    </div>
+                    <div class="footer-logo-small">
+                        <span>Made with ❤️ by Shristi Press</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        class ArtBookCalculator {
+            constructor() {
+                this.basePrice = 15000; // Base price in INR for 100 books, 96 pages
+                this.currentSpecs = {
+                    quantity: 100,
+                    pages: 96,
+                    size: '10x10',
+                    bookType: 'hardcover',
+                    binding: 'perfect',
+                    interiorPaper: '157gsm',
+                    coverPaper: '300gsm',
+                    lamination: 'matte',
+                    finishes: []
+                };
+                
+                this.priceMultipliers = {
+                    bookTypes: {
+                        'hardcover': 1.0,
+                        'softcover': 0.65
+                    },
+                    sizes: {
+                        '8.5x11': 0.85,
+                        '10x10': 1.0,
+                        '11x11': 1.25,
+                        '12x12': 1.55,
+                        'custom': 1.8
+                    },
+                    bindings: {
+                        'perfect': 1.0,
+                        'wire-o': 1.3,
+                        'hardcover': 1.2
+                    },
+                    papers: {
+                        '128gsm': 1.0,
+                        '157gsm': 1.15,
+                        '200gsm': 1.35,
+                        '250gsm': 1.55,
+                        '300gsm': 1.0,
+                        '350gsm': 1.25,
+                        'cloth': 2.2,
+                        'linen': 2.5
+                    },
+                    laminations: {
+                        'none': 1.0,
+                        'matte': 1.08,
+                        'gloss': 1.12,
+                        'soft-touch': 1.25
+                    },
+                    finishes: {
+                        'foil': 1200,
+                        'spot-uv': 800,
+                        'emboss': 1500
+                    }
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.calculatePrice();
+            }
+            
+            setupEventListeners() {
+                // Book type tabs
+                document.querySelectorAll('.book-type-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        this.selectBookType(e.target.closest('.book-type-tab'));
+                    });
+                });
+                
+                // Quantity controls
+                document.querySelectorAll('.qty-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.adjustQuantity(e.target.dataset.action);
+                    });
+                });
+                
+                document.getElementById('quantity').addEventListener('input', (e) => {
+                    this.currentSpecs.quantity = Math.max(25, parseInt(e.target.value) || 25);
+                    this.calculatePrice();
+                });
+                
+                // Page slider
+                const pageSlider = document.getElementById('pageSlider');
+                const pageCount = document.getElementById('pageCount');
+                
+                pageSlider.addEventListener('input', (e) => {
+                    const pages = parseInt(e.target.value);
+                    pageCount.textContent = pages;
+                    this.currentSpecs.pages = pages;
+                    this.calculatePrice();
+                });
+                
+                // Size selection
+                document.getElementById('bookSize').addEventListener('change', (e) => {
+                    this.currentSpecs.size = e.target.value;
+                    this.toggleCustomSizeInputs(e.target.value === 'custom');
+                    this.calculatePrice();
+                });
+                
+                // Binding selection
+                document.querySelectorAll('.binding-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        this.selectBinding(e.target.closest('.binding-option'));
+                    });
+                });
+                
+                // Paper selections
+                document.getElementById('interiorPaper').addEventListener('change', (e) => {
+                    this.currentSpecs.interiorPaper = e.target.value;
+                    this.calculatePrice();
+                });
+                
+                document.getElementById('coverPaper').addEventListener('change', (e) => {
+                    this.currentSpecs.coverPaper = e.target.value;
+                    this.calculatePrice();
+                });
+                
+                // Lamination options
+                document.querySelectorAll('.lamination-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        this.selectLamination(e.target.closest('.lamination-option'));
+                    });
+                });
+                
+                // Special finishes
+                document.querySelectorAll('.finish-checkbox').forEach(checkbox => {
+                    checkbox.addEventListener('change', (e) => {
+                        this.toggleFinish(e.target);
+                    });
+                });
+                
+                // Paper tabs
+                document.querySelectorAll('.paper-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        this.switchPaperTab(e.target);
+                    });
+                });
+            }
+            
+            selectBookType(selectedTab) {
+                document.querySelectorAll('.book-type-tab').forEach(tab => {
+                    tab.classList.remove('active', 'border-primary', 'bg-primary/10');
+                    tab.classList.add('border-gray-200');
+                    tab.querySelector('span').classList.remove('text-primary');
+                    tab.querySelector('span').classList.add('text-gray-700');
+                    tab.querySelector('.w-10').classList.remove('bg-primary/20');
+                    tab.querySelector('.w-10').classList.add('bg-gray-100');
+                    tab.querySelector('svg').classList.remove('text-primary');
+                    tab.querySelector('svg').classList.add('text-gray-600');
+                });
+                
+                selectedTab.classList.add('active', 'border-primary', 'bg-primary/10');
+                selectedTab.classList.remove('border-gray-200');
+                selectedTab.querySelector('span').classList.add('text-primary');
+                selectedTab.querySelector('span').classList.remove('text-gray-700');
+                selectedTab.querySelector('.w-10').classList.add('bg-primary/20');
+                selectedTab.querySelector('.w-10').classList.remove('bg-gray-100');
+                selectedTab.querySelector('svg').classList.add('text-primary');
+                selectedTab.querySelector('svg').classList.remove('text-gray-600');
+                
+                this.currentSpecs.bookType = selectedTab.dataset.type;
+                this.calculatePrice();
+            }
+            
+            adjustQuantity(action) {
+                const qtyInput = document.getElementById('quantity');
+                let qty = parseInt(qtyInput.value);
+                
+                if (action === 'increase') {
+                    qty = Math.min(qty + 25, 5000);
+                } else if (action === 'decrease') {
+                    qty = Math.max(qty - 25, 25);
+                }
+                
+                qtyInput.value = qty;
+                this.currentSpecs.quantity = qty;
+                this.calculatePrice();
+            }
+            
+            toggleCustomSizeInputs(show) {
+                const customInputs = document.getElementById('customSizeInputs');
+                if (show) {
+                    customInputs.classList.remove('hidden');
+                } else {
+                    customInputs.classList.add('hidden');
+                }
+            }
+            
+            selectBinding(selectedOption) {
+                document.querySelectorAll('.binding-option').forEach(option => {
+                    option.classList.remove('active', 'border-primary', 'bg-primary/10');
+                    option.classList.add('border-gray-200');
+                    option.querySelector('span').classList.remove('text-primary');
+                    option.querySelector('span').classList.add('text-gray-700');
+                });
+                
+                selectedOption.classList.add('active', 'border-primary', 'bg-primary/10');
+                selectedOption.classList.remove('border-gray-200');
+                selectedOption.querySelector('span').classList.add('text-primary');
+                selectedOption.querySelector('span').classList.remove('text-gray-700');
+                
+                this.currentSpecs.binding = selectedOption.dataset.binding;
+                this.calculatePrice();
+            }
+            
+            selectLamination(selectedOption) {
+                document.querySelectorAll('.lamination-option').forEach(option => {
+                    option.classList.remove('active', 'border-primary', 'bg-primary/10');
+                    option.classList.add('border-gray-200');
+                    option.querySelector('span').classList.remove('text-primary');
+                    option.querySelector('span').classList.add('text-gray-700');
+                });
+                
+                selectedOption.classList.add('active', 'border-primary', 'bg-primary/10');
+                selectedOption.classList.remove('border-gray-200');
+                selectedOption.querySelector('span').classList.add('text-primary');
+                selectedOption.querySelector('span').classList.remove('text-gray-700');
+                
+                this.currentSpecs.lamination = selectedOption.dataset.lamination;
+                this.calculatePrice();
+            }
+            
+            toggleFinish(checkbox) {
+                const finish = checkbox.dataset.finish;
+                if (checkbox.checked) {
+                    if (!this.currentSpecs.finishes.includes(finish)) {
+                        this.currentSpecs.finishes.push(finish);
+                    }
+                } else {
+                    this.currentSpecs.finishes = this.currentSpecs.finishes.filter(f => f !== finish);
+                }
+                this.calculatePrice();
+            }
+            
+            switchPaperTab(selectedTab) {
+                document.querySelectorAll('.paper-tab').forEach(tab => {
+                    tab.classList.remove('active', 'bg-white', 'text-primary', 'shadow-sm');
+                    tab.classList.add('text-gray-600');
+                });
+                
+                selectedTab.classList.add('active', 'bg-white', 'text-primary', 'shadow-sm');
+                selectedTab.classList.remove('text-gray-600');
+                
+                // Show/hide content
+                document.querySelectorAll('.paper-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                const targetContent = document.getElementById(selectedTab.dataset.tab + '-tab');
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                }
+            }
+            
+            calculatePrice() {
+                let totalPrice = this.basePrice;
+                
+                // Quantity scaling with bulk discount
+                const qtyMultiplier = this.getQuantityMultiplier(this.currentSpecs.quantity);
+                totalPrice *= qtyMultiplier;
+                
+                // Page count adjustment (base is 96 pages)
+                const pageMultiplier = this.currentSpecs.pages / 96;
+                totalPrice *= pageMultiplier;
+                
+                // Apply multipliers
+                totalPrice *= this.priceMultipliers.bookTypes[this.currentSpecs.bookType] || 1;
+                totalPrice *= this.priceMultipliers.sizes[this.currentSpecs.size] || 1;
+                totalPrice *= this.priceMultipliers.bindings[this.currentSpecs.binding] || 1;
+                
+                // Paper costs
+                const interiorMultiplier = this.priceMultipliers.papers[this.currentSpecs.interiorPaper] || 1;
+                const coverMultiplier = this.priceMultipliers.papers[this.currentSpecs.coverPaper] || 1;
+                totalPrice *= (interiorMultiplier + coverMultiplier) / 2;
+                
+                // Lamination
+                totalPrice *= this.priceMultipliers.laminations[this.currentSpecs.lamination] || 1;
+                
+                // Special finishes (flat cost)
+                let finishCost = 0;
+                this.currentSpecs.finishes.forEach(finish => {
+                    finishCost += this.priceMultipliers.finishes[finish] || 0;
+                });
+                
+                // Final calculations
+                const finalTotal = Math.round(totalPrice + finishCost);
+                const originalPrice = Math.round(finalTotal * 1.47); // Show 32% discount
+                const weight = this.calculateWeight();
+                
+                // Update UI
+                this.updatePriceDisplay({
+                    originalPrice,
+                    finalTotal,
+                    weight
+                });
+            }
+            
+            getQuantityMultiplier(quantity) {
+                if (quantity <= 50) return 1.3;
+                if (quantity <= 100) return 1.0;
+                if (quantity <= 250) return 0.85;
+                if (quantity <= 500) return 0.75;
+                return 0.65;
+            }
+            
+            calculateWeight() {
+                const baseWeight = 0.25; // kg per book for standard specs
+                const sizeMultipliers = {
+                    '8.5x11': 0.85,
+                    '10x10': 1.0,
+                    '11x11': 1.21,
+                    '12x12': 1.44,
+                    'custom': 1.6
+                };
+                
+                const sizeMultiplier = sizeMultipliers[this.currentSpecs.size] || 1;
+                const pageMultiplier = this.currentSpecs.pages / 96;
+                const typeMultiplier = this.currentSpecs.bookType === 'hardcover' ? 1.4 : 1.0;
+                const weightPerBook = baseWeight * sizeMultiplier * pageMultiplier * typeMultiplier;
+                const totalWeight = weightPerBook * this.currentSpecs.quantity;
+                
+                return totalWeight.toFixed(1);
+            }
+            
+            updatePriceDisplay(prices) {
+                // Animate numbers
+                this.animateNumber('originalPrice', prices.originalPrice, '₹');
+                this.animateNumber('finalPrice', prices.finalTotal, '₹');
+                
+                // Update weight
+                document.getElementById('weightInfo').textContent = `Weight: ${prices.weight}kg`;
+            }
+            
+            animateNumber(elementId, targetValue, prefix = '') {
+                const element = document.getElementById(elementId);
+                if (!element) return;
+                
+                const startValue = parseInt(element.textContent.replace(/[^\d]/g, '')) || 0;
+                const duration = 800;
+                const startTime = performance.now();
+                
+                const updateValue = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                    const currentValue = Math.round(startValue + (targetValue - startValue) * easeOutCubic);
+                    
+                    element.textContent = prefix + currentValue.toLocaleString('en-IN');
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateValue);
+                    }
+                };
+                
+                requestAnimationFrame(updateValue);
+            }
+        }
+        
+        // Initialize calculator when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ArtBookCalculator();
+            
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            document.querySelectorAll('.animate-slide-up, .animate-scale-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Custom slider styling
+        const style = document.createElement('style');
+        style.textContent = `
+            .slider::-webkit-slider-thumb {
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                background: #007bff;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+                transition: all 0.3s ease;
+            }
+            
+            .slider::-webkit-slider-thumb:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+            }
+            
+            .slider::-webkit-slider-track {
+                background: linear-gradient(to right, #007bff 0%, #007bff var(--progress, 32%), #e5e7eb var(--progress, 32%), #e5e7eb 100%);
+                height: 8px;
+                border-radius: 4px;
+            }
+            
+            .slider::-moz-range-thumb {
+                width: 24px;
+                height: 24px;
+                background: #007bff;
+                border-radius: 50%;
+                cursor: pointer;
+                border: none;
+                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <!-- Main Site Scripts -->
+    <script defer src="../js/script.js"></script>
+</body>
+</html>

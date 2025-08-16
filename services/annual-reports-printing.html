@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,7 @@
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -42,6 +43,7 @@
     </script>
     <!-- Main Site Styles -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body class="font-inter bg-white">
     <!-- Skip to Content (Accessibility) -->
@@ -433,5 +435,6 @@
     </script>
     <!-- Main Site Scripts -->
     <script defer src="../js/script.js"></script>
+    <script src="../js/dark-mode.js"></script>
 </body>
 </html>

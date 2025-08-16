@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Premium Custom Roll-Up Standees - Eye-catching, portable, and professional display solutions perfect for events, promotions, and branding. Order from just 1 piece with instant pricing.">
+    <meta name="keywords"
+        content="roll-up standees, banner stands, display boards, event marketing, promotional displays, custom printing, portable displays">
+    <meta name="author" content="Shristi Press">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Custom Roll-Up Standees - Professional Display Solutions | Shristi Press">
+    <meta property="og:description"
+        content="Premium roll-up standees for events, promotions, and branding. Professional quality with instant pricing.">
+    <meta property="og:image" content="../assets/images/standees-og.jpg">
+    <meta property="og:url" content="https://shristipress.com/services/standees.html">
+    <meta property="og:type" content="website">
+
+    <title>Custom Roll-Up Standees - Professional Display Solutions | Shristi Press</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../assets/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Enhanced Styles for Standees Page -->
+    <style>
+        :root {
+            --standee-primary: #6366f1;
+            --standee-secondary: #f59e0b;
+            --standee-accent: #10b981;
+            --standee-dark: #0f172a;
+            --standee-light: #f8fafc;
+            --standee-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #f59e0b 100%);
+            --standee-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --standee-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Enhanced Hero Section */
+        .standee-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .standee-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .standee-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            padding: 8px 20px;
+            color: #818cf8;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-hero-primary {
+            background: var(--standee-gradient);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--standee-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-hero-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .hero-main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--standee-shadow);
+            transition: transform 0.3s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-main-image:hover {
+            transform: scale(1.02);
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: rgba(16, 185, 129, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+            animation: bounce-slow 3s infinite;
+        }
+
+        .floating-badge.top-right {
+            top: 20px;
+            right: 20px;
+        }
+
+        .floating-badge.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            background: rgba(245, 158, 11, 0.9);
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
+            animation-delay: 1s;
+        }
+
+        /* Enhanced Calculator Section */
+        .calculator-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .calculator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .calculator-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="calc-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23calc-grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .calculator-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 0;
+            box-shadow:
+                0 40px 80px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .calculator-header {
+            background: var(--standee-gradient);
+            padding: 48px 48px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        .calculator-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .calculator-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            margin-bottom: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+
+        .calculator-body {
+            padding: 48px;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .form-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-section-title i {
+            color: #6366f1;
+            font-size: 1.25rem;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-label i {
+            color: #6366f1;
+            font-size: 1rem;
+        }
+
+        .form-select,
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            font-weight: 500;
+        }
+
+        .form-select:focus,
+        .form-input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-select:hover,
+        .form-input:hover {
+            border-color: #6366f1;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 8px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-controls:focus-within {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .quantity-btn {
+            width: 48px;
+            height: 48px;
+            border: none;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            color: #6366f1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quantity-btn:hover {
+            background: #6366f1;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+        }
+
+        .quantity-btn:active {
+            transform: scale(0.95);
+        }
+
+        .quantity-input {
+            flex: 1;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            color: #1f2937;
+        }
+
+        .quantity-input:focus {
+            outline: none;
+        }
+
+        .price-display {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #f59e0b 100%);
+            border-radius: 24px;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="90" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 25s linear infinite reverse;
+        }
+
+        .price-header {
+            padding: 32px 32px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-main {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1;
+        }
+
+        .price-unit {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.125rem;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .price-body {
+            padding: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .discount-badge {
+            background: rgba(16, 185, 129, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            animation: pulse-slow 2s infinite;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-primary-cta {
+            background: white;
+            color: #6366f1;
+            padding: 18px 24px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+            font-size: 1.125rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary-cta:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary-cta {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 18px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 1.125rem;
+        }
+
+        .btn-secondary-cta:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .delivery-section {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .delivery-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .delivery-controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .delivery-input {
+            flex: 1;
+            padding: 14px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .delivery-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .delivery-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .delivery-btn {
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+        }
+
+        .delivery-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .delivery-result {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .delivery-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .delivery-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .delivery-item i {
+            color: #10b981;
+            font-size: 1.125rem;
+        }
+
+        /* Enhanced Features Section */
+        .features-section {
+            background: white;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--standee-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--standee-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+
+        .feature-description {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .standee-hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 60px;
+            }
+
+            .hero-content-wrapper .container>div {
+                grid-template-columns: 1fr !important;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px;
+            }
+
+            .calculator-header {
+                padding: 32px 24px 24px;
+            }
+
+            .calculator-body {
+                padding: 32px 24px;
+            }
+
+            .calculator-title {
+                font-size: 2.25rem;
+            }
+
+            .price-display {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                justify-content: center;
+                gap: 24px;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                padding: 14px 24px;
+                font-size: 0.875rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .calculator-header {
+                padding: 24px 20px 20px;
+            }
+
+            .calculator-body {
+                padding: 24px 20px;
+            }
+
+            .calculator-title {
+                font-size: 2rem;
+            }
+
+            .calculator-subtitle {
+                font-size: 1rem;
+            }
+
+            .form-section {
+                padding: 24px 20px;
+            }
+
+            .form-section-title {
+                font-size: 1.25rem;
+            }
+
+            .price-main {
+                font-size: 2.75rem;
+            }
+
+            .price-header {
+                padding: 24px 24px 20px;
+            }
+
+            .price-body {
+                padding: 24px;
+            }
+
+            .btn-primary-cta,
+            .btn-secondary-cta {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+
+            .delivery-controls {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .delivery-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator-section {
+                padding: 60px 0;
+            }
+
+            .calculator-container {
+                border-radius: 24px;
+                margin: 0 16px;
+            }
+
+            .calculator-header {
+                padding: 20px 16px 16px;
+            }
+
+            .calculator-body {
+                padding: 20px 16px;
+            }
+
+            .calculator-title {
+                font-size: 1.75rem;
+            }
+
+            .form-section {
+                padding: 20px 16px;
+            }
+
+            .price-header {
+                padding: 20px 20px 16px;
+            }
+
+            .price-body {
+                padding: 20px;
+            }
+
+            .price-main {
+                font-size: 2.25rem;
+            }
+
+            .quantity-controls {
+                padding: 6px;
+            }
+
+            .quantity-btn {
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+            }
+        }
+
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
+                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
+                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
+                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
+                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
+                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
+                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
+                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
+                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="brochures.html">Brochures</a></li>
+                                                <li><a href="catalogue.html">Catalogue</a></li>
+                                                <li><a href="poster.html">Poster</a></li>
+                                                <li><a href="flyers.html">Flyers</a></li>
+                                                <li><a href="dangler.html">Dangler</a></li>
+                                                <li><a href="standees.html">Standees</a></li>
+                                                <li><a href="pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="business-cards.html">Business Card</a></li>
+                                                <li><a href="letter-head.html">Letter Head</a></li>
+                                                <li><a href="envelopes.html">Envelopes</a></li>
+                                                <li><a href="bill-book.html">Bill Book</a></li>
+                                                <li><a href="id-cards.html">ID Cards</a></li>
+                                                <li><a href="sticker.html">Sticker</a></li>
+                                                <li><a href="document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="standee-hero" id="hero">
+            <div class="hero-content-wrapper">
+                <div class="container">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                        <div>
+                            <div class="hero-badge">
+                                <i class="fas fa-star"></i>
+                                <span>Premium Display Solutions</span>
+                            </div>
+
+                            <h1 class="hero-title">
+                                Custom Roll-Up<br>
+                                <span
+                                    style="background: linear-gradient(135deg, #f59e0b 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Standees</span>
+                            </h1>
+
+                            <p class="hero-subtitle">
+                                Eye-catching, portable, and professional display solutions perfect for events,
+                                promotions, and branding. Make your message stand out with premium quality standees.
+                            </p>
+
+                            <div class="hero-stats">
+                                <div class="hero-stat">
+                                    <span class="hero-stat-number">10K+</span>
+                                    <span class="hero-stat-label">Happy Clients</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <span class="hero-stat-number">24hr</span>
+                                    <span class="hero-stat-label">Rush Ready</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <span class="hero-stat-number">5★</span>
+                                    <span class="hero-stat-label">Top Rated</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-cta-group">
+                                <a href="#calculator" class="btn-hero-primary">
+                                    <i class="fas fa-calculator"></i>
+                                    Get Instant Quote
+                                </a>
+                                <a href="#gallery" class="btn-hero-secondary">
+                                    <i class="fas fa-images"></i>
+                                    View Gallery
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual">
+                            <div class="hero-image-container">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop&auto=format"
+                                    alt="Professional Roll-Up Standees Display" class="hero-main-image">
+
+                                <div class="floating-elements">
+                                    <div class="floating-badge top-right">
+                                        <i class="fas fa-shipping-fast"></i>
+                                        Fast Delivery
+                                    </div>
+                                    <div class="floating-badge bottom-left">
+                                        <i class="fas fa-award"></i>
+                                        Premium Quality
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Price Calculator -->
+        <section class="calculator-section" id="calculator">
+            <div class="container">
+                <div class="calculator-container">
+                    <!-- Calculator Header -->
+                    <div class="calculator-header">
+                        <h2 class="calculator-title">Get Instant Quote</h2>
+                        <p class="calculator-subtitle">
+                            Configure your perfect standee and get real-time pricing. No hidden costs, transparent
+                            pricing with instant calculations.
+                        </p>
+                    </div>
+
+                    <!-- Calculator Body -->
+                    <div class="calculator-body">
+                        <div class="calculator-grid">
+                            <!-- Configuration Form -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-cogs"></i>
+                                    Configure Your Standee
+                                </h3>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-layer-group"></i>
+                                        Standee Type
+                                    </label>
+                                    <select id="standeeType" class="form-select">
+                                        <option value="event" data-price="2000">Event Standee - Perfect for exhibitions
+                                        </option>
+                                        <option value="standard" data-price="2200">Standard Standee - Versatile display
+                                        </option>
+                                        <option value="premium" data-price="2500">Premium Standee - High-end finish
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        Size
+                                    </label>
+                                    <select id="size" class="form-select">
+                                        <option value="2x5" data-multiplier="1">2ft × 5ft - Compact size</option>
+                                        <option value="3x6" data-multiplier="1.5">3ft × 6ft - Standard size</option>
+                                        <option value="custom" data-multiplier="2">Custom Size - Your dimensions
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-print"></i>
+                                        Print Type
+                                    </label>
+                                    <select id="printType" class="form-select">
+                                        <option value="inkjet" data-multiplier="1">Inkjet - Standard quality</option>
+                                        <option value="ecosolvent" data-multiplier="1.2">Ecosolvent - Premium quality
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-file-image"></i>
+                                        Print Media
+                                    </label>
+                                    <select id="printMedia" class="form-select">
+                                        <option value="photomatt" data-multiplier="1">Photomatt PP film - Matte finish
+                                        </option>
+                                        <option value="vinyl" data-multiplier="1.3">Vinyl - Glossy finish</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-hashtag"></i>
+                                        Quantity
+                                    </label>
+                                    <div class="quantity-controls">
+                                        <button type="button" class="quantity-btn" onclick="decreaseQuantity()">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" id="quantity" value="1" min="1" class="quantity-input">
+                                        <button type="button" class="quantity-btn" onclick="increaseQuantity()">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div style="margin-top: 8px; font-size: 0.875rem; color: #6b7280;">
+                                        <i class="fas fa-info-circle" style="color: #6366f1;"></i>
+                                        Bulk discounts: 10+ pieces (10% off), 25+ pieces (15% off), 50+ pieces (20% off)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price Display -->
+                            <div class="price-display">
+                                <div class="price-header">
+                                    <div class="price-badge">
+                                        <i class="fas fa-calculator"></i>
+                                        Live Pricing
+                                    </div>
+                                    <div class="price-main" id="totalPrice">₹2,000</div>
+                                    <div class="price-unit">
+                                        <an id="unitPrice">₹2,000</an> per pien>ce
+                                    </div>
+                                </div>
+
+                                <div class="price-body">
+                                    <div id="discountBadge" class="discount-badge" style="display: none;">
+                                        <i class="fas fa-tag"></i>
+                                        Save 15% today!
+                                    </div>
+
+                                    <div class="cta-buttons">
+                                        <a href="#" class="btn-primary-cta">
+                                            <i class="fas fa-upload"></i>
+                                            Upload Your Files
+                                        </a>
+                                        <a href="#" class="btn-secondary-cta">
+                                            <i class="fas fa-paint-brush"></i>
+                                            Create Your Design
+                                        </a>
+                                    </div>
+
+                                    <!-- Delivery Estimator -->
+                                    <div class="delivery-section">
+                                        <div class="delivery-title">
+                                            <i class="fas fa-shipping-fast"></i>
+                                            Estimate Delivery
+                                        </div>
+                                        <div class="delivery-controls">
+                                            <input type="text" id="pincode" placeholder="Enter your pincode"
+                                                class="delivery-input">
+                                            <button onclick="estimateDelivery()" class="delivery-btn">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                        <div id="deliveryResult" class="delivery-result" style="display: none;">
+                                            <div class="delivery-item">
+                                                <i class="fas fa-truck"></i>
+                                                <span>Estimated delivery: <strong>3-5 business days</strong></span>
+                                            </div>
+                                            <div class="delivery-item">
+                                                <i class="fas fa-rupee-sign"></i>
+                                                <span>Shipping cost: <strong>₹150</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <div class="hero-badge" style="margin-bottom: 24px;">
+                        <i class="fas fa-star"></i>
+                        <span>Why Choose Our Standees</span>
+                    </div>
+                    <h2
+                        style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; background: linear-gradient(135deg, #1f2937 0%, #6366f1 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                        Make Your Event Stand Out
+                    </h2>
+                    <p style="font-size: 1.125rem; color: #6b7280; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                        Professional roll-up standees designed to capture attention and deliver your message with
+                        impact. Perfect for any occasion.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <h3 class="feature-title">Multiple Sizes Available</h3>
+                        <p class="feature-description">Choose from 2ft × 5ft, 3ft × 6ft, or custom sizes to perfectly
+                            fit your space and requirements.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3 class="feature-title">Premium Materials</h3>
+                        <p class="feature-description">180GSM Photomatt PP film and premium vinyl options ensure vibrant
+                            colors and long-lasting durability.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="feature-title">Indoor & Outdoor Use</h3>
+                        <p class="feature-description">Weather-resistant materials suitable for both indoor events and
+                            outdoor promotions.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="feature-title">Fast Turnaround</h3>
+                        <p class="feature-description">Quick production and delivery options available. Rush orders
+                            ready in 24-48 hours.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="feature-title">Order from 1 Piece</h3>
+                        <p class="feature-description">No minimum order quantity. Perfect for small businesses and large
+                            corporations alike.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="feature-title">Easy Setup</h3>
+                        <p class="feature-description">Portable and lightweight design with easy setup mechanism. No
+                            tools required.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Scenarios -->
+        <section style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; color: #1f2937;">
+                        Perfect For These Occasions
+                    </h2>
+                    <p style="font-size: 1.125rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+                        Our roll-up standees are versatile display solutions suitable for various events and marketing
+                        needs.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                    <div
+                        style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5rem;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #1f2937;">Trade
+                            Shows & Exhibitions</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Stand out at trade shows with professional displays
+                            that attract visitors to your booth.</p>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5rem;">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #1f2937;">Retail
+                            Stores</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Promote sales, new products, and special offers in
+                            your retail space.</p>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5rem;">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #1f2937;">Corporate
+                            Events</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Professional displays for conferences, seminars,
+                            and corporate gatherings.</p>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5rem;">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #1f2937;">Marketing
+                            Campaigns</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Amplify your marketing message with eye-catching
+                            portable displays.</p>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5rem;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #1f2937;">Product
+                            Launches</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Create buzz around new product launches with
+                            impactful visual displays.</p>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); text-align: center;">
+                        <div
+                            style="width: 60px; height: 60px; background: linear-gradient(135deg, #06b6d4, #0891b2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 1.5rem;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; color: #1f2937;">Grand
+                            Openings</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Make a memorable first impression with professional
+                            opening displays.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Accordion -->
+        <section style="background: white; padding: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; color: #1f2937;">
+                        Specifications & Guidelines
+                    </h2>
+                    <p style="font-size: 1.125rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+                        Everything you need to know about our standees and design requirements.
+                    </p>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <!-- Specifications Accordion -->
+                    <div
+                        style="background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); margin-bottom: 16px; overflow: hidden; border: 1px solid #e5e7eb;">
+                        <button class="accordion-trigger" onclick="toggleAccordion('specs')"
+                            style="width: 100%; padding: 24px; text-align: left; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 600; font-size: 1.125rem; color: #1f2937;">
+                            <span>Technical Specifications</span>
+                            <i class="fas fa-chevron-down" id="specs-icon"
+                                style="transition: transform 0.3s ease; color: #6366f1;"></i>
+                        </button>
+                        <div class="accordion-content" id="specs-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+                            <div style="padding: 0 24px 24px;">
+                                <div
+                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
+                                    <div>
+                                        <h4
+                                            style="font-weight: 600; color: #1f2937; margin-bottom: 16px; font-size: 1rem;">
+                                            Available Sizes</h4>
+                                        <ul
+                                            style="list-style: none; padding: 0; margin: 0; color: #6b7280; line-height: 1.8;">
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> 2ft × 5ft
+                                                (Standard)</li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> 3ft × 6ft (Large)
+                                            </li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> Custom sizes
+                                                available</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            style="font-weight: 600; color: #1f2937; margin-bottom: 16px; font-size: 1rem;">
+                                            Materials</h4>
+                                        <ul
+                                            style="list-style: none; padding: 0; margin: 0; color: #6b7280; line-height: 1.8;">
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> 180GSM Photomatt
+                                                PP film</li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> Premium vinyl
+                                                options</li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> Weather-resistant
+                                                coating</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Guidelines Accordion -->
+                    <div
+                        style="background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); margin-bottom: 16px; overflow: hidden; border: 1px solid #e5e7eb;">
+                        <button class="accordion-trigger" onclick="toggleAccordion('design')"
+                            style="width: 100%; padding: 24px; text-align: left; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 600; font-size: 1.125rem; color: #1f2937;">
+                            <span>Design Guidelines</span>
+                            <i class="fas fa-chevron-down" id="design-icon"
+                                style="transition: transform 0.3s ease; color: #6366f1;"></i>
+                        </button>
+                        <div class="accordion-content" id="design-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+                            <div style="padding: 0 24px 24px;">
+                                <div
+                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
+                                    <div>
+                                        <h4
+                                            style="font-weight: 600; color: #1f2937; margin-bottom: 16px; font-size: 1rem;">
+                                            Resolution Requirements</h4>
+                                        <ul
+                                            style="list-style: none; padding: 0; margin: 0; color: #6b7280; line-height: 1.8;">
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-info-circle" style="color: #6366f1;"></i> Minimum: 150
+                                                DPI</li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-star" style="color: #f59e0b;"></i> Recommended: 300
+                                                DPI</li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> Large format:
+                                                72-150 DPI acceptable</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            style="font-weight: 600; color: #1f2937; margin-bottom: 16px; font-size: 1rem;">
+                                            File Formats</h4>
+                                        <ul
+                                            style="list-style: none; padding: 0; margin: 0; color: #6b7280; line-height: 1.8;">
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-star" style="color: #f59e0b;"></i> PDF (preferred)
+                                            </li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> AI, EPS, PSD</li>
+                                            <li style="display: flex; align-items: center; gap: 8px;"><i
+                                                    class="fas fa-check" style="color: #10b981;"></i> High-res JPEG, PNG
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Printing Instructions Accordion -->
+                    <div
+                        style="background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); overflow: hidden; border: 1px solid #e5e7eb;">
+                        <button class="accordion-trigger" onclick="toggleAccordion('printing')"
+                            style="width: 100%; padding: 24px; text-align: left; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 600; font-size: 1.125rem; color: #1f2937;">
+                            <span>Printing Instructions</span>
+                            <i class="fas fa-chevron-down" id="printing-icon"
+                                style="transition: transform 0.3s ease; color: #6366f1;"></i>
+                        </button>
+                        <div class="accordion-content" id="printing-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+                            <div style="padding: 0 24px 24px;">
+                                <div
+                                    style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                                    <h4
+                                        style="font-weight: 600; color: #1f2937; margin-bottom: 16px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                                        <i class="fas fa-clock" style="color: #6366f1;"></i>
+                                        Production Timeline
+                                    </h4>
+                                    <ul
+                                        style="list-style: none; padding: 0; margin: 0; color: #6b7280; line-height: 1.8;">
+                                        <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i
+                                                class="fas fa-check" style="color: #10b981;"></i> Standard production:
+                                            2-3 business days</li>
+                                        <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i
+                                                class="fas fa-bolt" style="color: #f59e0b;"></i> Rush orders: 24-48
+                                            hours (additional cost)</li>
+                                        <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i
+                                                class="fas fa-ruler" style="color: #6366f1;"></i> Custom sizes: 3-5
+                                            business days</li>
+                                        <li style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-eye"
+                                                style="color: #8b5cf6;"></i> Proof approval required before printing
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Similar Products -->
+        <section style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; color: #1f2937;">
+                        You May Also Like
+                    </h2>
+                    <p style="font-size: 1.125rem; color: #6b7280;">
+                        Explore our other premium display and marketing solutions
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+                    <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.15)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08)'">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #6366f1, #8b5cf6); position: relative; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop"
+                                alt="Banner Stands" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                            <div
+                                style="position: absolute; top: 16px; right: 16px; background: rgba(255, 255, 255, 0.9); color: #6366f1; padding: 8px 12px; border-radius: 20px; font-size: 0.875rem; font-weight: 600;">
+                                Popular
+                            </div>
+                        </div>
+                        <div style="padding: 24px;">
+                            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Banner
+                                Stands</h3>
+                            <p style="color: #6b7280; margin-bottom: 16px; font-size: 0.875rem;">Professional
+                                retractable banner stands for events and promotions</p>
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 1.5rem; font-weight: 700; color: #6366f1;">₹1,800</span>
+                                    <span style="color: #6b7280; font-size: 0.875rem;">starting</span>
+                                </div>
+                                <a href="banner-stands.html"
+                                    style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.15)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08)'">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #10b981, #059669); position: relative; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&h=200&fit=crop"
+                                alt="Poster Printing"
+                                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        </div>
+                        <div style="padding: 24px;">
+                            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Poster
+                                Printing</h3>
+                            <p style="color: #6b7280; margin-bottom: 16px; font-size: 0.875rem;">High-quality poster
+                                printing for advertising and decoration</p>
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 1.5rem; font-weight: 700; color: #10b981;">₹150</span>
+                                    <span style="color: #6b7280; font-size: 0.875rem;">per sq ft</span>
+                                </div>
+                                <a href="poster.html"
+                                    style="background: #10b981; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.15)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08)'">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); position: relative; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop"
+                                alt="Vinyl Banners" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        </div>
+                        <div style="padding: 24px;">
+                            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Vinyl
+                                Banners</h3>
+                            <p style="color: #6b7280; margin-bottom: 16px; font-size: 0.875rem;">Durable vinyl banners
+                                for outdoor advertising and events</p>
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 1.5rem; font-weight: 700; color: #f59e0b;">₹120</span>
+                                    <span style="color: #6b7280; font-size: 0.875rem;">per sq ft</span>
+                                </div>
+                                <a href="vinyl-banners.html"
+                                    style="background: #f59e0b; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.15)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.08)'">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); position: relative; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=300&h=200&fit=crop"
+                                alt="Display Boards"
+                                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        </div>
+                        <div style="padding: 24px;">
+                            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">
+                                Display Boards</h3>
+                            <p style="color: #6b7280; margin-bottom: 16px; font-size: 0.875rem;">Professional display
+                                boards for presentations and exhibitions</p>
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">₹2,200</span>
+                                    <span style="color: #6b7280; font-size: 0.875rem;">starting</span>
+                                </div>
+                                <a href="display-boards.html"
+                                    style="background: #8b5cf6; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.875rem; font-weight: 500;">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Mobile CTA -->
+        <div id="stickyMobileCTA"
+            style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 16px; z-index: 1000; transform: translateY(100%); transition: transform 0.3s ease; box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.2);">
+            <div
+                style="display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 auto;">
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 700;" id="mobileTotalPrice">₹2,000</div>
+                    <div style="font-size: 0.875rem; opacity: 0.9;">per piece</div>
+                </div>
+                <a href="#calculator"
+                    style="background: white; color: #6366f1; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.875rem;">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer" style="background: #0f172a; color: white; padding: 80px 0 40px;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; margin-bottom: 48px;">
+                <!-- Company Info -->
+                <div>
+                    <div style="margin-bottom: 24px;">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo"
+                            style="height: 50px; width: auto; filter: brightness(0) invert(1);">
+                    </div>
+                    <p style="color: #94a3b8; line-height: 1.6; margin-bottom: 24px;">
+                        The leader in quality custom printing services. Professional roll-up standees and display
+                        solutions for all your marketing needs.
+                    </p>
+                    <div style="display: flex; gap: 16px;">
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem; transition: color 0.3s ease;"
+                            onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem; transition: color 0.3s ease;"
+                            onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem; transition: color 0.3s ease;"
+                            onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.25rem; transition: color 0.3s ease;"
+                            onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 24px; color: white;">Quick Links
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px;">
+                            <a href="#calculator"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Price Calculator
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <a href="#features"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Features
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <a href="#specifications"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Specifications
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <a href="../contact.html"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 24px; color: white;">Our Services
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px;">
+                            <a href="brochures.html"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Brochures
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <a href="poster.html"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Poster Printing
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <a href="flyers.html"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Flyers
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <a href="catalogue.html"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#6366f1'" onmouseout="this.style.color='#94a3b8'">
+                                Catalogues
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 24px; color: white;">Contact Info
+                    </h3>
+                    <div style="space-y: 16px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <i class="fas fa-phone" style="color: #6366f1; width: 16px;"></i>
+                            <a href="tel:+919876543210" style="color: #94a3b8; text-decoration: none;">+91 98765
+                                43210</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <i class="fas fa-envelope" style="color: #6366f1; width: 16px;"></i>
+                            <a href="mailto:info@shristipress.com"
+                                style="color: #94a3b8; text-decoration: none;">info@shristipress.com</a>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                            <i class="fas fa-map-marker-alt" style="color: #6366f1; width: 16px; margin-top: 2px;"></i>
+                            <span style="color: #94a3b8;">123 Print Street, Design Plaza<br>Mumbai, Maharashtra
+                                400001</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #334155; padding-top: 32px; text-align: center;">
+                <p style="color: #64748b; margin: 0;">
+                    &copy; 2024 Shristi Press. All rights reserved. |
+                    <a href="#" style="color: #6366f1; text-decoration: none;">Privacy Policy</a> |
+                    <a href="#" style="color: #6366f1; text-decoration: none;">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../css/style.css"></script>
+    <script>
+        // Price calculation variables
+        let basePrice = 2000;
+        let currentPrice = basePrice;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            calculatePrice();
+            initializePage();
+
+            // Add event listeners for price calculation
+            document.getElementById('standeeType').addEventListener('change', calculatePrice);
+            document.getElementById('size').addEventListener('change', calculatePrice);
+            document.getElementById('printType').addEventListener('change', calculatePrice);
+            document.getElementById('printMedia').addEventListener('change', calculatePrice);
+            document.getElementById('quantity').addEventListener('input', calculatePrice);
+        });
+
+        // Initialize page functionality
+        function initializePage() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Sticky mobile CTA
+            let lastScrollTop = 0;
+            const stickyBar = document.getElementById('stickyMobileCTA');
+
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (window.innerWidth < 768) {
+                    if (scrollTop > 300) {
+                        stickyBar.style.transform = 'translateY(0)';
+                    } else {
+                        stickyBar.style.transform = 'translateY(100%)';
+                    }
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Scroll progress bar
+            const scrollProgress = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', function () {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                scrollProgress.style.width = scrollPercent + '%';
+            });
+        }
+
+        // Quantity controls
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            calculatePrice();
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            if (parseInt(quantityInput.value) > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                calculatePrice();
+            }
+        }
+
+        // Price calculation
+        function calculatePrice() {
+            const standeeType = document.getElementById('standeeType');
+            const size = document.getElementById('size');
+            const printType = document.getElementById('printType');
+            const printMedia = document.getElementById('printMedia');
+            const quantity = document.getElementById('quantity');
+
+            // Get base price from standee type
+            basePrice = parseInt(standeeType.selectedOptions[0].dataset.price);
+
+            // Apply multipliers
+            let sizeMultiplier = parseFloat(size.selectedOptions[0].dataset.multiplier);
+            let printMultiplier = parseFloat(printType.selectedOptions[0].dataset.multiplier);
+            let mediaMultiplier = parseFloat(printMedia.selectedOptions[0].dataset.multiplier);
+
+            // Calculate unit price
+            let unitPrice = basePrice * sizeMultiplier * printMultiplier * mediaMultiplier;
+
+            // Apply quantity discounts
+            let quantityValue = parseInt(quantity.value);
+            let discount = 1;
+            if (quantityValue >= 10) discount = 0.9; // 10% discount
+            if (quantityValue >= 25) discount = 0.85; // 15% discount
+            if (quantityValue >= 50) discount = 0.8; // 20% discount
+
+            unitPrice = unitPrice * discount;
+            currentPrice = unitPrice * quantityValue;
+
+            // Update display
+            document.getElementById('totalPrice').textContent = `₹${Math.round(currentPrice).toLocaleString()}`;
+            document.getElementById('unitPrice').textContent = `₹${Math.round(unitPrice).toLocaleString()}`;
+            document.getElementById('mobileTotalPrice').textContent = `₹${Math.round(currentPrice).toLocaleString()}`;
+
+            // Show discount badge if applicable
+            const discountBadge = document.getElementById('discountBadge');
+            if (discount < 1) {
+                discountBadge.style.display = 'block';
+                discountBadge.innerHTML = `<i class="fas fa-tag"></i> Save ${Math.round((1 - discount) * 100)}% today!`;
+            } else {
+                discountBadge.style.display = 'none';
+            }
+        }
+
+        // Accordion functionality
+        function toggleAccordion(id) {
+            const content = document.getElementById(id + '-content');
+            const icon = document.getElementById(id + '-icon');
+
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(acc => {
+                    acc.style.maxHeight = '0px';
+                });
+                document.querySelectorAll('.accordion-content').forEach((acc, index) => {
+                    const iconId = ['specs-icon', 'design-icon', 'printing-icon'][index];
+                    if (iconId && document.getElementById(iconId)) {
+                        document.getElementById(iconId).style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Open clicked accordion
+                content.style.maxHeight = '500px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Delivery estimation
+        function estimateDelivery() {
+            const pincode = document.getElementById('pincode').value;
+            const deliveryResult = document.getElementById('deliveryResult');
+
+            if (pincode.length >= 6) {
+                // Simulate API call
+                setTimeout(() => {
+                    deliveryResult.style.display = 'block';
+                }, 500);
+            } else {
+                alert('Please enter a valid pincode');
+            }
+        }
+
+        // Navbar functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
+            const header = document.querySelector('.header');
+
+            // Mobile menu toggle
+            if (navbarToggle) {
+                navbarToggle.addEventListener('click', function () {
+                    navbarMenu.classList.toggle('active');
+                    navbarToggle.classList.toggle('active');
+                });
+            }
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Hide/show navbar on scroll
+                if (scrollTop > lastScrollTop && scrollTop > 200) {
+                    header.classList.add('navbar-hidden');
+                } else {
+                    header.classList.remove('navbar-hidden');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Mega menu functionality
+            const megaMenuItems = document.querySelectorAll('.mega-menu-item');
+
+            megaMenuItems.forEach(item => {
+                const megaMenu = item.querySelector('.mega-menu');
+                let timeout;
+
+                item.addEventListener('mouseenter', function () {
+                    clearTimeout(timeout);
+                    item.classList.add('mega-menu-active');
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    timeout = setTimeout(() => {
+                        item.classList.remove('mega-menu-active');
+                    }, 100);
+                });
+
+                if (megaMenu) {
+                    megaMenu.addEventListener('mouseenter', function () {
+                        clearTimeout(timeout);
+                    });
+
+                    megaMenu.addEventListener('mouseleave', function () {
+                        timeout = setTimeout(() => {
+                            item.classList.remove('mega-menu-active');
+                        }, 100);
+                    });
+                }
+            });
+
+            // Theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function () {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+
+                // Load saved theme
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        });
+
+        // Performance optimization - debounce price calculation
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debouncing to quantity input
+        document.addEventListener('DOMContentLoaded', function () {
+            const quantityInput = document.getElementById('quantity');
+            if (quantityInput) {
+                quantityInput.addEventListener('input', debounce(calculatePrice, 300));
+            }
+        });
+    </script>
+</body>
+
+</html>""

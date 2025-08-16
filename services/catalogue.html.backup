@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Catalog & Brochure Printing | Professional Print Services</title>
+    <meta name="description"
+        content="High-quality catalog and brochure printing services. Professional full-color printing with fast turnaround, competitive pricing, and premium materials.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e'
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom gradient backgrounds */
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        }
+
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #0ea5e9 0%, #f59e0b 100%);
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* Hover effects */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Text gradient */
+        .text-gradient {
+            background: linear-gradient(135deg, #0ea5e9, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animated border */
+        .animated-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .animated-border:hover::before {
+            left: 100%;
+        }
+
+        /* Button ripple effect */
+        button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+    <!-- Main Site Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-gray-50 font-sans antialiased overflow-x-hidden">
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
+                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
+                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
+                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
+                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
+                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
+                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
+                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
+                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
+                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="brochures.html">Brochures</a></li>
+                                                <li><a href="catalogue.html">Catalogue</a></li>
+                                                <li><a href="poster.html">Poster</a></li>
+                                                <li><a href="flyers.html">Flyers</a></li>
+                                                <li><a href="dangler.html">Dangler</a></li>
+                                                <li><a href="standees.html">Standees</a></li>
+                                                <li><a href="pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="business-cards.html">Business Card</a></li>
+                                                <li><a href="letter-head.html">Letter Head</a></li>
+                                                <li><a href="envelopes.html">Envelopes</a></li>
+                                                <li><a href="bill-book.html">Bill Book</a></li>
+                                                <li><a href="id-cards.html">ID Cards</a></li>
+                                                <li><a href="sticker.html">Sticker</a></li>
+                                                <li><a href="document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    
+
+
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with Gradient -->
+        <div class="absolute inset-0 gradient-bg-3"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
+
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float"
+                style="animation-delay: 2s;"></div>
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl animate-pulse-slow">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="text-white space-y-8 animate-slide-in-left">
+                    <div class="space-y-2">
+                        <p class="text-accent-500 font-semibold text-lg tracking-wide uppercase">Professional
+                            Printing Services</p>
+                        <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                            Premium
+                            <span
+                                class="text-gradient bg-gradient-to-r from-white to-accent-500 bg-clip-text text-transparent">Catalog</span>
+                            & Brochure Printing
+                        </h1>
+                    </div>
+
+                    <p class="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-2xl">
+                        Transform your business with stunning, high-quality catalogs and brochures. Professional
+                        printing with vibrant colors, premium materials, and lightning-fast turnaround times.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="grid grid-cols-2 gap-4 text-white/80">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                            <span>Premium Quality</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                            <span>Fast Turnaround</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                            <span>Eco-Friendly</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                            <span>Competitive Pricing</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button
+                            class="group bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center justify-center space-x-2">
+                            <span>Get Free Quote</span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                        <button
+                            class="group border-2 border-white/50 text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm flex items-center justify-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                            <span>View Portfolio</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Right Content - Visual Elements -->
+                <div class="relative animate-slide-in-right">
+                    <div class="relative">
+                        <!-- Main Catalog Mockup -->
+                        <div class="relative z-20 transform rotate-6 hover:rotate-3 transition-transform duration-500">
+                            <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm mx-auto">
+                                <div class="space-y-4">
+                                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                                    <div class="h-32 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="h-3 bg-gray-200 rounded w-full"></div>
+                                        <div class="h-3 bg-gray-200 rounded w-2/3"></div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="h-16 bg-gray-100 rounded"></div>
+                                        <div class="h-16 bg-gray-100 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Brochure Mockup -->
+                        <div
+                            class="absolute -bottom-8 -left-8 z-10 transform -rotate-12 hover:-rotate-6 transition-transform duration-500">
+                            <div class="bg-white rounded-xl shadow-xl p-6 w-48">
+                                <div class="space-y-3">
+                                    <div class="h-3 bg-gray-200 rounded w-2/3"></div>
+                                    <div class="h-20 bg-gradient-to-br from-accent-100 to-accent-200 rounded"></div>
+                                    <div class="h-2 bg-gray-200 rounded w-full"></div>
+                                    <div class="h-2 bg-gray-200 rounded w-1/2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-8 -right-8 w-16 h-16 bg-white/20 rounded-full animate-bounce-slow">
+                        </div>
+                        <div class="absolute -bottom-4 right-8 w-8 h-8 bg-accent-500/30 rounded-full animate-float"
+                            style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 -left-12 w-12 h-12 bg-white/10 rounded-full animate-pulse-slow"
+                            style="animation-delay: 3s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Pricing Instant Quote Section -->
+    <section class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div
+                    class="inline-flex items-center space-x-2 bg-primary-50 text-primary-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span>Instant Quote Calculator</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Catalog Printing
+                    <span class="text-gradient">Instant Quote</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get an instant price quote for your catalog printing project. Customize every detail and see
+                    real-time pricing.
+                </p>
+            </div>
+
+            <!-- Quote Calculator -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Left Column - Configuration Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
+                        <form id="quote-calculator" class="space-y-8">
+                            <!-- Product Type Selection -->
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                    <div
+                                        class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                        1</div>
+                                    Choose Product Type
+                                </h3>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="productType" value="catalog" class="sr-only peer"
+                                            checked>
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div
+                                                class="w-12 h-12 mx-auto mb-2 bg-primary-100 peer-checked:bg-primary-200 rounded-lg flex items-center justify-center">
+                                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="font-semibold text-gray-900">Catalog</div>
+                                            <div class="text-xs text-gray-500">Multi-page</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="productType" value="brochure" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div
+                                                class="w-12 h-12 mx-auto mb-2 bg-gray-100 peer-checked:bg-primary-200 rounded-lg flex items-center justify-center">
+                                                <svg class="w-6 h-6 text-gray-600 peer-checked:text-primary-600"
+                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="font-semibold text-gray-900">Brochure</div>
+                                            <div class="text-xs text-gray-500">Tri-fold</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="productType" value="booklet" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div
+                                                class="w-12 h-12 mx-auto mb-2 bg-gray-100 peer-checked:bg-primary-200 rounded-lg flex items-center justify-center">
+                                                <svg class="w-6 h-6 text-gray-600 peer-checked:text-primary-600"
+                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="font-semibold text-gray-900">Booklet</div>
+                                            <div class="text-xs text-gray-500">Stapled</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="productType" value="magazine" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div
+                                                class="w-12 h-12 mx-auto mb-2 bg-gray-100 peer-checked:bg-primary-200 rounded-lg flex items-center justify-center">
+                                                <svg class="w-6 h-6 text-gray-600 peer-checked:text-primary-600"
+                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="font-semibold text-gray-900">Magazine</div>
+                                            <div class="text-xs text-gray-500">Perfect bound</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Size Selection -->
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                    <div
+                                        class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                        2</div>
+                                    Select Size
+                                </h3>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="size" value="a4" class="sr-only peer" checked>
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">A4</div>
+                                            <div class="text-sm text-gray-500">210 × 297 mm</div>
+                                            <div class="text-xs text-gray-400">8.3 × 11.7 in</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="size" value="a5" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">A5</div>
+                                            <div class="text-sm text-gray-500">148 × 210 mm</div>
+                                            <div class="text-xs text-gray-400">5.8 × 8.3 in</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="size" value="letter" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Letter</div>
+                                            <div class="text-sm text-gray-500">216 × 279 mm</div>
+                                            <div class="text-xs text-gray-400">8.5 × 11 in</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="size" value="tabloid" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Tabloid</div>
+                                            <div class="text-sm text-gray-500">279 × 432 mm</div>
+                                            <div class="text-xs text-gray-400">11 × 17 in</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="size" value="square" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Square</div>
+                                            <div class="text-sm text-gray-500">210 × 210 mm</div>
+                                            <div class="text-xs text-gray-400">8.3 × 8.3 in</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="size" value="custom" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Custom</div>
+                                            <div class="text-sm text-gray-500">Your size</div>
+                                            <div class="text-xs text-gray-400">Contact us</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pages and Quantity -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                        <div
+                                            class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                            3</div>
+                                        Pages
+                                    </h3>
+                                    <div class="relative">
+                                        <select name="pages"
+                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white">
+                                            <option value="4">4 pages</option>
+                                            <option value="8" selected>8 pages</option>
+                                            <option value="12">12 pages</option>
+                                            <option value="16">16 pages</option>
+                                            <option value="20">20 pages</option>
+                                            <option value="24">24 pages</option>
+                                            <option value="32">32 pages</option>
+                                            <option value="48">48 pages</option>
+                                            <option value="64">64 pages</option>
+                                            <option value="custom">Custom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                        <div
+                                            class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                            4</div>
+                                        Quantity
+                                    </h3>
+                                    <div class="relative">
+                                        <select name="quantity"
+                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white">
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100" selected>100</option>
+                                            <option value="250">250</option>
+                                            <option value="500">500</option>
+                                            <option value="1000">1,000</option>
+                                            <option value="2500">2,500</option>
+                                            <option value="5000">5,000</option>
+                                            <option value="custom">Custom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Paper Options -->
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                    <div
+                                        class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                        5</div>
+                                    Paper Options
+                                </h3>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Cover
+                                            Paper</label>
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="coverPaper" value="250gsm-gloss"
+                                                    class="sr-only peer" checked>
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">250gsm</div>
+                                                    <div class="text-xs text-gray-500">Gloss</div>
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="coverPaper" value="300gsm-matt"
+                                                    class="sr-only peer">
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">300gsm</div>
+                                                    <div class="text-xs text-gray-500">Matt</div>
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="coverPaper" value="350gsm-silk"
+                                                    class="sr-only peer">
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">350gsm</div>
+                                                    <div class="text-xs text-gray-500">Silk</div>
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="coverPaper" value="400gsm-uncoated"
+                                                    class="sr-only peer">
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">400gsm</div>
+                                                    <div class="text-xs text-gray-500">Uncoated</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Inner
+                                            Pages</label>
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="innerPaper" value="130gsm-gloss"
+                                                    class="sr-only peer" checked>
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">130gsm</div>
+                                                    <div class="text-xs text-gray-500">Gloss</div>
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="innerPaper" value="150gsm-matt"
+                                                    class="sr-only peer">
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">150gsm</div>
+                                                    <div class="text-xs text-gray-500">Matt</div>
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="innerPaper" value="170gsm-silk"
+                                                    class="sr-only peer">
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">170gsm</div>
+                                                    <div class="text-xs text-gray-500">Silk</div>
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="innerPaper" value="200gsm-uncoated"
+                                                    class="sr-only peer">
+                                                <div
+                                                    class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-lg p-3 text-center transition-all duration-200">
+                                                    <div class="font-medium text-gray-900">200gsm</div>
+                                                    <div class="text-xs text-gray-500">Uncoated</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Binding Options -->
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                    <div
+                                        class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                        6</div>
+                                    Binding & Finishing
+                                </h3>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Binding
+                                            Type</label>
+                                        <div class="space-y-3">
+                                            <label class="flex items-center space-x-3 cursor-pointer">
+                                                <input type="radio" name="binding" value="saddle-stitch"
+                                                    class="text-primary-600 focus:ring-primary-500" checked>
+                                                <div class="flex-1">
+                                                    <div class="font-medium text-gray-900">Saddle Stitch</div>
+                                                    <div class="text-sm text-gray-500">Stapled spine (up to 64
+                                                        pages)</div>
+                                                </div>
+                                                <div class="text-sm font-semibold text-primary-600">+₹0</div>
+                                            </label>
+                                            <label class="flex items-center space-x-3 cursor-pointer">
+                                                <input type="radio" name="binding" value="perfect-bound"
+                                                    class="text-primary-600 focus:ring-primary-500">
+                                                <div class="flex-1">
+                                                    <div class="font-medium text-gray-900">Perfect Bound</div>
+                                                    <div class="text-sm text-gray-500">Glued spine (16+ pages)</div>
+                                                </div>
+                                                <div class="text-sm font-semibold text-primary-600">+₹125</div>
+                                            </label>
+                                            <label class="flex items-center space-x-3 cursor-pointer">
+                                                <input type="radio" name="binding" value="wire-o"
+                                                    class="text-primary-600 focus:ring-primary-500">
+                                                <div class="flex-1">
+                                                    <div class="font-medium text-gray-900">Wire-O Bound</div>
+                                                    <div class="text-sm text-gray-500">Spiral wire binding</div>
+                                                </div>
+                                                <div class="text-sm font-semibold text-primary-600">+₹185</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Finishing
+                                            Options</label>
+                                        <div class="space-y-3">
+                                            <label class="flex items-center space-x-3 cursor-pointer">
+                                                <input type="checkbox" name="finishing" value="lamination"
+                                                    class="text-primary-600 focus:ring-primary-500 rounded">
+                                                <div class="flex-1">
+                                                    <div class="font-medium text-gray-900">Lamination</div>
+                                                    <div class="text-sm text-gray-500">Gloss or Matt finish</div>
+                                                </div>
+                                                <div class="text-sm font-semibold text-primary-600">+₹65</div>
+                                            </label>
+                                            <label class="flex items-center space-x-3 cursor-pointer">
+                                                <input type="checkbox" name="finishing" value="uv-coating"
+                                                    class="text-primary-600 focus:ring-primary-500 rounded">
+                                                <div class="flex-1">
+                                                    <div class="font-medium text-gray-900">UV Coating</div>
+                                                    <div class="text-sm text-gray-500">High gloss protective coating
+                                                    </div>
+                                                </div>
+                                                <div class="text-sm font-semibold text-primary-600">+₹105</div>
+                                            </label>
+                                            <label class="flex items-center space-x-3 cursor-pointer">
+                                                <input type="checkbox" name="finishing" value="foil-stamping"
+                                                    class="text-primary-600 focus:ring-primary-500 rounded">
+                                                <div class="flex-1">
+                                                    <div class="font-medium text-gray-900">Foil Stamping</div>
+                                                    <div class="text-sm text-gray-500">Metallic foil accents</div>
+                                                </div>
+                                                <div class="text-sm font-semibold text-primary-600">+₹295</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turnaround Time -->
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                    <div
+                                        class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                        7</div>
+                                    Turnaround Time
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="turnaround" value="standard" class="sr-only peer"
+                                            checked>
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Standard</div>
+                                            <div class="text-sm text-gray-500 mb-2">7-10 business days</div>
+                                            <div class="text-lg font-bold text-green-600">+₹0</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="turnaround" value="express" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Express</div>
+                                            <div class="text-sm text-gray-500 mb-2">3-5 business days</div>
+                                            <div class="text-lg font-bold text-accent-600">+25%</div>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="turnaround" value="rush" class="sr-only peer">
+                                        <div
+                                            class="bg-gray-50 peer-checked:bg-primary-50 peer-checked:border-primary-500 border-2 border-gray-200 rounded-xl p-4 text-center transition-all duration-200 hover:border-primary-300">
+                                            <div class="font-semibold text-gray-900">Rush</div>
+                                            <div class="text-sm text-gray-500 mb-2">24-48 hours</div>
+                                            <div class="text-lg font-bold text-red-600">+50%</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- File Upload Section -->
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                    <div
+                                        class="w-8 h-8 gradient-bg-1 rounded-lg flex items-center justify-center text-white text-sm font-bold mr-3">
+                                        8</div>
+                                    Upload Your Files
+                                </h3>
+                                <div class="space-y-6">
+                                    <!-- Main File Upload Area -->
+                                    <div class="border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:border-primary-400 transition-colors duration-200"
+                                        id="file-upload-area">
+                                        <div class="space-y-4">
+                                            <div
+                                                class="w-16 h-16 mx-auto bg-primary-100 rounded-2xl flex items-center justify-center">
+                                                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Drop your files
+                                                    here or click to browse</h4>
+                                                <p class="text-gray-500 mb-4">Upload your design files, artwork, or
+                                                    content</p>
+                                                <input type="file" id="file-input" name="files" multiple
+                                                    accept=".pdf,.ai,.psd,.eps,.jpg,.jpeg,.png,.tiff,.indd"
+                                                    class="hidden">
+                                                <button type="button"
+                                                    onclick="document.getElementById('file-input').click()"
+                                                    class="gradient-bg-1 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200">
+                                                    Choose Files
+                                                </button>
+                                            </div>
+                                            <div class="text-sm text-gray-400">
+                                                Supported formats: PDF, AI, PSD, EPS, JPG, PNG, TIFF, INDD (Max 100MB
+                                                per file)
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Uploaded Files List -->
+                                    <div id="uploaded-files" class="hidden">
+                                        <h5 class="font-semibold text-gray-900 mb-3">Uploaded Files:</h5>
+                                        <div id="files-list" class="space-y-2"></div>
+                                    </div>
+
+                                    <!-- Design Service Option -->
+                                    <div
+                                        class="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-100">
+                                        <div class="flex items-start space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                                                    <svg class="w-6 h-6 text-primary-600" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h4">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-semibold text-gray-900 mb-2">Need Design Help?</h5>
+                                                <p class="text-gray-600 mb-4">Our professional design team can create
+                                                    stunning layouts for your catalog.</p>
+                                                <label class="flex items-center space-x-3 cursor-pointer">
+                                                    <input type="checkbox" name="designService" value="yes"
+                                                        class="text-primary-600 focus:ring-primary-500 rounded">
+                                                    <span class="font-medium text-gray-900">Add Professional Design
+                                                        Service</span>
+                                                    <span class="text-primary-600 font-semibold">+₹2,500</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Special Instructions -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Special
+                                            Instructions (Optional)</label>
+                                        <textarea name="instructions" rows="4"
+                                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none transition-colors duration-200 resize-none"
+                                            placeholder="Any specific requirements, color preferences, or special instructions for your project..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Price Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 sticky top-8">
+                        <div class="text-center mb-8">
+                            <div
+                                class="w-20 h-20 gradient-bg-1 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Your Quote</h3>
+                            <p class="text-gray-600">Instant pricing calculation</p>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-600">Base Price</span>
+                                <span class="font-semibold text-gray-900" id="base-price">₹39,750</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-600">Binding</span>
+                                <span class="font-semibold text-gray-900" id="binding-price">₹0</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-600">Finishing</span>
+                                <span class="font-semibold text-gray-900" id="finishing-price">₹0</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="text-gray-600">Rush Charge</span>
+                                <span class="font-semibold text-gray-900" id="rush-price">₹0</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-t-2 border-primary-100">
+                                <span class="text-xl font-bold text-gray-900">Total</span>
+                                <span class="text-3xl font-bold text-primary-600" id="total-price">₹39,750</span>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm text-gray-500">Price per unit: <span class="font-semibold"
+                                        id="unit-price">₹397.50</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="bg-gray-50 rounded-2xl p-6 mb-8">
+                            <h4 class="font-bold text-gray-900 mb-4">Order Summary</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Product:</span>
+                                    <span class="font-medium" id="summary-product">Catalog</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Size:</span>
+                                    <span class="font-medium" id="summary-size">A4</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Pages:</span>
+                                    <span class="font-medium" id="summary-pages">8 pages</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Quantity:</span>
+                                    <span class="font-medium" id="summary-quantity">100</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Turnaround:</span>
+                                    <span class="font-medium" id="summary-turnaround">7-10 days</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-4">
+                            <button
+                                class="w-full gradient-bg-1 text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                                Order Now
+                            </button>
+                            <button
+                                class="w-full border-2 border-primary-500 text-primary-600 py-4 rounded-xl font-bold text-lg hover:bg-primary-50 transition-all duration-300">
+                                Request Quote
+                            </button>
+                            <button
+                                class="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300">
+                                Save Quote
+                            </button>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="mt-8 pt-6 border-t border-gray-100">
+                            <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
+                                <div class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>Free Shipping</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>Quality Guarantee</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(circle at 1px 1px, #0ea5e9 1px, transparent 0); background-size: 20px 20px;">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in">
+                <div
+                    class="inline-flex items-center space-x-2 bg-primary-50 text-primary-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span>Our Services</span>
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Professional Printing
+                    <span class="text-gradient">Solutions</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    From concept to completion, we deliver exceptional printing services that elevate your brand and
+                    captivate your audience.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Catalog Printing -->
+                <div
+                    class="group hover-lift bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animated-border">
+                    <div class="p-8">
+                        <div
+                            class="w-16 h-16 gradient-bg-1 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+                            Catalog Printing</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Professional product catalogs with premium
+                            binding, vibrant colors, and exceptional print quality that showcases your products
+                            beautifully.</p>
+                        <div
+                            class="flex items-center text-primary-600 font-semibold group-hover:text-primary-700 transition-colors duration-200">
+                            <span>Learn More</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Brochure Printing -->
+                <div
+                    class="group hover-lift bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animated-border">
+                    <div class="p-8">
+                        <div
+                            class="w-16 h-16 gradient-bg-2 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">
+                            Brochure Printing</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Eye-catching tri-fold and bi-fold brochures
+                            perfect for trade shows, marketing campaigns, and business presentations.</p>
+                        <div
+                            class="flex items-center text-accent-600 font-semibold group-hover:text-accent-700 transition-colors duration-200">
+                            <span>Learn More</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booklet Printing -->
+                <div
+                    class="group hover-lift bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animated-border">
+                    <div class="p-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                            Booklet Printing</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Custom booklets for manuals, guides, reports,
+                            and comprehensive business presentations with professional binding options.</p>
+                        <div
+                            class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors duration-200">
+                            <span>Learn More</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Design -->
+                <div
+                    class="group hover-lift bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animated-border">
+                    <div class="p-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h4">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                            Custom Design</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Professional design services to create
+                            stunning layouts and graphics that perfectly represent your brand and message.</p>
+                        <div
+                            class="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors duration-200">
+                            <span>Learn More</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Stats Section -->
+            <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">10K+</div>
+                    <div class="text-gray-600">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">500+</div>
+                    <div class="text-gray-600">Happy Clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">24h</div>
+                    <div class="text-gray-600">Fast Turnaround</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">99%</div>
+                    <div class="text-gray-600">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section -->
+    <section id="products" class="py-24 bg-gray-50 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-30 animate-float">
+        </div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-30 animate-float"
+            style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in">
+                <div
+                    class="inline-flex items-center space-x-2 bg-white text-gray-600 px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    <span>Our Portfolio</span>
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Featured
+                    <span class="text-gradient">Products</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Discover our premium printing capabilities through these carefully crafted examples of our work.
+                </p>
+            </div>
+            <!-- Products Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Product 1 - Tri-fold Brochures -->
+                <div class="group hover-lift bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-48 h-32 bg-white rounded-lg shadow-xl transform rotate-12 group-hover:rotate-6 transition-transform duration-500">
+                                <div class="p-4 space-y-2">
+                                    <div class="h-2 bg-primary-200 rounded w-3/4"></div>
+                                    <div class="h-16 bg-gradient-to-r from-primary-100 to-primary-200 rounded">
+                                    </div>
+                                    <div class="h-1 bg-primary-200 rounded w-1/2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-primary-600">
+                            Popular</div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                            Tri-fold Brochures</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Perfect for showcasing multiple aspects of
+                            your business with organized information panels and stunning visuals.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500">Starting at $2.50</div>
+                            <button
+                                class="gradient-bg-1 text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Product Catalogs -->
+                <div class="group hover-lift bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 bg-gradient-to-br from-accent-100 to-accent-200 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-40 h-36 bg-white rounded-lg shadow-xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                                <div class="p-4 space-y-2">
+                                    <div class="h-2 bg-accent-200 rounded w-2/3"></div>
+                                    <div class="h-20 bg-gradient-to-r from-accent-100 to-accent-200 rounded"></div>
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div class="h-3 bg-accent-100 rounded"></div>
+                                        <div class="h-3 bg-accent-100 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-accent-600">
+                            Premium</div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors duration-300">
+                            Product Catalogs</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive catalogs with professional
+                            binding and vibrant color reproduction that showcase your products beautifully.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500">Starting at $5.99</div>
+                            <button
+                                class="gradient-bg-2 text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 - Business Booklets -->
+                <div class="group hover-lift bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-100 to-purple-200 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-36 h-40 bg-white rounded-lg shadow-xl transform rotate-3 group-hover:-rotate-3 transition-transform duration-500">
+                                <div class="p-4 space-y-2">
+                                    <div class="h-2 bg-purple-200 rounded w-1/2"></div>
+                                    <div class="h-24 bg-gradient-to-r from-purple-100 to-purple-200 rounded"></div>
+                                    <div class="space-y-1">
+                                        <div class="h-1 bg-purple-100 rounded w-full"></div>
+                                        <div class="h-1 bg-purple-100 rounded w-3/4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-purple-600">
+                            Professional</div>
+                    </div>
+                    <div class="p-8">
+                        <h3
+                            class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                            Business Booklets</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Professional booklets for company profiles,
+                            user manuals, and training materials with premium binding options.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-500">Starting at $3.75</div>
+                            <button
+                                class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Products Button -->
+            <div class="text-center">
+                <button
+                    class="group bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg border-2 border-gray-200 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-3 mx-auto">
+                    <span>View All Products</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section></svg></button></div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in">
+                <div
+                    class="inline-flex items-center space-x-2 bg-primary-50 text-primary-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1">
+                        </path>
+                    </svg>
+                    <span>Transparent Pricing</span>
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Simple &
+                    <span class="text-gradient">Affordable</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Choose the perfect package for your printing needs. No hidden fees, no surprises.
+                </p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Basic Plan -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 hover:border-primary-200 transition-all duration-300 hover-lift">
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Basic</h3>
+                            <p class="text-gray-600 mb-6">Perfect for small businesses</p>
+                            <div class="text-5xl font-bold text-gray-900 mb-2">$2.50</div>
+                            <div class="text-gray-500">per brochure</div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Standard paper quality</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Full-color printing</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">5-7 business days</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Minimum order: 100</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full bg-gray-100 text-gray-900 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-200">Get
+                            Started</button>
+                    </div>
+                </div>
+                <!-- Professional Plan -->
+                <div
+                    class="bg-white rounded-3xl shadow-xl border-2 border-primary-500 hover:border-primary-600 transition-all duration-300 hover-lift relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="gradient-bg-1 text-white px-6 py-2 rounded-full text-sm font-bold">Most Popular
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                            <p class="text-gray-600 mb-6">Best for growing businesses</p>
+                            <div class="text-5xl font-bold text-primary-600 mb-2">$4.99</div>
+                            <div class="text-gray-500">per catalog</div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Premium paper quality</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Professional binding</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">3-5 business days</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Free design consultation</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full gradient-bg-1 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">Get
+                            Started</button>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div
+                    class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 hover:border-accent-200 transition-all duration-300 hover-lift">
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Premium</h3>
+                            <p class="text-gray-600 mb-6">For enterprise clients</p>
+                            <div class="text-5xl font-bold text-accent-600 mb-2">$8.99</div>
+                            <div class="text-gray-500">per item</div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Luxury finishes</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Custom design service</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">24-48 hour rush</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Dedicated account manager</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full gradient-bg-2 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">Get
+                            Started</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Quote CTA -->
+            <div class="text-center">
+                <p class="text-gray-600 mb-6">Need something custom? We've got you covered.</p>
+                <button
+                    class="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg border-2 border-gray-200 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">Request
+                    Custom Quote</button>
+            </div>
+        </div>
+    </section> <!-- Con
+tact Section -->
+    <section id="contact" class="py-24 gradient-bg-3 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"
+            style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Side - Content -->
+                <div class="text-white animate-slide-in-left">
+                    <div
+                        class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <span>Get In Touch</span>
+                    </div>
+
+                    <h2 class="text-5xl lg:text-6xl font-bold mb-8">
+                        Ready to Start Your
+                        <span class="text-accent-500">Project?</span>
+                    </h2>
+
+                    <p class="text-xl text-white/90 mb-12 leading-relaxed">
+                        Let's bring your vision to life with our premium printing services. Get a free quote today
+                        and see why thousands of businesses trust PrintCraft.
+                    </p>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Call Us</div>
+                                <div class="text-white/80">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Email Us</div>
+                                <div class="text-white/80">hello@printcraft.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Visit Us</div>
+                                <div class="text-white/80">123 Print Street, Design City</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side - Contact Form -->
+                <div class="animate-slide-in-right">
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                        <form class="space-y-6" id="contact-form">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-white font-semibold mb-2">First Name</label>
+                                    <input type="text" name="firstName"
+                                        class="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                                        placeholder="John" required>
+                                </div>
+                                <div>
+                                    <label class="block text-white font-semibold mb-2">Last Name</label>
+                                    <input type="text" name="lastName"
+                                        class="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                                        placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Email</label>
+                                <input type="email" name="email"
+                                    class="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                                    placeholder="john@example.com" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Service Needed</label>
+                                <select name="service"
+                                    class="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+                                    required>
+                                    <option value="">Select a service</option>
+                                    <option value="catalog">Catalog Printing</option>
+                                    <option value="brochure">Brochure Printing</option>
+                                    <option value="booklet">Booklet Printing</option>
+                                    <option value="custom">Custom Design</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Message</label>
+                                <textarea rows="4" name="message"
+                                    class="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent resize-none"
+                                    placeholder="Tell us about your project..." required></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-white text-primary-600 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+                <!-- Slim Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
+                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
+                        </a>
+                        <p class="footer-description">
+                            Professional printing services with unmatched quality and customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">All Services</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
+                        <li><a href="brochures.html">Brochures</a></li>
+                        <li><a href="business-cards.html">Business Cards</a></li>
+                        <li><a href="poster.html">Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                    </div>
+                    <div class="footer-logo-small">
+                        <span>Made with ❤️ by Shristi Press</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!-- Back to Top Button -->
+        <button id="back-to-top"
+            class="fixed bottom-8 right-8 w-14 h-14 gradient-bg-1 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 invisible z-50">
+            <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
+                </path>
+            </svg>
+        </button>
+
+        <!-- JavaScript -->
+        <script>
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > 100) {
+                    navbar.classList.add('shadow-lg');
+                    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                }
+
+                // Hide/show navbar on scroll
+                if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+
+                lastScrollY = currentScrollY;
+            });
+
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            // Form Submission
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = new FormData(this);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+
+                    // Show success message
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+
+                    // Reset form
+                    this.reset();
+                });
+            }
+
+            // Add hover effects to cards
+            document.querySelectorAll('.hover-lift').forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add ripple effect to buttons
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Intersection Observer for Animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for animations
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add smooth reveal animations
+            const revealElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right, .animate-slide-up');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0) translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(el => {
+                el.style.opacity = '0';
+                if (el.classList.contains('animate-slide-in-left')) {
+                    el.style.transform = 'translateX(-50px)';
+                } else if (el.classList.contains('animate-slide-in-right')) {
+                    el.style.transform = 'translateX(50px)';
+                } else if (el.classList.contains('animate-slide-up')) {
+                    el.style.transform = 'translateY(50px)';
+                }
+                el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                revealObserver.observe(el);
+            });
+
+            // Quote Calculator Functionality
+            const quoteCalculator = {
+                basePrice: 397.50,
+
+                prices: {
+                    productType: {
+                        catalog: 1.0,
+                        brochure: 0.6,
+                        booklet: 0.8,
+                        magazine: 1.2
+                    },
+                    size: {
+                        a4: 1.0,
+                        a5: 0.7,
+                        letter: 1.1,
+                        tabloid: 1.8,
+                        square: 0.9,
+                        custom: 1.3
+                    },
+                    pages: {
+                        4: 0.5,
+                        8: 1.0,
+                        12: 1.4,
+                        16: 1.8,
+                        20: 2.2,
+                        24: 2.6,
+                        32: 3.4,
+                        48: 5.0,
+                        64: 6.6
+                    },
+                    binding: {
+                        'saddle-stitch': 0,
+                        'perfect-bound': 125,
+                        'wire-o': 185
+                    },
+                    finishing: {
+                        lamination: 65,
+                        'uv-coating': 105,
+                        'foil-stamping': 295
+                    },
+                    turnaround: {
+                        standard: 1.0,
+                        express: 1.25,
+                        rush: 1.50
+                    }
+                },
+
+                calculate() {
+                    const form = document.getElementById('quote-calculator');
+                    const formData = new FormData(form);
+
+                    const productType = formData.get('productType') || 'catalog';
+                    const size = formData.get('size') || 'a4';
+                    const pages = parseInt(formData.get('pages')) || 8;
+                    const quantity = parseInt(formData.get('quantity')) || 100;
+                    const binding = formData.get('binding') || 'saddle-stitch';
+                    const turnaround = formData.get('turnaround') || 'standard';
+
+                    // Calculate base price
+                    let unitPrice = this.basePrice;
+                    unitPrice *= this.prices.productType[productType];
+                    unitPrice *= this.prices.size[size];
+                    unitPrice *= this.prices.pages[pages];
+
+                    const baseTotal = unitPrice * quantity;
+
+                    // Calculate binding cost
+                    const bindingCost = this.prices.binding[binding] * quantity;
+
+                    // Calculate finishing costs
+                    const finishingOptions = formData.getAll('finishing');
+                    let finishingCost = 0;
+                    finishingOptions.forEach(option => {
+                        finishingCost += this.prices.finishing[option] * quantity;
+                    });
+
+                    // Calculate turnaround multiplier
+                    const turnaroundMultiplier = this.prices.turnaround[turnaround];
+                    const subtotal = baseTotal + bindingCost + finishingCost;
+                    const rushCharge = turnaroundMultiplier > 1 ? (subtotal * (turnaroundMultiplier - 1)) : 0;
+
+                    const total = subtotal + rushCharge;
+                    const finalUnitPrice = total / quantity;
+
+                    // Update UI
+                    this.updatePriceDisplay(baseTotal, bindingCost, finishingCost, rushCharge, total, finalUnitPrice);
+                    this.updateSummary(productType, size, pages, quantity, turnaround);
+                },
+
+                updatePriceDisplay(basePrice, bindingPrice, finishingPrice, rushPrice, total, unitPrice) {
+                    document.getElementById('base-price').textContent = `₹${basePrice.toFixed(0)}`;
+                    document.getElementById('binding-price').textContent = `₹${bindingPrice.toFixed(0)}`;
+                    document.getElementById('finishing-price').textContent = `₹${finishingPrice.toFixed(0)}`;
+                    document.getElementById('rush-price').textContent = `₹${rushPrice.toFixed(0)}`;
+                    document.getElementById('total-price').textContent = `₹${total.toFixed(0)}`;
+                    document.getElementById('unit-price').textContent = `₹${unitPrice.toFixed(2)}`;
+                },
+
+                updateSummary(productType, size, pages, quantity, turnaround) {
+                    document.getElementById('summary-product').textContent = productType.charAt(0).toUpperCase() + productType.slice(1);
+                    document.getElementById('summary-size').textContent = size.toUpperCase();
+                    document.getElementById('summary-pages').textContent = `${pages} pages`;
+                    document.getElementById('summary-quantity').textContent = quantity.toLocaleString();
+
+                    const turnaroundText = {
+                        standard: '7-10 days',
+                        express: '3-5 days',
+                        rush: '24-48 hours'
+                    };
+                    document.getElementById('summary-turnaround').textContent = turnaroundText[turnaround];
+                }
+            };
+
+            // Initialize quote calculator
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('quote-calculator');
+                if (form) {
+                    // Initial calculation
+                    quoteCalculator.calculate();
+
+                    // Add event listeners for real-time updates
+                    form.addEventListener('change', function () {
+                        quoteCalculator.calculate();
+                    });
+
+                    // Add smooth animations for form interactions
+                    const radioInputs = form.querySelectorAll('input[type="radio"]');
+                    radioInputs.forEach(input => {
+                        input.addEventListener('change', function () {
+                            // Add a subtle animation to the price display
+                            const totalPrice = document.getElementById('total-price');
+                            totalPrice.style.transform = 'scale(1.1)';
+                            setTimeout(() => {
+                                totalPrice.style.transform = 'scale(1)';
+                            }, 200);
+                        });
+                    });
+                }
+            });
+
+            // File Upload Functionality
+            const fileUpload = {
+                maxFileSize: 100 * 1024 * 1024, // 100MB
+                allowedTypes: ['.pdf', '.ai', '.psd', '.eps', '.jpg', '.jpeg', '.png', '.tiff', '.indd'],
+                uploadedFiles: [],
+
+                init() {
+                    const fileInput = document.getElementById('file-input');
+                    const uploadArea = document.getElementById('file-upload-area');
+
+                    // File input change event
+                    fileInput.addEventListener('change', (e) => {
+                        this.handleFiles(e.target.files);
+                    });
+
+                    // Drag and drop events
+                    uploadArea.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        uploadArea.classList.add('border-primary-500', 'bg-primary-50');
+                    });
+
+                    uploadArea.addEventListener('dragleave', (e) => {
+                        e.preventDefault();
+                        uploadArea.classList.remove('border-primary-500', 'bg-primary-50');
+                    });
+
+                    uploadArea.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        uploadArea.classList.remove('border-primary-500', 'bg-primary-50');
+                        this.handleFiles(e.dataTransfer.files);
+                    });
+                },
+
+                handleFiles(files) {
+                    Array.from(files).forEach(file => {
+                        if (this.validateFile(file)) {
+                            this.uploadedFiles.push(file);
+                            this.displayFile(file);
+                        }
+                    });
+                    this.updateUploadedFilesSection();
+                },
+
+                validateFile(file) {
+                    // Check file size
+                    if (file.size > this.maxFileSize) {
+                        alert(`File "${file.name}" is too large. Maximum size is 100MB.`);
+                        return false;
+                    }
+
+                    // Check file type
+                    const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+                    if (!this.allowedTypes.includes(fileExtension)) {
+                        alert(`File type "${fileExtension}" is not supported. Please upload: ${this.allowedTypes.join(', ')}`);
+                        return false;
+                    }
+
+                    return true;
+                },
+
+                displayFile(file) {
+                    const filesList = document.getElementById('files-list');
+                    const fileElement = document.createElement('div');
+                    fileElement.className = 'flex items-center justify-between bg-gray-50 rounded-lg p-3';
+
+                    fileElement.innerHTML = `
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-gray-900">${file.name}</div>
+                                    <div class="text-sm text-gray-500">${this.formatFileSize(file.size)}</div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="fileUpload.removeFile('${file.name}')" class="text-red-500 hover:text-red-700 transition-colors duration-200">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        `;
+
+                    filesList.appendChild(fileElement);
+                },
+
+                removeFile(fileName) {
+                    this.uploadedFiles = this.uploadedFiles.filter(file => file.name !== fileName);
+                    this.updateUploadedFilesSection();
+                },
+
+                updateUploadedFilesSection() {
+                    const uploadedFilesSection = document.getElementById('uploaded-files');
+                    const filesList = document.getElementById('files-list');
+
+                    if (this.uploadedFiles.length > 0) {
+                        uploadedFilesSection.classList.remove('hidden');
+                        filesList.innerHTML = '';
+                        this.uploadedFiles.forEach(file => this.displayFile(file));
+                    } else {
+                        uploadedFilesSection.classList.add('hidden');
+                    }
+                },
+
+                formatFileSize(bytes) {
+                    if (bytes === 0) return '0 Bytes';
+                    const k = 1024;
+                    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                    const i = Math.floor(Math.log(bytes) / Math.log(k));
+                    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+                }
+            };
+
+            // Initialize file upload
+            document.addEventListener('DOMContentLoaded', function () {
+                fileUpload.init();
+            });
+
+            console.log('PrintCraft Catalog Page with Quote Calculator and File Upload Loaded Successfully! 🎨');
+        </script>
+    <!-- Main Site Scripts -->
+    <script defer src="../js/script.js"></script>
+</body>
+
+</html>

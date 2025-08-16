@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Shristi Press - The leader in quality custom printing services. Get business cards, brochures, folders, and more with professional design and fast delivery.">
+    <meta name="keywords" content="printing, custom printing, business cards, brochures, design, quality printing">
+    <meta name="author" content="Shristi Press">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shristi Press - Quality Custom Printing">
+    <meta property="og:description" content="The leader in quality custom printing services">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://shristipress.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shristi Press - Quality Custom Printing">
+    <meta name="twitter:description" content="The leader in quality custom printing services">
+    <meta name="twitter:image" content="assets/images/og-image.jpg">
+
+    <title>Shristi Press - The Leader in Quality Custom Printing</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="assets/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <link rel="preload" href="css/style.css" as="style">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "PrintingService",
+        "name": "Shristi Press",
+        "description": "The leader in quality custom printing services",
+        "url": "https://shristipress.com",
+        "logo": "assets/images/logo.png",
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+91-98765-43210",
+                "contactType": "customer service",
+                "email": "info@shristipress.com"
+            },
+            {
+                "@type": "ContactPoint", 
+                "telephone": "+91-98765-43211",
+                "contactType": "sales",
+                "email": "orders@shristipress.com"
+            }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Print Street, Design Plaza",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra", 
+            "postalCode": "400001",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-bar-content">
+                    <div class="contact-info">
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:info@shristipress.com" class="contact-link">
+                                <span class="contact-full">info@shristipress.com</span>
+                                <span class="contact-short">Email</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-essential">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+919876543210" class="contact-link">
+                                <span class="contact-full">+91 98765 43210</span>
+                                <span class="contact-short">Call</span>
+                            </a>
+                        </div>
+                        <div class="contact-item contact-optional">
+                            <span class="contact-icon">💬</span>
+                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="#" class="logo" aria-label="Shristi Press Home">
+                        <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
+                    </a>
+                </div>
+
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="navbar-nav" role="menubar">
+                        <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                        <li class="mega-menu-item" role="none">
+                            <a href="#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                Services
+                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                            </a>
+                            <div class="mega-menu" role="menu" aria-label="Services submenu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-columns">
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Book Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="services\childrens-book-printing.html">Children's Book
+                                                        Printing</a></li>
+                                                <li><a href="services\comic-book-printing.html">Comic Book Printing</a>
+                                                </li>
+                                                <li><a href="services\coffee-table-book-printing.html">Coffee Table Book
+                                                        Printing</a></li>
+                                                <li><a href="services\coloring-book-printing.html">Coloring Book
+                                                        Printing</a></li>
+                                                <li><a href="services\art-book-printing.html">Art Book Printing</a></li>
+                                                <li><a href="services\annual-reports-printing.html">Annual Reports
+                                                        Printing</a></li>
+                                                <li><a href="services\year-book-printing.html">Year Book Printing</a>
+                                                </li>
+                                                <li><a href="services\on-demand-books-printing.html">On Demand Books
+                                                        Printing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="services/medical-paper-boxes.html">Medical Paper Boxes</a>
+                                                </li>
+                                                <li><a href="services/cosmetic-paper-boxes.html">Cosmetic Paper
+                                                        Boxes</a></li>
+                                                <li><a href="services/retail-paper-boxes.html">Retail Paper Boxes</a>
+                                                </li>
+                                                <li><a href="services/folding-carton-boxes.html">Folding Carton
+                                                        Boxes</a></li>
+                                                <li><a href="services/corrugated-boxes.html">Corrugated Boxes</a></li>
+                                                <li><a href="services/kraft-boxes.html">Kraft Boxes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Marketing Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="services/brochures.html">Brochures</a></li>
+                                                <li><a href="services/catalogue.html">Catalogue</a></li>
+                                                <li><a href="services/poster.html">Poster</a></li>
+                                                <li><a href="services/flyers.html">Flyers</a></li>
+                                                <li><a href="services/dangler.html">Dangler</a></li>
+                                                <li><a href="services/standees.html">Standees</a></li>
+                                                <li><a href="services/pen-drives.html">Pen Drives</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-menu-column">
+                                            <h3 class="mega-menu-heading">Stationery Product</h3>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="services/business-cards.html">Business Card</a></li>
+                                                <li><a href="services/letter-head.html">Letter Head</a></li>
+                                                <li><a href="services/envelopes.html">Envelopes</a></li>
+                                                <li><a href="services/bill-book.html">Bill Book</a></li>
+                                                <li><a href="services/id-cards.html">ID Cards</a></li>
+                                                <li><a href="services/sticker.html">Sticker</a></li>
+                                                <li><a href="services/document-printing.html">Document Printing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-image-panel">
+                                        <div class="image-panel-content">
+                                            <img src="assets/images/hero-book.png" alt="Professional printing showcase"
+                                                class="panel-image">
+                                            <div class="panel-overlay">
+                                                <h4 class="panel-title">Premium Quality</h4>
+                                                <h3 class="panel-heading">Printing Excellence</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="none"><a href="#products" role="menuitem">Products</a></li>
+                        <li role="none"><a href="#about" role="menuitem">About</a></li>
+                        <li role="none"><a href="#blog" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                            title="Toggle dark mode">
+                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+                        </button>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-slider" aria-roledescription="carousel">
+                <div class="hero-track" id="heroTrack">
+                    <!-- Slide 1 -->
+                    <div class="hero-slide active" data-index="0">
+                        <div class="container">
+                            <div class="hero-content">
+                                <div class="hero-text" data-animation="fade-up">
+                                    <p class="hero-subtitle">PRINTING SERVICES</p>
+                                    <h1 id="hero-title" class="hero-title">
+                                        The leader in
+                                        <span class="text-gradient">quality custom</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Let us walk you through the top-tier art expertise that
+                                        we will utilize to create your fantastic printing design.
+                                    </p>
+                                    <div class="hero-actions">
+                                        <button class="btn btn-primary btn-large">
+                                            Get Started
+                                            <span class="btn-icon" aria-hidden="true">→</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="hero-visual" data-animation="fade-left">
+                                    <div class="hero-image-container">
+                                        <div class="hero-circle kenburns"></div>
+                                        <img src="assets/images/hero-book.png"
+                                            alt="Open book showcasing professional printing services and design layouts"
+                                            class="hero-image hero-book parallax" loading="eager">
+                                        <div class="floating-badge">
+                                            <div class="badge-content">
+                                                <span class="badge-number">10K+</span>
+                                                <span class="badge-text">Happy Clients</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="hero-slide" data-index="1">
+                        <div class="container">
+                            <div class="hero-content">
+                                <div class="hero-text" data-animation="fade-up">
+                                    <p class="hero-subtitle">BROCHURES & CATALOGS</p>
+                                    <h2 class="hero-title">
+                                        Design. <span class="text-gradient">Print.</span> Deliver.
+                                    </h2>
+                                    <p class="hero-description">
+                                        Premium brochures and catalogs with vibrant colors, crisp details, and fast
+                                        turnaround.
+                                    </p>
+                                    <div class="hero-actions">
+                                        <button class="btn btn-primary btn-large">Explore Brochures <span
+                                                class="btn-icon">→</span></button>
+                                        <button class="btn btn-secondary">See Samples</button>
+                                    </div>
+                                </div>
+                                <div class="hero-visual" data-animation="fade-left">
+                                    <div class="hero-image-container">
+                                        <div class="book-open-overlay" aria-hidden="true"></div>
+                                        <div class="hero-circle alt kenburns"></div>
+                                        <img src="assets/images/hero-illustration.svg"
+                                            alt="Shristi Press book illustration showcasing quality printing services"
+                                            class="hero-image parallax" loading="lazy">
+                                        <div class="floating-badge">
+                                            <div class="badge-content">
+                                                <span class="badge-number">24hr</span>
+                                                <span class="badge-text">Rush Ready</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="hero-slide" data-index="2">
+                        <div class="container">
+                            <div class="hero-content">
+                                <div class="hero-text" data-animation="fade-up">
+                                    <p class="hero-subtitle">APPAREL PRINTING</p>
+                                    <h2 class="hero-title">
+                                        Bring your <span class="text-gradient">brand</span> to life
+                                    </h2>
+                                    <p class="hero-description">
+                                        Custom T‑shirts and wearables with durable, high‑quality prints and stunning
+                                        finish options.
+                                    </p>
+                                    <div class="hero-actions">
+                                        <button class="btn btn-primary btn-large">Start Customizing <span
+                                                class="btn-icon">→</span></button>
+                                        <button class="btn btn-secondary">Pricing</button>
+                                    </div>
+                                </div>
+                                <div class="hero-visual" data-animation="fade-left">
+                                    <div class="hero-image-container">
+                                        <div class="book-open-overlay" aria-hidden="true"></div>
+                                        <div class="hero-circle success kenburns"></div>
+                                        <img src="assets/images/bestselling-t-shirts.svg"
+                                            alt="Custom T‑shirt printing preview" class="hero-image parallax"
+                                            loading="lazy">
+                                        <div class="floating-badge">
+                                            <div class="badge-content">
+                                                <span class="badge-number">5★</span>
+                                                <span class="badge-text">Top Rated</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="hero-nav" aria-label="Hero navigation">
+                    <button class="hero-nav-btn prev" id="prevHero" aria-label="Previous slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
+                    <button class="hero-nav-btn next" id="nextHero" aria-label="Next slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services-grid" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="services-row">
+                    <a href="categories.html#book-printing" class="service-card-link">
+                        <div class="service-card" data-animation="fade-up" data-delay="100">
+                            <div class="service-image">
+                                <img src="assets\images\book-types\book printing.jpg" alt="Custom print layouts design"
+                                    loading="lazy">
+                            </div>
+                            <h3 class="service-title">BOOK PRINTING</h3>
+                            <p class="service-subtitle">Our custom collection</p>
+                        </div>
+                    </a>
+
+                    <a href="categories.html#paper-box" class="service-card-link">
+                        <div class="service-card" data-animation="fade-up" data-delay="200">
+                            <div class="service-image">
+                                <img src="assets\images\book-types\paper boxes.jpg" alt="High quality printing service"
+                                    loading="lazy">
+                            </div>
+                            <h3 class="service-title">PAPER BOX PRINTING</h3>
+                            <p class="service-subtitle">Print Your Own Boxes</p>
+                        </div>
+                    </a>
+
+                    <a href="categories.html#marketing" class="service-card-link">
+                        <div class="service-card" data-animation="fade-up" data-delay="300">
+                            <div class="service-image">
+                                <img src="assets\images\book-types\danglers.jpg" alt="One stop shop printing solutions"
+                                    loading="lazy">
+                            </div>
+                            <h3 class="service-title">MARKETING PRODUCTS</h3>
+                            <p class="service-subtitle">Complete solution For You</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="services-row">
+                    <a href="categories.html#stationery" class="service-card-link">
+                        <div class="service-card" data-animation="fade-up" data-delay="500">
+                            <div class="service-image">
+                                <img src="assets\images\book-types\stationery.jpg" alt="Design services" loading="lazy">
+                            </div>
+                            <h3 class="service-title">STATIONERY PRODUCTS</h3>
+                            <p class="service-subtitle">Creative solutions</p>
+                        </div>
+                    </a>
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us" aria-labelledby="why-choose-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <p class="section-subtitle">Start your business now</p>
+                    <h2 id="why-choose-title" class="section-title">
+                        Reasons to get <span class="text-gradient">printing</span><br>
+                        started with us
+                    </h2>
+                    <p class="section-description">
+                        Our designers and print professionals will work directly with you to ensure
+                        that your printing experience is nothing less than fantastic.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card" data-animation="fade-up" data-delay="100">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature-connect-ideas.svg" alt="Connect your ideas"
+                                aria-hidden="true">
+                        </div>
+                        <h3 class="feature-title">Connect your ideas</h3>
+                        <p class="feature-description">
+                            Seamlessly bring your creative vision to life with our collaborative design process.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-animation="fade-up" data-delay="200">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature-color-customize.svg" alt="Customize with lots of color"
+                                aria-hidden="true">
+                        </div>
+                        <h3 class="feature-title">Customize with lots of color</h3>
+                        <p class="feature-description">
+                            Express your brand with unlimited color options and premium finishing techniques.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-animation="fade-up" data-delay="300">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature-printing-center.svg" alt="Printing in the home center"
+                                aria-hidden="true">
+                        </div>
+                        <h3 class="feature-title">Printing in the home center</h3>
+                        <p class="feature-description">
+                            State-of-the-art printing facility ensuring consistent quality and fast turnaround.
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-animation="fade-up" data-delay="400">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature-order-ship-track.svg"
+                                alt="Order, ship and track your shipment" aria-hidden="true">
+                        </div>
+                        <h3 class="feature-title">Order, ship and track your shipment</h3>
+                        <p class="feature-description">
+                            Complete order management with real-time tracking from production to delivery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products" id="products" aria-labelledby="products-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <p class="section-subtitle">Featured Products</p>
+                    <h2 id="products-title" class="section-title">
+                        Discover our <span class="text-gradient">bestselling</span><br>
+                        products
+                    </h2>
+                    <p class="section-description">
+                        We provide the lowest prices on the market for all our best-selling products.
+                        That's because our promise is always to provide you with the best prices.
+                    </p>
+                    <button class="btn btn-primary">
+                        <span>View all products</span>
+                        <span class="btn-icon" aria-hidden="true">→</span>
+                    </button>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Price Calculator -->
+        <section class="price-calculator" aria-labelledby="calculator-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <h2 id="calculator-title" class="section-title">
+                        <span class="text-gradient">Instant</span> Price Calculator
+                    </h2>
+                    <p class="section-description">
+                        Get real-time quotes for your printing projects with our advanced calculator.
+                    </p>
+                </div>
+
+                <div class="calculator-container" data-animation="fade-up" data-delay="200">
+                    <div class="calculator-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="product-type">Product Type</label>
+                                <select id="product-type" class="calc-select">
+                                    <option value="business-cards">Business Cards</option>
+                                    <option value="brochures">Brochures</option>
+                                    <option value="folders">Folders</option>
+                                    <option value="reports">Reports</option>
+                                    <option value="posters">Posters</option>
+                                    <option value="banners">Banners</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <select id="quantity" class="calc-select">
+
+
+                                    <option value="250">200 pieces</option>
+                                    <option value="500">500 pieces</option>
+                                    <option value="1000">1,000 pieces</option>
+                                    <option value="2500">2,500 pieces</option>
+                                    <option value="5000">5,000 pieces</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="paper-type">Paper Type</label>
+                                <select id="paper-type" class="calc-select">
+                                    <option value="standard">Standard (300gsm)</option>
+                                    <option value="premium">Premium (400gsm)</option>
+                                    <option value="luxury">Luxury (500gsm)</option>
+                                    <option value="recycled">Eco-Friendly Recycled</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="finish-type">Finish</label>
+                                <select id="finish-type" class="calc-select">
+                                    <option value="matte">Matte</option>
+                                    <option value="gloss">Gloss</option>
+                                    <option value="satin">Satin</option>
+                                    <option value="velvet">Velvet Touch</option>
+                                    <option value="uv">UV Coating</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="colors">Color Options</label>
+                                <select id="colors" class="calc-select">
+                                    <option value="bw">Black & White</option>
+                                    <option value="color">Full Color (CMYK)</option>
+                                    <option value="spot">Spot Colors</option>
+                                    <option value="metallic">Metallic Inks</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="turnaround">Turnaround Time</label>
+                                <select id="turnaround" class="calc-select">
+                                    <option value="rush">Rush (24 hours)</option>
+                                    <option value="fast">Fast (2-3 days)</option>
+                                    <option value="standard">Standard (5-7 days)</option>
+                                    <option value="economy">Economy (10-14 days)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="calculator-actions">
+                            <button class="btn btn-primary btn-large" id="calculate-price">
+                                📊 Calculate Price
+                            </button>
+                            <button class="btn btn-secondary" id="reset-calculator">
+                                🔄 Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-results">
+                        <div class="results-header">
+                            <h3>Price Breakdown</h3>
+                            <div class="quote-id">Quote #<span id="quote-number">QT-2024-001</span></div>
+                        </div>
+
+                        <div class="price-breakdown">
+                            <div class="breakdown-item">
+                                <span>Base Price:</span>
+                                <span id="base-price">₹0.00</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Paper Upgrade:</span>
+                                <span id="paper-cost">₹0.00</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Finish Premium:</span>
+                                <span id="finish-cost">₹0.00</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Color Processing:</span>
+                                <span id="color-cost">₹0.00</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Rush Fee:</span>
+                                <span id="rush-cost">₹0.00</span>
+                            </div>
+                            <div class="breakdown-divider"></div>
+                            <div class="breakdown-total">
+                                <span>Total Price:</span>
+                                <span id="total-price">₹0.00</span>
+                            </div>
+                            <div class="price-per-unit">
+                                <span id="unit-price">₹0.00 per piece</span>
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button class="btn btn-success btn-large" id="request-quote">
+                                📋 Request Official Quote
+                            </button>
+                            <button class="btn btn-outline" id="save-calculation">
+                                💾 Save Calculation
+                            </button>
+                        </div>
+
+                        <div class="delivery-estimate">
+                            <div class="estimate-item">
+                                <span class="estimate-label">📅 Ready Date:</span>
+                                <span id="ready-date">-</span>
+                            </div>
+                            <div class="estimate-item">
+                                <span class="estimate-label">🚚 Delivery:</span>
+                                <span id="delivery-date">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Product Gallery -->
+        <section class="product-gallery" aria-labelledby="gallery-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <h2 id="gallery-title" class="section-title">
+                        <span class="text-gradient">Interactive</span> Product Gallery
+                    </h2>
+                    <p class="section-description">
+                        Explore our products with our advanced 3D preview and customization tools.
+                    </p>
+                </div>
+
+                <div class="gallery-tabs" data-animation="fade-up">
+                    <button class="tab-btn active" data-tab="business-cards">Business Cards</button>
+                    <button class="tab-btn" data-tab="brochures">Brochures</button>
+                    <button class="tab-btn" data-tab="folders">Folders</button>
+                    <button class="tab-btn" data-tab="reports">Reports</button>
+                </div>
+
+                <div class="gallery-content" data-animation="fade-up" data-delay="200">
+                    <div class="gallery-main">
+                        <div class="product-preview">
+                            <div class="preview-controls">
+                                <button class="control-btn" id="rotateLeft" aria-label="Rotate left">↺</button>
+                                <button class="control-btn" id="zoomIn" aria-label="Zoom in">🔍+</button>
+                                <button class="control-btn" id="zoomOut" aria-label="Zoom out">🔍-</button>
+                                <button class="control-btn" id="rotateRight" aria-label="Rotate right">↻</button>
+                            </div>
+                            <div class="preview-image" id="mainPreview">
+                                <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_1050/v1/shared-assets/s2/raster/business-card-template.jpg" alt="Business Cards Preview"
+                                    class="preview-img">
+                                <div class="preview-overlay">
+                                    <button class="customize-btn">🎨 Customize Design</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-details">
+                            <h3 class="product-title">Professional Business Cards</h3>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">(4.9/5 - 2,341 reviews)</span>
+                            </div>
+                            <div class="price-section">
+                                <span class="price-current">₹9.99</span>
+                                <span class="price-original">₹14.99</span>
+                                <span class="price-save">Save 33%</span>
+                            </div>
+                            <div class="product-options">
+                                <div class="option-group">
+                                    <label>Material:</label>
+                                    <select class="option-select">
+                                        <option>Standard (300gsm)</option>
+                                        <option>Premium (400gsm)</option>
+                                        <option>Luxury (500gsm)</option>
+                                    </select>
+                                </div>
+                                <div class="option-group">
+                                    <label>Finish:</label>
+                                    <select class="option-select">
+                                        <option>Matte</option>
+                                        <option>Gloss</option>
+                                        <option>Velvet</option>
+                                    </select>
+                                </div>
+                                <div class="option-group">
+                                    <label>Quantity:</label>
+                                    <select class="option-select">
+                                        <option>100 cards</option>
+                                        <option>250 cards</option>
+                                        <option>500 cards</option>
+                                        <option>1000 cards</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn btn-primary btn-large add-to-cart-btn">
+                                    🛒 Add to Cart
+                                </button>
+                                <button class="btn btn-secondary quick-quote-btn">
+                                    📋 Quick Quote
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Selling Items -->
+        <section class="top-selling" aria-labelledby="top-selling-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <h2 id="top-selling-title" class="section-title">
+                        <span class="text-gradient">Top Selling</span> Items
+                    </h2>
+                    <p class="section-description">
+                        Our most popular products chosen by thousands of satisfied customers.
+                    </p>
+                </div>
+
+                <div class="top-selling-grid">
+                    <div class="product-card" data-animation="fade-up" data-delay="100">
+                        <div class="product-image">
+                            <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_1050/v1/shared-assets/s2/raster/business-card-template.jpg" alt="Business Card Set" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-cart" aria-label="Add to cart">🛒</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Business Card Set</h3>
+                            <p class="product-price">₹9.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-animation="fade-up" data-delay="200">
+                        <div class="product-image">
+                            <img src="https://www.eymockup.com/wp-content/uploads/2018/04/Tri-Fold-2-28-1500x1501.jpg" alt="Business Brochure" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-cart" aria-label="Add to cart">🛒</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Business Brochure</h3>
+                            <p class="product-price">₹24.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-animation="fade-up" data-delay="300">
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuMO3A1JVZHr16a-K01VUHTJKCJxBGX8MSjQ&s" alt="Folder Collection Set" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-cart" aria-label="Add to cart">🛒</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Folder Collection Set</h3>
+                            <p class="product-price">₹18.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-animation="fade-up" data-delay="400">
+                        <div class="product-image">
+                            <img src="data:image/jpeg;base64,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" alt="Report Layout Design" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-cart" aria-label="Add to cart">🛒</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Report Layout</h3>
+                            <p class="product-price">₹34.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-animation="fade-up" data-delay="500">
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHqLJT2I-5Mi1iM6e2vbhm64OiuOEtDlCM1A&s" alt="Annual Magazine Design" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-cart" aria-label="Add to cart">🛒</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Annual Magazine</h3>
+                            <p class="product-price">₹49.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW BESTSELLING PRODUCTS SECTION -->
+        <section class="new-bestselling-products" aria-labelledby="new-bestselling-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <h2 id="new-bestselling-title" class="section-title">
+                        Discover Our <span class="text-gradient">Bestselling</span> Products
+                    </h2>
+                    <p class="section-description">
+                        Explore our most popular printing solutions that customers love and trust.
+                    </p>
+                </div>
+
+                <div class="new-bestselling-grid" data-animation="fade-up" data-delay="200">
+                    <!-- Product 1: Business Cards -->
+                    <div class="new-product-card" data-animation="slide-up" data-delay="100">
+                        <div class="new-product-badge">#1 Bestseller</div>
+                        <div class="new-product-image-container">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTybqd62rrSvaP3YRkVgZmV_jLMEV2_sbRGsQ&s" alt="Premium Business Cards"
+                                loading="lazy" class="new-product-image">
+                            <div class="new-product-overlay">
+                                <div class="new-overlay-content">
+                                    <button class="new-btn-quick-view" aria-label="Quick view">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="new-btn-add-cart" aria-label="Add to cart">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-info">
+                            <div class="new-product-category">Business Essentials</div>
+                            <h3 class="new-product-name">Premium Business Cards</h3>
+                            <div class="new-product-rating">
+                                <div class="new-stars">
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                </div>
+                                <span class="new-rating-text">(2,847 reviews)</span>
+                            </div>
+                            <div class="new-product-features">
+                                <span class="new-feature-tag">Premium Paper</span>
+                                <span class="new-feature-tag">UV Coating</span>
+                                <span class="new-feature-tag">24hr Turnaround</span>
+                            </div>
+                            <div class="new-product-pricing">
+                                <span class="new-price">₹29.99</span>
+                                <span class="new-price-original">₹39.99</span>
+                                <span class="new-discount-badge">-25%</span>
+                            </div>
+                            <button class="new-btn-order-now">Order Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Brochures -->
+                    <div class="new-product-card" data-animation="slide-up" data-delay="200">
+                        <div class="new-product-badge">#2 Popular</div>
+                        <div class="new-product-image-container">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlHJB-nz_iVbmfR16LfwiqhygDqVDnY35n6Q&s" alt="Professional Brochures"
+                                loading="lazy" class="new-product-image">
+                            <div class="new-product-overlay">
+                                <div class="new-overlay-content">
+                                    <button class="new-btn-quick-view" aria-label="Quick view">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="new-btn-add-cart" aria-label="Add to cart">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-info">
+                            <div class="new-product-category">Marketing Materials</div>
+                            <h3 class="new-product-name">Professional Brochures</h3>
+                            <div class="new-product-rating">
+                                <div class="new-stars">
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star">★</span>
+                                </div>
+                                <span class="new-rating-text">(1,923 reviews)</span>
+                            </div>
+                            <div class="new-product-features">
+                                <span class="new-feature-tag">Tri-fold Design</span>
+                                <span class="new-feature-tag">Glossy Finish</span>
+                                <span class="new-feature-tag">Full Color</span>
+                            </div>
+                            <div class="new-product-pricing">
+                                <span class="new-price">₹89.99</span>
+                                <span class="new-price-original">₹119.99</span>
+                                <span class="new-discount-badge">-25%</span>
+                            </div>
+                            <button class="new-btn-order-now">Order Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: T-Shirts -->
+                    <div class="new-product-card" data-animation="slide-up" data-delay="300">
+                        <div class="new-product-badge">#3 Trending</div>
+                        <div class="new-product-image-container">
+                            <img src="https://files.printo.in/site/20230608_175135729748_caf4c1_Thumbnail-images.jpg" alt="Standees" loading="lazy"
+                                class="new-product-image">
+                            <div class="new-product-overlay">
+                                <div class="new-overlay-content">
+                                    <button class="new-btn-quick-view" aria-label="Quick view">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="new-btn-add-cart" aria-label="Add to cart">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-info">
+                            <div class="new-product-category">Top Classic</div>
+                            <h3 class="new-product-name">Standees</h3>
+                            <div class="new-product-rating">
+                                <div class="new-stars">
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                </div>
+                                <span class="new-rating-text">(3,156 reviews)</span>
+                            </div>
+                            <div class="new-product-features">
+                                <span class="new-feature-tag">Premium Steel</span>
+                                <span class="new-feature-tag">Durable </span>
+                                <span class="new-feature-tag">Multiple Sizes</span>
+                            </div>
+                            <div class="new-product-pricing">
+                                <span class="new-price">₹1499.99</span>
+                                <span class="new-price-original">₹3499.99</span>
+                                <span class="new-discount-badge">-29%</span>
+                            </div>
+                            <button class="new-btn-order-now">Order Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4: Banners -->
+                    <div class="new-product-card" data-animation="slide-up" data-delay="400">
+                        <div class="new-product-badge">#4 Hot</div>
+                        <div class="new-product-image-container">
+                            <img src="https://cdn.dribbble.com/userupload/29946811/file/original-6ab5c0b981e36b4a8d328f6b1f68ea6d.jpg?format=webp&resize=400x300&vertical=center" alt="Large Format Banners" loading="lazy"
+                                class="new-product-image">
+                            <div class="new-product-overlay">
+                                <div class="new-overlay-content">
+                                    <button class="new-btn-quick-view" aria-label="Quick view">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="new-btn-add-cart" aria-label="Add to cart">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-info">
+                            <div class="new-product-category">Large Format</div>
+                            <h3 class="new-product-name">Large Format Banners</h3>
+                            <div class="new-product-rating">
+                                <div class="new-stars">
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star filled">★</span>
+                                    <span class="new-star">★</span>
+                                </div>
+                                <span class="new-rating-text">(1,234 reviews)</span>
+                            </div>
+                            <div class="new-product-features">
+                                <span class="new-feature-tag">Weather Resistant</span>
+                                <span class="new-feature-tag">High Resolution</span>
+                                <span class="new-feature-tag">Grommet Holes</span>
+                            </div>
+                            <div class="new-product-pricing">
+                                <span class="new-price">₹149.99</span>
+                                <span class="new-price-original">₹199.99</span>
+                                <span class="new-discount-badge">-25%</span>
+                            </div>
+                            <button class="new-btn-order-now">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-bestselling-cta" data-animation="fade-up" data-delay="500">
+                    <button class="new-btn-view-all-products">
+                        <span>View All Products</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+       
+
+        <!-- Statistics Counter Section -->
+        <section class="statistics-section" aria-labelledby="stats-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <h2 id="stats-title" class="section-title">
+                        <span class="text-gradient">Trusted</span> by Thousands
+                    </h2>
+                    <p class="section-description">
+                        Our numbers speak for themselves - delivering excellence in every project.
+                    </p>
+                </div>
+
+                <div class="stats-grid" data-animation="fade-up" data-delay="200">
+                    <div class="stat-card" data-animation="fade-up" data-delay="100">
+                        <div class="stat-icon">
+                            <div class="stat-icon-bg">📈</div>
+                        </div>
+                        <div class="stat-number" data-target="10500">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-description">High-quality printing projects delivered successfully</div>
+                    </div>
+
+                    <div class="stat-card" data-animation="fade-up" data-delay="200">
+                        <div class="stat-icon">
+                            <div class="stat-icon-bg">😊</div>
+                        </div>
+                        <div class="stat-number" data-target="8900">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                        <div class="stat-description">Satisfied customers who trust our services</div>
+                    </div>
+
+                    <div class="stat-card" data-animation="fade-up" data-delay="300">
+                        <div class="stat-icon">
+                            <div class="stat-icon-bg">⭐</div>
+                        </div>
+                        <div class="stat-number" data-target="99" data-suffix="%">0</div>
+                        <div class="stat-label">Quality Rating</div>
+                        <div class="stat-description">Customer satisfaction rate for our work</div>
+                    </div>
+
+                    <div class="stat-card" data-animation="fade-up" data-delay="400">
+                        <div class="stat-icon">
+                            <div class="stat-icon-bg">🚀</div>
+                        </div>
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">Hours Average</div>
+                        <div class="stat-description">Fast turnaround time for rush orders</div>
+                    </div>
+                </div>
+
+                <div class="achievements-row" data-animation="fade-up" data-delay="500">
+                    <div class="achievement-badge">
+                        <div class="badge-icon">🏆</div>
+                        <div class="badge-text">
+                            <strong>Best Printing Service 2024</strong>
+                            <span>Industry Excellence Award</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-badge">
+                        <div class="badge-icon">🌟</div>
+                        <div class="badge-text">
+                            <strong>5-Star Rating</strong>
+                            <span>Google Business Reviews</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-badge">
+                        <div class="badge-icon">♻️</div>
+                        <div class="badge-text">
+                            <strong>Eco-Friendly Certified</strong>
+                            <span>Sustainable Printing Partner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <p class="section-subtitle">What our clients say</p>
+                    <h2 id="testimonials-title" class="section-title">
+                        Customer <span class="text-gradient">Testimonials</span>
+                    </h2>
+                    <p class="section-description">
+                        Don't just take our word for it. Here's what our satisfied customers have to say about their
+                        experience with Shristi Press.
+                    </p>
+                </div>
+
+                <div class="testimonials-slider" data-animation="fade-up" data-delay="200">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card active" data-index="0">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "We found a fantastic thing at shristi press that was cheaper than a hotel, no more
+                                    price comparisons needed because we know we're getting the best deal with this
+                                    team!"
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/avatar-sarah.svg" alt="Sarah Johnson" class="author-avatar">
+                                    <div class="author-info">
+                                        <cite class="author-name">Sarah Johnson</cite>
+                                        <span class="author-company">TechStart Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card" data-index="1">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "Outstanding quality and professional service. They delivered exactly what we needed
+                                    on time and exceeded our expectations with their attention to detail."
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/avatar-michael.svg" alt="Michael Chen"
+                                        class="author-avatar">
+                                    <div class="author-info">
+                                        <cite class="author-name">Michael Chen</cite>
+                                        <span class="author-company">Design Studio Pro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card" data-index="2">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "The attention to detail and customer service is unmatched. They helped us create
+                                    stunning marketing materials that perfectly represent our brand."
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/avatar-emma.svg" alt="Emma Wilson" class="author-avatar">
+                                    <div class="author-info">
+                                        <cite class="author-name">Emma Wilson</cite>
+                                        <span class="author-company">Marketing Pro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card" data-index="3">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "Fast turnaround times, competitive pricing, and exceptional quality. Shristi Press
+                                    has become our go-to partner for all printing needs."
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/avatar-david.svg" alt="David Rodriguez"
+                                        class="author-avatar">
+                                    <div class="author-info">
+                                        <cite class="author-name">David Rodriguez</cite>
+                                        <span class="author-company">Creative Agency</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-card" data-index="4">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                    <span class="star">⭐</span>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "Professional, reliable, and innovative. Their team went above and beyond to ensure
+                                    our project was perfect. Highly recommended!"
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/avatar-lisa.svg" alt="Lisa Thompson" class="author-avatar">
+                                    <div class="author-info">
+                                        <cite class="author-name">Lisa Thompson</cite>
+                                        <span class="author-company">Startup Founder</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <div class="testimonials-nav">
+                        <button class="nav-btn prev-btn" id="prevTestimonial" aria-label="Previous testimonial">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                        <div class="testimonials-dots" id="testimonialsDots">
+                            <button class="dot active" data-index="0" aria-label="Go to testimonial 1"></button>
+                            <button class="dot" data-index="1" aria-label="Go to testimonial 2"></button>
+                            <button class="dot" data-index="2" aria-label="Go to testimonial 3"></button>
+                            <button class="dot" data-index="3" aria-label="Go to testimonial 4"></button>
+                            <button class="dot" data-index="4" aria-label="Go to testimonial 5"></button>
+                        </div>
+
+                        <button class="nav-btn next-btn" id="nextTestimonial" aria-label="Next testimonial">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trusted By Section -->
+                <div class="trusted-by" data-animation="fade-up" data-delay="400">
+                    <p class="trusted-by-text">Trusted by leading companies worldwide</p>
+                    <div class="brand-logos">
+                        <div class="brand-logo" aria-label="Google">
+                            <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
+                                <path d="M8 6h64v12H8z" fill="#4285f4" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Google</text>
+                            </svg>
+                        </div>
+                        <div class="brand-logo" aria-label="Airbnb">
+                            <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
+                                <path d="M8 6h64v12H8z" fill="#ff5a5f" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Airbnb</text>
+                            </svg>
+                        </div>
+                        <div class="brand-logo" aria-label="GitHub">
+                            <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
+                                <path d="M8 6h64v12H8z" fill="#333" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">GitHub</text>
+                            </svg>
+                        </div>
+                        <div class="brand-logo" aria-label="Squarespace">
+                            <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
+                                <path d="M8 6h64v12H8z" fill="#000" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Squarespace</text>
+                            </svg>
+                        </div>
+                        <div class="brand-logo" aria-label="Uber">
+                            <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
+                                <path d="M8 6h64v12H8z" fill="#000" />
+                                <text x="40" y="16" text-anchor="middle" fill="white" font-size="12"
+                                    font-weight="bold">Uber</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+
+
+        <!-- Blog Section -->
+        <section class="blog-section" id="blog" aria-labelledby="blog-title">
+            <div class="container">
+                <div class="section-header" data-animation="fade-up">
+                    <p class="section-subtitle">Latest Insights</p>
+                    <h2 id="blog-title" class="section-title">
+                        Our <span class="text-gradient">Blog</span> & News
+                    </h2>
+                    <p class="section-description">
+                        Stay updated with the latest printing trends, tips, and industry insights from our experts.
+                    </p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" data-animation="fade-up" data-delay="100">
+                        <div class="blog-image">
+                            <img src="assets/images/blog-design-tips.svg" alt="Ultimate Guide to Business Card Design"
+                                loading="lazy">
+                            <div class="blog-category">Design Tips</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">December 15, 2024</span>
+                                <span class="blog-read-time">5 min read</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="#" class="blog-link">The Ultimate Guide to Business Card Design That
+                                    Converts</a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Discover the essential elements that make business cards memorable and effective. From
+                                typography choices to color psychology, learn how to create cards that leave a lasting
+                                impression.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-author">
+                                    <img src="assets/images/avatar-sarah.svg" alt="Sarah Johnson" class="author-avatar">
+                                    <span class="author-name">Sarah Johnson</span>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-animation="fade-up" data-delay="200">
+                        <div class="blog-image">
+                            <img src="assets/images/blog-sustainability.svg" alt="Sustainable Printing Solutions"
+                                loading="lazy">
+                            <div class="blog-category">Sustainability</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">December 10, 2024</span>
+                                <span class="blog-read-time">7 min read</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="#" class="blog-link">Eco-Friendly Printing: Sustainable Solutions for Modern
+                                    Businesses</a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Explore how sustainable printing practices can reduce your environmental footprint while
+                                maintaining high-quality results. Learn about recycled papers, eco-friendly inks, and
+                                green printing processes.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-author">
+                                    <img src="assets/images/avatar-michael.svg" alt="Michael Chen"
+                                        class="author-avatar">
+                                    <span class="author-name">Michael Chen</span>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-animation="fade-up" data-delay="300">
+                        <div class="blog-image">
+                            <img src="assets/images/blog-printing-trends.svg" alt="Print Marketing Trends 2024"
+                                loading="lazy">
+                            <div class="blog-category">Marketing</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">December 5, 2024</span>
+                                <span class="blog-read-time">6 min read</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="#" class="blog-link">Top Print Marketing Trends to Watch in 2024</a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Stay ahead of the curve with the latest print marketing trends. From interactive QR
+                                codes to augmented reality integration, discover innovative ways to enhance your print
+                                campaigns.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-author">
+                                    <img src="assets/images/avatar-emma.svg" alt="Emily Rodriguez"
+                                        class="author-avatar">
+                                    <span class="author-name">Emily Rodriguez</span>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-animation="fade-up" data-delay="400">
+                        <div class="blog-image">
+                            <img src="assets/images/blog-branding-guide.svg" alt="Book Printing Quality Guide"
+                                loading="lazy">
+                            <div class="blog-category">Quality</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">November 28, 2024</span>
+                                <span class="blog-read-time">8 min read</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="#" class="blog-link">How to Choose the Right Paper and Binding for Your
+                                    Book</a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                A comprehensive guide to selecting the perfect paper weight, finish, and binding options
+                                for your book project. Learn about different paper types and their impact on readability
+                                and durability.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-author">
+                                    <img src="assets/images/avatar-david.svg" alt="David Thompson"
+                                        class="author-avatar">
+                                    <span class="author-name">David Thompson</span>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-animation="fade-up" data-delay="500">
+                        <div class="blog-image">
+                            <img src="assets/images/business-cards.svg" alt="Digital vs Print Marketing" loading="lazy">
+                            <div class="blog-category">Strategy</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">November 20, 2024</span>
+                                <span class="blog-read-time">9 min read</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="#" class="blog-link">Digital vs Print: Finding the Perfect Marketing
+                                    Balance</a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Understand when to use digital marketing versus print marketing for maximum impact.
+                                Learn how to integrate both channels for a cohesive marketing strategy that drives
+                                results.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-author">
+                                    <img src="assets/images/avatar-lisa.svg" alt="Lisa Wang" class="author-avatar">
+                                    <span class="author-name">Lisa Wang</span>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-animation="fade-up" data-delay="600">
+                        <div class="blog-image">
+                            <img src="assets/images/brochure-design.svg" alt="Color Psychology in Print Design"
+                                loading="lazy">
+                            <div class="blog-category">Psychology</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">November 15, 2024</span>
+                                <span class="blog-read-time">6 min read</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="#" class="blog-link">The Psychology of Color in Print Design</a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Explore how different colors affect consumer behavior and decision-making. Learn to
+                                choose the right color palette for your brand to evoke the desired emotional response.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-author">
+                                    <img src="assets/images/avatar-michael.svg" alt="James Miller"
+                                        class="author-avatar">
+                                    <span class="author-name">James Miller</span>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="blog-actions" data-animation="fade-up" data-delay="700">
+                    <button class="btn btn-primary btn-large">
+                        View All Articles
+                        <span class="btn-icon" aria-hidden="true">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo" aria-label="Shristi Press Home">
+                            <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                                class="footer-logo-image">
+                        </a>
+                        <p class="footer-description">
+                            Professional printing services with unmatched quality and customer satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">All Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services/childrens-book-printing.html">Book Printing</a></li>
+                        <li><a href="services/brochures.html">Brochures</a></li>
+                        <li><a href="services/business-cards.html">Business Cards</a></li>
+                        <li><a href="services/poster.html">Posters</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
+                    </div>
+                    <div class="footer-logo-small">
+                        <span>Made with ❤️ by Shristi Press</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- Modal for Newsletter -->
+    <div class="modal" id="newsletterModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle" class="modal-title">Thank You!</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                <p>You've successfully subscribed to our newsletter. We'll keep you updated with our latest offers and
+                    news!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add to Cart Modal -->
+    <div class="modal" id="cartModal" role="dialog" aria-labelledby="cartModalTitle" aria-hidden="true">
+        <div class="modal-overlay" id="cartModalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="cartModalTitle" class="modal-title">Added to Cart!</h3>
+                <button class="modal-close" id="cartModalClose" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="cartModalText">Product has been added to your cart successfully!</p>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="continueShopping">Continue Shopping</button>
+                    <button class="btn btn-primary" id="viewCart">View Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script defer src="js/script.js?v=17"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -71,12 +71,14 @@ class ThemeManager {
 class NavigationManager {
   constructor() {
     this.navbar = $('.navbar');
+    this.header = $('.header'); // Add header reference for auto-hide
     this.navbarToggle = $('#navbarToggle');
     this.navbarMenu = $('#navbarMenu');
     this.isMenuOpen = false;
     this.lastScrollY = 0;
     this.isNavbarVisible = true;
-    this.scrollThreshold = 100; // Minimum scroll distance to trigger hide/show
+    this.scrollThreshold = 60; // Minimum scroll distance to trigger hide/show  
+    this.scrollDelta = 3; // Minimum scroll delta to trigger direction detection
     this.init();
   }
 
@@ -440,12 +442,15 @@ class NavigationManager {
   handleScroll() {
     const currentScrollY = window.scrollY;
     const scrolled = currentScrollY > 50;
+    const scrollDifference = Math.abs(currentScrollY - this.lastScrollY);
 
     // Add scrolled class for styling
-    this.navbar.classList.toggle('scrolled', scrolled);
+    if (this.header) {
+      this.header.classList.toggle('scrolled', scrolled);
+    }
 
     // Handle navbar hide/show based on scroll direction
-    if (currentScrollY > this.scrollThreshold) {
+    if (currentScrollY > this.scrollThreshold && scrollDifference > this.scrollDelta) {
       const isScrollingDown = currentScrollY > this.lastScrollY;
       const isScrollingUp = currentScrollY < this.lastScrollY;
 
@@ -456,7 +461,7 @@ class NavigationManager {
         // Show navbar when scrolling up
         this.showNavbar();
       }
-    } else if (!this.isNavbarVisible) {
+    } else if (currentScrollY <= this.scrollThreshold && !this.isNavbarVisible) {
       // Always show navbar at the top
       this.showNavbar();
     }
@@ -465,13 +470,17 @@ class NavigationManager {
   }
 
   hideNavbar() {
-    this.navbar.classList.add('navbar-hidden');
-    this.isNavbarVisible = false;
+    if (this.header) {
+      this.header.classList.add('navbar-hidden');
+      this.isNavbarVisible = false;
+    }
   }
 
   showNavbar() {
-    this.navbar.classList.remove('navbar-hidden');
-    this.isNavbarVisible = true;
+    if (this.header) {
+      this.header.classList.remove('navbar-hidden');
+      this.isNavbarVisible = true;
+    }
   }
 
   // Improved mega menu functionality with better performance
@@ -868,7 +877,7 @@ class DataLoader {
         rating: 4.9,
         reviews: 2847,
         features: ["Premium 400gsm Paper", "UV Coating", "24hr Delivery"],
-        image: "assets/images/business-cards.svg"
+        image: "https://www.expandbuzz.com/wp-content/uploads/2024/04/Business-Card-Design-4.jpg"
       },
       {
         id: 2,
@@ -880,7 +889,7 @@ class DataLoader {
         rating: 4.8,
         reviews: 1956,
         features: ["Tri-fold Design", "Glossy Finish", "Full Color Print"],
-        image: "assets/images/brochure-design.svg"
+        image: "https://uicreative.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2021/01/29094652/brochure-company-brochure-8-1.jpg"
       },
       {
         id: 3,
@@ -892,7 +901,7 @@ class DataLoader {
         rating: 4.7,
         reviews: 1234,
         features: ["Matte Lamination", "Die Cut", "Pocket Design"],
-        image: "assets/images/product-folders.svg"
+        image: "https://5.imimg.com/data5/SELLER/Default/2023/6/313616004/UT/AW/RA/2558270/executive-document-file-folder.jpeg"
       },
       {
         id: 4,
@@ -904,7 +913,7 @@ class DataLoader {
         rating: 4.9,
         reviews: 892,
         features: ["Wire-O Binding", "High Resolution", "Laminated Cover"],
-        image: "assets/images/product-reports.svg"
+        image: "https://as1.ftcdn.net/v2/jpg/10/30/37/74/1000_F_1030377466_NoBjUyHP7exQcbqrAJgDpRBVSHpeysVn.jpg"
       },
       {
         id: 5,
@@ -916,7 +925,7 @@ class DataLoader {
         rating: 4.8,
         reviews: 567,
         features: ["Perfect Binding", "Silk Paper", "Vibrant Colors"],
-        image: "assets/images/brochure-design.svg"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_xNd1WXMxfxl6a1IHN7NU0Y5NKDrNkpU5A&s"
       }
     ];
 
@@ -2711,7 +2720,7 @@ class ProductGalleryManager {
     this.products = {
       'business-cards': {
         name: 'Professional Business Cards',
-        image: 'assets/images/business-cards.svg',
+        image: 'https://worksheets.clipart-library.com/images2/printing-business-cards-brisbane/printing-business-cards-brisbane-11.webp',
         price: '₹9.99',
         originalPrice: '₹14.99',
         rating: '4.9/5',
@@ -2719,7 +2728,7 @@ class ProductGalleryManager {
       },
       'brochures': {
         name: 'Premium Brochures',
-        image: 'assets/images/brochure-design.svg',
+        image: 'https://cms-assets.tutsplus.com/cdn-cgi/image/width=360/uploads/users/346/posts/29623/image/professional-brochure-1.jpg',
         price: '₹24.99',
         originalPrice: '₹34.99',
         rating: '4.8/5',
@@ -2727,7 +2736,7 @@ class ProductGalleryManager {
       },
       'folders': {
         name: 'Custom Folders',
-        image: 'assets/images/business-cards.svg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1r1zPUbRZ-0z0aQWgVp3L8zII66Mpp50S5Q&s',
         price: '₹19.99',
         originalPrice: '₹29.99',
         rating: '4.7/5',
@@ -2735,7 +2744,7 @@ class ProductGalleryManager {
       },
       'reports': {
         name: 'Annual Reports',
-        image: 'assets/images/brochure-design.svg',
+        image: 'https://5.imimg.com/data5/SELLER/Default/2024/2/384846205/GK/WC/JI/4030281/professional-annual-report-printing-services.jpg',
         price: '₹49.99',
         originalPrice: '₹69.99',
         rating: '4.9/5',
