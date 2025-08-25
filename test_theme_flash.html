@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Flash Test - Shristi Press</title>
+    
+    <!-- Prevent theme flash -->
+    <script src="js/theme-init.js"></script>
+    
+    <!-- Dark Mode CSS -->
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Tailwind for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            transition: all 0.3s ease;
+        }
+        
+        .test-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .test-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .toggle-button {
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-button:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-light { background: #10b981; }
+        .status-dark { background: #6366f1; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-card">
+            <h1 style="color: var(--text-primary); font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">
+                Theme Flash Test
+            </h1>
+            
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                This page tests the theme flash fix. Refresh the page multiple times to verify there's no flash between light and dark modes.
+            </p>
+            
+            <div style="margin-bottom: 2rem;">
+                <p style="color: var(--text-secondary); margin-bottom: 8px;">Current Theme:</p>
+                <span id="themeStatus" style="color: var(--text-primary); font-weight: 600; font-size: 1.25rem;">
+                    <span class="status-indicator" id="statusIndicator"></span>
+                    <span id="themeText">Loading...</span>
+                </span>
+            </div>
+            
+            <button class="toggle-button" onclick="toggleTheme()">
+                Toggle Theme
+            </button>
+            
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <p style="color: var(--text-muted); font-size: 0.875rem;">
+                    Test Steps:<br>
+                    1. Toggle theme and refresh page<br>
+                    2. Verify no flash occurs<br>
+                    3. Theme should persist across refreshes
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function updateThemeDisplay() {
+            const theme = document.documentElement.getAttribute('data-theme') || 'light';
+            const themeText = document.getElementById('themeText');
+            const statusIndicator = document.getElementById('statusIndicator');
+            
+            if (themeText && statusIndicator) {
+                themeText.textContent = theme.charAt(0).toUpperCase() + theme.slice(1) + ' Mode';
+                statusIndicator.className = 'status-indicator status-' + theme;
+            }
+        }
+        
+        function toggleTheme() {
+            if (window.darkModeManager) {
+                window.darkModeManager.toggleTheme();
+            } else if (window.themeInit) {
+                // Fallback if dark mode manager not loaded yet
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                window.themeInit.applyTheme(newTheme);
+                localStorage.setItem(window.themeInit.STORAGE_KEY, newTheme);
+            }
+            
+            // Update display after a short delay
+            setTimeout(updateThemeDisplay, 100);
+        }
+        
+        // Update display on load
+        document.addEventListener('DOMContentLoaded', updateThemeDisplay);
+        
+        // Listen for theme changes
+        document.addEventListener('themechange', updateThemeDisplay);
+        
+        // Update display immediately if theme is already set
+        updateThemeDisplay();
+    </script>
+    
+    <!-- Load dark mode manager -->
+    <script src="js/dark-mode.js"></script>
+</body>
+</html>
+

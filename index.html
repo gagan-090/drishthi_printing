@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -44,8 +44,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Hero Styles -->
+    <style>
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-track {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-slide {
+            flex: 0 0 33.333%;
+            width: 33.333%;
+            height: 100vh;
+        }
+
+        .hero-slide:not(.active) {
+            opacity: 1;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-dot.active {
+            background-color: #1f2937 !important;
+            transform: scale(1.2);
+        }
+
+        /* Fix for header overlap */
+        body {
+            padding-top: 0 !important;
+        }
+
+        .hero-slider {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+    </style>
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui-enhancements.css">
+
+    <!-- Prevent theme flash on page load - INLINE for instant execution -->
+    <script>
+        (function () {
+            'use strict';
+            const STORAGE_KEY = 'theme-preference';
+            function getSavedTheme() {
+                try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+            }
+            function getSystemTheme() {
+                try { return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; } catch (e) { return 'light'; }
+            }
+            function applyTheme(theme) {
+                const html = document.documentElement;
+                html.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+            const savedTheme = getSavedTheme();
+            const systemTheme = getSystemTheme();
+            const theme = savedTheme || systemTheme;
+            applyTheme(theme);
+            if (!savedTheme) {
+                try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) { }
+            }
+        })();
+    </script>
+
+    <!-- Dark Mode CSS - Load immediately after theme detection -->
+    <!-- Load full theme manager after critical styles -->
+    <script src="js/theme-init.js"></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -80,7 +164,6 @@
         }
     }
     </script>
-    <link rel="stylesheet" href="css/dark-mode.css">
 </head>
 
 <body>
@@ -222,11 +305,6 @@
                     </ul>
 
                     <div class="navbar-actions">
-                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
-                            title="Toggle dark mode">
-                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
-                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
-                        </button>
                         <button class="btn btn-primary">Get Started</button>
                     </div>
                 </div>
@@ -244,117 +322,110 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section class="hero" id="home" aria-labelledby="hero-title">
-            <div class="hero-slider" aria-roledescription="carousel">
-                <div class="hero-track" id="heroTrack">
-                    <!-- Slide 1 -->
-                    <div class="hero-slide active" data-index="0">
-                        <div class="container">
-                            <div class="hero-content">
-                                <div class="hero-text" data-animation="fade-up">
-                                    <p class="hero-subtitle">PRINTING SERVICES</p>
-                                    <h1 id="hero-title" class="hero-title">
-                                        The leader in
-                                        <span class="text-gradient">quality custom</span>
+        <section class="hero-slider" id="home">
+            <div class="hero-track" id="heroTrack">
+                <!-- Slide 1 - Main Hero -->
+                <div class="hero-slide active" data-index="0">
+                    <div
+                        class="relative h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+                        <div class="absolute inset-0 opacity-30">
+                            <div class="absolute top-20 right-20 w-32 h-32 bg-white/10 rounded-full"></div>
+                            <div class="absolute bottom-32 left-16 w-24 h-24 bg-white/5 rounded-full"></div>
+                            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full"></div>
+                        </div>
+
+                        <div class="relative z-10 container mx-auto px-6 lg:px-8 h-screen flex items-center pt-32">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+
+                                <!-- Left Column - Text Content -->
+                                <div class="text-left">
+                                    <div class="mb-6">
+                                        <span
+                                            class="inline-block text-gray-700 font-semibold text-sm tracking-widest uppercase">
+                                            PRINTING SERVICES
+                                        </span>
+                                    </div>
+
+                                    <h1
+                                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                                        The leader in<br>
+                                        <span class="text-gray-800">quality custom</span>
                                     </h1>
-                                    <p class="hero-description">
-                                        Let us walk you through the top-tier art expertise that
-                                        we will utilize to create your fantastic printing design.
+
+                                    <p class="text-lg text-gray-600 font-medium max-w-md mb-8 leading-relaxed">
+                                        Turn your ideas into premium products that leave a lasting impression
                                     </p>
-                                    <div class="hero-actions">
-                                        <button class="btn btn-primary btn-large">
-                                            Get Started
-                                            <span class="btn-icon" aria-hidden="true">→</span>
-                                        </button>
-                                    </div>
+
+                                    <button
+                                        class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                                        <span class="mr-3">Shop Now</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </button>
                                 </div>
-                                <div class="hero-visual" data-animation="fade-left">
-                                    <div class="hero-image-container">
-                                        <div class="hero-circle kenburns"></div>
-                                        <img src="assets/images/hero-book.png"
-                                            alt="Open book showcasing professional printing services and design layouts"
-                                            class="hero-image hero-book parallax" loading="eager">
-                                        <div class="floating-badge">
-                                            <div class="badge-content">
-                                                <span class="badge-number">10K+</span>
-                                                <span class="badge-text">Happy Clients</span>
+
+                                <!-- Right Column - Visual -->
+                                <div class="relative flex justify-center lg:justify-end">
+                                    <div
+                                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] bg-yellow-400 rounded-full -z-10 opacity-90">
+                                    </div>
+
+                                    <div
+                                        class="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                                        <div
+                                            class="w-80 h-64 sm:w-96 sm:h-80 lg:w-[32rem] lg:h-96 bg-white rounded-lg shadow-2xl transform rotate-3 hover:rotate-1 transition-transform duration-500">
+                                            <div
+                                                class="h-full w-full bg-gradient-to-br from-white to-gray-50 rounded-lg p-6 flex flex-col">
+                                                <div class="text-center mb-4">
+                                                    <h3 class="text-lg font-bold text-gray-800">Print Products</h3>
+                                                    <div class="w-full h-px bg-gray-200 mt-2"></div>
+                                                </div>
+
+                                                <div class="grid grid-cols-2 gap-4 flex-1">
+                                                    <div
+                                                        class="bg-blue-100 rounded-lg p-3 flex items-center justify-center">
+                                                        <div class="text-center">
+                                                            <div class="w-8 h-8 bg-blue-500 rounded mx-auto mb-2"></div>
+                                                            <span class="text-xs font-medium text-blue-800">01</span>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-yellow-100 rounded-lg p-3 flex items-center justify-center">
+                                                        <div class="text-center">
+                                                            <div class="w-8 h-8 bg-yellow-500 rounded mx-auto mb-2">
+                                                            </div>
+                                                            <span class="text-xs font-medium text-yellow-800">02</span>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-green-100 rounded-lg p-3 flex items-center justify-center">
+                                                        <div class="text-center">
+                                                            <div class="w-8 h-8 bg-green-500 rounded mx-auto mb-2">
+                                                            </div>
+                                                            <span class="text-xs font-medium text-green-800">03</span>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-purple-100 rounded-lg p-3 flex items-center justify-center">
+                                                        <div class="text-center">
+                                                            <div class="w-8 h-8 bg-purple-500 rounded mx-auto mb-2">
+                                                            </div>
+                                                            <span class="text-xs font-medium text-purple-800">04</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Slide 2 -->
-                    <div class="hero-slide" data-index="1">
-                        <div class="container">
-                            <div class="hero-content">
-                                <div class="hero-text" data-animation="fade-up">
-                                    <p class="hero-subtitle">BROCHURES & CATALOGS</p>
-                                    <h2 class="hero-title">
-                                        Design. <span class="text-gradient">Print.</span> Deliver.
-                                    </h2>
-                                    <p class="hero-description">
-                                        Premium brochures and catalogs with vibrant colors, crisp details, and fast
-                                        turnaround.
-                                    </p>
-                                    <div class="hero-actions">
-                                        <button class="btn btn-primary btn-large">Explore Brochures <span
-                                                class="btn-icon">→</span></button>
-                                        <button class="btn btn-secondary">See Samples</button>
-                                    </div>
-                                </div>
-                                <div class="hero-visual" data-animation="fade-left">
-                                    <div class="hero-image-container">
-                                        <div class="book-open-overlay" aria-hidden="true"></div>
-                                        <div class="hero-circle alt kenburns"></div>
-                                        <img src="assets/images/hero-illustration.svg"
-                                            alt="Shristi Press book illustration showcasing quality printing services"
-                                            class="hero-image parallax" loading="lazy">
-                                        <div class="floating-badge">
-                                            <div class="badge-content">
-                                                <span class="badge-number">24hr</span>
-                                                <span class="badge-text">Rush Ready</span>
-                                            </div>
+                                        <div
+                                            class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform rotate-12">
+                                            <div class="w-8 h-8 bg-yellow-400 rounded-full"></div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="hero-slide" data-index="2">
-                        <div class="container">
-                            <div class="hero-content">
-                                <div class="hero-text" data-animation="fade-up">
-                                    <p class="hero-subtitle">APPAREL PRINTING</p>
-                                    <h2 class="hero-title">
-                                        Bring your <span class="text-gradient">brand</span> to life
-                                    </h2>
-                                    <p class="hero-description">
-                                        Custom T‑shirts and wearables with durable, high‑quality prints and stunning
-                                        finish options.
-                                    </p>
-                                    <div class="hero-actions">
-                                        <button class="btn btn-primary btn-large">Start Customizing <span
-                                                class="btn-icon">→</span></button>
-                                        <button class="btn btn-secondary">Pricing</button>
-                                    </div>
-                                </div>
-                                <div class="hero-visual" data-animation="fade-left">
-                                    <div class="hero-image-container">
-                                        <div class="book-open-overlay" aria-hidden="true"></div>
-                                        <div class="hero-circle success kenburns"></div>
-                                        <img src="assets/images/bestselling-t-shirts.svg"
-                                            alt="Custom T‑shirt printing preview" class="hero-image parallax"
-                                            loading="lazy">
-                                        <div class="floating-badge">
-                                            <div class="badge-content">
-                                                <span class="badge-number">5★</span>
-                                                <span class="badge-text">Top Rated</span>
-                                            </div>
+                                        <div
+                                            class="absolute -bottom-6 -left-6 w-12 h-12 bg-gray-800 rounded-full shadow-lg">
                                         </div>
                                     </div>
                                 </div>
@@ -363,86 +434,328 @@
                     </div>
                 </div>
 
-                <!-- Navigation Controls -->
-                <div class="hero-nav" aria-label="Hero navigation">
-                    <button class="hero-nav-btn prev" id="prevHero" aria-label="Previous slide">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
-                    <button class="hero-nav-btn next" id="nextHero" aria-label="Next slide">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                <!-- Slide 2 - Business Cards -->
+                <div class="hero-slide" data-index="1">
+                    <div
+                        class="relative h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 overflow-hidden">
+                        <div class="absolute inset-0 opacity-30">
+                            <div class="absolute top-20 right-20 w-32 h-32 bg-white/10 rounded-full"></div>
+                            <div class="absolute bottom-32 left-16 w-24 h-24 bg-white/5 rounded-full"></div>
+                            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full"></div>
+                        </div>
+
+                        <div class="relative z-10 container mx-auto px-6 lg:px-8 h-screen flex items-center pt-32">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+
+                                <div class="text-left">
+                                    <div class="mb-6">
+                                        <span
+                                            class="inline-block text-blue-700 font-semibold text-sm tracking-widest uppercase">
+                                            BUSINESS CARDS
+                                        </span>
+                                    </div>
+
+                                    <h2
+                                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                                        Make your first<br>
+                                        <span class="text-blue-800">impression count</span>
+                                    </h2>
+
+                                    <p class="text-lg text-gray-600 font-medium max-w-md mb-8 leading-relaxed">
+                                        Premium business cards with exceptional quality and professional finish
+                                    </p>
+
+                                    <button
+                                        class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                                        <span class="mr-3">Design Now</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="relative flex justify-center lg:justify-end">
+                                    <div
+                                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] bg-blue-400 rounded-full -z-10 opacity-90">
+                                    </div>
+
+                                    <div
+                                        class="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                                        <div class="relative w-80 h-64 sm:w-96 sm:h-80 lg:w-[32rem] lg:h-96">
+                                            <!-- Business Card Stack -->
+                                            <div
+                                                class="absolute top-8 left-8 w-64 h-40 bg-white rounded-lg shadow-xl transform rotate-6 hover:rotate-3 transition-transform duration-500">
+                                                <div
+                                                    class="h-full w-full bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-4 flex flex-col justify-between text-white">
+                                                    <div>
+                                                        <h4 class="text-sm font-bold">SHRISTI PRESS</h4>
+                                                        <p class="text-xs opacity-90">Premium Printing</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-xs">John Doe</p>
+                                                        <p class="text-xs opacity-80">Creative Director</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute top-4 left-12 w-64 h-40 bg-white rounded-lg shadow-xl transform rotate-3 hover:rotate-1 transition-transform duration-500">
+                                                <div
+                                                    class="h-full w-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 flex flex-col justify-between text-white">
+                                                    <div>
+                                                        <h4 class="text-sm font-bold">BUSINESS CARD</h4>
+                                                        <p class="text-xs opacity-90">Professional Design</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-xs">Jane Smith</p>
+                                                        <p class="text-xs opacity-80">Marketing Manager</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute top-0 left-16 w-64 h-40 bg-white rounded-lg shadow-xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+                                                <div
+                                                    class="h-full w-full bg-gradient-to-br from-white to-gray-50 rounded-lg p-4 flex flex-col justify-between border border-gray-200">
+                                                    <div>
+                                                        <h4 class="text-sm font-bold text-gray-800">ELEGANT DESIGN</h4>
+                                                        <p class="text-xs text-gray-600">Minimalist Style</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-xs text-gray-800">Alex Johnson</p>
+                                                        <p class="text-xs text-gray-600">Brand Designer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform rotate-12">
+                                            <div class="w-8 h-8 bg-blue-400 rounded-full"></div>
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-6 -left-6 w-12 h-12 bg-gray-800 rounded-full shadow-lg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - Brochures -->
+                <div class="hero-slide" data-index="2">
+                    <div
+                        class="relative h-screen bg-gradient-to-br from-green-50 via-green-100 to-green-200 overflow-hidden">
+                        <div class="absolute inset-0 opacity-30">
+                            <div class="absolute top-20 right-20 w-32 h-32 bg-white/10 rounded-full"></div>
+                            <div class="absolute bottom-32 left-16 w-24 h-24 bg-white/5 rounded-full"></div>
+                            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full"></div>
+                        </div>
+
+                        <div class="relative z-10 container mx-auto px-6 lg:px-8 h-screen flex items-center pt-32">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+
+                                <div class="text-left">
+                                    <div class="mb-6">
+                                        <span
+                                            class="inline-block text-green-700 font-semibold text-sm tracking-widest uppercase">
+                                            BROCHURES & FLYERS
+                                        </span>
+                                    </div>
+
+                                    <h2
+                                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                                        Promote your<br>
+                                        <span class="text-green-800">business effectively</span>
+                                    </h2>
+
+                                    <p class="text-lg text-gray-600 font-medium max-w-md mb-8 leading-relaxed">
+                                        Eye-catching brochures and flyers that capture attention and drive results
+                                    </p>
+
+                                    <button
+                                        class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                                        <span class="mr-3">Get Quote</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="relative flex justify-center lg:justify-end">
+                                    <div
+                                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] bg-green-400 rounded-full -z-10 opacity-90">
+                                    </div>
+
+                                    <div
+                                        class="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                                        <div class="relative w-80 h-64 sm:w-96 sm:h-80 lg:w-[32rem] lg:h-96">
+                                            <!-- Brochure Stack -->
+                                            <div
+                                                class="absolute top-8 left-8 w-48 h-64 bg-white rounded-lg shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-500">
+                                                <div
+                                                    class="h-full w-full bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-4 flex flex-col text-white">
+                                                    <div class="mb-4">
+                                                        <h4 class="text-lg font-bold">ECO FRIENDLY</h4>
+                                                        <p class="text-sm opacity-90">Sustainable Printing</p>
+                                                    </div>
+                                                    <div class="flex-1 bg-white/20 rounded p-2 mb-4">
+                                                        <div class="w-full h-16 bg-white/30 rounded mb-2"></div>
+                                                        <div class="w-3/4 h-2 bg-white/40 rounded mb-1"></div>
+                                                        <div class="w-1/2 h-2 bg-white/40 rounded"></div>
+                                                    </div>
+                                                    <div class="text-xs opacity-80">
+                                                        Learn More →
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute top-4 left-16 w-48 h-64 bg-white rounded-lg shadow-xl transform rotate-6 hover:rotate-3 transition-transform duration-500">
+                                                <div
+                                                    class="h-full w-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-4 flex flex-col text-white">
+                                                    <div class="mb-4">
+                                                        <h4 class="text-lg font-bold">CREATIVE</h4>
+                                                        <p class="text-sm opacity-90">Design Solutions</p>
+                                                    </div>
+                                                    <div class="flex-1 bg-white/20 rounded p-2 mb-4">
+                                                        <div class="w-full h-16 bg-white/30 rounded mb-2"></div>
+                                                        <div class="w-3/4 h-2 bg-white/40 rounded mb-1"></div>
+                                                        <div class="w-1/2 h-2 bg-white/40 rounded"></div>
+                                                    </div>
+                                                    <div class="text-xs opacity-80">
+                                                        Explore →
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="absolute top-0 left-24 w-48 h-64 bg-white rounded-lg shadow-xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                                                <div
+                                                    class="h-full w-full bg-gradient-to-br from-orange-400 to-red-500 rounded-lg p-4 flex flex-col text-white">
+                                                    <div class="mb-4">
+                                                        <h4 class="text-lg font-bold">PREMIUM</h4>
+                                                        <p class="text-sm opacity-90">Quality Prints</p>
+                                                    </div>
+                                                    <div class="flex-1 bg-white/20 rounded p-2 mb-4">
+                                                        <div class="w-full h-16 bg-white/30 rounded mb-2"></div>
+                                                        <div class="w-3/4 h-2 bg-white/40 rounded mb-1"></div>
+                                                        <div class="w-1/2 h-2 bg-white/40 rounded"></div>
+                                                    </div>
+                                                    <div class="text-xs opacity-80">
+                                                        Order Now →
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform rotate-12">
+                                            <div class="w-8 h-8 bg-green-400 rounded-full"></div>
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-6 -left-6 w-12 h-12 bg-gray-800 rounded-full shadow-lg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Navigation Controls -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+                <button
+                    class="hero-dot active w-3 h-3 bg-gray-800 rounded-full transition-all duration-300 hover:scale-110"
+                    data-slide="0"></button>
+                <button
+                    class="hero-dot w-3 h-3 bg-gray-300 rounded-full transition-all duration-300 hover:scale-110 hover:bg-gray-400"
+                    data-slide="1"></button>
+                <button
+                    class="hero-dot w-3 h-3 bg-gray-300 rounded-full transition-all duration-300 hover:scale-110 hover:bg-gray-400"
+                    data-slide="2"></button>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button
+                class="absolute left-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all duration-300 z-20"
+                id="prevSlide">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button
+                class="absolute right-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all duration-300 z-20"
+                id="nextSlide">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </section>""
 
         <!-- Services Grid -->
-        <section class="services-grid" id="services" aria-labelledby="services-title">
+        <section class="services-grid scroll-reveal" id="services" aria-labelledby="services-title">
             <div class="container">
                 <div class="services-row">
                     <a href="categories.html#book-printing" class="service-card-link">
-                        <div class="service-card" data-animation="fade-up" data-delay="100">
+                        <div class="service-card scroll-reveal" data-animation="slide-up" data-delay="100">
                             <div class="service-image">
                                 <img src="assets\images\book-types\book printing.jpg" alt="Custom print layouts design"
                                     loading="lazy">
                             </div>
-                            <h3 class="service-title">BOOK PRINTING</h3>
-                            <p class="service-subtitle">Our custom collection</p>
+                            <div class="service-content">
+                                <h3 class="service-title">BOOK PRINTING</h3>
+                                <p class="service-subtitle">Our custom collection</p>
+                            </div>
                         </div>
                     </a>
 
                     <a href="categories.html#paper-box" class="service-card-link">
-                        <div class="service-card" data-animation="fade-up" data-delay="200">
+                        <div class="service-card scroll-reveal" data-animation="slide-up" data-delay="200">
                             <div class="service-image">
                                 <img src="assets\images\book-types\paper boxes.jpg" alt="High quality printing service"
                                     loading="lazy">
                             </div>
-                            <h3 class="service-title">PAPER BOX PRINTING</h3>
-                            <p class="service-subtitle">Print Your Own Boxes</p>
+                            <div class="service-content">
+                                <h3 class="service-title">PAPER BOX PRINTING</h3>
+                                <p class="service-subtitle">Print Your Own Boxes</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="categories.html#stationery" class="service-card-link">
+                        <div class="service-card scroll-reveal" data-animation="slide-up" data-delay="300">
+                            <div class="service-image">
+                                <img src="assets\images\book-types\stationery.jpg" alt="Design services" loading="lazy">
+                            </div>
+                            <div class="service-content">
+                                <h3 class="service-title">STATIONERY PRODUCTS</h3>
+                                <p class="service-subtitle">Creative solutions</p>
+                            </div>
                         </div>
                     </a>
 
                     <a href="categories.html#marketing" class="service-card-link">
-                        <div class="service-card" data-animation="fade-up" data-delay="300">
+                        <div class="service-card scroll-reveal" data-animation="slide-up" data-delay="400">
                             <div class="service-image">
                                 <img src="assets\images\book-types\danglers.jpg" alt="One stop shop printing solutions"
                                     loading="lazy">
                             </div>
-                            <h3 class="service-title">MARKETING PRODUCTS</h3>
-                            <p class="service-subtitle">Complete solution For You</p>
-                        </div>
-                    </a>
-
-                </div>
-
-                <div class="services-row">
-                    <a href="categories.html#stationery" class="service-card-link">
-                        <div class="service-card" data-animation="fade-up" data-delay="500">
-                            <div class="service-image">
-                                <img src="assets\images\book-types\stationery.jpg" alt="Design services" loading="lazy">
+                            <div class="service-content">
+                                <h3 class="service-title">MARKETING PRODUCTS</h3>
+                                <p class="service-subtitle">Complete solution For You</p>
                             </div>
-                            <h3 class="service-title">STATIONERY PRODUCTS</h3>
-                            <p class="service-subtitle">Creative solutions</p>
                         </div>
                     </a>
-
-
-
-
-
 
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Us Section -->
-        <section class="why-choose-us" aria-labelledby="why-choose-title">
+        <section class="why-choose-us scroll-reveal" aria-labelledby="why-choose-title">
             <div class="container">
                 <div class="section-header" data-animation="fade-up">
                     <p class="section-subtitle">Start your business now</p>
@@ -505,7 +818,7 @@
         </section>
 
         <!-- Featured Products -->
-        <section class="featured-products" id="products" aria-labelledby="products-title">
+        <section class="featured-products scroll-reveal" id="products" aria-labelledby="products-title">
             <div class="container">
                 <div class="section-header" data-animation="fade-up">
                     <p class="section-subtitle">Featured Products</p>
@@ -711,8 +1024,8 @@
                                 <button class="control-btn" id="rotateRight" aria-label="Rotate right">↻</button>
                             </div>
                             <div class="preview-image" id="mainPreview">
-                                <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_1050/v1/shared-assets/s2/raster/business-card-template.jpg" alt="Business Cards Preview"
-                                    class="preview-img">
+                                <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_1050/v1/shared-assets/s2/raster/business-card-template.jpg"
+                                    alt="Business Cards Preview" class="preview-img">
                                 <div class="preview-overlay">
                                     <button class="customize-btn">🎨 Customize Design</button>
                                 </div>
@@ -786,7 +1099,8 @@
                 <div class="top-selling-grid">
                     <div class="product-card" data-animation="fade-up" data-delay="100">
                         <div class="product-image">
-                            <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_1050/v1/shared-assets/s2/raster/business-card-template.jpg" alt="Business Card Set" loading="lazy">
+                            <img src="https://res.cloudinary.com/zenbusiness/q_auto,w_1050/v1/shared-assets/s2/raster/business-card-template.jpg"
+                                alt="Business Card Set" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -799,7 +1113,8 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="200">
                         <div class="product-image">
-                            <img src="https://www.eymockup.com/wp-content/uploads/2018/04/Tri-Fold-2-28-1500x1501.jpg" alt="Business Brochure" loading="lazy">
+                            <img src="https://www.eymockup.com/wp-content/uploads/2018/04/Tri-Fold-2-28-1500x1501.jpg"
+                                alt="Business Brochure" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -812,7 +1127,8 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="300">
                         <div class="product-image">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuMO3A1JVZHr16a-K01VUHTJKCJxBGX8MSjQ&s" alt="Folder Collection Set" loading="lazy">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuMO3A1JVZHr16a-K01VUHTJKCJxBGX8MSjQ&s"
+                                alt="Folder Collection Set" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -825,7 +1141,8 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="400">
                         <div class="product-image">
-                            <img src="data:image/jpeg;base64,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" alt="Report Layout Design" loading="lazy">
+                            <img src="data:image/jpeg;base64,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"
+                                alt="Report Layout Design" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -838,7 +1155,8 @@
 
                     <div class="product-card" data-animation="fade-up" data-delay="500">
                         <div class="product-image">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHqLJT2I-5Mi1iM6e2vbhm64OiuOEtDlCM1A&s" alt="Annual Magazine Design" loading="lazy">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHqLJT2I-5Mi1iM6e2vbhm64OiuOEtDlCM1A&s"
+                                alt="Annual Magazine Design" loading="lazy">
                             <div class="product-overlay">
                                 <button class="btn-cart" aria-label="Add to cart">🛒</button>
                             </div>
@@ -869,8 +1187,8 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="100">
                         <div class="new-product-badge">#1 Bestseller</div>
                         <div class="new-product-image-container">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTybqd62rrSvaP3YRkVgZmV_jLMEV2_sbRGsQ&s" alt="Premium Business Cards"
-                                loading="lazy" class="new-product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTybqd62rrSvaP3YRkVgZmV_jLMEV2_sbRGsQ&s"
+                                alt="Premium Business Cards" loading="lazy" class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
@@ -926,8 +1244,8 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="200">
                         <div class="new-product-badge">#2 Popular</div>
                         <div class="new-product-image-container">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlHJB-nz_iVbmfR16LfwiqhygDqVDnY35n6Q&s" alt="Professional Brochures"
-                                loading="lazy" class="new-product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlHJB-nz_iVbmfR16LfwiqhygDqVDnY35n6Q&s"
+                                alt="Professional Brochures" loading="lazy" class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
@@ -983,8 +1301,8 @@
                     <div class="new-product-card" data-animation="slide-up" data-delay="300">
                         <div class="new-product-badge">#3 Trending</div>
                         <div class="new-product-image-container">
-                            <img src="https://files.printo.in/site/20230608_175135729748_caf4c1_Thumbnail-images.jpg" alt="Standees" loading="lazy"
-                                class="new-product-image">
+                            <img src="https://files.printo.in/site/20230608_175135729748_caf4c1_Thumbnail-images.jpg"
+                                alt="Standees" loading="lazy" class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
@@ -1037,11 +1355,11 @@
                     </div>
 
                     <!-- Product 4: Banners -->
-                    <div class="new-product-card" data-animation="slide-up" data-delay="400">
+                    <div class="new-product-card swipeable-card" data-animation="slide-up" data-delay="400">
                         <div class="new-product-badge">#4 Hot</div>
                         <div class="new-product-image-container">
-                            <img src="https://cdn.dribbble.com/userupload/29946811/file/original-6ab5c0b981e36b4a8d328f6b1f68ea6d.jpg?format=webp&resize=400x300&vertical=center" alt="Large Format Banners" loading="lazy"
-                                class="new-product-image">
+                            <img src="https://cdn.dribbble.com/userupload/29946811/file/original-6ab5c0b981e36b4a8d328f6b1f68ea6d.jpg?format=webp&resize=400x300&vertical=center"
+                                alt="Large Format Banners" loading="lazy" class="new-product-image">
                             <div class="new-product-overlay">
                                 <div class="new-overlay-content">
                                     <button class="new-btn-quick-view" aria-label="Quick view">
@@ -1107,7 +1425,7 @@
         </section>
 
         <!-- Blog Section -->
-       
+
 
         <!-- Statistics Counter Section -->
         <section class="statistics-section" aria-labelledby="stats-title">
@@ -1188,7 +1506,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="testimonials" aria-labelledby="testimonials-title">
+        <section class="testimonials scroll-reveal" aria-labelledby="testimonials-title">
             <div class="container">
                 <div class="section-header" data-animation="fade-up">
                     <p class="section-subtitle">What our clients say</p>
@@ -1710,6 +2028,7 @@
 
     <!-- Scripts -->
     <script defer src="js/script.js?v=17"></script>
+    <script defer src="js/ui-enhancements.js"></script>
 
     <!-- Service Worker Registration -->
     <script>
@@ -1725,7 +2044,6 @@
             });
         }
     </script>
-    <script src="js/dark-mode.js"></script>
 </body>
 
 </html>

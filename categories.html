@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrintCraft - Premium Printing Services</title>
+    
+
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Main Site Styles -->
@@ -124,7 +127,6 @@
             width: 100%;
         }
     </style>
-    <link rel="stylesheet" href="css/dark-mode.css">
 </head>
 
 <body class="bg-gray-50">
@@ -251,11 +253,6 @@
                     </ul>
 
                     <div class="navbar-actions">
-                        <button class="btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
-                            title="Toggle dark mode">
-                            <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
-                            <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
-                        </button>
                         <button class="btn btn-primary">Get Started</button>
                     </div>
                 </div>
@@ -362,29 +359,32 @@
                     </div>
                 </div>
 
-                <!-- Marketing Product -->
-                <div class="category-section" id="marketing">
-                    <div class="text-center mb-12 fade-in">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Marketing Products</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Eye-catching marketing materials to promote your
-                            brand and boost your business visibility.</p>
+                <!-- Side-by-side Marketing and Stationery Products -->
+                <div class="side-by-side-sections">
+                    <!-- Stationery Product (Left Side) -->
+                    <div class="category-section half-section" id="stationery">
+                        <div class="text-center mb-12 fade-in">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Stationery Products</h2>
+                            <p class="text-gray-600 max-w-2xl mx-auto">Professional stationery items for your business
+                                communication and documentation needs.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8"
+                            id="stationery-grid">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                        id="marketing-grid">
-                        <!-- Products will be inserted here by JavaScript -->
-                    </div>
-                </div>
 
-                <!-- Stationery Product -->
-                <div class="category-section" id="stationery">
-                    <div class="text-center mb-12 fade-in">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Stationery Products</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Professional stationery items for your business
-                            communication and documentation needs.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                        id="stationery-grid">
-                        <!-- Products will be inserted here by JavaScript -->
+                    <!-- Marketing Product (Right Side) -->
+                    <div class="category-section half-section" id="marketing">
+                        <div class="text-center mb-12 fade-in">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Marketing Products</h2>
+                            <p class="text-gray-600 max-w-2xl mx-auto">Eye-catching marketing materials to promote your
+                                brand and boost your business visibility.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8"
+                            id="marketing-grid">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
                     </div>
                 </div>
 
@@ -714,7 +714,6 @@
 
     <!-- Main Site Scripts -->
     <script defer src="js/script.js"></script>
-    <script src="js/dark-mode.js"></script>
 </body>
 
 </html>

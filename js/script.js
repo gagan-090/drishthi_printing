@@ -166,7 +166,7 @@ class NavigationManager {
 
       // Desktop hover behavior
       if (window.innerWidth > 1024) {
-        
+
         // Mouse enter nav item - open mega menu
         item.addEventListener('mouseenter', () => {
           // Close any other open menu
@@ -174,12 +174,12 @@ class NavigationManager {
             currentOpenMenu.classList.remove('mega-menu-active');
             this.hideMegaMenu(currentOpenMenu);
           }
-          
+
           // Open this menu
           this.showMegaMenu(item);
           item.classList.add('mega-menu-active');
           currentOpenMenu = item;
-          
+
           // Show navigation area
           navigationArea.style.display = 'block';
           isInNavigationArea = true;
@@ -255,7 +255,7 @@ class NavigationManager {
     document.addEventListener('mousemove', (e) => {
       const target = e.target;
       const isOverNav = target.closest('.navbar') || target.closest('.mega-menu') || target.closest('.mega-menu-item');
-      
+
       if (isOverNav) {
         isInNavigationArea = true;
       } else {
@@ -282,14 +282,14 @@ class NavigationManager {
     if (megaMenu && trigger) {
       // Close all other mega menus first
       this.closeAllOtherMegaMenus(item);
-      
+
       // Calculate the center position based on viewport width
       const viewportWidth = window.innerWidth;
       const megaMenuWidth = Math.min(1400, viewportWidth - 40); // 40px for margins
 
       // Add active class first for CSS transitions
       item.classList.add('mega-menu-active');
-      
+
       // Set styles with a small delay to allow CSS transitions
       requestAnimationFrame(() => {
         megaMenu.style.width = `${megaMenuWidth}px`;
@@ -300,7 +300,7 @@ class NavigationManager {
         megaMenu.style.pointerEvents = 'auto';
         megaMenu.style.zIndex = '9999';
       });
-      
+
       trigger.setAttribute('aria-expanded', 'true');
     }
   }
@@ -312,14 +312,14 @@ class NavigationManager {
     if (megaMenu && trigger) {
       // Remove active class first to trigger CSS transitions
       item.classList.remove('mega-menu-active');
-      
+
       // Reset styles after transition
       setTimeout(() => {
         megaMenu.style.opacity = '0';
         megaMenu.style.visibility = 'hidden';
         megaMenu.style.transform = 'translateX(-50%) translateY(-20px)';
         megaMenu.style.pointerEvents = 'none';
-        
+
         // For mobile devices, also reset display property
         if (window.innerWidth <= 1024) {
           megaMenu.style.display = 'none';
@@ -702,12 +702,12 @@ class NavigationManager {
   initSimpleMegaMenu() {
     const megaMenuItems = $$('.mega-menu-item');
     const allNavItems = $$('.navbar-nav li');
-    
+
     // Desktop: Add hover handlers to close mega menus when hovering non-mega items
     if (window.innerWidth > 1024) {
       allNavItems.forEach(navItem => {
         const isMegaMenuItem = navItem.classList.contains('mega-menu-item');
-        
+
         if (!isMegaMenuItem) {
           navItem.addEventListener('mouseenter', () => {
             // Hide all mega menus by adding a class
@@ -715,7 +715,7 @@ class NavigationManager {
               item.classList.add('force-hide');
             });
           });
-          
+
           navItem.addEventListener('mouseleave', () => {
             // Remove force hide class
             megaMenuItems.forEach(item => {
@@ -725,24 +725,24 @@ class NavigationManager {
         }
       });
     }
-    
+
     // Mobile click behavior
     megaMenuItems.forEach(item => {
       const trigger = item.querySelector('a');
-      
+
       if (!trigger) return;
 
       if (window.innerWidth <= 1024) {
         trigger.addEventListener('click', (e) => {
           e.preventDefault();
-          
+
           // Close other menus
           megaMenuItems.forEach(otherItem => {
             if (otherItem !== item) {
               otherItem.classList.remove('active');
             }
           });
-          
+
           // Toggle this menu
           item.classList.toggle('active');
         });
@@ -2096,6 +2096,88 @@ if (!document.querySelector('#calculator-animations')) {
   style.id = 'calculator-animations';
   style.textContent = calculatorStyles;
   document.head.appendChild(style);
+}
+
+// ===== SWIPEABLE CARD FUNCTIONALITY =====
+class SwipeableCardManager {
+  constructor() {
+    this.swipeThreshold = 100;
+    this.isDown = false;
+    this.startX = 0;
+    this.currentX = 0;
+  }
+
+  init() {
+    const swipeableCards = document.querySelectorAll('.swipeable-card');
+    swipeableCards.forEach(card => {
+      this.setupSwipeEvents(card);
+    });
+  }
+
+  setupSwipeEvents(card) {
+    // Mouse events
+    card.addEventListener('mousedown', (e) => this.handleStart(e, card));
+    card.addEventListener('mousemove', (e) => this.handleMove(e, card));
+    card.addEventListener('mouseup', (e) => this.handleEnd(e, card));
+    card.addEventListener('mouseleave', (e) => this.handleEnd(e, card));
+
+    // Touch events for mobile
+    card.addEventListener('touchstart', (e) => this.handleStart(e, card), { passive: true });
+    card.addEventListener('touchmove', (e) => this.handleMove(e, card), { passive: true });
+    card.addEventListener('touchend', (e) => this.handleEnd(e, card));
+  }
+
+  handleStart(e, card) {
+    this.isDown = true;
+    card.classList.add('swiping');
+
+    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    this.startX = clientX - card.offsetLeft;
+    this.currentX = this.startX;
+  }
+
+  handleMove(e, card) {
+    if (!this.isDown) return;
+
+    e.preventDefault();
+    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    this.currentX = clientX - card.offsetLeft;
+
+    const deltaX = this.currentX - this.startX;
+
+    // Only allow swiping to the right
+    if (deltaX > 0) {
+      card.style.transform = `translateX(${Math.min(deltaX, 150)}px)`;
+      card.style.opacity = Math.max(0.4, 1 - (deltaX / 300));
+    }
+  }
+
+  handleEnd(e, card) {
+    if (!this.isDown) return;
+
+    this.isDown = false;
+    card.classList.remove('swiping');
+
+    const deltaX = this.currentX - this.startX;
+
+    if (deltaX > this.swipeThreshold) {
+      // Swipe was successful
+      card.classList.add('swiped-right');
+      card.style.transform = 'translateX(200px)';
+      card.style.opacity = '0.3';
+
+      // Reset after 2 seconds
+      setTimeout(() => {
+        card.classList.remove('swiped-right');
+        card.style.transform = '';
+        card.style.opacity = '';
+      }, 2000);
+    } else {
+      // Reset position
+      card.style.transform = '';
+      card.style.opacity = '';
+    }
+  }
 }
 
 // ===== BESTSELLING PRODUCTS MANAGER =====
@@ -3528,6 +3610,7 @@ class App {
       this.bestsellingProductsManager = new BestsellingProductsManager();
       this.featuredProductsManager = new FeaturedProductsManager();
       this.newBestsellingProductsManager = new NewBestsellingProductsManager();
+      this.swipeableCardManager = new SwipeableCardManager();
       this.productGalleryManager = new ProductGalleryManager();
       this.blogManager = new BlogManager();
       this.heroSliderManager = new HeroSliderManager();
@@ -3559,6 +3642,14 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     // Initialize app
     window.app = new App();
+
+    // Initialize swipeable card functionality after a short delay to ensure DOM is ready
+    setTimeout(() => {
+      if (window.app && window.app.swipeableCardManager) {
+        window.app.swipeableCardManager.init();
+        console.log('✅ Swipeable card functionality initialized');
+      }
+    }, 100);
   } catch (error) {
     console.error('❌ Error initializing app:', error);
   }
@@ -3935,3 +4026,180 @@ class NewBestsellingProductsManager {
     }, 500);
   }
 }
+
+// ===== HERO SLIDER =====
+class HeroSlider {
+  constructor() {
+    this.currentSlide = 0;
+    this.slides = document.querySelectorAll('.hero-slide');
+    this.dots = document.querySelectorAll('.hero-dot');
+    this.prevBtn = document.getElementById('prevSlide');
+    this.nextBtn = document.getElementById('nextSlide');
+    this.track = document.getElementById('heroTrack');
+    this.autoPlayInterval = null;
+    this.autoPlayDelay = 5000; // 5 seconds
+
+    this.init();
+  }
+
+  init() {
+    if (!this.slides.length) return;
+
+    this.bindEvents();
+    this.startAutoPlay();
+    this.updateSlider();
+  }
+
+  bindEvents() {
+    // Dot navigation
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        this.goToSlide(index);
+      });
+    });
+
+    // Arrow navigation
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener('click', () => {
+        this.prevSlide();
+      });
+    }
+
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener('click', () => {
+        this.nextSlide();
+      });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        this.prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        this.nextSlide();
+      }
+    });
+
+    // Pause autoplay on hover
+    const slider = document.querySelector('.hero-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', () => {
+        this.stopAutoPlay();
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        this.startAutoPlay();
+      });
+    }
+
+    // Touch/swipe support
+    this.addTouchSupport();
+  }
+
+  goToSlide(index) {
+    if (index < 0 || index >= this.slides.length) return;
+
+    this.currentSlide = index;
+    this.updateSlider();
+    this.resetAutoPlay();
+  }
+
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.slides.length;
+    this.goToSlide(nextIndex);
+  }
+
+  prevSlide() {
+    const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+    this.goToSlide(prevIndex);
+  }
+
+  updateSlider() {
+    // Update slides
+    this.slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === this.currentSlide);
+    });
+
+    // Update dots
+    this.dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === this.currentSlide);
+      if (index === this.currentSlide) {
+        dot.style.backgroundColor = '#1f2937';
+      } else {
+        dot.style.backgroundColor = '#d1d5db';
+      }
+    });
+
+    // Update track position
+    if (this.track) {
+      const translateX = -this.currentSlide * 33.333;
+      this.track.style.transform = `translateX(${translateX}%)`;
+    }
+  }
+
+  startAutoPlay() {
+    this.stopAutoPlay();
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, this.autoPlayDelay);
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+  }
+
+  addTouchSupport() {
+    let startX = 0;
+    let endX = 0;
+    const slider = document.querySelector('.hero-slider');
+
+    if (!slider) return;
+
+    slider.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      this.handleSwipe();
+    });
+
+    slider.addEventListener('mousedown', (e) => {
+      startX = e.clientX;
+      slider.addEventListener('mouseup', this.handleMouseUp);
+    });
+  }
+
+  handleMouseUp = (e) => {
+    const slider = document.querySelector('.hero-slider');
+    endX = e.clientX;
+    this.handleSwipe();
+    slider.removeEventListener('mouseup', this.handleMouseUp);
+  }
+
+  handleSwipe() {
+    const threshold = 50;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        this.nextSlide();
+      } else {
+        this.prevSlide();
+      }
+    }
+  }
+}
+
+// Initialize hero slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new HeroSlider();
+});
