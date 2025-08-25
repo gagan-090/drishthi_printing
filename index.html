@@ -173,8 +173,9 @@
         .mega-menu {
             position: absolute;
             top: calc(100% + 1rem);
-            left: 50%;
-            transform: translateX(-50%) translateY(-10px);
+            left: 0;
+            right: 0;
+            transform: translateY(-10px) scaleX(0.95);
             background: white;
             border: none;
             border-radius: 1rem;
@@ -183,15 +184,16 @@
             visibility: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            min-width: 1000px;
-            max-width: 90vw;
+            width: 100%;
+            max-width: 100%;
             padding: 0.5rem;
+            transform-origin: center top;
         }
 
         .mega-menu-item:hover .mega-menu {
             opacity: 1;
             visibility: visible;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0) scaleX(1);
         }
 
         .mega-menu-item:hover .dropdown-arrow {
@@ -199,17 +201,19 @@
         }
 
         .mega-menu-content {
-            padding: 2.5rem;
+            padding: 2.5rem 4rem;
             position: relative;
             background: white;
             border-radius: 0.75rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .mega-menu-columns {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2.5rem;
-            margin-right: 240px;
+            gap: 3rem;
+            margin-right: 280px;
         }
 
         .mega-menu-column {
@@ -278,10 +282,10 @@
 
         .mega-menu-image-panel {
             position: absolute;
-            right: 2.5rem;
+            right: 4rem;
             top: 2.5rem;
-            width: 220px;
-            height: 220px;
+            width: 250px;
+            height: 250px;
             border-radius: 1rem;
             overflow: hidden;
             z-index: 10;
@@ -369,23 +373,24 @@
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             .mega-menu {
-                min-width: 700px;
                 left: 0;
-                transform: translateX(0) translateY(-10px);
+                right: 0;
+                transform: translateY(-10px);
                 padding: 0.25rem;
             }
 
             .mega-menu-item:hover .mega-menu {
-                transform: translateX(0) translateY(0);
+                transform: translateY(0);
             }
 
             .mega-menu-content {
-                padding: 2rem;
+                padding: 2rem 3rem;
+                max-width: 100%;
             }
 
             .mega-menu-columns {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                gap: 2.5rem;
                 margin-right: 0;
             }
 
