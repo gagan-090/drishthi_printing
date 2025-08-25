@@ -8,433 +8,14 @@
     <meta name="description" content="Professional coloring book printing with premium uncoated paper, vibrant covers, and multiple binding options. Perfect for kids and adults with instant quotes and fast delivery.">
     
     
-            <!-- Slim Footer Section -->
+            
     
-
-    <!-- JavaScript -->
-    <script>
-        class ColoringBookCalculator {
-            constructor() {
-                this.basePrice = 8500; // Base price in INR for 100 books, 48 pages
-                this.currentSpecs = {
-                    quantity: 100,
-                    pages: 48,
-                    size: '8x10',
-                    bookType: 'softcover',
-                    binding: 'perfect',
-                    interiorPaper: '70gsm',
-                    coverPaper: '250gsm',
-                    lamination: 'matte',
-                    finishes: []
-                };
-                
-                this.priceMultipliers = {
-                    bookTypes: {
-                        'softcover': 1.0,
-                        'hardcover': 1.8,
-                        'wire-o': 1.4
-                    },
-                    sizes: {
-                        '8.5x11': 1.0,
-                        '8x10': 0.9,
-                        '8.5x8.5': 0.85,
-                        'custom': 1.3
-                    },
-                    bindings: {
-                        'perfect': 1.0,
-                        'saddle': 0.7,
-                        'spiral': 1.2,
-                        'wire-o': 1.4
-                    },
-                    papers: {
-                        '70gsm': 1.0,
-                        '80gsm': 1.1,
-                        '100gsm': 1.3,
-                        '250gsm': 1.0,
-                        '300gsm': 1.2,
-                        '350gsm': 1.4
-                    },
-                    laminations: {
-                        'none': 1.0,
-                        'matte': 1.08,
-                        'gloss': 1.1,
-                        'soft-touch': 1.2
-                    },
-                    finishes: {
-                        'foil': 800,
-                        'spot-uv': 600,
-                        'emboss': 1200
-                    }
-                };
-                
-                this.init();
-            }
-            
-            init() {
-                this.setupEventListeners();
-                this.calculatePrice();
-            }
-            
-            setupEventListeners() {
-                // Book type tabs
-                document.querySelectorAll('.book-type-tab').forEach(tab => {
-                    tab.addEventListener('click', (e) => {
-                        this.selectBookType(e.target.closest('.book-type-tab'));
-                    });
-                });
-                
-                // Quantity controls
-                document.querySelectorAll('.qty-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        this.adjustQuantity(e.target.dataset.action);
-                    });
-                });
-                
-                document.getElementById('quantity').addEventListener('input', (e) => {
-                    this.currentSpecs.quantity = Math.max(25, parseInt(e.target.value) || 25);
-                    this.calculatePrice();
-                });
-                
-                // Page slider
-                const pageSlider = document.getElementById('pageSlider');
-                const pageCount = document.getElementById('pageCount');
-                
-                pageSlider.addEventListener('input', (e) => {
-                    const pages = parseInt(e.target.value);
-                    pageCount.textContent = pages;
-                    this.currentSpecs.pages = pages;
-                    this.calculatePrice();
-                });
-                
-                // Size selection
-                document.getElementById('bookSize').addEventListener('change', (e) => {
-                    this.currentSpecs.size = e.target.value;
-                    this.toggleCustomSizeInputs(e.target.value === 'custom');
-                    this.calculatePrice();
-                });
-                
-                // Binding selection
-                document.querySelectorAll('.binding-option').forEach(option => {
-                    option.addEventListener('click', (e) => {
-                        this.selectBinding(e.target.closest('.binding-option'));
-                    });
-                });
-                
-                // Paper selections
-                document.getElementById('interiorPaper').addEventListener('change', (e) => {
-                    this.currentSpecs.interiorPaper = e.target.value;
-                    this.calculatePrice();
-                });
-                
-                document.getElementById('coverPaper').addEventListener('change', (e) => {
-                    this.currentSpecs.coverPaper = e.target.value;
-                    this.calculatePrice();
-                });
-                
-                // Lamination options
-                document.querySelectorAll('.lamination-option').forEach(option => {
-                    option.addEventListener('click', (e) => {
-                        this.selectLamination(e.target.closest('.lamination-option'));
-                    });
-                });
-                
-                // Special finishes
-                document.querySelectorAll('.finish-checkbox').forEach(checkbox => {
-                    checkbox.addEventListener('change', (e) => {
-                        this.toggleFinish(e.target);
-                    });
-                });
-                
-                // Paper tabs
-                document.querySelectorAll('.paper-tab').forEach(tab => {
-                    tab.addEventListener('click', (e) => {
-                        this.switchPaperTab(e.target);
-                    });
-                });
-            }
-            
-            selectBookType(selectedTab) {
-                document.querySelectorAll('.book-type-tab').forEach(tab => {
-                    tab.classList.remove('active', 'border-primary', 'bg-primary/10');
-                    tab.classList.add('border-gray-200');
-                    tab.querySelector('span').classList.remove('text-primary');
-                    tab.querySelector('span').classList.add('text-gray-700');
-                    tab.querySelector('.w-8').classList.remove('bg-primary/20');
-                    tab.querySelector('.w-8').classList.add('bg-gray-100');
-                    tab.querySelector('svg').classList.remove('text-primary');
-                    tab.querySelector('svg').classList.add('text-gray-600');
-                });
-                
-                selectedTab.classList.add('active', 'border-primary', 'bg-primary/10');
-                selectedTab.classList.remove('border-gray-200');
-                selectedTab.querySelector('span').classList.add('text-primary');
-                selectedTab.querySelector('span').classList.remove('text-gray-700');
-                selectedTab.querySelector('.w-8').classList.add('bg-primary/20');
-                selectedTab.querySelector('.w-8').classList.remove('bg-gray-100');
-                selectedTab.querySelector('svg').classList.add('text-primary');
-                selectedTab.querySelector('svg').classList.remove('text-gray-600');
-                
-                this.currentSpecs.bookType = selectedTab.dataset.type;
-                this.calculatePrice();
-            }
-            
-            adjustQuantity(action) {
-                const qtyInput = document.getElementById('quantity');
-                let qty = parseInt(qtyInput.value);
-                
-                if (action === 'increase') {
-                    qty = Math.min(qty + 25, 5000);
-                } else if (action === 'decrease') {
-                    qty = Math.max(qty - 25, 25);
-                }
-                
-                qtyInput.value = qty;
-                this.currentSpecs.quantity = qty;
-                this.calculatePrice();
-            }
-            
-            toggleCustomSizeInputs(show) {
-                const customInputs = document.getElementById('customSizeInputs');
-                if (show) {
-                    customInputs.classList.remove('hidden');
-                } else {
-                    customInputs.classList.add('hidden');
-                }
-            }
-            
-            selectBinding(selectedOption) {
-                document.querySelectorAll('.binding-option').forEach(option => {
-                    option.classList.remove('active', 'border-primary', 'bg-primary/10');
-                    option.classList.add('border-gray-200');
-                    option.querySelector('span').classList.remove('text-primary');
-                    option.querySelector('span').classList.add('text-gray-700');
-                });
-                
-                selectedOption.classList.add('active', 'border-primary', 'bg-primary/10');
-                selectedOption.classList.remove('border-gray-200');
-                selectedOption.querySelector('span').classList.add('text-primary');
-                selectedOption.querySelector('span').classList.remove('text-gray-700');
-                
-                this.currentSpecs.binding = selectedOption.dataset.binding;
-                this.calculatePrice();
-            }
-            
-            selectLamination(selectedOption) {
-                document.querySelectorAll('.lamination-option').forEach(option => {
-                    option.classList.remove('active', 'border-primary', 'bg-primary/10');
-                    option.classList.add('border-gray-200');
-                    option.querySelector('span').classList.remove('text-primary');
-                    option.querySelector('span').classList.add('text-gray-700');
-                });
-                
-                selectedOption.classList.add('active', 'border-primary', 'bg-primary/10');
-                selectedOption.classList.remove('border-gray-200');
-                selectedOption.querySelector('span').classList.add('text-primary');
-                selectedOption.querySelector('span').classList.remove('text-gray-700');
-                
-                this.currentSpecs.lamination = selectedOption.dataset.lamination;
-                this.calculatePrice();
-            }
-            
-            toggleFinish(checkbox) {
-                const finish = checkbox.dataset.finish;
-                if (checkbox.checked) {
-                    if (!this.currentSpecs.finishes.includes(finish)) {
-                        this.currentSpecs.finishes.push(finish);
-                    }
-                } else {
-                    this.currentSpecs.finishes = this.currentSpecs.finishes.filter(f => f !== finish);
-                }
-                this.calculatePrice();
-            }
-            
-            switchPaperTab(selectedTab) {
-                document.querySelectorAll('.paper-tab').forEach(tab => {
-                    tab.classList.remove('active', 'bg-white', 'text-primary', 'shadow-sm');
-                    tab.classList.add('text-gray-600');
-                });
-                
-                selectedTab.classList.add('active', 'bg-white', 'text-primary', 'shadow-sm');
-                selectedTab.classList.remove('text-gray-600');
-                
-                // Show/hide content
-                document.querySelectorAll('.paper-content').forEach(content => {
-                    content.classList.add('hidden');
-                });
-                
-                const targetContent = document.getElementById(selectedTab.dataset.tab + '-tab');
-                if (targetContent) {
-                    targetContent.classList.remove('hidden');
-                }
-            }
-            
-            calculatePrice() {
-                let totalPrice = this.basePrice;
-                
-                // Quantity scaling with bulk discount
-                const qtyMultiplier = this.getQuantityMultiplier(this.currentSpecs.quantity);
-                totalPrice *= qtyMultiplier;
-                
-                // Page count adjustment (base is 48 pages)
-                const pageMultiplier = this.currentSpecs.pages / 48;
-                totalPrice *= pageMultiplier;
-                
-                // Apply multipliers
-                totalPrice *= this.priceMultipliers.bookTypes[this.currentSpecs.bookType] || 1;
-                totalPrice *= this.priceMultipliers.sizes[this.currentSpecs.size] || 1;
-                totalPrice *= this.priceMultipliers.bindings[this.currentSpecs.binding] || 1;
-                
-                // Paper costs
-                const interiorMultiplier = this.priceMultipliers.papers[this.currentSpecs.interiorPaper] || 1;
-                const coverMultiplier = this.priceMultipliers.papers[this.currentSpecs.coverPaper] || 1;
-                totalPrice *= (interiorMultiplier + coverMultiplier) / 2;
-                
-                // Lamination
-                totalPrice *= this.priceMultipliers.laminations[this.currentSpecs.lamination] || 1;
-                
-                // Special finishes (flat cost)
-                let finishCost = 0;
-                this.currentSpecs.finishes.forEach(finish => {
-                    finishCost += this.priceMultipliers.finishes[finish] || 0;
-                });
-                
-                // Final calculations
-                const finalTotal = Math.round(totalPrice + finishCost);
-                const originalPrice = Math.round(finalTotal * 1.47); // Show 32% discount
-                const weight = this.calculateWeight();
-                
-                // Update UI
-                this.updatePriceDisplay({
-                    originalPrice,
-                    finalTotal,
-                    weight
-                });
-            }
-            
-            getQuantityMultiplier(quantity) {
-                if (quantity <= 50) return 1.2;
-                if (quantity <= 100) return 1.0;
-                if (quantity <= 250) return 0.85;
-                if (quantity <= 500) return 0.75;
-                return 0.65;
-            }
-            
-            calculateWeight() {
-                const baseWeight = 0.15; // kg per book for standard specs
-                const sizeMultipliers = {
-                    '8.5x11': 1.0,
-                    '8x10': 0.85,
-                    '8.5x8.5': 0.72,
-                    'custom': 1.2
-                };
-                
-                const sizeMultiplier = sizeMultipliers[this.currentSpecs.size] || 1;
-                const pageMultiplier = this.currentSpecs.pages / 48;
-                const weightPerBook = baseWeight * sizeMultiplier * pageMultiplier;
-                const totalWeight = weightPerBook * this.currentSpecs.quantity;
-                
-                return totalWeight.toFixed(1);
-            }
-            
-            updatePriceDisplay(prices) {
-                // Animate numbers
-                this.animateNumber('originalPrice', prices.originalPrice, '₹');
-                this.animateNumber('finalPrice', prices.finalTotal, '₹');
-                
-                // Update weight
-                document.getElementById('weightInfo').textContent = `Weight: ${prices.weight}kg`;
-            }
-            
-            animateNumber(elementId, targetValue, prefix = '') {
-                const element = document.getElementById(elementId);
-                if (!element) return;
-                
-                const startValue = parseInt(element.textContent.replace(/[^\d]/g, '')) || 0;
-                const duration = 800;
-                const startTime = performance.now();
-                
-                const updateValue = (currentTime) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-                    const currentValue = Math.round(startValue + (targetValue - startValue) * easeOutCubic);
-                    
-                    element.textContent = prefix + currentValue.toLocaleString('en-IN');
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateValue);
-                    }
-                };
-                
-                requestAnimationFrame(updateValue);
-            }
-        }
-        
-        // Initialize calculator when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            new ColoringBookCalculator();
-            
-            // Add scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in');
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe elements for animation
-            document.querySelectorAll('.animate-slide-up, .animate-scale-in').forEach(el => {
-                observer.observe(el);
-            });
-        });
-        
-        // Custom slider styling
-        const style = document.createElement('style');
-        style.textContent = `
-            .slider::-webkit-slider-thumb {
-                appearance: none;
-                width: 24px;
-                height: 24px;
-                background: #007bff;
-                border-radius: 50%;
-                cursor: pointer;
-                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-                transition: all 0.3s ease;
-            }
-            
-            .slider::-webkit-slider-thumb:hover {
-                transform: scale(1.1);
-                box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-            }
-            
-            .slider::-webkit-slider-track {
-                background: linear-gradient(to right, #007bff 0%, #007bff var(--progress, 24%), #e5e7eb var(--progress, 24%), #e5e7eb 100%);
-                height: 8px;
-                border-radius: 4px;
-            }
-            
-            .slider::-moz-range-thumb {
-                width: 24px;
-                height: 24px;
-                background: #007bff;
-                border-radius: 50%;
-                cursor: pointer;
-                border: none;
-                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-    <!-- Main Site Scripts -->
-    <script defer src="../js/script.js"></script>
-
+    
+    
+    
+    
+    
+    
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -447,10 +28,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="../index.html#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="../index.html#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="../index.html#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="../index.html#about" class="text-gray-400 hover:text-white">About</a></li>
                     </ul>
                 </div>
                 
@@ -476,49 +57,63 @@
         </div>
     </footer>
     
-    <!-- Navbar JavaScript -->
     <script>
-        // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbarToggle = document.getElementById('navbarToggle');
-            const navbarMenu = document.getElementById('navbarMenu');
-            
-            if (navbarToggle && navbarMenu) {
-                navbarToggle.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    
-                    // Toggle aria-expanded
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    
-                    // Toggle menu visibility
-                    navbarMenu.classList.toggle('active');
-                });
-            }
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
-                    navbarMenu.classList.remove('active');
-                    navbarToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // Handle mega menu on mobile
-            const megaMenuItems = document.querySelectorAll('.mega-menu-item');
-            megaMenuItems.forEach(item => {
-                const link = item.querySelector('a');
-                const megaMenu = item.querySelector('.mega-menu');
-                
-                if (link && megaMenu) {
-                    link.addEventListener('click', function(e) {
-                        if (window.innerWidth <= 768) {
-                            e.preventDefault();
-                            megaMenu.style.display = megaMenu.style.display === 'block' ? 'none' : 'block';
-                        }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
         });
+
+        // Hero Slider Functionality
+        let currentSlide = 1;
+        const totalSlides = 3;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+            document.querySelector(`.dot[data-slide="${currentSlide}"]`).classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+        
+        // Event listeners
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+        
+        // Dot navigation
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                currentSlide = parseInt(this.getAttribute('data-slide'));
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto-play slider
+        setInterval(nextSlide, 5000);
     </script>
     </body>
 </html>

@@ -857,50 +857,156 @@
         </section>
 
         <!-- Best Selling Products Section -->
-        <section id="bestselling" class="section-padding bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Best Selling Products</h2>
-                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        <section id="bestselling" class="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+            <!-- Background decoration -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-10 w-40 h-40 bg-purple-500 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-20">
+                    <div class="inline-block">
+                        <span class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">Premium Quality</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                            Best Selling Products
+                        </h2>
+                        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
                         Our most popular printing solutions that businesses love and trust.
                     </p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="card text-center">
-                        <img src="assets/images/hero-book.png" alt="Business Cards" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Book printing</h3>
-                        <p class="text-gray-600 mb-4">On Demand Digital Book Printing in India</p>
-                        <div class="">
-                            <button class="btn-primary items-center">See More</button>
+                    <!-- Book Printing Card -->
+                    <div class="bestselling-card group">
+                        <div class="card-inner">
+                            <div class="image-container">
+                                <img src="assets/images/hero-book.png" alt="Book Printing" class="card-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-content">
+                                        <i class="fas fa-book text-2xl text-white mb-2"></i>
+                                        <span class="text-white text-sm font-medium">Premium Quality</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-badge">
+                                    <span class="badge-text">Most Popular</span>
+                                </div>
+                                <h3 class="card-title">Book Printing</h3>
+                                <p class="card-description">On Demand Digital Book Printing in India with premium paper quality</p>
+                                <div class="card-features">
+                                    <span class="feature-item">✓ Premium Paper</span>
+                                    <span class="feature-item">✓ Fast Delivery</span>
+                                </div>
+                                <button class="card-button">
+                                    <span>Explore Books</span>
+                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card text-center">
-                        <img src="assets/images/273848_1.webp" alt="Brochures" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Paperbox</h3>
-                        <p class="text-gray-600 mb-4">Eye-catching brochures to showcase your products and services.</p>
-                        <div class="">
-                            <button class="btn-primary items-center">See More</button>
+                    <!-- Paper Box Card -->
+                    <div class="bestselling-card group">
+                        <div class="card-inner">
+                            <div class="image-container">
+                                <img src="assets/images/273848_1.webp" alt="Paper Boxes" class="card-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-content">
+                                        <i class="fas fa-box text-2xl text-white mb-2"></i>
+                                        <span class="text-white text-sm font-medium">Custom Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-badge">
+                                    <span class="badge-text">Trending</span>
+                                </div>
+                                <h3 class="card-title">Paper Boxes</h3>
+                                <p class="card-description">Custom paper boxes for retail, medical, and cosmetic packaging</p>
+                                <div class="card-features">
+                                    <span class="feature-item">✓ Custom Sizes</span>
+                                    <span class="feature-item">✓ Eco-Friendly</span>
+                                </div>
+                                <button class="card-button">
+                                    <span>View Boxes</span>
+                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card text-center">
-                        <img src="assets/images/bestselling-banners.svg" alt="Flyers" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Marketing</h3>
-                        <p class="text-gray-600 mb-4">Eye-catching brochures and Marketing products.</p>
-                        <div class="">
-                            <button class="btn-primary items-center">See More</button>
+                    <!-- Marketing Card -->
+                    <div class="bestselling-card group">
+                        <div class="card-inner">
+                            <div class="image-container">
+                                <img src="assets/images/bestselling-banners.svg" alt="Marketing Materials" class="card-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-content">
+                                        <i class="fas fa-bullhorn text-2xl text-white mb-2"></i>
+                                        <span class="text-white text-sm font-medium">Eye-Catching</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-badge">
+                                    <span class="badge-text">Best Value</span>
+                                </div>
+                                <h3 class="card-title">Marketing</h3>
+                                <p class="card-description">Eye-catching brochures, flyers, and marketing materials</p>
+                                <div class="card-features">
+                                    <span class="feature-item">✓ High Impact</span>
+                                    <span class="feature-item">✓ Quick Turnaround</span>
+                                </div>
+                                <button class="card-button">
+                                    <span>Get Marketing</span>
+                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card text-center">
-                        <img src="assets/images/business-cards.svg" alt="Posters" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Stationary</h3>
-                        <p class="text-gray-600 mb-4">Custom posters in various sizes for maximum visibility.</p>
-                        <div class="">
-                            <button class="btn-primary items-center">See More</button>
+                    <!-- Stationery Card -->
+                    <div class="bestselling-card group">
+                        <div class="card-inner">
+                            <div class="image-container">
+                                <img src="assets/images/business-cards.svg" alt="Stationery" class="card-image">
+                                <div class="image-overlay">
+                                    <div class="overlay-content">
+                                        <i class="fas fa-id-card text-2xl text-white mb-2"></i>
+                                        <span class="text-white text-sm font-medium">Professional</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-badge">
+                                    <span class="badge-text">Essential</span>
+                                </div>
+                                <h3 class="card-title">Stationery</h3>
+                                <p class="card-description">Professional business cards, letterheads, and office stationery</p>
+                                <div class="card-features">
+                                    <span class="feature-item">✓ Premium Finish</span>
+                                    <span class="feature-item">✓ Multiple Options</span>
+                                </div>
+                                <button class="card-button">
+                                    <span>Order Now</span>
+                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                </button>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="text-center mt-16">
+                    <div class="inline-flex items-center gap-4 bg-white rounded-full px-8 py-4 shadow-lg border border-gray-100">
+                        <span class="text-gray-600 font-medium">Need something custom?</span>
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                            Get Quote
+                        </button>
                     </div>
                 </div>
             </div>
