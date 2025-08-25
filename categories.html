@@ -10,710 +10,96 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Main Site Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .glassmorphism {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .card-hover:hover .card-image {
-            transform: scale(1.1);
-        }
-
-        .card-image {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tab-indicator {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .category-section {
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .category-section.active {
-            opacity: 1;
-            max-height: 2000px;
-        }
-
-        .btn-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .search-container {
-            position: relative;
-        }
-
-        .search-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 2px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: exclude;
-            mask-composite: exclude;
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-50">
-    <!-- Skip to Content (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
-    <header class="header" role="banner">
-        <!-- Contact Bar -->
-        <div class="contact-bar">
-            <div class="container">
-                <div class="contact-bar-content">
-                    <div class="contact-info">
-                        <div class="contact-item contact-essential">
-                            <span class="contact-icon">📧</span>
-                            <a href="mailto:info@shristipress.com" class="contact-link">
-                                <span class="contact-full">info@shristipress.com</span>
-                                <span class="contact-short">Email</span>
-                            </a>
-                        </div>
-                        <div class="contact-item contact-essential">
-                            <span class="contact-icon">📞</span>
-                            <a href="tel:+919876543210" class="contact-link">
-                                <span class="contact-full">+91 98765 43210</span>
-                                <span class="contact-short">Call</span>
-                            </a>
-                        </div>
-                        <div class="contact-item contact-optional">
-                            <span class="contact-icon">💬</span>
-                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
-                        </div>
-                       
-                    </div>
-                   
+    
+    
+    
+    
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Drishthi Printing</h3>
+                    <p class="text-gray-400">Your trusted partner for all printing needs. Quality, speed, and affordability guaranteed.</p>
                 </div>
-            </div>
-        </div>
-
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="index.html" class="logo" aria-label="Shristi Press Home">
-                        <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
-                            class="logo-image">
-                    </a>
-                </div>
-
-                <div class="navbar-menu" id="navbarMenu">
-                    <ul class="navbar-nav" role="menubar">
-                        <li role="none"><a href="index.html#home" role="menuitem">Home</a></li>
-                        <li class="mega-menu-item" role="none">
-                            <a href="index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
-                                Services
-                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
-                            </a>
-                            <div class="mega-menu" role="menu" aria-label="Services submenu">
-                                <div class="mega-menu-content">
-                                    <div class="mega-menu-columns">
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Book Printing</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="services/childrens-book-printing.html">Children's Book Printing</a></li>
-                                                <li><a href="services/comic-book-printing.html">Comic Book Printing</a></li>
-                                                <li><a href="services/coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
-                                                <li><a href="services/coloring-book-printing.html">Coloring Book Printing</a></li>
-                                                <li><a href="services/art-book-printing.html">Art Book Printing</a></li>
-                                                <li><a href="services/annual-reports-printing.html">Annual Reports Printing</a></li>
-                                                <li><a href="services/year-book-printing.html">Year Book Printing</a></li>
-                                                <li><a href="services/on-demand-books-printing.html">On Demand Books Printing</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="services/medical-paper-boxes.html">Medical Paper Boxes</a></li>
-                                                <li><a href="services/cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
-                                                <li><a href="services/retail-paper-boxes.html">Retail Paper Boxes</a></li>
-                                                <li><a href="services/folding-carton-boxes.html">Folding Carton Boxes</a></li>
-                                                <li><a href="services/corrugated-boxes.html">Corrugated Boxes</a></li>
-                                                <li><a href="services/kraft-boxes.html">Kraft Boxes</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Marketing Product</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="services/brochures.html">Brochures</a></li>
-                                                <li><a href="services/catalogue.html">Catalogue</a></li>
-                                                <li><a href="services/poster.html">Poster</a></li>
-                                                <li><a href="services/flyers.html">Flyers</a></li>
-                                                <li><a href="services/dangler.html">Dangler</a></li>
-                                                <li><a href="services/standees.html">Standees</a></li>
-                                                <li><a href="services/pen-drives.html">Pen Drives</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Stationery Product</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="services/business-cards.html">Business Card</a></li>
-                                                <li><a href="services/letter-head.html">Letter Head</a></li>
-                                                <li><a href="services/envelopes.html">Envelopes</a></li>
-                                                <li><a href="services/bill-book.html">Bill Book</a></li>
-                                                <li><a href="services/id-cards.html">ID Cards</a></li>
-                                                <li><a href="services/sticker.html">Sticker</a></li>
-                                                <li><a href="services/document-printing.html">Document Printing</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mega-menu-image-panel">
-                                        <div class="image-panel-content">
-                                            <img src="assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
-                                            <div class="panel-overlay">
-                                                <h4 class="panel-title">Premium Quality</h4>
-                                                <h3 class="panel-heading">Printing Excellence</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li role="none"><a href="index.html#products" role="menuitem">Products</a></li>
-                        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
-                        <li role="none"><a href="index.html#blog" role="menuitem">Blog</a></li>
-                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                    </ul>
-
-                    <div class="navbar-actions">
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-
-                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
-                    aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content" role="main" class="pt-16">
-        <!-- Hero Section -->
-        <section class="bg-gradient-to-br from-indigo-50 to-purple-50 py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold gradient-text mb-6">Premium Printing Solutions</h1>
-                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Discover our comprehensive range of high-quality
-                    printing services tailored to meet all your business and personal needs.</p>
-            </div>
-        </section>
-
-        <!-- Category Tab Bar -->
-        <section class="bg-white shadow-sm sticky top-16 z-40">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="relative">
-                    <div class="flex overflow-x-auto scrollbar-hide" id="categoryTabs">
-                        <button
-                            class="category-tab flex-shrink-0 px-6 py-4 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors whitespace-nowrap"
-                            data-category="book-printing">
-                            Book Printing
-                        </button>
-                        <button
-                            class="category-tab flex-shrink-0 px-6 py-4 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors whitespace-nowrap"
-                            data-category="paper-box">
-                            Paper Box Printing
-                        </button>
-                        <button
-                            class="category-tab flex-shrink-0 px-6 py-4 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors whitespace-nowrap"
-                            data-category="marketing">
-                            Marketing Product
-                        </button>
-                        <button
-                            class="category-tab flex-shrink-0 px-6 py-4 text-sm font-medium text-gray-700 hover:text-indigo-600 transition-colors whitespace-nowrap"
-                            data-category="stationery">
-                            Stationery Product
-                        </button>
-                    </div>
-                    <div class="tab-indicator absolute bottom-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
-                        style="width: 0; left: 0;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Search & Filter -->
-        <section class="bg-white py-6">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
-                    <div class="search-container flex-1 max-w-md">
-                        <div class="relative">
-                            <input type="text" id="searchInput" placeholder="Search products..."
-                                class="w-full px-4 py-3 pl-12 bg-white border-0 rounded-xl focus:outline-none focus:ring-0 text-gray-900">
-                            <i
-                                class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                        </div>
-                    </div>
-                    <div class="text-sm text-gray-500">
-                        <span id="productCount">0</span> products found
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Categories -->
-        <section class="pb-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Book Printing -->
-                <div class="category-section" id="book-printing">
-                    <div class="text-center mb-12 fade-in">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Book Printing</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Professional book printing services for authors,
-                            publishers, and businesses. From children's books to annual reports.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                        id="book-printing-grid">
-                        <!-- Products will be inserted here by JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Paper Box Printing -->
-                <div class="category-section" id="paper-box">
-                    <div class="text-center mb-12 fade-in">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Paper Box Printing</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Custom paper box solutions for retail, medical,
-                            cosmetic, and industrial packaging needs.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                        id="paper-box-grid">
-                        <!-- Products will be inserted here by JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Side-by-side Marketing and Stationery Products -->
-                <div class="side-by-side-sections">
-                    <!-- Stationery Product (Left Side) -->
-                    <div class="category-section half-section" id="stationery">
-                        <div class="text-center mb-12 fade-in">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Stationery Products</h2>
-                            <p class="text-gray-600 max-w-2xl mx-auto">Professional stationery items for your business
-                                communication and documentation needs.</p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8"
-                            id="stationery-grid">
-                            <!-- Products will be inserted here by JavaScript -->
-                        </div>
-                    </div>
-
-                    <!-- Marketing Product (Right Side) -->
-                    <div class="category-section half-section" id="marketing">
-                        <div class="text-center mb-12 fade-in">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Marketing Products</h2>
-                            <p class="text-gray-600 max-w-2xl mx-auto">Eye-catching marketing materials to promote your
-                                brand and boost your business visibility.</p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8"
-                            id="marketing-grid">
-                            <!-- Products will be inserted here by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Slim Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <a href="index.html" class="footer-logo" aria-label="Shristi Press Home">
-                            <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
-                                class="footer-logo-image">
-                        </a>
-                        <p class="footer-description">
-                            Professional printing services with unmatched quality and customer satisfaction.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#services">All Services</a></li>
-                        <li><a href="index.html#products">Products</a></li>
-                        <li><a href="index.html#about">About</a></li>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services/childrens-book-printing.html">Book Printing</a></li>
-                        <li><a href="services/brochures.html">Brochures</a></li>
-                        <li><a href="services/retail-paper-boxes.html">Paper Boxes</a></li>
-                        <li><a href="services/business-cards.html">Business Cards</a></li>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400">Business Cards</span></li>
+                        <li><span class="text-gray-400">Brochures</span></li>
+                        <li><span class="text-gray-400">Banners</span></li>
+                        <li><span class="text-gray-400">Custom Printing</span></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#cookies">Cookie Policy</a></li>
-                        <li><a href="#sitemap">Sitemap</a></li>
-                    </ul>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <p class="text-gray-400 text-sm">123 Printing Street<br>City, State 12345<br>Phone: (555) 123-4567</p>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
-                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
-                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
-                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
-                    </div>
-                    <div class="footer-logo-small">
-                        <span>Made with ❤️ by Shristi Press</span>
-                    </div>
-                </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Drishthi Printing. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- Navbar JavaScript -->
     <script>
-        // Product data
-        const products = {
-            'book-printing': [
-                { name: "Children's Book Printing", description: "Vibrant, safe printing for children's stories", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" },
-                { name: "Comic Book Printing", description: "High-quality comic book production", image: "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=400&h=300&fit=crop" },
-                { name: "Coffee Table Book Printing", description: "Premium large format book printing", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop" },
-                { name: "Coloring Book Printing", description: "Interactive coloring books for all ages", image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop" },
-                { name: "Art Book Printing", description: "Museum-quality art reproduction", image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop" },
-                { name: "Annual Reports Printing", description: "Professional corporate reports", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop" },
-                { name: "Year Book Printing", description: "Memorable yearbook production", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" },
-                { name: "On Demand Books Printing", description: "Flexible print-on-demand solutions", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop" }
-            ],
-            'paper-box': [
-                { name: "Medical Paper Boxes", description: "Safe, sterile medical packaging", image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop" },
-                { name: "Cosmetic Paper Boxes", description: "Elegant beauty product packaging", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop" },
-                { name: "Retail Paper Boxes", description: "Attractive retail packaging solutions", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" },
-                { name: "Folding Carton Boxes", description: "Versatile folding carton designs", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop" },
-                { name: "Corrugated Boxes", description: "Durable shipping and storage boxes", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop" },
-                { name: "Kraft Boxes", description: "Eco-friendly kraft paper boxes", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop" }
-            ],
-            'marketing': [
-                { name: "Brochures", description: "Professional tri-fold and bi-fold brochures", image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop" },
-                { name: "Catalogue", description: "Comprehensive product catalogs", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" },
-                { name: "Poster", description: "Eye-catching promotional posters", image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop" },
-                { name: "Flyers", description: "Quick and effective flyer printing", image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop" },
-                { name: "Dangler", description: "Hanging promotional displays", image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop" },
-                { name: "Standees", description: "Life-size promotional standees", image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop" },
-                { name: "Pen Drives", description: "Custom branded USB drives", image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=300&fit=crop" }
-            ],
-            'stationery': [
-                { name: "Business Card", description: "Professional business card printing", image: "https://images.unsplash.com/photo-1589330273594-fade1ee91647?w=400&h=300&fit=crop" },
-                { name: "Letter Head", description: "Corporate letterhead design", image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop" },
-                { name: "Envelopes", description: "Custom envelope printing", image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop" },
-                { name: "Bill Book", description: "Professional invoice books", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop" },
-                { name: "ID Cards", description: "Employee and student ID cards", image: "https://images.unsplash.com/photo-1589330273594-fade1ee91647?w=400&h=300&fit=crop" },
-                { name: "Sticker", description: "Custom sticker and label printing", image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop" },
-                { name: "Document Printing", description: "High-quality document printing", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop" }
-            ]
-        };
-
-        let currentCategory = '';
-        let allProducts = [];
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function () {
-            setupEventListeners();
-
-            // Small delay to ensure all elements are ready
-            setTimeout(() => {
-                // Check for hash in URL and navigate to that category
-                const hash = window.location.hash.substring(1); // Remove the # symbol
-                
-                if (hash && document.querySelector(`[data-category="${hash}"]`)) {
-                    // If there's a valid hash, click that tab
-                    const targetTab = document.querySelector(`[data-category="${hash}"]`);
-                    if (targetTab) {
-                        targetTab.click();
-                    }
-                } else {
-                    // Auto-select first category if no hash
-                    const firstTab = document.querySelector('.category-tab');
-                    if (firstTab) {
-                        firstTab.click();
-                    }
-                }
-            }, 100);
-        });
-
-        function setupEventListeners() {
-            // Category tab clicks
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.addEventListener('click', function () {
-                    const category = this.dataset.category;
-                    switchCategory(category);
-                    updateTabIndicator(this);
-                    // Update URL hash without triggering page reload
-                    history.pushState(null, null, `#${category}`);
-                });
-            });
-
-            // Handle browser back/forward navigation
-            window.addEventListener('hashchange', function () {
-                const hash = window.location.hash.substring(1);
-                if (hash && document.querySelector(`[data-category="${hash}"]`)) {
-                    const targetTab = document.querySelector(`[data-category="${hash}"]`);
-                    targetTab.click();
-                }
-            });
-
-            // Search functionality
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.addEventListener('input', function () {
-                    const searchTerm = this.value.trim();
-                    if (searchTerm) {
-                        filterProducts(searchTerm);
-                    } else if (currentCategory) {
-                        loadCategoryProducts(currentCategory);
-                    }
-                });
-            }
-
-        }
-
-        function switchCategory(category) {
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
             
-            // Close current category
-            if (currentCategory) {
-                const currentSection = document.getElementById(currentCategory);
-                if (currentSection) {
-                    currentSection.classList.remove('active');
-                }
-            }
-
-            // Update active tab
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.classList.remove('text-indigo-600', 'font-semibold', 'active');
-                tab.classList.add('text-gray-700');
-            });
-
-            const activeTab = document.querySelector(`[data-category="${category}"]`);
-            if (activeTab) {
-                activeTab.classList.remove('text-gray-700');
-                activeTab.classList.add('text-indigo-600', 'font-semibold', 'active');
-            }
-
-            // Show new category after a brief delay for smooth transition
-            setTimeout(() => {
-                currentCategory = category;
-                const newSection = document.getElementById(category);
-                if (newSection) {
-                    loadCategoryProducts(category);
-                    newSection.classList.add('active');
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     
-                    // Scroll to the section
-                    newSection.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start' 
-                    });
-                }
-
-                // Clear search when switching categories
-                const searchInput = document.getElementById('searchInput');
-                if (searchInput) {
-                    searchInput.value = '';
-                }
-            }, 200);
-        }
-
-        function updateTabIndicator(activeTab) {
-            const indicator = document.querySelector('.tab-indicator');
-            const tabsContainer = document.getElementById('categoryTabs');
-
-            const tabRect = activeTab.getBoundingClientRect();
-            const containerRect = tabsContainer.getBoundingClientRect();
-
-            const left = tabRect.left - containerRect.left;
-            const width = tabRect.width;
-
-            indicator.style.left = `${left}px`;
-            indicator.style.width = `${width}px`;
-        }
-
-        function loadCategoryProducts(category) {
-            const grid = document.getElementById(`${category}-grid`);
-            const categoryProducts = products[category] || [];
-            allProducts = categoryProducts;
-
-            grid.innerHTML = '';
-
-            categoryProducts.forEach((product, index) => {
-                const productCard = createProductCard(product, index);
-                grid.appendChild(productCard);
-            });
-
-            updateProductCount(categoryProducts.length);
-        }
-
-        function createProductCard(product, index) {
-            const card = document.createElement('div');
-            card.className = 'card-hover bg-white rounded-2xl shadow-lg overflow-hidden fade-in';
-            card.style.animationDelay = `${index * 0.1}s`;
-
-            card.innerHTML = `
-                <div class="relative overflow-hidden" style="height: 240px;">
-                    <img src="${product.image}" 
-                         alt="${product.name}" 
-                         class="card-image w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">${product.name}</h3>
-                    <p class="text-gray-600 text-sm mb-4">${product.description}</p>
-                    <button class="btn-gradient w-full text-white px-4 py-2 rounded-lg font-medium text-sm">
-                        View Details
-                    </button>
-                </div>
-            `;
-
-            return card;
-        }
-
-        function filterProducts(searchTerm) {
-            if (!currentCategory || !allProducts.length) return;
-
-            const filteredProducts = allProducts.filter(product =>
-                product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                product.description.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-
-            const grid = document.getElementById(`${currentCategory}-grid`);
-            grid.innerHTML = '';
-
-            filteredProducts.forEach((product, index) => {
-                const productCard = createProductCard(product, index);
-                grid.appendChild(productCard);
-            });
-
-            updateProductCount(filteredProducts.length);
-        }
-
-        function updateProductCount(count) {
-            document.getElementById('productCount').textContent = count;
-        }
-
-        function toggleMobileMenu() {
-            // Mobile menu toggle functionality can be added here
-            console.log('Mobile menu toggled');
-        }
-
-        // Smooth scroll behavior for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
+                    // Toggle aria-expanded
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle menu visibility
+                    navbarMenu.classList.toggle('active');
+                });
             }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+                    navbarMenu.classList.remove('active');
+                    navbarToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Handle mega menu on mobile
+            const megaMenuItems = document.querySelectorAll('.mega-menu-item');
+            megaMenuItems.forEach(item => {
+                const link = item.querySelector('a');
+                const megaMenu = item.querySelector('.mega-menu');
+                
+                if (link && megaMenu) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            megaMenu.style.display = megaMenu.style.display === 'block' ? 'none' : 'block';
+                        }
+                    });
+                }
+            });
         });
     </script>
-
-    <!-- Main Site Scripts -->
-    <script defer src="js/script.js"></script>
-</body>
+    </body>
 
 </html>

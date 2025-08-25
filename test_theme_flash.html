@@ -5,143 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Flash Test - Shristi Press</title>
     
-    <!-- Prevent theme flash -->
-    <script src="js/theme-init.js"></script>
     
-    <!-- Dark Mode CSS -->
-    <link rel="stylesheet" href="css/dark-mode.css">
     
-    <!-- Tailwind for quick styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <style>
-        body {
-            transition: all 0.3s ease;
-        }
-        
-        .test-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
-        }
-        
-        .test-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px var(--shadow-color);
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .toggle-button {
-            background: var(--button-bg);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 24px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .toggle-button:hover {
-            background: var(--button-hover);
-            transform: translateY(-2px);
-        }
-        
-        .status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        
-        .status-light { background: #10b981; }
-        .status-dark { background: #6366f1; }
-    </style>
-</head>
-<body>
-    <div class="test-container">
-        <div class="test-card">
-            <h1 style="color: var(--text-primary); font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">
-                Theme Flash Test
-            </h1>
-            
-            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-                This page tests the theme flash fix. Refresh the page multiple times to verify there's no flash between light and dark modes.
-            </p>
-            
-            <div style="margin-bottom: 2rem;">
-                <p style="color: var(--text-secondary); margin-bottom: 8px;">Current Theme:</p>
-                <span id="themeStatus" style="color: var(--text-primary); font-weight: 600; font-size: 1.25rem;">
-                    <span class="status-indicator" id="statusIndicator"></span>
-                    <span id="themeText">Loading...</span>
-                </span>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Drishthi Printing</h3>
+                    <p class="text-gray-400">Your trusted partner for all printing needs. Quality, speed, and affordability guaranteed.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400">Business Cards</span></li>
+                        <li><span class="text-gray-400">Brochures</span></li>
+                        <li><span class="text-gray-400">Banners</span></li>
+                        <li><span class="text-gray-400">Custom Printing</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <p class="text-gray-400 text-sm">123 Printing Street<br>City, State 12345<br>Phone: (555) 123-4567</p>
+                </div>
             </div>
             
-            <button class="toggle-button" onclick="toggleTheme()">
-                Toggle Theme
-            </button>
-            
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-                <p style="color: var(--text-muted); font-size: 0.875rem;">
-                    Test Steps:<br>
-                    1. Toggle theme and refresh page<br>
-                    2. Verify no flash occurs<br>
-                    3. Theme should persist across refreshes
-                </p>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Drishthi Printing. All rights reserved.</p>
             </div>
         </div>
-    </div>
+    </footer>
     
+    <!-- Navbar JavaScript -->
     <script>
-        function updateThemeDisplay() {
-            const theme = document.documentElement.getAttribute('data-theme') || 'light';
-            const themeText = document.getElementById('themeText');
-            const statusIndicator = document.getElementById('statusIndicator');
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
             
-            if (themeText && statusIndicator) {
-                themeText.textContent = theme.charAt(0).toUpperCase() + theme.slice(1) + ' Mode';
-                statusIndicator.className = 'status-indicator status-' + theme;
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Toggle aria-expanded
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle menu visibility
+                    navbarMenu.classList.toggle('active');
+                });
             }
-        }
-        
-        function toggleTheme() {
-            if (window.darkModeManager) {
-                window.darkModeManager.toggleTheme();
-            } else if (window.themeInit) {
-                // Fallback if dark mode manager not loaded yet
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                window.themeInit.applyTheme(newTheme);
-                localStorage.setItem(window.themeInit.STORAGE_KEY, newTheme);
-            }
-            
-            // Update display after a short delay
-            setTimeout(updateThemeDisplay, 100);
-        }
-        
-        // Update display on load
-        document.addEventListener('DOMContentLoaded', updateThemeDisplay);
-        
-        // Listen for theme changes
-        document.addEventListener('themechange', updateThemeDisplay);
-        
-        // Update display immediately if theme is already set
-        updateThemeDisplay();
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+                    navbarMenu.classList.remove('active');
+                    navbarToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Handle mega menu on mobile
+            const megaMenuItems = document.querySelectorAll('.mega-menu-item');
+            megaMenuItems.forEach(item => {
+                const link = item.querySelector('a');
+                const megaMenu = item.querySelector('.mega-menu');
+                
+                if (link && megaMenu) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            megaMenu.style.display = megaMenu.style.display === 'block' ? 'none' : 'block';
+                        }
+                    });
+                }
+            });
+        });
     </script>
-    
-    <!-- Load dark mode manager -->
-    <script src="js/dark-mode.js"></script>
-</body>
+    </body>
 </html>
 

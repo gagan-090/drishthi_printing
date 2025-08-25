@@ -7,428 +7,95 @@
 
     <meta name="description" content="Professional annual reports printing services with high-quality paper, perfect binding, and corporate design. Create impressive reports that reflect your company's success.">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/services.css">
-    
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'poppins': ['Poppins', 'sans-serif']
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Main Site Styles -->
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="font-inter bg-white">
-    <!-- Skip to Content (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
-    <header class="header" role="banner">
-        <!-- Contact Bar -->
-        <div class="contact-bar">
-            <div class="container">
-                <div class="contact-bar-content">
-                    <div class="contact-info">
-                        <div class="contact-item contact-essential">
-                            <span class="contact-icon">📧</span>
-                            <a href="mailto:info@shristipress.com" class="contact-link">
-                                <span class="contact-full">info@shristipress.com</span>
-                                <span class="contact-short">Email</span>
-                            </a>
-                        </div>
-                        <div class="contact-item contact-essential">
-                            <span class="contact-icon">📞</span>
-                            <a href="tel:+919876543210" class="contact-link">
-                                <span class="contact-full">+91 98765 43210</span>
-                                <span class="contact-short">Call</span>
-                            </a>
-                        </div>
-                        <div class="contact-item contact-optional">
-                            <span class="contact-icon">💬</span>
-                            <a href="https://wa.me/919876543210" class="contact-link" target="_blank">WhatsApp</a>
-                        </div>
-                       
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="../index.html#" class="logo" aria-label="Shristi Press Home">
-                        <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
-                            class="logo-image">
-                    </a>
-                </div>
-
-                <div class="navbar-menu" id="navbarMenu">
-                    <ul class="navbar-nav" role="menubar">
-                        <li role="none"><a href="../index.html#home" role="menuitem">Home</a></li>
-                        <li class="mega-menu-item" role="none">
-                            <a href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false">
-                                Services
-                                <span class="dropdown-arrow" aria-hidden="true">▼</span>
-                            </a>
-                            <div class="mega-menu" role="menu" aria-label="Services submenu">
-                                <div class="mega-menu-content">
-                                    <div class="mega-menu-columns">
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Book Printing</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="childrens-book-printing.html">Children's Book Printing</a></li>
-                                                <li><a href="comic-book-printing.html">Comic Book Printing</a></li>
-                                                <li><a href="coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
-                                                <li><a href="coloring-book-printing.html">Coloring Book Printing</a></li>
-                                                <li><a href="art-book-printing.html">Art Book Printing</a></li>
-                                                <li><a href="annual-reports-printing.html">Annual Reports Printing</a></li>
-                                                <li><a href="year-book-printing.html">Year Book Printing</a></li>
-                                                <li><a href="on-demand-books-printing.html">On Demand Books Printing</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Paper Box Printing</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="medical-paper-boxes.html">Medical Paper Boxes</a></li>
-                                                <li><a href="cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
-                                                <li><a href="retail-paper-boxes.html">Retail Paper Boxes</a></li>
-                                                <li><a href="folding-carton-boxes.html">Folding Carton Boxes</a></li>
-                                                <li><a href="corrugated-boxes.html">Corrugated Boxes</a></li>
-                                                <li><a href="kraft-boxes.html">Kraft Boxes</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Marketing Product</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="brochures.html">Brochures</a></li>
-                                                <li><a href="catalogue.html">Catalogue</a></li>
-                                                <li><a href="poster.html">Poster</a></li>
-                                                <li><a href="flyers.html">Flyers</a></li>
-                                                <li><a href="dangler.html">Dangler</a></li>
-                                                <li><a href="standees.html">Standees</a></li>
-                                                <li><a href="pen-drives.html">Pen Drives</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-menu-column">
-                                            <h3 class="mega-menu-heading">Stationery Product</h3>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="business-cards.html">Business Card</a></li>
-                                                <li><a href="letter-head.html">Letter Head</a></li>
-                                                <li><a href="envelopes.html">Envelopes</a></li>
-                                                <li><a href="bill-book.html">Bill Book</a></li>
-                                                <li><a href="id-cards.html">ID Cards</a></li>
-                                                <li><a href="sticker.html">Sticker</a></li>
-                                                <li><a href="document-printing.html">Document Printing</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mega-menu-image-panel">
-                                        <div class="image-panel-content">
-                                            <img src="../assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
-                                            <div class="panel-overlay">
-                                                <h4 class="panel-title">Premium Quality</h4>
-                                                <h3 class="panel-heading">Printing Excellence</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li role="none"><a href="../index.html#products" role="menuitem">Products</a></li>
-                        <li role="none"><a href="../index.html#about" role="menuitem">About</a></li>
-                        <li role="none"><a href="../index.html#blog" role="menuitem">Blog</a></li>
-                        <li role="none"><a href="../contact.html" role="menuitem">Contact</a></li>
-                    </ul>
-
-                    <div class="navbar-actions">
-                        <button class="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-
-                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
-                    aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-
-    <!-- Skip to Content (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
     
 
-
-
-    <!-- Header -->
     
-
-    <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                <h1 class="text-5xl md:text-6xl font-poppins font-bold text-gray-900 mb-6">
-                    Annual Reports Printing
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Present your company's achievements with professionally printed annual reports that 
-                    convey success, trust, and corporate excellence. Premium quality for serious business.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-primary-600 text-white px-8 py-4 rounded-xl hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl">
-                        Start Your Project
-                    </button>
-                    <button class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 font-semibold text-lg">
-                        View Samples
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">
-                    Why Choose Our Annual Reports Printing?
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We specialize in creating annual reports that reflect your company's professionalism 
-                    and success with superior printing quality.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-gray-50 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Professional Design</h3>
-                    <p class="text-gray-600">Corporate layouts that enhance readability and project success.</p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-zinc-50 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Premium Binding</h3>
-                    <p class="text-gray-600">Durable binding options that withstand frequent handling and storage.</p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-neutral-50 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">High-Quality Paper</h3>
-                    <p class="text-gray-600">Premium paper stocks that enhance the professional appearance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">
-                    Our Annual Report Collection
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Explore our diverse range of annual report styles and formats.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Report 1 -->
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-64 bg-gradient-to-br from-slate-400 to-gray-500 flex items-center justify-center">
-                            <span class="text-white text-4xl font-bold">📊</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Corporate Reports</h3>
-                            <p class="text-gray-600 mb-4">Professional reports for large corporations and enterprises.</p>
-                            <span class="text-primary-600 font-medium">Starting at $8.99</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Report 2 -->
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-64 bg-gradient-to-br from-gray-400 to-zinc-500 flex items-center justify-center">
-                            <span class="text-white text-4xl font-bold">🏢</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Business Reports</h3>
-                            <p class="text-gray-600 mb-4">Comprehensive reports for small and medium businesses.</p>
-                            <span class="text-primary-600 font-medium">Starting at $6.99</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Report 3 -->
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-64 bg-gradient-to-br from-zinc-400 to-neutral-500 flex items-center justify-center">
-                            <span class="text-white text-4xl font-bold">📈</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Financial Reports</h3>
-                            <p class="text-gray-600 mb-4">Detailed financial statements and performance reports.</p>
-                            <span class="text-primary-600 font-medium">Starting at $9.99</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-3xl mx-auto" data-aos="fade-up">
-                <h2 class="text-4xl font-poppins font-bold text-white mb-6">
-                    Ready to Print Your Annual Report?
-                </h2>
-                <p class="text-xl text-primary-100 mb-8">
-                    Let's create a professional annual report that showcases your company's success and achievements. 
-                    Get a free quote and start your premium printing journey today.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-white text-primary-600 px-8 py-4 rounded-xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-lg">
-                        Get Free Quote
-                    </button>
-                    <button class="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300 font-semibold text-lg">
-                        Contact Us
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
-            <!-- Slim Footer Section -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo" aria-label="Shristi Press Home">
-                            <img src="../assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
-                                class="footer-logo-image">
-                        </a>
-                        <p class="footer-description">
-                            Professional printing services with unmatched quality and customer satisfaction.
-                        </p>
-                    </div>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Drishthi Printing</h3>
+                    <p class="text-gray-400">Your trusted partner for all printing needs. Quality, speed, and affordability guaranteed.</p>
                 </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="../index.html#home">Home</a></li>
-                        <li><a href="../index.html#services">All Services</a></li>
-                        <li><a href="../index.html#about">About Us</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="childrens-book-printing.html">Book Printing</a></li>
-                        <li><a href="brochures.html">Brochures</a></li>
-                        <li><a href="business-cards.html">Business Cards</a></li>
-                        <li><a href="poster.html">Posters</a></li>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400">Business Cards</span></li>
+                        <li><span class="text-gray-400">Brochures</span></li>
+                        <li><span class="text-gray-400">Banners</span></li>
+                        <li><span class="text-gray-400">Custom Printing</span></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#cookies">Cookie Policy</a></li>
-                        <li><a href="#gdpr">GDPR</a></li>
-                    </ul>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <p class="text-gray-400 text-sm">123 Printing Street<br>City, State 12345<br>Phone: (555) 123-4567</p>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p class="copyright">Copyright © 2024 Shristi Press. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook" class="social-link">📘</a>
-                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
-                        <a href="#" aria-label="Instagram" class="social-link">📷</a>
-                        <a href="#" aria-label="LinkedIn" class="social-link">💼</a>
-                    </div>
-                    <div class="footer-logo-small">
-                        <span>Made with ❤️ by Shristi Press</span>
-                    </div>
-                </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Drishthi Printing. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Custom Scripts -->
-    <script src="../js/services.js"></script>
-    
+    <!-- Navbar JavaScript -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
+            
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Toggle aria-expanded
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle menu visibility
+                    navbarMenu.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+                    navbarMenu.classList.remove('active');
+                    navbarToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Handle mega menu on mobile
+            const megaMenuItems = document.querySelectorAll('.mega-menu-item');
+            megaMenuItems.forEach(item => {
+                const link = item.querySelector('a');
+                const megaMenu = item.querySelector('.mega-menu');
+                
+                if (link && megaMenu) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            megaMenu.style.display = megaMenu.style.display === 'block' ? 'none' : 'block';
+                        }
+                    });
+                }
+            });
         });
     </script>
-    <!-- Main Site Scripts -->
-    <script defer src="../js/script.js"></script>
-</body>
+    </body>
 </html>
