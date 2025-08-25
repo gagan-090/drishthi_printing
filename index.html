@@ -85,6 +85,7 @@
             background: white;
             padding: 1rem 0;
             border-bottom: 1px solid #e5e7eb;
+            position: relative;
         }
 
         .navbar .container {
@@ -137,13 +138,14 @@
         /* Mega Menu Styles */
         .mega-menu-item {
             position: relative;
+            display: inline-block;
         }
 
         .mega-menu {
             position: absolute;
-            top: 100%;
+            top: calc(100% + 1rem);
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(-10px);
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 0.5rem;
@@ -153,7 +155,7 @@
             transition: all 0.3s ease;
             z-index: 1000;
             min-width: 900px;
-            margin-top: 0.5rem;
+            max-width: 90vw;
         }
 
         .mega-menu-item:hover .mega-menu {
@@ -300,6 +302,12 @@
         @media (max-width: 1024px) {
             .mega-menu {
                 min-width: 600px;
+                left: 0;
+                transform: translateX(0) translateY(-10px);
+            }
+
+            .mega-menu-item:hover .mega-menu {
+                transform: translateX(0) translateY(0);
             }
 
             .mega-menu-columns {
