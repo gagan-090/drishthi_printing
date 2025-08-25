@@ -47,25 +47,25 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Hero Styles -->
+    <!-- Hero Section Styles -->
     <style>
-        /* Reset any conflicting styles */
-        body {
-            padding-top: 0 !important;
-            margin: 0 !important;
-        }
-
-        /* Hero Slider Container */
-        .hero-slider {
+        /* Hero Section */
+        .hero-section {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
 
-        /* Hero Track for sliding */
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hero Track */
         .hero-track {
             display: flex;
             width: 300%;
@@ -73,369 +73,272 @@
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Individual Hero Slides */
+        /* Hero Slides */
         .hero-slide {
             flex: 0 0 33.333%;
             width: 33.333%;
-            height: 100vh;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Hero Text */
+        .hero-text {
+            z-index: 10;
+        }
+
+        .hero-badge {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge span {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.05);
+            color: #374151;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 28rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 2px solid #e5e7eb;
+        }
+
+        .btn-secondary:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
         }
 
-        .hero-slide:not(.active) {
-            opacity: 1;
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation Dots */
+        .hero-dots {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.75rem;
+            z-index: 20;
+        }
+
+        .hero-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background: rgba(156, 163, 175, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-dot.active {
+            background: #1f2937;
+            border-color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        .hero-dot:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation Arrows */
+        .hero-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+            transition: all 0.3s ease;
+            z-index: 20;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-nav-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-prev {
+            left: 2rem;
+        }
+
+        .hero-next {
+            right: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .hero-slide {
+                padding: 2rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-nav-btn {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            .hero-prev {
+                left: 1rem;
+            }
+
+            .hero-next {
+                right: 1rem;
+            }
+        }
+
+        /* Touch/Swipe Support */
+        .hero-track {
+            touch-action: pan-y pinch-zoom;
+        }
+
+        /* Smooth transitions */
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
         }
 
         .hero-slide.active {
             opacity: 1;
         }
-
-        /* Hero Slide Content Container */
-        .hero-slide > div {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            width: 100% !important;
-            position: relative !important;
-        }
-
-        /* Hero Content Container */
-        .hero-slide .container {
-            height: 100% !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        /* Hero Dots */
-        .hero-dot.active {
-            background-color: #1f2937 !important;
-            transform: scale(1.2);
-        }
-
-        /* Ensure proper viewport coverage on all devices */
-        @media (max-height: 600px) {
-            .hero-slider,
-            .hero-slide,
-            .hero-slide > div {
-                height: 100vh !important;
-                min-height: 100vh !important;
-            }
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .hero-slider,
-            .hero-slide,
-            .hero-slide > div {
-                height: 100vh !important;
-                min-height: 100vh !important;
-            }
-        }
-
-        /* Override any conflicting CSS */
-        .hero-slider *,
-        .hero-slide * {
-            box-sizing: border-box !important;
-        }
-
-        /* Force hero section to take full viewport */
-        #home.hero-slider {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            max-height: 100vh !important;
-        }
-
-        /* Ensure hero slides are properly sized */
-        #home .hero-slide {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            max-height: 100vh !important;
-        }
-
-        /* Force hero slide content to fill viewport */
-        #home .hero-slide > div {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            max-height: 100vh !important;
-        }
-
-        /* Override any external CSS that might interfere */
-        #home.hero-slider,
-        #home .hero-slide,
-        #home .hero-slide > div {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            max-height: 100vh !important;
-        }
-
-        /* Additional viewport fixes */
-        html, body {
-            height: 100% !important;
-            overflow-x: hidden !important;
-        }
-
-        /* Ensure main content doesn't interfere */
-        #main-content {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-
-        /* Smooth transitions for hero slider */
-        .hero-track {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        }
-
-        /* Ensure all hero slides are properly sized */
-        .hero-slide {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            max-height: 100vh !important;
-        }
-
-        .hero-slide > div {
-            height: 100vh !important;
-            min-height: 100vh !important;
-            max-height: 100vh !important;
-        }
-
-        /* Navigation button improvements */
-        #prevSlide, #nextSlide {
-            transition: all 0.3s ease !important;
-        }
-
-        #prevSlide:hover, #nextSlide:hover {
-            transform: scale(1.1) !important;
-            background-color: rgba(255, 255, 255, 0.95) !important;
-        }
-
-        /* Dot navigation improvements */
-        .hero-dot {
-            transition: all 0.3s ease !important;
-            cursor: pointer !important;
-        }
-
-        .hero-dot:hover {
-            transform: scale(1.2) !important;
-        }
-
-        .hero-dot.active {
-            background-color: #1f2937 !important;
-            transform: scale(1.2) !important;
-        }
-
-        /* Ensure hero images are properly sized and responsive */
-        .hero-slide img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-        }
-
-        /* Remove any box-like structure from hero images */
-        .hero-slide .relative {
-            border: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
-        }
-
-        /* Ensure proper spacing for hero content */
-        .hero-slide .container {
-            padding: 0 2rem !important;
-        }
-
-        /* Make hero images even bigger on larger screens */
-        @media (min-width: 1024px) {
-            .hero-slide .relative {
-                width: 42rem !important;
-                height: 34rem !important;
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .hero-slide .relative {
-                width: 48rem !important;
-                height: 40rem !important;
-            }
-        }
-
-        /* Enhanced hero section optimization */
-        .hero-slider {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
-        }
-
-        /* Optimize hero slide backgrounds */
-        .hero-slide[data-index="0"] > div {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #f59e0b 100%) !important;
-        }
-
-        .hero-slide[data-index="1"] > div {
-            background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #3b82f6 100%) !important;
-        }
-
-        .hero-slide[data-index="2"] > div {
-            background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 50%, #10b981 100%) !important;
-        }
-
-        /* Enhanced hero content styling */
-        .hero-slide h1, .hero-slide h2 {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-            letter-spacing: -0.025em !important;
-        }
-
-        .hero-slide p {
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
-        }
-
-        /* Optimize hero buttons */
-        .hero-slide button {
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        .hero-slide button:hover {
-            transform: translateY(-2px) scale(1.02) !important;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
-        }
-
-        /* Enhanced floating elements */
-        .hero-slide .absolute.-top-4,
-        .hero-slide .absolute.-bottom-6 {
-            animation: float 6s ease-in-out infinite !important;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(12deg); }
-            50% { transform: translateY(-10px) rotate(8deg); }
-        }
-
-        /* Slide entrance animation */
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Enhanced track transitions */
-        .hero-track.transitioning {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        }
-
-        /* Optimize hero navigation */
-        .hero-dot {
-            background: rgba(156, 163, 175, 0.5) !important;
-            border: 2px solid rgba(255, 255, 255, 0.8) !important;
-        }
-
-        .hero-dot.active {
-            background: #1f2937 !important;
-            border-color: #ffffff !important;
-            box-shadow: 0 0 20px rgba(31, 41, 55, 0.5) !important;
-        }
-
-        /* Enhanced navigation arrows */
-        #prevSlide, #nextSlide {
-            background: rgba(255, 255, 255, 0.9) !important;
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        #prevSlide:hover, #nextSlide:hover {
-            background: rgba(255, 255, 255, 1) !important;
-            transform: scale(1.1) !important;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
-        }
-
-        /* Performance optimizations */
-        .hero-slider {
-            will-change: transform !important;
-            contain: layout style paint !important;
-        }
-
-        .hero-track {
-            will-change: transform !important;
-            contain: layout style paint !important;
-        }
-
-        .hero-slide {
-            contain: layout style paint !important;
-            backface-visibility: hidden !important;
-            transform: translateZ(0) !important;
-        }
-
-        /* Optimize hero images */
-        .hero-slide img {
-            will-change: transform !important;
-            backface-visibility: hidden !important;
-            transform: translateZ(0) !important;
-        }
-
-        /* Smooth scrolling optimization */
-        html {
-            scroll-behavior: smooth !important;
-        }
-
-        /* Reduce motion for users who prefer it */
-        @media (prefers-reduced-motion: reduce) {
-            .hero-track,
-            .hero-slide,
-            .hero-slide img,
-            .hero-slide .absolute.-top-4,
-            .hero-slide .absolute.-bottom-6 {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-
     </style>
 
-    <!-- JavaScript to force hero section height -->
-    <script>
-        // Force hero section to take full viewport height
-        function forceHeroHeight() {
-            const heroSlider = document.getElementById('home');
-            const heroSlides = document.querySelectorAll('.hero-slide');
-            const heroSlideDivs = document.querySelectorAll('.hero-slide > div');
-            
-            if (heroSlider) {
-                heroSlider.style.height = '100vh';
-                heroSlider.style.minHeight = '100vh';
-                heroSlider.style.maxHeight = '100vh';
-            }
-            
-            heroSlides.forEach(slide => {
-                slide.style.height = '100vh';
-                slide.style.minHeight = '100vh';
-                slide.style.maxHeight = '100vh';
-            });
-            
-            heroSlideDivs.forEach(div => {
-                div.style.height = '100vh';
-                div.style.minHeight = '100vh';
-                div.style.maxHeight = '100vh';
-            });
-        }
 
-        // Run on page load
-        document.addEventListener('DOMContentLoaded', forceHeroHeight);
-        
-        // Run on window resize
-        window.addEventListener('resize', forceHeroHeight);
-        
-        // Run after a short delay to ensure all CSS is loaded
-        setTimeout(forceHeroHeight, 100);
-        setTimeout(forceHeroHeight, 500);
-        setTimeout(forceHeroHeight, 1000);
-    </script>
+
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui-enhancements.css">
 
     <!-- Hero Slider JavaScript -->
     <script>
@@ -447,7 +350,13 @@
                 this.dots = document.querySelectorAll('.hero-dot');
                 this.prevBtn = document.getElementById('prevSlide');
                 this.nextBtn = document.getElementById('nextSlide');
-                this.track = document.getElementById('heroTrack');
+                this.track = document.querySelector('.hero-track');
+                this.isDragging = false;
+                this.startPos = 0;
+                this.currentTranslate = 0;
+                this.prevTranslate = 0;
+                this.animationID = 0;
+                this.currentIndex = 0;
                 
                 this.init();
             }
@@ -461,39 +370,122 @@
                     dot.addEventListener('click', () => this.goToSlide(index));
                 });
 
+                // Touch events for mobile swipe
+                this.track.addEventListener('touchstart', (e) => this.touchStart(e));
+                this.track.addEventListener('touchmove', (e) => this.touchMove(e));
+                this.track.addEventListener('touchend', () => this.touchEnd());
+
+                // Mouse events for desktop drag
+                this.track.addEventListener('mousedown', (e) => this.mouseStart(e));
+                this.track.addEventListener('mousemove', (e) => this.mouseMove(e));
+                this.track.addEventListener('mouseup', () => this.mouseEnd());
+                this.track.addEventListener('mouseleave', () => this.mouseEnd());
+
+                // Prevent context menu on right click
+                this.track.addEventListener('contextmenu', (e) => e.preventDefault());
+
                 // Auto-play functionality
                 this.startAutoPlay();
+            }
+
+            // Touch events
+            touchStart(e) {
+                this.startPos = e.touches[0].clientX;
+                this.isDragging = true;
+                this.animationID = requestAnimationFrame(this.animation.bind(this));
+                this.track.style.cursor = 'grabbing';
+            }
+
+            touchMove(e) {
+                if (!this.isDragging) return;
+                const currentPosition = e.touches[0].clientX;
+                const diff = currentPosition - this.startPos;
+                const moveX = diff * 0.5; // Reduce sensitivity
+                
+                this.currentTranslate = this.prevTranslate + moveX;
+                this.setSliderPosition(this.currentTranslate);
+            }
+
+            touchEnd() {
+                this.isDragging = false;
+                cancelAnimationFrame(this.animationID);
+                this.track.style.cursor = 'grab';
+                
+                const movedBy = this.currentTranslate - this.prevTranslate;
+                
+                if (Math.abs(movedBy) > 100) {
+                    if (movedBy < 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                } else {
+                    this.goToSlide(this.currentIndex);
+                }
+            }
+
+            // Mouse events
+            mouseStart(e) {
+                this.startPos = e.clientX;
+                this.isDragging = true;
+                this.animationID = requestAnimationFrame(this.animation.bind(this));
+                this.track.style.cursor = 'grabbing';
+            }
+
+            mouseMove(e) {
+                if (!this.isDragging) return;
+                const currentPosition = e.clientX;
+                const diff = currentPosition - this.startPos;
+                const moveX = diff * 0.5;
+                
+                this.currentTranslate = this.prevTranslate + moveX;
+                this.setSliderPosition(this.currentTranslate);
+            }
+
+            mouseEnd() {
+                this.isDragging = false;
+                cancelAnimationFrame(this.animationID);
+                this.track.style.cursor = 'grab';
+                
+                const movedBy = this.currentTranslate - this.prevTranslate;
+                
+                if (Math.abs(movedBy) > 100) {
+                    if (movedBy < 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                } else {
+                    this.goToSlide(this.currentIndex);
+                }
+            }
+
+            // Animation
+            animation() {
+                this.setSliderPosition(this.currentTranslate);
+                if (this.isDragging) {
+                    requestAnimationFrame(this.animation.bind(this));
+                }
+            }
+
+            setSliderPosition(pos) {
+                this.track.style.transform = `translateX(${pos}px)`;
             }
 
             goToSlide(index) {
                 if (index < 0 || index >= this.slides.length) return;
                 
-                // Update current slide
+                this.currentIndex = index;
                 this.currentSlide = index;
                 
-                // Update track position with smooth transition
-                const translateX = -(index * 33.333);
+                // Update track position
+                const translateX = -(index * (100 / this.slides.length));
                 this.track.style.transform = `translateX(${translateX}%)`;
-                
-                // Add smooth transition class
-                this.track.classList.add('transitioning');
-                
-                // Remove transition class after animation completes
-                setTimeout(() => {
-                    this.track.classList.remove('transitioning');
-                }, 600);
+                this.currentTranslate = translateX;
+                this.prevTranslate = translateX;
                 
                 // Update active states
                 this.updateActiveStates();
-                
-                // Add entrance animation to new slide
-                const currentSlide = this.slides[index];
-                if (currentSlide) {
-                    currentSlide.style.animation = 'slideIn 0.6s ease-out';
-                    setTimeout(() => {
-                        currentSlide.style.animation = '';
-                    }, 600);
-                }
             }
 
             nextSlide() {
@@ -528,61 +520,8 @@
         // Initialize hero slider when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new HeroSlider();
-            
-                    // Handle missing images with fallbacks and optimize performance
-        const images = document.querySelectorAll('.hero-slide img');
-        images.forEach((img, index) => {
-            // Add loading optimization
-            img.loading = 'eager';
-            img.decoding = 'async';
-            
-            // Add error handling with better fallbacks
-            img.addEventListener('error', function() {
-                // Create a fallback colored div if image fails to load
-                const fallback = document.createElement('div');
-                fallback.className = 'w-full h-full flex items-center justify-center text-white text-2xl font-bold';
-                
-                // Different colors for different slides with better gradients
-                const slideIndex = this.closest('.hero-slide').dataset.index;
-                if (slideIndex === '0') {
-                    fallback.style.background = 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)';
-                    fallback.textContent = 'Print Products';
-                } else if (slideIndex === '1') {
-                    fallback.style.background = 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)';
-                    fallback.textContent = 'Business Cards';
-                } else if (slideIndex === '2') {
-                    fallback.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-                    fallback.textContent = 'Brochures';
-                }
-                
-                // Add some styling to fallback
-                fallback.style.borderRadius = '1rem';
-                fallback.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
-                
-                this.style.display = 'none';
-                this.parentNode.appendChild(fallback);
-            });
-            
-            // Add intersection observer for lazy loading optimization
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.src = entry.target.dataset.src || entry.target.src;
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                
-                observer.observe(img);
-            }
-        });
         });
     </script>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/ui-enhancements.css">
 
     <!-- Force Light Theme - No Dark Mode -->
     <script>
@@ -809,7 +748,639 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
+        <section class="hero-section" id="home" x-data="heroSlider()">
+            <div class="hero-container relative min-h-screen overflow-hidden">
+                
+                <!-- Slide 1 - Main Hero (Printing Services) -->
+                <div class="hero-slide" 
+                     x-show="currentSlide === 0" 
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform translate-x-full"
+                     x-transition:enter-end="opacity-100 transform translate-x-0"
+                     x-transition:leave="transition ease-in duration-300"
+                     x-transition:leave-start="opacity-100 transform translate-x-0"
+                     x-transition:leave-end="opacity-0 transform -translate-x-full">
+                    
+                    <div class="relative h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
+                        
+                        <!-- Decorative Background Elements -->
+                        <div class="absolute inset-0 opacity-20">
+                            <div class="absolute top-20 right-20 w-32 h-32 bg-yellow-300/30 rounded-full"></div>
+                            <div class="absolute bottom-32 left-16 w-24 h-24 bg-yellow-400/20 rounded-full"></div>
+                            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-300/40 rounded-full"></div>
+                        </div>
+        
+                        <div class="relative z-10 container mx-auto px-6 lg:px-8 h-full flex items-center">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl mx-auto">
+                                
+                                <!-- Left Side - Text Content -->
+                                <div class="text-left" 
+                                     x-show="currentSlide === 0"
+                                     x-transition:enter="transition ease-out duration-700 delay-200"
+                                     x-transition:enter-start="opacity-0 transform -translate-x-10"
+                                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                                    
+                                    <div class="mb-6">
+                                        <span class="inline-block text-gray-700 font-semibold text-xs tracking-[0.25em] uppercase">
+                                            PRINTING SERVICES
+                                        </span>
+                                    </div>
+        
+                                    <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.9] mb-6">
+                                        The leader in<br>
+                                        <span class="text-gray-900">quality custom</span>
+                                    </h1>
+        
+                                    <p class="text-lg text-gray-600 font-normal max-w-lg mb-10 leading-relaxed">
+                                        Turn your ideas into premium products that leave a lasting impression
+                                    </p>
+        
+                                    <button class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                                        <span class="mr-3">Shop Now</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+        
+                                <!-- Right Side - Product Showcase -->
+                                <div class="relative flex justify-center lg:justify-end" 
+                                     x-show="currentSlide === 0"
+                                     x-transition:enter="transition ease-out duration-700 delay-400"
+                                     x-transition:enter-start="opacity-0 transform translate-x-10"
+                                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                                    
+                                    <!-- Large Yellow Circle Background -->
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem] bg-yellow-400 rounded-full -z-10 opacity-90"></div>
+        
+                                    <!-- Product Mockup Container -->
+                                    <div class="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                                        
+                                        <!-- Main Open Book/Magazine -->
+                                        <div class="relative floating-animation">
+                                            <div class="w-96 h-72 sm:w-[28rem] sm:h-80 lg:w-[32rem] lg:h-[24rem] xl:w-[36rem] xl:h-[28rem] bg-white rounded-lg shadow-2xl transform -rotate-12 hover:-rotate-8 transition-transform duration-500 perspective-1000">
+                                                <!-- Book Pages -->
+                                                <div class="relative w-full h-full overflow-hidden rounded-lg">
+                                                    <!-- Left Page -->
+                                                    <div class="absolute left-0 top-0 w-1/2 h-full bg-white p-4 border-r border-gray-100">
+                                                        <!-- Print Products Header -->
+                                                        <div class="mb-4">
+                                                            <h3 class="text-lg font-bold text-gray-800">Print Products</h3>
+                                                            <div class="w-12 h-1 bg-blue-400 rounded mt-1"></div>
+                                                        </div>
+                                                        
+                                                        <!-- Content sections -->
+                                                        <div class="space-y-3">
+                                                            <div class="text-xs text-gray-600 leading-relaxed">
+                                                                <div class="h-2 bg-blue-200 rounded w-full mb-1"></div>
+                                                                <div class="h-2 bg-blue-200 rounded w-4/5 mb-1"></div>
+                                                                <div class="h-2 bg-blue-200 rounded w-3/4"></div>
+                                                            </div>
+                                                            
+                                                            <div class="text-xs font-semibold text-gray-700">Our</div>
+                                                            
+                                                            <div class="space-y-1">
+                                                                <div class="h-1 bg-gray-200 rounded w-full"></div>
+                                                                <div class="h-1 bg-gray-200 rounded w-4/5"></div>
+                                                                <div class="h-1 bg-gray-200 rounded w-3/4"></div>
+                                                                <div class="h-1 bg-gray-200 rounded w-full"></div>
+                                                                <div class="h-1 bg-gray-200 rounded w-2/3"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Right Page -->
+                                                    <div class="absolute right-0 top-0 w-1/2 h-full bg-white p-4">
+                                                        <!-- Grid of product showcases -->
+                                                        <div class="grid grid-cols-2 gap-3 h-full">
+                                                            <!-- Item 1 - Teal Design -->
+                                                            <div class="relative bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg overflow-hidden">
+                                                                <div class="absolute top-2 left-2 text-xs font-bold text-yellow-400">01</div>
+                                                                <div class="absolute bottom-0 left-0 right-0 h-8 bg-white/20 backdrop-blur-sm"></div>
+                                                                <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                                                                <!-- Zebra pattern -->
+                                                                <div class="absolute inset-0 opacity-30">
+                                                                    <div class="h-full w-full bg-gradient-to-r from-black/20 via-transparent to-transparent bg-[length:4px_4px]"></div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!-- Item 2 - Yellow with Glasses and Notebook -->
+                                                            <div class="relative bg-yellow-400 rounded-lg overflow-hidden flex flex-col items-center justify-center p-2">
+                                                                <div class="absolute top-2 left-2 text-xs font-bold text-gray-800">02</div>
+                                                                <!-- Glasses Icon -->
+                                                                <div class="mb-2">
+                                                                    <div class="w-8 h-3 border-2 border-gray-700 rounded-full relative">
+                                                                        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-2 bg-gray-700"></div>
+                                                                        <div class="absolute -left-1 top-1/2 transform -translate-y-1/2 w-1 h-px bg-gray-700"></div>
+                                                                        <div class="absolute -right-1 top-1/2 transform -translate-y-1/2 w-1 h-px bg-gray-700"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Notebook lines -->
+                                                                <div class="absolute bottom-2 left-2 right-2">
+                                                                    <div class="space-y-0.5">
+                                                                        <div class="h-px bg-gray-600/40"></div>
+                                                                        <div class="h-px bg-gray-600/40"></div>
+                                                                        <div class="h-px bg-gray-600/40"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!-- Item 3 - Person Image with Yellow Background -->
+                                                            <div class="relative bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-lg overflow-hidden">
+                                                                <div class="absolute inset-0 bg-gradient-to-t from-yellow-600/40 to-transparent"></div>
+                                                                <!-- Person silhouette -->
+                                                                <div class="absolute bottom-3 left-3 w-6 h-6 bg-gray-800/80 rounded-full"></div>
+                                                                <div class="absolute bottom-1 left-4 w-4 h-4 bg-gray-800/60 rounded-t-full"></div>
+                                                                <!-- Text lines -->
+                                                                <div class="absolute top-2 right-2 space-y-1">
+                                                                    <div class="w-6 h-px bg-blue-500"></div>
+                                                                    <div class="w-4 h-px bg-blue-400"></div>
+                                                                    <div class="w-5 h-px bg-blue-300"></div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!-- Item 4 - Blue Wave Design -->
+                                                            <div class="relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg overflow-hidden">
+                                                                <div class="absolute top-2 left-2 text-xs font-bold text-yellow-400">03</div>
+                                                                <!-- Wave pattern -->
+                                                                <div class="absolute bottom-0 left-0 right-0">
+                                                                    <svg viewBox="0 0 100 20" class="w-full h-4">
+                                                                        <path d="M0,10 Q25,0 50,10 Q75,20 100,10 L100,20 L0,20 Z" fill="white" opacity="0.3"/>
+                                                                        <path d="M0,15 Q25,5 50,15 Q75,25 100,15 L100,20 L0,20 Z" fill="white" opacity="0.2"/>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Book Spine Shadow -->
+                                                    <div class="absolute left-1/2 top-0 w-px h-full bg-gray-200 transform -translate-x-px"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Floating Small Card - Top Right -->
+                                        <div class="absolute -top-6 right-4 w-16 h-10 bg-white rounded shadow-lg transform rotate-12 opacity-90 z-10">
+                                            <div class="p-2">
+                                                <div class="h-1 bg-blue-400 rounded mb-1"></div>
+                                                <div class="h-1 bg-blue-200 rounded w-3/4 mb-1"></div>
+                                                <div class="h-1 bg-gray-200 rounded w-1/2"></div>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Floating Elements -->
+                                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform rotate-12 z-10">
+                                            <div class="w-8 h-8 bg-yellow-400 rounded-full"></div>
+                                        </div>
+                                        
+                                        <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-gray-800 rounded-full shadow-lg z-10"></div>
+                                        
+                                        <!-- White Dots on Yellow Circle -->
+                                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -translate-x-20">
+                                            <div class="flex flex-col space-y-2">
+                                                <div class="w-2 h-2 bg-white rounded-full opacity-60"></div>
+                                                <div class="w-2 h-2 bg-white rounded-full opacity-40"></div>
+                                                <div class="w-2 h-2 bg-white rounded-full opacity-20"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Slide 2 - Business Cards -->
+                <div class="hero-slide" 
+                     x-show="currentSlide === 1" 
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform translate-x-full"
+                     x-transition:enter-end="opacity-100 transform translate-x-0"
+                     x-transition:leave="transition ease-in duration-300"
+                     x-transition:leave-start="opacity-100 transform translate-x-0"
+                     x-transition:leave-end="opacity-0 transform -translate-x-full">
+                    
+                    <div class="relative h-screen w-full overflow-hidden bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">
+                        
+                        <!-- Decorative elements -->
+                        <div class="absolute inset-0 opacity-30">
+                            <div class="absolute top-20 right-20 w-32 h-32 bg-white/10 rounded-full"></div>
+                            <div class="absolute bottom-32 left-16 w-24 h-24 bg-white/5 rounded-full"></div>
+                            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full"></div>
+                        </div>
+        
+                        <div class="relative z-10 container mx-auto px-6 lg:px-8 h-full flex items-center">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl mx-auto">
+        
+                                <div class="text-left" 
+                                     x-show="currentSlide === 1"
+                                     x-transition:enter="transition ease-out duration-700 delay-200"
+                                     x-transition:enter-start="opacity-0 transform -translate-x-10"
+                                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                                    
+                                    <div class="mb-6">
+                                        <span class="inline-block text-blue-700 font-semibold text-xs tracking-[0.25em] uppercase">
+                                            BUSINESS CARDS
+                                        </span>
+                                    </div>
+        
+                                    <h2 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.9] mb-6">
+                                        Make your first<br>
+                                        <span class="text-blue-800">impression count</span>
+                                    </h2>
+        
+                                    <p class="text-lg text-gray-600 font-normal max-w-lg mb-10 leading-relaxed">
+                                        Premium business cards with exceptional quality and professional finish
+                                    </p>
+        
+                                    <button class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                                        <span class="mr-3">Design Now</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+        
+                                <div class="relative flex justify-center lg:justify-end" 
+                                     x-show="currentSlide === 1"
+                                     x-transition:enter="transition ease-out duration-700 delay-400"
+                                     x-transition:enter-start="opacity-0 transform translate-x-10"
+                                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                                    
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem] bg-blue-400 rounded-full -z-10 opacity-90"></div>
+        
+                                    <div class="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                                        <!-- Business Cards Stack -->
+                                        <div class="relative floating-animation">
+                                            <div class="w-72 h-48 sm:w-80 sm:h-56 lg:w-96 lg:h-64">
+                                                <!-- Card 1 -->
+                                                <div class="absolute inset-0 bg-white rounded-xl shadow-2xl transform rotate-3"></div>
+                                                <!-- Card 2 -->
+                                                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-2xl transform rotate-1 translate-x-2 translate-y-2"></div>
+                                                <!-- Card 3 (Top) -->
+                                                <div class="absolute inset-0 bg-white rounded-xl shadow-2xl transform -rotate-2 translate-x-4 translate-y-4">
+                                                    <div class="p-6 h-full flex flex-col justify-between">
+                                                        <div>
+                                                            <h3 class="text-xl font-bold text-gray-800">John Smith</h3>
+                                                            <p class="text-sm text-blue-600">Creative Director</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-xs text-gray-500">info@company.com</p>
+                                                            <p class="text-xs text-gray-500">+1 (555) 123-4567</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform rotate-12">
+                                            <div class="w-8 h-8 bg-blue-400 rounded-full"></div>
+                                        </div>
+                                        <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-gray-800 rounded-full shadow-lg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Slide 3 - Brochures -->
+                <div class="hero-slide" 
+                     x-show="currentSlide === 2" 
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform translate-x-full"
+                     x-transition:enter-end="opacity-100 transform translate-x-0"
+                     x-transition:leave="transition ease-in duration-300"
+                     x-transition:leave-start="opacity-100 transform translate-x-0"
+                     x-transition:leave-end="opacity-0 transform -translate-x-full">
+                    
+                    <div class="relative h-screen bg-gradient-to-br from-green-50 via-green-100 to-green-200 overflow-hidden">
+                        <div class="absolute inset-0 opacity-30">
+                            <div class="absolute top-20 right-20 w-32 h-32 bg-white/10 rounded-full"></div>
+                            <div class="absolute bottom-32 left-16 w-24 h-24 bg-white/5 rounded-full"></div>
+                            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full"></div>
+                        </div>
+        
+                        <div class="relative z-10 container mx-auto px-6 lg:px-8 h-screen flex items-center">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl mx-auto">
+        
+                                <div class="text-left" 
+                                     x-show="currentSlide === 2"
+                                     x-transition:enter="transition ease-out duration-700 delay-200"
+                                     x-transition:enter-start="opacity-0 transform -translate-x-10"
+                                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                                    
+                                    <div class="mb-6">
+                                        <span class="inline-block text-green-700 font-semibold text-xs tracking-[0.25em] uppercase">
+                                            BROCHURES & FLYERS
+                                        </span>
+                                    </div>
+        
+                                    <h2 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.9] mb-6">
+                                        Promote your<br>
+                                        <span class="text-green-800">business effectively</span>
+                                    </h2>
+        
+                                    <p class="text-lg text-gray-600 font-normal max-w-lg mb-10 leading-relaxed">
+                                        Eye-catching brochures and flyers that capture attention and drive results
+                                    </p>
+        
+                                    <button class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 group">
+                                        <span class="mr-3">Get Quote</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+        
+                                <div class="relative flex justify-center lg:justify-end" 
+                                     x-show="currentSlide === 2"
+                                     x-transition:enter="transition ease-out duration-700 delay-400"
+                                     x-transition:enter-start="opacity-0 transform translate-x-10"
+                                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                                    
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem] bg-green-400 rounded-full -z-10 opacity-90"></div>
+        
+                                    <div class="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                                        <!-- Brochure Stack -->
+                                        <div class="relative floating-animation">
+                                            <div class="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[28rem]">
+                                                <!-- Brochure 1 -->
+                                                <div class="absolute inset-0 bg-white rounded-lg shadow-2xl transform rotate-3"></div>
+                                                <!-- Brochure 2 -->
+                                                <div class="absolute inset-0 bg-gradient-to-br from-green-600 to-green-800 rounded-lg shadow-2xl transform rotate-1 translate-x-2 translate-y-2"></div>
+                                                <!-- Brochure 3 (Top) -->
+                                                <div class="absolute inset-0 bg-white rounded-lg shadow-2xl transform -rotate-2 translate-x-4 translate-y-4">
+                                                    <div class="p-6 h-full">
+                                                        <div class="h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-lg mb-4"></div>
+                                                        <h3 class="text-lg font-bold text-gray-800 mb-2">Our Services</h3>
+                                                        <div class="space-y-2">
+                                                            <div class="h-2 bg-gray-200 rounded"></div>
+                                                            <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+                                                            <div class="h-2 bg-gray-200 rounded w-1/2"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform rotate-12">
+                                            <div class="w-8 h-8 bg-green-400 rounded-full"></div>
+                                        </div>
+                                        <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-gray-800 rounded-full shadow-lg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Navigation Controls (Dots) -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+                <template x-for="(slide, index) in totalSlides" :key="index">
+                    <button 
+                        class="w-3 h-3 rounded-full transition-all duration-300 hover:scale-110"
+                        :class="currentSlide === index ? 'bg-gray-800' : 'bg-gray-300 hover:bg-gray-400'"
+                        @click="goToSlide(index)">
+                    </button>
+                </template>
+            </div>
+        
+            <!-- Navigation Arrows -->
+            <button 
+                class="absolute left-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all duration-300 z-20" 
+                @click="previousSlide()"
+                @mouseenter="pauseAutoplay()"
+                @mouseleave="resumeAutoplay()">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            
+            <button 
+                class="absolute right-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all duration-300 z-20" 
+                @click="nextSlide()"
+                @mouseenter="pauseAutoplay()"
+                @mouseleave="resumeAutoplay()">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </section>
+        
+        <!-- Alpine.js Script -->
+        <script>
+        function heroSlider() {
+            return {
+                currentSlide: 0,
+                totalSlides: [0, 1, 2],
+                autoplayInterval: null,
+                isAutoplayPaused: false,
+                
+                init() {
+                    this.startAutoplay();
+                    
+                    // Keyboard navigation
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') {
+                            this.pauseAutoplay();
+                            this.previousSlide();
+                            this.resumeAutoplay();
+                        } else if (e.key === 'ArrowRight') {
+                            this.pauseAutoplay();
+                            this.nextSlide();
+                            this.resumeAutoplay();
+                        }
+                    });
+                    
+                    // Touch/swipe support
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    this.$el.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    });
+                    
+                    this.$el.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        this.handleSwipe(touchStartX, touchEndX);
+                    });
+                    
+                    // Pause autoplay when section is not visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !this.isAutoplayPaused) {
+                                this.startAutoplay();
+                            } else {
+                                this.stopAutoplay();
+                            }
+                        });
+                    });
+                    
+                    observer.observe(this.$el);
+                },
+                
+                nextSlide() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides.length;
+                },
+                
+                previousSlide() {
+                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides.length) % this.totalSlides.length;
+                },
+                
+                goToSlide(index) {
+                    this.pauseAutoplay();
+                    this.currentSlide = index;
+                    this.resumeAutoplay();
+                },
+                
+                startAutoplay() {
+                    if (!this.autoplayInterval && !this.isAutoplayPaused) {
+                        this.autoplayInterval = setInterval(() => {
+                            this.nextSlide();
+                        }, 5000);
+                    }
+                },
+                
+                stopAutoplay() {
+                    if (this.autoplayInterval) {
+                        clearInterval(this.autoplayInterval);
+                        this.autoplayInterval = null;
+                    }
+                },
+                
+                pauseAutoplay() {
+                    this.isAutoplayPaused = true;
+                    this.stopAutoplay();
+                },
+                
+                resumeAutoplay() {
+                    this.isAutoplayPaused = false;
+                    setTimeout(() => {
+                        this.startAutoplay();
+                    }, 1000); // Resume after 1 second
+                },
+                
+                handleSwipe(startX, endX) {
+                    const swipeThreshold = 50;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > swipeThreshold) {
+                        this.pauseAutoplay();
+                        if (diff > 0) {
+                            this.nextSlide(); // Swipe left - next slide
+                        } else {
+                            this.previousSlide(); // Swipe right - previous slide
+                        }
+                        this.resumeAutoplay();
+                    }
+                }
+            }
+        }
+        </script>
+        
 
+        <!-- Hero Section - Swipable Banners -->
+        <section class="hero-section" id="home">
+            <div class="hero-slider">
+                <div class="hero-track">
+                    <!-- Banner 1 - Book Printing -->
+                    <div class="hero-slide active" data-index="0">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <div class="hero-badge">
+                                    <span>PRINTING SERVICES</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    The leader in<br>
+                                    <span class="text-gradient">quality custom</span>
+                                </h1>
+                                <p class="hero-description">
+                                    Turn your ideas into premium products that leave a lasting impression
+                                </p>
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary">Shop Now</button>
+                                    <button class="btn btn-secondary">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <img src="assets/images/hero-book.png" alt="Professional printing showcase" class="hero-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banner 2 - Business Cards -->
+                    <div class="hero-slide" data-index="1">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <div class="hero-badge">
+                                    <span>BUSINESS CARDS</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    Make your first<br>
+                                    <span class="text-gradient">impression count</span>
+                                </h1>
+                                <p class="hero-description">
+                                    Premium business cards with exceptional quality and professional finish
+                                </p>
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary">Design Now</button>
+                                    <button class="btn btn-secondary">Get Quote</button>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <img src="assets/images/business-cards.jpg" alt="Professional business cards" class="hero-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banner 3 - Brochures -->
+                    <div class="hero-slide" data-index="2">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <div class="hero-badge">
+                                    <span>BROCHURES & FLYERS</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    Promote your<br>
+                                    <span class="text-gradient">business effectively</span>
+                                </h1>
+                                <p class="hero-description">
+                                    Eye-catching brochures and flyers that capture attention and drive results
+                                </p>
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary">Get Quote</button>
+                                    <button class="btn btn-secondary">View Samples</button>
+                                </div>
+                            </div>
+                            <div class="hero-visual">
+                                <img src="assets/images/brochures.jpg" alt="Professional brochures and flyers" class="hero-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="hero-dots">
+                    <button class="hero-dot active" data-slide="0"></button>
+                    <button class="hero-dot" data-slide="1"></button>
+                    <button class="hero-dot" data-slide="2"></button>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="hero-nav-btn hero-prev" id="prevSlide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button class="hero-nav-btn hero-next" id="nextSlide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
 
         <!-- Services Grid -->
         <section class="services-grid scroll-reveal" id="services" aria-labelledby="services-title">
