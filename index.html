@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Drishthi Printing - Professional quality custom printing services. Business cards, brochures, folders, and more with fast delivery.">
+    <meta name="description"
+        content="Drishthi Printing - Professional quality custom printing services. Business cards, brochures, folders, and more with fast delivery.">
     <meta name="keywords" content="printing, custom printing, business cards, brochures, design, quality printing">
     <meta name="author" content="Drishthi Printing">
-    
+
     <title>Drishthi Printing - Professional Quality Custom Printing</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom Styles -->
     <style>
         * {
@@ -29,20 +31,20 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
-        
+
         .hero {
             background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
         }
-        
+
         .section-padding {
             padding: 4rem 0;
         }
-        
+
         .btn-primary {
             background: #3981e6;
             color: white;
@@ -51,12 +53,12 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             background: #0447d7;
             transform: translateY(-2px);
         }
-        
+
         .card {
             background: white;
             border-radius: 0.5rem;
@@ -64,11 +66,11 @@
             padding: 2rem;
             transition: transform 0.3s ease;
         }
-        
+
         .card:hover {
             transform: translateY(-5px);
         }
-        
+
         /* Header Styles */
         .header {
             position: fixed;
@@ -126,16 +128,43 @@
         }
 
         .navbar-nav a:hover {
-            color: #3b82f6;
+            color: #4c1d95;
+        }
+
+        .mega-menu-item > a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .mega-menu-item > a:hover {
+            color: #4c1d95;
+        }
+
+        .mega-menu-item > a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4c1d95, #7c3aed);
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .mega-menu-item:hover > a::after {
+            width: 100%;
         }
 
         .dropdown-arrow {
-            margin-left: 0.25rem;
+            margin-left: 0.5rem;
             font-size: 0.75rem;
             transition: transform 0.3s ease;
+            color: #4c1d95;
+            font-weight: 600;
         }
 
-        /* Mega Menu Styles */
+        /* Mega Menu Styles - Pixel Perfect Design */
         .mega-menu-item {
             position: relative;
             display: inline-block;
@@ -147,15 +176,16 @@
             left: 50%;
             transform: translateX(-50%) translateY(-10px);
             background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            min-width: 900px;
+            min-width: 1000px;
             max-width: 90vw;
+            padding: 0.5rem;
         }
 
         .mega-menu-item:hover .mega-menu {
@@ -169,15 +199,17 @@
         }
 
         .mega-menu-content {
-            padding: 2rem;
+            padding: 2.5rem;
             position: relative;
+            background: white;
+            border-radius: 0.75rem;
         }
 
         .mega-menu-columns {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-right: 220px;
+            gap: 2.5rem;
+            margin-right: 240px;
         }
 
         .mega-menu-column {
@@ -185,12 +217,33 @@
         }
 
         .mega-menu-heading {
-            color: #111827;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #3b82f6;
+            color: #4c1d95;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .mega-menu-heading::before {
+            content: "•";
+            color: #4c1d95;
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            line-height: 1;
+        }
+
+        .mega-menu-heading::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 120%;
+            height: 2px;
+            background: linear-gradient(90deg, #4c1d95, #7c3aed);
+            border-radius: 1px;
         }
 
         .mega-menu-links {
@@ -200,46 +253,57 @@
         }
 
         .mega-menu-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .mega-menu-links a {
             color: #6b7280;
             text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
             display: block;
-            padding: 0.25rem 0;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
             position: relative;
             z-index: 20;
+            line-height: 1.4;
         }
 
         .mega-menu-links a:hover {
-            color: #3b82f6;
+            color: #4c1d95;
+            background: #f3f4f6;
+            transform: translateX(4px);
         }
 
         .mega-menu-image-panel {
             position: absolute;
-            right: 2rem;
-            top: 2rem;
-            width: 200px;
-            height: 200px;
-            border-radius: 0.5rem;
+            right: 2.5rem;
+            top: 2.5rem;
+            width: 220px;
+            height: 220px;
+            border-radius: 1rem;
             overflow: hidden;
             z-index: 10;
             pointer-events: none;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
         }
 
         .image-panel-content {
             position: relative;
             width: 100%;
             height: 100%;
+            background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .panel-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0.9;
         }
 
         .panel-overlay {
@@ -247,22 +311,26 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
             color: white;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
         }
 
         .panel-title {
             font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            opacity: 0.9;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .panel-heading {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-actions .btn {
@@ -301,17 +369,24 @@
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             .mega-menu {
-                min-width: 600px;
+                min-width: 700px;
                 left: 0;
                 transform: translateX(0) translateY(-10px);
+                padding: 0.25rem;
             }
 
             .mega-menu-item:hover .mega-menu {
                 transform: translateX(0) translateY(0);
             }
 
+            .mega-menu-content {
+                padding: 2rem;
+            }
+
             .mega-menu-columns {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-right: 0;
             }
 
             .mega-menu-image-panel {
@@ -362,14 +437,14 @@
                 display: none;
             }
         }
-        
+
         .contact-bar {
             background: #1f2937;
             color: white;
             padding: 8px 0;
             font-size: 14px;
         }
-        
+
         .contact-bar .container {
             display: flex;
             justify-content: space-between;
@@ -378,31 +453,31 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .contact-info span {
             margin-right: 20px;
         }
-        
+
         .contact-info i {
             margin-right: 5px;
             color: #60a5fa;
         }
-        
+
         .social-links a {
             color: white;
             margin-left: 15px;
             transition: color 0.3s ease;
         }
-        
+
         .social-links a:hover {
             color: #60a5fa;
         }
-        
+
         .navbar {
             background: white;
             padding: 15px 0;
         }
-        
+
         .navbar .container {
             display: flex;
             justify-content: space-between;
@@ -411,35 +486,35 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .nav-brand .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
             color: #1f2937;
         }
-        
+
         .nav-brand .logo img {
             margin-right: 10px;
         }
-        
+
         .brand-text {
             font-size: 24px;
             font-weight: 700;
             color: #1f2937;
         }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        
+
         .nav-menu li {
             margin: 0 20px;
         }
-        
+
         .nav-link {
             color: #374151;
             text-decoration: none;
@@ -448,11 +523,11 @@
             transition: color 0.3s ease;
             position: relative;
         }
-        
+
         .nav-link:hover {
             color: #1f2937;
         }
-        
+
         .nav-link:hover::after {
             content: '';
             position: absolute;
@@ -462,13 +537,13 @@
             height: 2px;
             background: #60a5fa;
         }
-        
+
         .nav-actions {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .quote-btn {
             padding: 10px 25px;
             font-size: 14px;
@@ -476,7 +551,7 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .mobile-menu-toggle {
             display: none;
             flex-direction: column;
@@ -485,7 +560,7 @@
             cursor: pointer;
             padding: 5px;
         }
-        
+
         .mobile-menu-toggle span {
             width: 25px;
             height: 3px;
@@ -493,47 +568,47 @@
             margin: 2px 0;
             transition: 0.3s;
         }
-        
+
         @media (max-width: 768px) {
             .contact-bar .container {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .contact-info {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 10px;
             }
-            
+
             .contact-info span {
                 margin-right: 0;
                 font-size: 12px;
             }
-            
+
             .nav-menu {
                 display: none;
             }
-            
+
             .mobile-menu-toggle {
                 display: flex;
             }
-            
+
             .quote-btn {
                 padding: 8px 15px;
                 font-size: 12px;
             }
         }
-        
+
         /* Hero Slider Styles */
         .hero-slider {
             position: relative;
         }
-        
+
         .slider-container {
             position: relative;
         }
-        
+
         .hero-slide {
             position: absolute;
             top: 0;
@@ -543,13 +618,13 @@
             visibility: hidden;
             transition: opacity 0.8s ease-in-out;
         }
-        
+
         .hero-slide.active {
             opacity: 1;
             visibility: visible;
             position: relative;
         }
-        
+
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -567,20 +642,20 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        
+
         .slider-btn:hover {
             background: white;
             transform: translateY(-50%) scale(1.1);
         }
-        
+
         .prev-btn {
             left: 30px;
         }
-        
+
         .next-btn {
             right: 30px;
         }
-        
+
         .slider-dots {
             position: absolute;
             bottom: 30px;
@@ -590,7 +665,7 @@
             gap: 10px;
             z-index: 10;
         }
-        
+
         .dot {
             width: 12px;
             height: 12px;
@@ -599,24 +674,568 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .dot.active {
             background: white;
             transform: scale(1.2);
         }
-        
+
         @media (max-width: 768px) {
             .slider-btn {
                 width: 40px;
                 height: 40px;
             }
-            
+
             .prev-btn {
                 left: 15px;
             }
-            
+
             .next-btn {
                 right: 15px;
+            }
+        }
+
+        /* Best Selling Products Styles */
+        .bestselling-card {
+            position: relative;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            height: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bestselling-card:hover .card-inner {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        .bestselling-card:hover .card-image {
+            transform: scale(1.1) rotate(2deg);
+            filter: brightness(1.2) contrast(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .overlay-content {
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+            opacity: 0;
+        }
+
+        .card-content {
+            padding: 24px;
+            position: relative;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .badge-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .bestselling-card:hover .card-title {
+            color: #3b82f6;
+        }
+
+        .card-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .bestselling-card:hover .feature-item {
+            background: #dbeafe;
+            color: #3b82f6;
+        }
+
+        .card-button {
+            width: 100%;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #374151;
+            border: 2px solid #e5e7eb;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .bestselling-card:hover .card-button {
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .bestselling-card:hover .card-button::before {
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .bestselling-card:hover .card-inner {
+                transform: translateY(-8px) scale(1.01);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                height: 180px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.25rem;
+            }
+
+            .card-features {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .feature-item {
+                text-align: center;
+            }
+
+            .bestselling-card:hover .card-inner {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .card-badge {
+                right: 15px;
+                top: -8px;
+            }
+
+            .badge-text {
+                padding: 4px 12px;
+                font-size: 11px;
+            }
+        }
+
+        /* Design Tool Section Styles */
+        .design-tool-card {
+            position: relative;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .card-wrapper {
+            position: relative;
+            height: 100%;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .design-tool-card:hover .card-wrapper {
+            transform: translateY(-16px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-section {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .design-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        .design-tool-card:hover .design-image {
+            transform: scale(1.15) rotate(3deg);
+            filter: brightness(1.3) contrast(1.15);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            transform: scale(0.9);
+            transition: all 0.4s ease;
+        }
+
+        .design-tool-card:hover .price-badge {
+            transform: scale(1) rotate(-5deg);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
+        }
+
+        .price-text {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .price-label {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .design-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .overlay-icons {
+            display: flex;
+            gap: 2rem;
+            transform: translateY(30px);
+            transition: transform 0.5s ease;
+        }
+
+        .design-tool-card:hover .overlay-icons {
+            transform: translateY(0);
+        }
+
+        .icon-item {
+            text-align: center;
+            color: white;
+        }
+
+        .icon-item i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-item:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .icon-item span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-section {
+            padding: 24px;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f2937;
+            transition: all 0.3s ease;
+        }
+
+        .design-tool-card:hover .product-title {
+            color: #667eea;
+            transform: translateX(4px);
+        }
+
+        .rating-stars {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .rating-stars i {
+            color: #fbbf24;
+            font-size: 0.8rem;
+        }
+
+        .rating-text {
+            margin-left: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #6b7280;
+        }
+
+        .product-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .design-tool-card:hover .feature {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #3b82f6;
+            border-color: #93c5fd;
+            transform: translateY(-2px);
+        }
+
+        .design-button {
+            width: 100%;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #374151;
+            border: 2px solid #e5e7eb;
+            padding: 16px 24px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .design-tool-card:hover .design-button {
+            color: white;
+            border-color: transparent;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .design-tool-card:hover .design-button::before {
+            left: 0;
+        }
+
+        .button-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .design-tool-card:hover .button-icon {
+            transform: translateX(4px);
+        }
+
+        /* Staggered Animation */
+        .design-tool-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .design-tool-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .design-tool-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .design-tool-card:hover .card-wrapper {
+                transform: translateY(-12px) rotateX(2deg) rotateY(2deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-section {
+                height: 200px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .product-title {
+                font-size: 1.2rem;
+            }
+
+            .product-header {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+
+            .features-list {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .feature {
+                text-align: center;
+            }
+
+            .design-tool-card:hover .card-wrapper {
+                transform: translateY(-8px);
+            }
+
+            .overlay-icons {
+                gap: 1rem;
+            }
+
+            .icon-item i {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .price-badge {
+                top: 12px;
+                right: 12px;
+                padding: 6px 12px;
+            }
+
+            .price-text {
+                font-size: 1rem;
+            }
+
+            .price-label {
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -646,7 +1265,8 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a href="#" class="logo" aria-label="Shristi Press Home">
-                        <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40" class="logo-image">
+                        <img src="assets/images/logo.svg" alt="Shristi Press Logo" width="120" height="40"
+                            class="logo-image">
                     </a>
                 </div>
 
@@ -664,23 +1284,34 @@
                                         <div class="mega-menu-column">
                                             <h3 class="mega-menu-heading">Book Printing</h3>
                                             <ul class="mega-menu-links">
-                                                <li><a href="services/childrens-book-printing.html">Children's Book Printing</a></li>
-                                                <li><a href="services/comic-book-printing.html">Comic Book Printing</a></li>
-                                                <li><a href="services/coffee-table-book-printing.html">Coffee Table Book Printing</a></li>
-                                                <li><a href="services/coloring-book-printing.html">Coloring Book Printing</a></li>
+                                                <li><a href="services/childrens-book-printing.html">Children's Book
+                                                        Printing</a></li>
+                                                <li><a href="services/comic-book-printing.html">Comic Book Printing</a>
+                                                </li>
+                                                <li><a href="services/coffee-table-book-printing.html">Coffee Table Book
+                                                        Printing</a></li>
+                                                <li><a href="services/coloring-book-printing.html">Coloring Book
+                                                        Printing</a></li>
                                                 <li><a href="services/art-book-printing.html">Art Book Printing</a></li>
-                                                <li><a href="services/annual-reports-printing.html">Annual Reports Printing</a></li>
-                                                <li><a href="services/year-book-printing.html">Year Book Printing</a></li>
-                                                <li><a href="services/on-demand-books-printing.html">On Demand Books Printing</a></li>
+                                                <li><a href="services/annual-reports-printing.html">Annual Reports
+                                                        Printing</a></li>
+                                                <li><a href="services/year-book-printing.html">Year Book Printing</a>
+                                                </li>
+                                                <li><a href="services/on-demand-books-printing.html">On Demand Books
+                                                        Printing</a></li>
                                             </ul>
                                         </div>
                                         <div class="mega-menu-column">
                                             <h3 class="mega-menu-heading">Paper Box Printing</h3>
                                             <ul class="mega-menu-links">
-                                                <li><a href="services/medical-paper-boxes.html">Medical Paper Boxes</a></li>
-                                                <li><a href="services/cosmetic-paper-boxes.html">Cosmetic Paper Boxes</a></li>
-                                                <li><a href="services/retail-paper-boxes.html">Retail Paper Boxes</a></li>
-                                                <li><a href="services/folding-carton-boxes.html">Folding Carton Boxes</a></li>
+                                                <li><a href="services/medical-paper-boxes.html">Medical Paper Boxes</a>
+                                                </li>
+                                                <li><a href="services/cosmetic-paper-boxes.html">Cosmetic Paper
+                                                        Boxes</a></li>
+                                                <li><a href="services/retail-paper-boxes.html">Retail Paper Boxes</a>
+                                                </li>
+                                                <li><a href="services/folding-carton-boxes.html">Folding Carton
+                                                        Boxes</a></li>
                                                 <li><a href="services/corrugated-boxes.html">Corrugated Boxes</a></li>
                                                 <li><a href="services/kraft-boxes.html">Kraft Boxes</a></li>
                                             </ul>
@@ -712,7 +1343,8 @@
                                     </div>
                                     <div class="mega-menu-image-panel">
                                         <div class="image-panel-content">
-                                            <img src="assets/images/hero-book.png" alt="Professional printing showcase" class="panel-image">
+                                            <img src="assets/images/hero-book.png" alt="Professional printing showcase"
+                                                class="panel-image">
                                             <div class="panel-overlay">
                                                 <h4 class="panel-title">Premium Quality</h4>
                                                 <h3 class="panel-heading">Printing Excellence</h3>
@@ -733,7 +1365,8 @@
                     </div>
                 </div>
 
-                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -749,26 +1382,32 @@
             <div class="slider-container relative overflow-hidden" style="min-height: 70vh;">
                 <!-- Slide 1 -->
                 <div class="hero-slide active" data-slide="1">
-                    <div class="hero bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex items-center" style="min-height: 70vh;">
+                    <div class="hero bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex items-center"
+                        style="min-height: 70vh;">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
-                                    <span class="text-gray-600 font-semibold text-sm tracking-wide uppercase">Professional Printing Services</span>
-                                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight">
+                                    <span
+                                        class="text-gray-600 font-semibold text-sm tracking-wide uppercase">Professional
+                                        Printing Services</span>
+                                    <h1
+                                        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight">
                                         Quality Custom
                                         <span class="text-gray-700">Printing Solutions</span>
                                     </h1>
                                     <p class="text-lg text-gray-600 mt-6 max-w-lg">
-                                        Transform your ideas into premium printed materials that leave a lasting impression on your customers.
+                                        Transform your ideas into premium printed materials that leave a lasting
+                                        impression on your customers.
                                     </p>
                                     <div class="mt-8">
                                         <button class="btn-primary mr-4">Get Started</button>
                                         <button class="text-gray-700 font-semibold">View Portfolio</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="relative">
-                                    <img src="assets/images/hero-book.png" alt="Printing Services" class="w-full max-w-lg mx-auto" width="500" height="500">
+                                    <img src="assets/images/hero-book.png" alt="Printing Services"
+                                        class="w-full max-w-lg mx-auto" width="500" height="500">
                                 </div>
                             </div>
                         </div>
@@ -777,26 +1416,31 @@
 
                 <!-- Slide 2 -->
                 <div class="hero-slide" data-slide="2">
-                    <div class="hero bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 flex items-center" style="min-height: 70vh;">
+                    <div class="hero bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 flex items-center"
+                        style="min-height: 70vh;">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
-                                    <span class="text-blue-600 font-semibold text-sm tracking-wide uppercase">Business Cards & More</span>
-                                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight">
-                                        Professional 
+                                    <span class="text-blue-600 font-semibold text-sm tracking-wide uppercase">Business
+                                        Cards & More</span>
+                                    <h1
+                                        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight">
+                                        Professional
                                         <span class="text-blue-700">Business Cards</span>
                                     </h1>
                                     <p class="text-lg text-gray-600 mt-6 max-w-lg">
-                                        Make a lasting first impression with our premium business cards. Multiple finishes and paper options available.
+                                        Make a lasting first impression with our premium business cards. Multiple
+                                        finishes and paper options available.
                                     </p>
                                     <div class="mt-8">
                                         <button class="btn-primary mr-4">Order Cards</button>
                                         <button class="text-gray-700 font-semibold">See Samples</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="relative">
-                                    <img src="assets/images/business-cards.png" alt="Business Cards" class="w-full max-w-lg mx-auto" width="500" height="500">
+                                    <img src="assets/images/business-cards.png" alt="Business Cards"
+                                        class="w-full max-w-lg mx-auto" width="500" height="500">
                                 </div>
                             </div>
                         </div>
@@ -805,27 +1449,33 @@
 
                 <!-- Slide 3 -->
                 <div class="hero-slide" data-slide="3">
-                    <div class="hero bg-gradient-to-br from-green-100 via-green-200 to-green-300 flex items-center" style="min-height: 70vh;">
+                    <div class="hero bg-gradient-to-br from-green-100 via-green-200 to-green-300 flex items-center"
+                        style="min-height: 70vh;">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
-                                    <span class="text-green-600 font-semibold text-sm tracking-wide uppercase">Free Design Service</span>
-                                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight">
+                                    <span class="text-green-600 font-semibold text-sm tracking-wide uppercase">Free
+                                        Design Service</span>
+                                    <h1
+                                        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 leading-tight">
                                         No Design?
                                         <span class="text-green-700">No Problem!</span>
                                     </h1>
                                     <p class="text-lg text-gray-600 mt-6 max-w-lg">
-                                        Our expert design team creates stunning, professional designs tailored to your brand at no extra cost.
+                                        Our expert design team creates stunning, professional designs tailored to your
+                                        brand at no extra cost.
                                     </p>
                                     <div class="mt-8">
                                         <button class="btn-primary mr-4">Get Free Design</button>
                                         <button class="text-gray-700 font-semibold">Learn More</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="relative">
-                                    <img src="assets/images/design-team.png" alt="Design Team" class="w-full max-w-lg mx-auto" width="500" height="500">
-                                    <div class="absolute -bottom-4 -right-4 bg-green-600 text-white p-3 rounded-lg shadow-lg">
+                                    <img src="assets/images/design-team.png" alt="Design Team"
+                                        class="w-full max-w-lg mx-auto" width="500" height="500">
+                                    <div
+                                        class="absolute -bottom-4 -right-4 bg-green-600 text-white p-3 rounded-lg shadow-lg">
                                         <div class="text-xl font-bold">FREE</div>
                                         <div class="text-xs">Design</div>
                                     </div>
@@ -838,7 +1488,8 @@
                 <!-- Navigation Arrows -->
                 <button class="slider-btn prev-btn" id="prevBtn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
                     </svg>
                 </button>
                 <button class="slider-btn next-btn" id="nextBtn">
@@ -857,27 +1508,30 @@
         </section>
 
         <!-- Best Selling Products Section -->
-        <section id="bestselling" class="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <section id="bestselling"
+            class="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
             <!-- Background decoration -->
             <div class="absolute inset-0 opacity-5">
                 <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-20 right-10 w-40 h-40 bg-purple-500 rounded-full blur-3xl"></div>
             </div>
-            
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-20">
                     <div class="inline-block">
-                        <span class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">Premium Quality</span>
+                        <span class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">Premium
+                            Quality</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                             Best Selling Products
                         </h2>
-                        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full">
+                        </div>
                     </div>
                     <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
                         Our most popular printing solutions that businesses love and trust.
                     </p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Book Printing Card -->
                     <div class="bestselling-card group">
@@ -896,19 +1550,21 @@
                                     <span class="badge-text">Most Popular</span>
                                 </div>
                                 <h3 class="card-title">Book Printing</h3>
-                                <p class="card-description">On Demand Digital Book Printing in India with premium paper quality</p>
+                                <p class="card-description">On Demand Digital Book Printing in India with premium paper
+                                    quality</p>
                                 <div class="card-features">
                                     <span class="feature-item">✓ Premium Paper</span>
                                     <span class="feature-item">✓ Fast Delivery</span>
                                 </div>
                                 <button class="card-button">
                                     <span>Explore Books</span>
-                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                    <i
+                                        class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Paper Box Card -->
                     <div class="bestselling-card group">
                         <div class="card-inner">
@@ -926,24 +1582,27 @@
                                     <span class="badge-text">Trending</span>
                                 </div>
                                 <h3 class="card-title">Paper Boxes</h3>
-                                <p class="card-description">Custom paper boxes for retail, medical, and cosmetic packaging</p>
+                                <p class="card-description">Custom paper boxes for retail, medical, and cosmetic
+                                    packaging</p>
                                 <div class="card-features">
                                     <span class="feature-item">✓ Custom Sizes</span>
                                     <span class="feature-item">✓ Eco-Friendly</span>
                                 </div>
                                 <button class="card-button">
                                     <span>View Boxes</span>
-                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                    <i
+                                        class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Marketing Card -->
                     <div class="bestselling-card group">
                         <div class="card-inner">
                             <div class="image-container">
-                                <img src="assets/images/bestselling-banners.svg" alt="Marketing Materials" class="card-image">
+                                <img src="assets/images/bestselling-banners.svg" alt="Marketing Materials"
+                                    class="card-image">
                                 <div class="image-overlay">
                                     <div class="overlay-content">
                                         <i class="fas fa-bullhorn text-2xl text-white mb-2"></i>
@@ -963,12 +1622,13 @@
                                 </div>
                                 <button class="card-button">
                                     <span>Get Marketing</span>
-                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                    <i
+                                        class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Stationery Card -->
                     <div class="bestselling-card group">
                         <div class="card-inner">
@@ -986,25 +1646,29 @@
                                     <span class="badge-text">Essential</span>
                                 </div>
                                 <h3 class="card-title">Stationery</h3>
-                                <p class="card-description">Professional business cards, letterheads, and office stationery</p>
+                                <p class="card-description">Professional business cards, letterheads, and office
+                                    stationery</p>
                                 <div class="card-features">
                                     <span class="feature-item">✓ Premium Finish</span>
                                     <span class="feature-item">✓ Multiple Options</span>
                                 </div>
                                 <button class="card-button">
                                     <span>Order Now</span>
-                                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                                    <i
+                                        class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Call to Action -->
                 <div class="text-center mt-16">
-                    <div class="inline-flex items-center gap-4 bg-white rounded-full px-8 py-4 shadow-lg border border-gray-100">
+                    <div
+                        class="inline-flex items-center gap-4 bg-white rounded-full px-8 py-4 shadow-lg border border-gray-100">
                         <span class="text-gray-600 font-medium">Need something custom?</span>
-                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                        <button
+                            class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
                             Get Quote
                         </button>
                     </div>
@@ -1021,114 +1685,406 @@
                             No Design? <span class="text-blue-600">No Problem!</span>
                         </h2>
                         <p class="text-gray-600 mb-6 text-lg">
-                            Don't have a design? Our expert design team will create stunning, professional designs 
+                            Don't have a design? Our expert design team will create stunning, professional designs
                             tailored to your brand and requirements at no extra cost.
                         </p>
-                        
+
                         <div class="space-y-4 mb-8">
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-700 font-medium">Free Design Consultation</span>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-700 font-medium">Professional Design Team</span>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-700 font-medium">Unlimited Revisions</span>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-700 font-medium">24-Hour Design Turnaround</span>
                             </div>
                         </div>
-                        
+
                         <button class="btn-primary">Get Free Design</button>
                     </div>
-                    
+
                     <div class="relative">
-                        <img src="assets/images/nodes2.jpg" alt="Professional Design Team"  width="1200px">
+                        <img src="assets/images/nodes2.jpg" alt="Professional Design Team" width="1200px">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Online Design Tool Section -->
-        <section id="design-tool" class="section-padding bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Online Design With Pricing Option</h2>
-                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-                        Our Online Design Tool Is For Any Skill Level - Create professional designs instantly with our easy-to-use platform.
+        <section id="design-tool"
+            class="section-padding bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div
+                    class="absolute top-10 left-20 w-64 h-64 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-3xl">
+                </div>
+                <div
+                    class="absolute bottom-10 right-20 w-80 h-80 bg-gradient-to-r from-pink-400 to-orange-400 rounded-full blur-3xl">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-20">
+                    <div class="inline-block">
+                        <span class="text-indigo-600 font-semibold text-sm tracking-wider uppercase mb-3 block">Design &
+                            Print Online</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                            Online Design With <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Pricing
+                                Option</span>
+                        </h2>
+                        <div class="w-32 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-6 rounded-full">
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+                        Our Online Design Tool Is For Any Skill Level - Create professional designs instantly with our
+                        easy-to-use platform.
                     </p>
                 </div>
-                
+
                 <!-- First Row - 3 Products -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="card text-center">
-                        <img src="https://images.unsplash.com/photo-1589330273594-fade1ee91647?w=400&h=300&fit=crop" alt="Business Card Printing" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Business Card Printing</h3>
-                        <p class="text-gray-600 mb-4">Professional business cards with online design tool. Multiple templates available.</p>
-                        <div class="justify-between items-center">
-                            <button class="btn-primary ">Design Now</button>
+                    <!-- Business Card -->
+                    <div class="design-tool-card group">
+                        <div class="card-wrapper">
+                            <div class="image-section">
+                                <img src="https://images.unsplash.com/photo-1589330273594-fade1ee91647?w=400&h=300&fit=crop"
+                                    alt="Business Card Printing" class="design-image">
+                                <div class="price-badge">
+                                    <span class="price-text">₹299</span>
+                                    <span class="price-label">Starting</span>
+                                </div>
+                                <div class="design-overlay">
+                                    <div class="overlay-icons">
+                                        <div class="icon-item">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-print"></i>
+                                            <span>Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-section">
+                                <div class="product-header">
+                                    <h3 class="product-title">Business Card Printing</h3>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="product-description">Professional business cards with online design tool.
+                                    Multiple templates available.</p>
+                                <div class="features-list">
+                                    <span class="feature">✓ 500+ Templates</span>
+                                    <span class="feature">✓ Premium Paper</span>
+                                    <span class="feature">✓ Fast Delivery</span>
+                                </div>
+                                <button class="design-button">
+                                    <span class="button-text">Design Now</span>
+                                    <i class="fas fa-arrow-right button-icon"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="card text-center">
-                        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop" alt="Letter Heads" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Letter Heads</h3>
-                        <p class="text-gray-600 mb-4">Custom letterheads for your business correspondence with professional layouts.</p>
-                        <div class="justify-between items-center">
-                            <button class="btn-primary ">Design Now</button>
+
+                    <!-- Letter Heads -->
+                    <div class="design-tool-card group">
+                        <div class="card-wrapper">
+                            <div class="image-section">
+                                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop"
+                                    alt="Letter Heads" class="design-image">
+                                <div class="price-badge">
+                                    <span class="price-text">₹199</span>
+                                    <span class="price-label">Starting</span>
+                                </div>
+                                <div class="design-overlay">
+                                    <div class="overlay-icons">
+                                        <div class="icon-item">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-print"></i>
+                                            <span>Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-section">
+                                <div class="product-header">
+                                    <h3 class="product-title">Letter Heads</h3>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.8</span>
+                                    </div>
+                                </div>
+                                <p class="product-description">Custom letterheads for your business correspondence with
+                                    professional layouts.</p>
+                                <div class="features-list">
+                                    <span class="feature">✓ Professional Design</span>
+                                    <span class="feature">✓ Quality Paper</span>
+                                    <span class="feature">✓ Quick Setup</span>
+                                </div>
+                                <button class="design-button">
+                                    <span class="button-text">Design Now</span>
+                                    <i class="fas fa-arrow-right button-icon"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="card text-center">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop" alt="Bill Book" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Bill Book</h3>
-                        <p class="text-gray-600 mb-4">Customizable bill books and invoice pads for your business transactions.</p>
-                        <div class="justify-between items-center">
-                            <button class="btn-primary ">Design Now</button>
+
+                    <!-- Bill Book -->
+                    <div class="design-tool-card group">
+                        <div class="card-wrapper">
+                            <div class="image-section">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop"
+                                    alt="Bill Book" class="design-image">
+                                <div class="price-badge">
+                                    <span class="price-text">₹399</span>
+                                    <span class="price-label">Starting</span>
+                                </div>
+                                <div class="design-overlay">
+                                    <div class="overlay-icons">
+                                        <div class="icon-item">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-print"></i>
+                                            <span>Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-section">
+                                <div class="product-header">
+                                    <h3 class="product-title">Bill Book</h3>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.7</span>
+                                    </div>
+                                </div>
+                                <p class="product-description">Customizable bill books and invoice pads for your
+                                    business transactions.</p>
+                                <div class="features-list">
+                                    <span class="feature">✓ Custom Format</span>
+                                    <span class="feature">✓ Duplicate Copy</span>
+                                    <span class="feature">✓ Bulk Orders</span>
+                                </div>
+                                <button class="design-button">
+                                    <span class="button-text">Design Now</span>
+                                    <i class="fas fa-arrow-right button-icon"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Second Row - 3 Products -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card text-center">
-                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop" alt="Sticker" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sticker</h3>
-                        <p class="text-gray-600 mb-4">Custom stickers in various shapes and sizes for branding and promotions.</p>
-                        <div class="justify-between items-center">
-                            <button class="btn-primary ">Design Now</button>
+                    <!-- Sticker -->
+                    <div class="design-tool-card group">
+                        <div class="card-wrapper">
+                            <div class="image-section">
+                                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop"
+                                    alt="Sticker" class="design-image">
+                                <div class="price-badge">
+                                    <span class="price-text">₹149</span>
+                                    <span class="price-label">Starting</span>
+                                </div>
+                                <div class="design-overlay">
+                                    <div class="overlay-icons">
+                                        <div class="icon-item">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-print"></i>
+                                            <span>Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-section">
+                                <div class="product-header">
+                                    <h3 class="product-title">Sticker</h3>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="product-description">Custom stickers in various shapes and sizes for branding
+                                    and promotions.</p>
+                                <div class="features-list">
+                                    <span class="feature">✓ Any Shape</span>
+                                    <span class="feature">✓ Waterproof</span>
+                                    <span class="feature">✓ Vibrant Colors</span>
+                                </div>
+                                <button class="design-button">
+                                    <span class="button-text">Design Now</span>
+                                    <i class="fas fa-arrow-right button-icon"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="card text-center">
-                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop" alt="Brochure" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Brochure</h3>
-                        <p class="text-gray-600 mb-4">Professional brochures with fold options and premium paper quality.</p>
-                        <div class="justify-between items-center">
-                            <button class="btn-primary ">Design Now</button>
+
+                    <!-- Brochure -->
+                    <div class="design-tool-card group">
+                        <div class="card-wrapper">
+                            <div class="image-section">
+                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop"
+                                    alt="Brochure" class="design-image">
+                                <div class="price-badge">
+                                    <span class="price-text">₹599</span>
+                                    <span class="price-label">Starting</span>
+                                </div>
+                                <div class="design-overlay">
+                                    <div class="overlay-icons">
+                                        <div class="icon-item">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-print"></i>
+                                            <span>Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-section">
+                                <div class="product-header">
+                                    <h3 class="product-title">Brochure</h3>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.8</span>
+                                    </div>
+                                </div>
+                                <p class="product-description">Professional brochures with fold options and premium
+                                    paper quality.</p>
+                                <div class="features-list">
+                                    <span class="feature">✓ Multiple Folds</span>
+                                    <span class="feature">✓ Glossy Finish</span>
+                                    <span class="feature">✓ High Quality</span>
+                                </div>
+                                <button class="design-button">
+                                    <span class="button-text">Design Now</span>
+                                    <i class="fas fa-arrow-right button-icon"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="card text-center">
-                        <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&h=300&fit=crop" alt="Flyer" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Flyer</h3>
-                        <p class="text-gray-600 mb-4">Eye-catching flyers for events, promotions, and marketing campaigns.</p>
-                        <div class="justify-between items-center">
-                            <button class="btn-primary ">Design Now</button>
+
+                    <!-- Flyer -->
+                    <div class="design-tool-card group">
+                        <div class="card-wrapper">
+                            <div class="image-section">
+                                <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&h=300&fit=crop"
+                                    alt="Flyer" class="design-image">
+                                <div class="price-badge">
+                                    <span class="price-text">₹249</span>
+                                    <span class="price-label">Starting</span>
+                                </div>
+                                <div class="design-overlay">
+                                    <div class="overlay-icons">
+                                        <div class="icon-item">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </div>
+                                        <div class="icon-item">
+                                            <i class="fas fa-print"></i>
+                                            <span>Print</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-section">
+                                <div class="product-header">
+                                    <h3 class="product-title">Flyer</h3>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="rating-text">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="product-description">Eye-catching flyers for events, promotions, and marketing
+                                    campaigns.</p>
+                                <div class="features-list">
+                                    <span class="feature">✓ Eye-Catching</span>
+                                    <span class="feature">✓ Quick Print</span>
+                                    <span class="feature">✓ Affordable</span>
+                                </div>
+                                <button class="design-button">
+                                    <span class="button-text">Design Now</span>
+                                    <i class="fas fa-arrow-right button-icon"></i>
+                                </button>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="text-center mt-16">
+                    <div
+                        class="inline-flex items-center gap-6 bg-white/80 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-xl border border-white/20">
+                        <div class="text-left">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-1">Need Help Getting Started?</h4>
+                            <p class="text-gray-600 text-sm">Our design experts are here to help you create the perfect
+                                design</p>
+                        </div>
+                        <button
+                            class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap">
+                            Get Free Consultation
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1140,94 +2096,116 @@
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Our Clients Say</h2>
                     <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-                        Don't just take our word for it - hear from our satisfied customers who trust us with their printing needs.
+                        Don't just take our word for it - hear from our satisfied customers who trust us with their
+                        printing needs.
                     </p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="card text-center">
                         <div class="mb-6">
-                            <img src="assets/images/client-1.png" alt="Client 1" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                            <img src="assets/images/client-1.png" alt="Client 1"
+                                class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
                             <div class="flex justify-center mb-4">
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                             </div>
                         </div>
                         <blockquote class="text-gray-600 italic mb-4">
-                            "Drishthi Printing delivered exceptional quality business cards for our startup. The design team understood our vision perfectly and the turnaround time was incredibly fast!"
+                            "Drishthi Printing delivered exceptional quality business cards for our startup. The design
+                            team understood our vision perfectly and the turnaround time was incredibly fast!"
                         </blockquote>
                         <div>
                             <div class="font-semibold text-gray-900">Rajesh Kumar</div>
                             <div class="text-sm text-gray-500">CEO, TechStart Solutions</div>
                         </div>
                     </div>
-                    
+
                     <div class="card text-center">
                         <div class="mb-6">
-                            <img src="assets/images/client-2.png" alt="Client 2" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                            <img src="assets/images/client-2.png" alt="Client 2"
+                                class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
                             <div class="flex justify-center mb-4">
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                             </div>
                         </div>
                         <blockquote class="text-gray-600 italic mb-4">
-                            "We needed 1000 brochures for our product launch in just 2 days. Drishthi Printing not only met our deadline but exceeded our quality expectations. Highly recommended!"
+                            "We needed 1000 brochures for our product launch in just 2 days. Drishthi Printing not only
+                            met our deadline but exceeded our quality expectations. Highly recommended!"
                         </blockquote>
                         <div>
                             <div class="font-semibold text-gray-900">Priya Sharma</div>
                             <div class="text-sm text-gray-500">Marketing Director, InnovateNow</div>
                         </div>
                     </div>
-                    
+
                     <div class="card text-center">
                         <div class="mb-6">
-                            <img src="assets/images/client-3.png" alt="Client 3" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                            <img src="assets/images/client-3.png" alt="Client 3"
+                                class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
                             <div class="flex justify-center mb-4">
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                             </div>
                         </div>
                         <blockquote class="text-gray-600 italic mb-4">
-                            "The free design service was a game-changer for us. We had no idea what we wanted, but their design team created something amazing that perfectly represented our brand."
+                            "The free design service was a game-changer for us. We had no idea what we wanted, but their
+                            design team created something amazing that perfectly represented our brand."
                         </blockquote>
                         <div>
                             <div class="font-semibold text-gray-900">Amit Patel</div>
@@ -1238,7 +2216,7 @@
             </div>
         </section>
 
-    
+
     </main>
 
     <!-- Footer -->
@@ -1247,9 +2225,10 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Drishthi Printing</h3>
-                    <p class="text-gray-400">Your trusted partner for all printing needs. Quality, speed, and affordability guaranteed.</p>
+                    <p class="text-gray-400">Your trusted partner for all printing needs. Quality, speed, and
+                        affordability guaranteed.</p>
                 </div>
-                
+
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
@@ -1259,7 +2238,7 @@
                         <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Services</h3>
                     <ul class="space-y-2">
@@ -1269,13 +2248,14 @@
                         <li><span class="text-gray-400">Custom Printing</span></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <p class="text-gray-400 text-sm">123 Printing Street<br>City, State 12345<br>Phone: (555) 123-4567</p>
+                    <p class="text-gray-400 text-sm">123 Printing Street<br>City, State 12345<br>Phone: (555) 123-4567
+                    </p>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
                 <p class="text-gray-400">&copy; 2024 Drishthi Printing. All rights reserved.</p>
             </div>
@@ -1301,43 +2281,43 @@
         // Hero Slider Functionality
         let currentSlide = 1;
         const totalSlides = 3;
-        
+
         function showSlide(n) {
             const slides = document.querySelectorAll('.hero-slide');
             const dots = document.querySelectorAll('.dot');
-            
+
             if (n > totalSlides) currentSlide = 1;
             if (n < 1) currentSlide = totalSlides;
-            
+
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
+
             document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
             document.querySelector(`.dot[data-slide="${currentSlide}"]`).classList.add('active');
         }
-        
+
         function nextSlide() {
             currentSlide++;
             showSlide(currentSlide);
         }
-        
+
         function prevSlide() {
             currentSlide--;
             showSlide(currentSlide);
         }
-        
+
         // Event listeners
         document.getElementById('nextBtn').addEventListener('click', nextSlide);
         document.getElementById('prevBtn').addEventListener('click', prevSlide);
-        
+
         // Dot navigation
         document.querySelectorAll('.dot').forEach(dot => {
-            dot.addEventListener('click', function() {
+            dot.addEventListener('click', function () {
                 currentSlide = parseInt(this.getAttribute('data-slide'));
                 showSlide(currentSlide);
             });
         });
-        
+
         // Auto-play slider
         setInterval(nextSlide, 5000);
     </script>
@@ -1345,24 +2325,24 @@
     <!-- Navbar JavaScript -->
     <script>
         // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const navbarToggle = document.getElementById('navbarToggle');
             const navbarMenu = document.getElementById('navbarMenu');
-            
+
             if (navbarToggle && navbarMenu) {
-                navbarToggle.addEventListener('click', function() {
+                navbarToggle.addEventListener('click', function () {
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    
+
                     // Toggle aria-expanded
                     this.setAttribute('aria-expanded', !isExpanded);
-                    
+
                     // Toggle menu visibility
                     navbarMenu.classList.toggle('active');
                 });
             }
 
             // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
                 if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
                     navbarMenu.classList.remove('active');
                     navbarToggle.setAttribute('aria-expanded', 'false');
@@ -1374,9 +2354,9 @@
             megaMenuItems.forEach(item => {
                 const link = item.querySelector('a');
                 const megaMenu = item.querySelector('.mega-menu');
-                
+
                 if (link && megaMenu) {
-                    link.addEventListener('click', function(e) {
+                    link.addEventListener('click', function (e) {
                         if (window.innerWidth <= 768) {
                             e.preventDefault();
                             megaMenu.style.display = megaMenu.style.display === 'block' ? 'none' : 'block';
